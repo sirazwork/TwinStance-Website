@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PPC & Paid Ads | TwinStance Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--white:#fff;--off-white:#f8f7f4;--border:#e5e2dc;--text:#1a1a1a;--muted:#6b6b6b;--accent:#1a1a6e;--accent2:#e63946;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--white);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%;height:70px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--accent);text-decoration:none;}
+.nav-logo span{color:var(--accent2);}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;}
+.nav-links a:hover{color:var(--accent);}
+.nav-cta{background:var(--accent);color:white!important;padding:10px 22px;border-radius:8px;font-weight:600!important;}
+.hero{padding:120px 5% 80px;background:linear-gradient(135deg,#7b1a1a 0%,#c0392b 100%);color:white;}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.breadcrumb{font-size:13px;opacity:0.7;margin-bottom:16px;}
+.breadcrumb a{color:white;text-decoration:none;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:900;line-height:1.1;margin-bottom:20px;}
+.hero h1 em{font-style:italic;color:#ffd166;}
+.hero p{font-size:16px;opacity:0.85;line-height:1.7;margin-bottom:32px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-white{background:white;color:#7b1a1a;padding:13px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;transition:all 0.2s;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,0.2);}
+.btn-outline-white{background:transparent;color:white;padding:13px 28px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;border:2px solid rgba(255,255,255,0.5);}
+.hero-card{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:32px;}
+.hero-card h3{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:20px;}
+.feature-list{list-style:none;}
+.feature-list li{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:14px;opacity:0.9;}
+.feature-list li:last-child{border-bottom:none;}
+.feature-list li::before{content:'✓';background:rgba(255,255,255,0.2);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+section{padding:80px 5%;}
+.section-inner{max-width:1200px;margin:0 auto;}
+.section-tag{display:inline-block;background:#eeeef8;color:var(--accent);padding:4px 14px;border-radius:100px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,38px);font-weight:700;margin-bottom:16px;line-height:1.2;}
+.section-sub{color:var(--muted);font-size:15px;line-height:1.7;max-width:560px;margin-bottom:48px;}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.feature-card{background:var(--off-white);border-radius:16px;padding:28px;border:1px solid var(--border);transition:all 0.3s;}
+.feature-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.08);border-color:var(--accent);}
+.feature-icon{font-size:32px;margin-bottom:16px;}
+.feature-card h3{font-size:16px;font-weight:600;margin-bottom:10px;}
+.feature-card p{font-size:13px;color:var(--muted);line-height:1.6;}
+.process-bg{background:var(--off-white);}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.step{text-align:center;}
+.step-num{width:60px;height:60px;border-radius:50%;background:var(--accent);color:white;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+.step h3{font-size:15px;font-weight:600;margin-bottom:8px;}
+.step p{font-size:13px;color:var(--muted);}
+.pricing-card{background:white;border:2px solid var(--accent);border-radius:24px;padding:48px;max-width:600px;margin:0 auto;text-align:center;box-shadow:0 20px 60px rgba(26,26,110,0.1);}
+.pricing-tag{display:inline-block;background:var(--accent);color:white;padding:4px 16px;border-radius:100px;font-size:12px;font-weight:700;margin-bottom:16px;}
+.pricing-price{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:var(--accent);margin-bottom:4px;}
+.pricing-price span{font-size:18px;font-weight:400;color:var(--muted);font-family:'Outfit',sans-serif;}
+.pricing-setup{font-size:14px;color:var(--muted);margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border);}
+.pricing-features{list-style:none;text-align:left;margin-bottom:32px;}
+.pricing-features li{display:flex;align-items:center;gap:10px;padding:9px 0;font-size:14px;border-bottom:1px solid var(--off-white);}
+.pricing-features li::before{content:'✓';color:var(--accent);font-weight:700;}
+.btn-primary{background:var(--accent);color:white;padding:14px 36px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{background:#2a2a9e;transform:translateY(-2px);}
+.note-box{background:#fff8e1;border-left:4px solid #f39c12;border-radius:0 10px 10px 0;padding:16px 20px;margin:20px 0;font-size:13px;color:#7d5a00;}
+.faq-list{max-width:720px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
+.faq-q{font-size:15px;font-weight:600;margin-bottom:10px;}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.7;}
+.cta-section{background:var(--accent);color:white;text-align:center;padding:80px 5%;}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,42px);font-weight:700;margin-bottom:16px;}
+.cta-section p{font-size:16px;opacity:0.85;margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto;}
+footer{background:var(--text);color:rgba(255,255,255,0.6);padding:30px 5%;text-align:center;font-size:13px;}
+footer a{color:rgba(255,255,255,0.7);text-decoration:none;margin:0 10px;}
+.footer-links{margin-bottom:12px;}
+@media(max-width:768px){.hero-inner{grid-template-columns:1fr;}.hero-card{display:none;}.features-grid{grid-template-columns:1fr;}.process-steps{grid-template-columns:1fr 1fr;}.nav-links{display:none;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">Twin<span>Stance</span></a>
+  <div class="nav-links">
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#packages">Packages</a>
+    <a href="../index.html#contact">Contact</a>
+    <a href="http://app.tssolutionsllp.com" class="nav-cta">📧 Email Tool</a>
+  </div>
+</nav>
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="breadcrumb"><a href="../index.html">Home</a> → <a href="../index.html#services">Services</a> → PPC & Paid Ads</div>
+      <h1>Ads That <em>Make Money</em>, Not Just Clicks</h1>
+      <p>Google Ads and Facebook campaigns managed by experts. Every rupee of your ad budget is optimised for maximum return.</p>
+      <div class="hero-btns">
+        <a href="../index.html#contact" class="btn-white">Start Advertising →</a>
+        <a href="../index.html#packages" class="btn-outline-white">View Packages</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>What's Included</h3>
+      <ul class="feature-list">
+        <li>Google Ads campaign setup</li>
+        <li>Facebook & Instagram Ads</li>
+        <li>Keyword research & targeting</li>
+        <li>Ad copy writing</li>
+        <li>A/B testing</li>
+        <li>Monthly performance reports</li>
+        <li>Budget optimization</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<section>
+  <div class="section-inner">
+    <div class="section-tag">What We Manage</div>
+    <h2 class="section-title">Full PPC Management Across All Platforms</h2>
+    <p class="section-sub">We manage your ad campaigns so you don't have to. From setup to daily optimization — we handle everything.</p>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">🔍</div><h3>Google Search Ads</h3><p>Show up when customers are actively searching for your product or service. High intent, high conversion.</p></div>
+      <div class="feature-card"><div class="feature-icon">📘</div><h3>Facebook & Instagram Ads</h3><p>Reach your ideal customers by age, location, interests, and behaviour on social media.</p></div>
+      <div class="feature-card"><div class="feature-icon">🛍️</div><h3>Google Shopping Ads</h3><p>Perfect for e-commerce. Show your products directly in Google search results with price and images.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔄</div><h3>Remarketing</h3><p>Re-engage visitors who didn't convert. Follow up with targeted ads across Google and social media.</p></div>
+      <div class="feature-card"><div class="feature-icon">📊</div><h3>Conversion Tracking</h3><p>Know exactly which ads are bringing customers and how much each lead costs you.</p></div>
+      <div class="feature-card"><div class="feature-icon">✍️</div><h3>Ad Copywriting</h3><p>Compelling ad text that gets clicks and converts visitors into customers — written by our team.</p></div>
+    </div>
+  </div>
+</section>
+<section class="process-bg">
+  <div class="section-inner">
+    <div class="section-tag" style="text-align:center;display:block;">Our Process</div>
+    <h2 class="section-title" style="text-align:center;">How We Run Your Campaigns</h2>
+    <div class="process-steps">
+      <div class="step"><div class="step-num">1</div><h3>Research</h3><p>Analyse your competitors, audience, and best keywords for your budget.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Setup</h3><p>Build campaigns, write ad copy, and configure tracking within 3–5 days.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Optimise</h3><p>Daily monitoring and weekly optimizations to reduce cost and increase conversions.</p></div>
+      <div class="step"><div class="step-num">4</div><h3>Report</h3><p>Monthly report showing spend, clicks, conversions, cost per lead, and ROI.</p></div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="section-inner">
+    <div class="section-tag" style="text-align:center;display:block;">Pricing</div>
+    <h2 class="section-title" style="text-align:center;">PPC Management Pricing</h2>
+    <div class="pricing-card">
+      <div class="pricing-tag">PPC & Paid Ads</div>
+      <div class="pricing-price">₹5,999 <span>/ month</span></div>
+      <div class="pricing-setup">+ One-time setup fee (discussed during consultation)</div>
+      <div class="note-box">⚠️ This is our management fee only. Your ad spend (paid directly to Google/Facebook) is separate and decided by you.</div>
+      <ul class="pricing-features">
+        <li>Google Ads campaign setup & management</li>
+        <li>Facebook / Instagram Ads management</li>
+        <li>Keyword research & audience targeting</li>
+        <li>Ad copywriting & creative direction</li>
+        <li>A/B testing of ads</li>
+        <li>Conversion tracking setup</li>
+        <li>Daily campaign monitoring</li>
+        <li>Monthly performance report</li>
+      </ul>
+      <a href="../index.html#contact" class="btn-primary">Start Your Campaign →</a>
+      <p style="font-size:12px;color:var(--muted);margin-top:16px;">No long-term contracts. Cancel anytime with 30 days notice.</p>
+    </div>
+  </div>
+</section>
+<section class="process-bg">
+  <div class="section-inner">
+    <div class="section-tag" style="text-align:center;display:block;">FAQ</div>
+    <h2 class="section-title" style="text-align:center;">Common Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q">What is the minimum ad budget I need?</div><div class="faq-a">We recommend a minimum ad spend of ₹10,000–₹15,000/month for Google Ads to see meaningful results. For Facebook Ads, ₹5,000–₹10,000/month is a good starting point.</div></div>
+      <div class="faq-item"><div class="faq-q">Do you guarantee results?</div><div class="faq-a">We guarantee professional management and continuous optimization. Results depend on your industry, competition, and budget. We'll set realistic expectations during your consultation.</div></div>
+      <div class="faq-item"><div class="faq-q">Who pays Google and Facebook directly?</div><div class="faq-a">You do. Your ad budget goes directly from your card/account to the ad platform. We only charge our management fee separately.</div></div>
+      <div class="faq-item"><div class="faq-q">How soon will my ads go live?</div><div class="faq-a">We set up and launch your campaigns within 3–5 business days after receiving your brief and payment.</div></div>
+    </div>
+  </div>
+</section>
+<div class="cta-section">
+  <h2>Ready to Start Advertising?</h2>
+  <p>Get a free consultation and we'll tell you the best strategy for your budget and business goals.</p>
+  <a href="../index.html#contact" class="btn-white" style="color:var(--accent);">Get Free Consultation →</a>
+</div>
+<footer>
+  <div class="footer-links">
+    <a href="../index.html">Home</a>
+    <a href="../privacy-policy.html">Privacy Policy</a>
+    <a href="../refund-policy.html">Refund Policy</a>
+    <a href="../terms.html">Terms & Conditions</a>
+  </div>
+  © 2025 TwinStance Solutions LLP. All rights reserved.
+</footer>
+</body>
+</html>
