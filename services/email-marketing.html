@@ -77,6 +77,201 @@ footer a{color:rgba(255,255,255,0.7);text-decoration:none;margin:0 10px;}.footer
     <div class="feature-card"><div class="feature-icon">⏰</div><h3>Campaign Scheduling</h3><p>Schedule campaigns to send at the perfect time. Pause, resume, or cancel at any point.</p></div>
   </div>
 </div></section>
+<!-- INTERACTIVE DEMO -->
+<section style="background:#0a0a0f;padding:80px 5%;"><div style="max-width:1200px;margin:0 auto;">
+  <div style="text-align:center;margin-bottom:48px;">
+    <div style="display:inline-block;background:rgba(108,99,255,0.15);color:#6c63ff;padding:4px 14px;border-radius:100px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Live Preview</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,38px);font-weight:700;color:white;margin-bottom:12px;">See the Tool Before You Subscribe</h2>
+    <p style="color:rgba(255,255,255,0.5);font-size:15px;">Click through the tabs below to explore each section of the tool.</p>
+  </div>
+
+  <!-- Browser chrome -->
+  <div style="background:#1c1c27;border-radius:16px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,0.6);border:1px solid #2a2a3a;">
+
+    <!-- Browser bar -->
+    <div style="background:#13131a;padding:12px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #2a2a3a;">
+      <div style="display:flex;gap:6px;"><div style="width:12px;height:12px;border-radius:50%;background:#ff5f57;"></div><div style="width:12px;height:12px;border-radius:50%;background:#febc2e;"></div><div style="width:12px;height:12px;border-radius:50%;background:#28c840;"></div></div>
+      <div style="flex:1;background:#1c1c27;border-radius:6px;padding:6px 14px;font-size:12px;color:rgba(255,255,255,0.4);font-family:monospace;">app.tssolutionsllp.com</div>
+      <a href="https://app.tssolutionsllp.com" target="_blank" style="font-size:11px;color:#6c63ff;text-decoration:none;white-space:nowrap;">Open Live Tool →</a>
+    </div>
+
+    <!-- App shell -->
+    <div style="display:flex;height:560px;">
+
+      <!-- Sidebar -->
+      <div style="width:200px;background:#13131a;border-right:1px solid #2a2a3a;padding:20px 0;flex-shrink:0;">
+        <div style="padding:0 16px 20px;border-bottom:1px solid #2a2a3a;font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:white;">Twin<span style="color:#6c63ff;">Stance</span><div style="font-size:10px;color:#6b6b80;font-family:'Outfit',sans-serif;font-weight:400;margin-top:2px;">Email Marketing</div></div>
+        <div style="padding:12px 8px;">
+          <div class="demo-nav" id="dn-dashboard" onclick="demoTab('dashboard')" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;cursor:pointer;color:#6b6b80;font-size:13px;background:rgba(108,99,255,0.15);color:#6c63ff;margin-bottom:2px;">📊 Dashboard</div>
+          <div class="demo-nav" id="dn-contacts" onclick="demoTab('contacts')" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;cursor:pointer;color:#6b6b80;font-size:13px;margin-bottom:2px;">👥 Contacts</div>
+          <div class="demo-nav" id="dn-campaigns" onclick="demoTab('campaigns')" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;cursor:pointer;color:#6b6b80;font-size:13px;margin-bottom:2px;">📧 Campaigns</div>
+          <div class="demo-nav" id="dn-compose" onclick="demoTab('compose')" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;cursor:pointer;color:#6b6b80;font-size:13px;margin-bottom:2px;">✏️ New Campaign</div>
+          <div class="demo-nav" id="dn-analytics" onclick="demoTab('analytics')" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;cursor:pointer;color:#6b6b80;font-size:13px;">📈 Analytics</div>
+        </div>
+      </div>
+
+      <!-- Main content -->
+      <div style="flex:1;overflow-y:auto;padding:28px;background:#0a0a0f;">
+
+        <!-- DASHBOARD -->
+        <div id="demo-dashboard">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:white;margin-bottom:4px;">Dashboard</div>
+          <div style="color:#6b6b80;font-size:13px;margin-bottom:24px;">Welcome back. Here is your overview.</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;">
+            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:12px;padding:18px;"><div style="font-size:28px;font-weight:700;color:#6c63ff;font-family:'Playfair Display',serif;">2,920</div><div style="font-size:12px;color:#6b6b80;">Total Contacts</div></div>
+            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:12px;padding:18px;"><div style="font-size:28px;font-weight:700;color:#2ed573;font-family:'Playfair Display',serif;">14</div><div style="font-size:12px;color:#6b6b80;">Campaigns</div></div>
+            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:12px;padding:18px;"><div style="font-size:28px;font-weight:700;color:#ffa502;font-family:'Playfair Display',serif;">4,060</div><div style="font-size:12px;color:#6b6b80;">Emails Sent</div></div>
+            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:12px;padding:18px;"><div style="font-size:28px;font-weight:700;color:#2ed573;font-family:'Playfair Display',serif;">96.2%</div><div style="font-size:12px;color:#6b6b80;">Delivery Rate</div></div>
+          </div>
+          <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:12px;padding:20px;">
+            <div style="font-size:13px;font-weight:600;color:white;margin-bottom:16px;">Recent Campaigns</div>
+            <table style="width:100%;border-collapse:collapse;font-size:12px;">
+              <tr style="color:#6b6b80;border-bottom:1px solid #2a2a3a;"><th style="padding:8px 10px;text-align:left;font-weight:600;">Campaign</th><th style="padding:8px 10px;text-align:left;">Status</th><th style="padding:8px 10px;text-align:left;">Sent</th><th style="padding:8px 10px;text-align:left;">Progress</th></tr>
+              <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,0.5);">
+                <td style="padding:10px;">Real Estate Outreach</td>
+                <td style="padding:10px;"><span style="background:rgba(46,213,115,0.2);color:#2ed573;padding:2px 8px;border-radius:20px;font-size:11px;">Completed</span></td>
+                <td style="padding:10px;">290</td>
+                <td style="padding:10px;"><div style="background:#1c1c27;border-radius:4px;height:5px;width:80px;"><div style="background:linear-gradient(90deg,#6c63ff,#ff6584);height:100%;width:100%;border-radius:4px;"></div></div></td>
+              </tr>
+              <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,0.5);">
+                <td style="padding:10px;">Restaurant Owners Feb</td>
+                <td style="padding:10px;"><span style="background:rgba(108,99,255,0.2);color:#6c63ff;padding:2px 8px;border-radius:20px;font-size:11px;">Running</span></td>
+                <td style="padding:10px;">140</td>
+                <td style="padding:10px;"><div style="background:#1c1c27;border-radius:4px;height:5px;width:80px;"><div style="background:linear-gradient(90deg,#6c63ff,#ff6584);height:100%;width:48%;border-radius:4px;"></div></div></td>
+              </tr>
+              <tr style="color:#e8e8f0;">
+                <td style="padding:10px;">Clinic Outreach Mar</td>
+                <td style="padding:10px;"><span style="background:rgba(255,165,2,0.2);color:#ffa502;padding:2px 8px;border-radius:20px;font-size:11px;">Scheduled</span></td>
+                <td style="padding:10px;">0</td>
+                <td style="padding:10px;"><div style="background:#1c1c27;border-radius:4px;height:5px;width:80px;"><div style="background:linear-gradient(90deg,#6c63ff,#ff6584);height:100%;width:0%;border-radius:4px;"></div></div></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- CONTACTS -->
+        <div id="demo-contacts" style="display:none;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+            <div><div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:white;">Contacts</div><div style="color:#6b6b80;font-size:13px;">2,920 total contacts</div></div>
+            <div style="display:flex;gap:8px;"><button style="background:#2a2a3a;border:1px solid #3a3a4a;color:#e8e8f0;padding:8px 14px;border-radius:8px;font-size:12px;cursor:pointer;">📁 Import CSV</button><button style="background:#6c63ff;border:none;color:white;padding:8px 14px;border-radius:8px;font-size:12px;cursor:pointer;">+ Add Contact</button></div>
+          </div>
+          <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:12px;padding:14px;margin-bottom:14px;display:flex;gap:10px;">
+            <input style="flex:1;background:#1c1c27;border:1px solid #2a2a3a;border-radius:8px;padding:8px 12px;color:#e8e8f0;font-size:13px;" placeholder="Search contacts...">
+            <select style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:8px;padding:8px 12px;color:#e8e8f0;font-size:13px;"><option>All Tags</option><option>real-estate</option><option>restaurant</option></select>
+          </div>
+          <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:12px;overflow:hidden;">
+            <table style="width:100%;border-collapse:collapse;font-size:12px;">
+              <tr style="color:#6b6b80;border-bottom:1px solid #2a2a3a;background:#1c1c27;"><th style="padding:10px 14px;text-align:left;">Email</th><th style="padding:10px 14px;text-align:left;">Name</th><th style="padding:10px 14px;text-align:left;">Tags</th><th style="padding:10px 14px;text-align:left;">Status</th></tr>
+              <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,0.5);"><td style="padding:10px 14px;">rajesh@gmail.com</td><td style="padding:10px 14px;">Rajesh Sharma</td><td style="padding:10px 14px;"><span style="background:rgba(108,99,255,0.2);color:#6c63ff;padding:2px 7px;border-radius:10px;font-size:10px;">real-estate</span></td><td style="padding:10px 14px;"><span style="color:#2ed573;">● Active</span></td></tr>
+              <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,0.5);background:rgba(255,255,255,0.02);"><td style="padding:10px 14px;">priya@realty.in</td><td style="padding:10px 14px;">Priya Mehta</td><td style="padding:10px 14px;"><span style="background:rgba(108,99,255,0.2);color:#6c63ff;padding:2px 7px;border-radius:10px;font-size:10px;">real-estate</span></td><td style="padding:10px 14px;"><span style="color:#2ed573;">● Active</span></td></tr>
+              <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,0.5);"><td style="padding:10px 14px;">ankit@zomato.in</td><td style="padding:10px 14px;">Ankit Patel</td><td style="padding:10px 14px;"><span style="background:rgba(255,165,2,0.2);color:#ffa502;padding:2px 7px;border-radius:10px;font-size:10px;">restaurant</span></td><td style="padding:10px 14px;"><span style="color:#2ed573;">● Active</span></td></tr>
+              <tr style="color:#e8e8f0;"><td style="padding:10px 14px;">dr.sunita@clinic.com</td><td style="padding:10px 14px;">Dr. Sunita Rao</td><td style="padding:10px 14px;"><span style="background:rgba(46,213,115,0.2);color:#2ed573;padding:2px 7px;border-radius:10px;font-size:10px;">clinic</span></td><td style="padding:10px 14px;"><span style="color:#2ed573;">● Active</span></td></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- CAMPAIGNS -->
+        <div id="demo-campaigns" style="display:none;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+            <div><div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:white;">Campaigns</div><div style="color:#6b6b80;font-size:13px;">Track and manage your email campaigns</div></div>
+            <button onclick="demoTab('compose')" style="background:#6c63ff;border:none;color:white;padding:8px 16px;border-radius:8px;font-size:12px;cursor:pointer;">+ New Campaign</button>
+          </div>
+          <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:12px;overflow:hidden;">
+            <table style="width:100%;border-collapse:collapse;font-size:12px;">
+              <tr style="color:#6b6b80;border-bottom:1px solid #2a2a3a;background:#1c1c27;"><th style="padding:10px 14px;text-align:left;">Name</th><th style="padding:10px 14px;">Status</th><th style="padding:10px 14px;">Contacts</th><th style="padding:10px 14px;">Sent</th><th style="padding:10px 14px;">Batch</th><th style="padding:10px 14px;">Actions</th></tr>
+              <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,0.5);">
+                <td style="padding:10px 14px;">Real Estate Outreach</td>
+                <td style="padding:10px 14px;text-align:center;"><span style="background:rgba(46,213,115,0.2);color:#2ed573;padding:2px 8px;border-radius:20px;font-size:10px;">Completed</span></td>
+                <td style="padding:10px 14px;text-align:center;">290</td><td style="padding:10px 14px;text-align:center;">290</td><td style="padding:10px 14px;text-align:center;">10/batch</td>
+                <td style="padding:10px 14px;"><button style="background:#ff4757;border:none;color:white;padding:4px 10px;border-radius:6px;font-size:11px;cursor:pointer;">✕</button></td>
+              </tr>
+              <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,0.5);background:rgba(255,255,255,0.02);">
+                <td style="padding:10px 14px;">Restaurant Owners Feb</td>
+                <td style="padding:10px 14px;text-align:center;"><span style="background:rgba(108,99,255,0.2);color:#6c63ff;padding:2px 8px;border-radius:20px;font-size:10px;">Running</span></td>
+                <td style="padding:10px 14px;text-align:center;">290</td><td style="padding:10px 14px;text-align:center;">140</td><td style="padding:10px 14px;text-align:center;">10/batch</td>
+                <td style="padding:10px 14px;display:flex;gap:4px;"><button style="background:#ffa502;border:none;color:#000;padding:4px 10px;border-radius:6px;font-size:11px;cursor:pointer;">⏸</button><button style="background:#ff4757;border:none;color:white;padding:4px 10px;border-radius:6px;font-size:11px;cursor:pointer;">✕</button></td>
+              </tr>
+              <tr style="color:#e8e8f0;">
+                <td style="padding:10px 14px;">Clinic Outreach Mar</td>
+                <td style="padding:10px 14px;text-align:center;"><span style="background:rgba(255,165,2,0.2);color:#ffa502;padding:2px 8px;border-radius:20px;font-size:10px;">Scheduled</span></td>
+                <td style="padding:10px 14px;text-align:center;">150</td><td style="padding:10px 14px;text-align:center;">0</td><td style="padding:10px 14px;text-align:center;">10/batch</td>
+                <td style="padding:10px 14px;display:flex;gap:4px;"><button style="background:#2ed573;border:none;color:#000;padding:4px 10px;border-radius:6px;font-size:11px;cursor:pointer;">▶ Send</button><button style="background:#ff4757;border:none;color:white;padding:4px 10px;border-radius:6px;font-size:11px;cursor:pointer;">✕</button></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- COMPOSE -->
+        <div id="demo-compose" style="display:none;">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:white;margin-bottom:4px;">New Campaign</div>
+          <div style="color:#6b6b80;font-size:13px;margin-bottom:20px;">Create and schedule your email campaign</div>
+          <div style="background:rgba(108,99,255,0.08);border:1px solid rgba(108,99,255,0.2);border-radius:10px;padding:14px;margin-bottom:16px;">
+            <div style="font-size:10px;font-weight:700;color:#6c63ff;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;">🤖 AI Assistant</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+              <input style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:7px;padding:8px 12px;color:#e8e8f0;font-size:12px;" placeholder="What is this email about?" value="Digital marketing for real estate agents">
+              <select style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:7px;padding:8px 12px;color:#e8e8f0;font-size:12px;"><option>Professional</option><option>Friendly</option></select>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button style="background:transparent;border:1px solid #2a2a3a;color:#e8e8f0;padding:6px 12px;border-radius:7px;font-size:11px;cursor:pointer;">✨ Write Email Body</button>
+              <button style="background:transparent;border:1px solid #2a2a3a;color:#e8e8f0;padding:6px 12px;border-radius:7px;font-size:11px;cursor:pointer;">💡 Subject Lines</button>
+              <button style="background:transparent;border:1px solid #2a2a3a;color:#e8e8f0;padding:6px 12px;border-radius:7px;font-size:11px;cursor:pointer;">⬆ Improve</button>
+            </div>
+          </div>
+          <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:12px;padding:18px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+              <div><div style="font-size:10px;color:#6b6b80;text-transform:uppercase;margin-bottom:6px;">Campaign Name</div><input style="width:100%;background:#1c1c27;border:1px solid #2a2a3a;border-radius:7px;padding:8px 12px;color:#e8e8f0;font-size:12px;" value="Real Estate March 2025"></div>
+              <div><div style="font-size:10px;color:#6b6b80;text-transform:uppercase;margin-bottom:6px;">Subject Line</div><input style="width:100%;background:#1c1c27;border:1px solid #2a2a3a;border-radius:7px;padding:8px 12px;color:#e8e8f0;font-size:12px;" value="Quick question about your listings"></div>
+              <div><div style="font-size:10px;color:#6b6b80;text-transform:uppercase;margin-bottom:6px;">Batch Size</div><select style="width:100%;background:#1c1c27;border:1px solid #2a2a3a;border-radius:7px;padding:8px 12px;color:#e8e8f0;font-size:12px;"><option>10 emails per batch</option><option>25 emails per batch</option></select></div>
+              <div><div style="font-size:10px;color:#6b6b80;text-transform:uppercase;margin-bottom:6px;">Delay Between Batches</div><select style="width:100%;background:#1c1c27;border:1px solid #2a2a3a;border-radius:7px;padding:8px 12px;color:#e8e8f0;font-size:12px;"><option>30 minutes</option><option>1 hour</option></select></div>
+              <div><div style="font-size:10px;color:#6b6b80;text-transform:uppercase;margin-bottom:6px;">Send To</div><select style="width:100%;background:#1c1c27;border:1px solid #2a2a3a;border-radius:7px;padding:8px 12px;color:#e8e8f0;font-size:12px;"><option>All Active Contacts</option><option>Filter by Tag</option></select></div>
+              <div><div style="font-size:10px;color:#6b6b80;text-transform:uppercase;margin-bottom:6px;">Schedule Send</div><input type="datetime-local" style="width:100%;background:#1c1c27;border:1px solid #2a2a3a;border-radius:7px;padding:8px 12px;color:#e8e8f0;font-size:12px;"></div>
+            </div>
+            <div style="margin-bottom:14px;"><div style="font-size:10px;color:#6b6b80;text-transform:uppercase;margin-bottom:6px;">Email Body</div><textarea style="width:100%;background:#1c1c27;border:1px solid #2a2a3a;border-radius:7px;padding:10px 12px;color:#e8e8f0;font-size:12px;height:80px;resize:none;">Hi {{first_name}}, Are your property listings getting the online visibility they deserve?...</textarea></div>
+            <div style="display:flex;gap:10px;">
+              <button style="background:transparent;border:1px solid #2a2a3a;color:#e8e8f0;padding:9px 20px;border-radius:8px;font-size:12px;cursor:pointer;">💾 Save Draft</button>
+              <button style="background:#2ed573;border:none;color:#000;padding:9px 20px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;">🚀 Schedule & Send</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANALYTICS -->
+        <div id="demo-analytics" style="display:none;">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:white;margin-bottom:4px;">Analytics</div>
+          <div style="color:#6b6b80;font-size:13px;margin-bottom:20px;">Campaign performance overview</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;">
+            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:12px;padding:16px;text-align:center;"><div style="font-size:24px;font-weight:700;color:#6c63ff;">4,060</div><div style="font-size:11px;color:#6b6b80;">Total Sent</div></div>
+            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:12px;padding:16px;text-align:center;"><div style="font-size:24px;font-weight:700;color:#2ed573;">96.2%</div><div style="font-size:11px;color:#6b6b80;">Delivered</div></div>
+            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:12px;padding:16px;text-align:center;"><div style="font-size:24px;font-weight:700;color:#ffa502;">28.4%</div><div style="font-size:11px;color:#6b6b80;">Open Rate</div></div>
+            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:12px;padding:16px;text-align:center;"><div style="font-size:24px;font-weight:700;color:#ff6584;">3.8%</div><div style="font-size:11px;color:#6b6b80;">Bounced</div></div>
+          </div>
+          <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:12px;padding:18px;">
+            <div style="font-size:13px;font-weight:600;color:white;margin-bottom:14px;">Campaign Breakdown</div>
+            <div style="margin-bottom:12px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px;"><span style="color:#e8e8f0;">Real Estate Outreach</span><span style="color:#2ed573;">290 sent · 96% delivered</span></div><div style="background:#1c1c27;border-radius:4px;height:7px;"><div style="background:linear-gradient(90deg,#6c63ff,#2ed573);height:100%;width:96%;border-radius:4px;"></div></div></div>
+            <div style="margin-bottom:12px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px;"><span style="color:#e8e8f0;">Restaurant Owners Feb</span><span style="color:#ffa502;">140 sent · running</span></div><div style="background:#1c1c27;border-radius:4px;height:7px;"><div style="background:linear-gradient(90deg,#6c63ff,#ffa502);height:100%;width:48%;border-radius:4px;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px;"><span style="color:#e8e8f0;">Cold Outreach Jan</span><span style="color:#2ed573;">580 sent · 97% delivered</span></div><div style="background:#1c1c27;border-radius:4px;height:7px;"><div style="background:linear-gradient(90deg,#6c63ff,#2ed573);height:100%;width:97%;border-radius:4px;"></div></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <p style="text-align:center;color:rgba(255,255,255,0.3);font-size:13px;margin-top:20px;">This is an interactive preview. <a href="https://app.tssolutionsllp.com" target="_blank" style="color:#6c63ff;">Open the live tool →</a></p>
+</div></section>
+
+<script>
+function demoTab(tab) {
+  ['dashboard','contacts','campaigns','compose','analytics'].forEach(t => {
+    document.getElementById('demo-' + t).style.display = t === tab ? 'block' : 'none';
+    const nav = document.getElementById('dn-' + t);
+    if (nav) {
+      nav.style.background = t === tab ? 'rgba(108,99,255,0.15)' : 'transparent';
+      nav.style.color = t === tab ? '#6c63ff' : '#6b6b80';
+    }
+  });
+}
+</script>
+
 <section class="process-bg"><div class="section-inner">
   <div class="section-tag" style="text-align:center;display:block;">Pricing</div>
   <h2 class="section-title" style="text-align:center;">Simple, Transparent Pricing</h2>
