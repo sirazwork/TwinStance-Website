@@ -586,14 +586,14 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
             </tr>
             <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
               <td style="padding:16px 20px;font-weight:600;">🏠 Virtual Office</td>
-              <td style="padding:16px 20px;color:var(--accent);font-weight:700;">₹3,999 / month</td>
-              <td style="padding:16px 20px;color:var(--muted);">Business address, digital workspace, professional emails, up to 3 users</td>
+              <td style="padding:16px 20px;color:var(--accent);font-weight:700;">₹2,999 / month</td>
+              <td style="padding:16px 20px;color:var(--muted);">Business address, digital workspace, professional emails, per user</td>
               <td style="padding:16px 20px;"><a href="services/virtual-office.html" style="color:var(--accent);font-weight:600;text-decoration:none;white-space:nowrap;">Learn more →</a></td>
             </tr>
             <tr>
               <td style="padding:16px 20px;font-weight:600;">📧 Email Marketing Tool</td>
-              <td style="padding:16px 20px;color:var(--accent);font-weight:700;">₹1,299 / month</td>
-              <td style="padding:16px 20px;color:var(--muted);">AI email writer, 300 emails/day, batch sending, spam checker, analytics</td>
+              <td style="padding:16px 20px;color:var(--accent);font-weight:700;">From ₹1,299 / month</td>
+              <td style="padding:16px 20px;color:var(--muted);">AI email writer, batch sending, spam checker, analytics. Multiple plans available.</td>
               <td style="padding:16px 20px;"><a href="services/email-marketing.html" style="color:var(--accent);font-weight:600;text-decoration:none;white-space:nowrap;">Learn more →</a></td>
             </tr>
           </tbody>
@@ -780,21 +780,21 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
         <div class="form-row">
           <div class="form-group">
             <label>Your Name</label>
-            <input type="text" placeholder="John Doe">
+            <input type="text" id="contactName" placeholder="John Doe">
           </div>
           <div class="form-group">
             <label>Email Address</label>
-            <input type="email" placeholder="john@example.com">
+            <input type="email" id="contactEmail" placeholder="john@example.com">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label>Phone Number</label>
-            <input type="tel" placeholder="+91 XXXXX XXXXX">
+            <input type="tel" id="contactPhone" placeholder="+91 XXXXX XXXXX">
           </div>
           <div class="form-group">
             <label>Service Interested In</label>
-            <select>
+            <select id="contactService">
               <option>Web Development</option>
               <option>SEO Services</option>
               <option>PPC & Paid Ads</option>
@@ -809,7 +809,7 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
         </div>
         <div class="form-group">
           <label>Tell Us About Your Business</label>
-          <textarea placeholder="Briefly describe your business and what you need..."></textarea>
+          <textarea id="contactMessage" placeholder="Briefly describe your business and what you need..."></textarea>
         </div>
         <button class="btn-submit" onclick="submitForm(this)">Send Message →</button>
         <p style="font-size:12px;color:var(--muted);margin-top:12px;text-align:center;">We respond within 24 hours. Your info is never shared.</p>
@@ -895,18 +895,42 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
 // Contact form
-function submitForm(btn) {
-  const name = btn.closest('.contact-form').querySelector('input[type=text]').value;
-  if (!name) { alert('Please fill in your name.'); return; }
-  btn.textContent = '✅ Message Sent!';
-  btn.style.background = '#2ed573';
-  setTimeout(() => {
+async function submitForm(btn) {
+  const form = btn.closest('.contact-form');
+  const name = form.querySelector('#contactName').value.trim();
+  const email = form.querySelector('#contactEmail').value.trim();
+  const phone = form.querySelector('#contactPhone').value.trim();
+  const service = form.querySelector('#contactService').value.trim();
+  const message = form.querySelector('#contactMessage').value.trim();
+
+  if (!name || !email) { alert('Please fill in your name and email.'); return; }
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://formspree.io/f/xpwzgkqb', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name, email, phone, service, message,
+        _replyto: email,
+        _subject: 'New Enquiry from ' + name + ' — TwinStance Website'
+      })
+    });
+    if (res.ok) {
+      btn.textContent = '✅ Message Sent!';
+      btn.style.background = '#2ed573';
+      btn.style.color = '#000';
+      form.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+      setTimeout(() => { btn.textContent = 'Send Message →'; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 4000);
+    } else {
+      throw new Error('Failed');
+    }
+  } catch(e) {
     btn.textContent = 'Send Message →';
-    btn.style.background = '';
-  }, 3000);
-  // You can connect this to Formspree, EmailJS, or your backend later
-  const email = 'admin@tssolutionsllp.com';
-  window.location.href = `mailto:${email}?subject=New enquiry from ${name}&body=Hi TwinStance, I came from your website.`;
+    btn.disabled = false;
+    window.location.href = 'mailto:siraz@tssolutionslp.com?subject=Enquiry from ' + encodeURIComponent(name) + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\nService: ' + service + '\n\n' + message);
+  }
 }
 </script>
 </body>
