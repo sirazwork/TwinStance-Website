@@ -4,13 +4,14 @@
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Virtual Office | TwinStance Solutions</title>
+<meta name="description" content="Professional virtual office setup — business address, digital workspace, professional email. From $20/user/month.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--white:#fff;--off-white:#f8f7f4;--border:#e5e2dc;--text:#1a1a1a;--muted:#6b6b6b;--accent:#1a1a6e;--accent2:#e63946;}
 *{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--white);}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%;height:70px;display:flex;align-items:center;justify-content:space-between;}
 .nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--accent);text-decoration:none;}.nav-logo span{color:var(--accent2);}
-.nav-links{display:flex;align-items:center;gap:28px;}.nav-links a{text-decoration:none;color:var(--muted);font-size:14px;}.nav-links a:hover{color:var(--accent);}
+.nav-links{display:flex;align-items:center;gap:28px;}.nav-links a{text-decoration:none;color:var(--muted);font-size:14px;transition:color 0.2s;}.nav-links a:hover{color:var(--accent);}
 .nav-cta{background:var(--accent);color:white!important;padding:10px 22px;border-radius:8px;font-weight:600!important;}
 .hero{padding:120px 5% 80px;background:linear-gradient(135deg,#1a3a4a 0%,#2e7d6b 100%);color:white;}
 .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
@@ -18,7 +19,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:900;line-height:1.1;margin-bottom:20px;}
 .hero h1 em{font-style:italic;color:#ffd166;}.hero p{font-size:16px;opacity:0.85;line-height:1.7;margin-bottom:32px;}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
-.btn-white{background:white;color:#1a3a4a;padding:13px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;}
+.btn-white{background:white;color:#1a3a4a;padding:13px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;transition:all 0.2s;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,0.2);}
 .btn-outline-white{background:transparent;color:white;padding:13px 28px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;border:2px solid rgba(255,255,255,0.5);}
 .hero-card{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:32px;}
 .hero-card h3{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:20px;}
@@ -30,11 +32,12 @@ section{padding:80px 5%;}.section-inner{max-width:1200px;margin:0 auto;}
 .section-sub{color:var(--muted);font-size:15px;line-height:1.7;max-width:560px;margin-bottom:48px;}
 .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .feature-card{background:var(--off-white);border-radius:16px;padding:28px;border:1px solid var(--border);transition:all 0.3s;}
-.feature-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.08);}
+.feature-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.08);border-color:var(--accent);}
 .feature-icon{font-size:32px;margin-bottom:16px;}.feature-card h3{font-size:16px;font-weight:600;margin-bottom:10px;}.feature-card p{font-size:13px;color:var(--muted);line-height:1.6;}
 .process-bg{background:var(--off-white);}
 .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:900px;margin:0 auto;}
-.pricing-card{background:white;border:2px solid var(--border);border-radius:24px;padding:40px;text-align:center;}
+.pricing-card{background:white;border:2px solid var(--border);border-radius:24px;padding:40px;text-align:center;transition:all 0.3s;}
+.pricing-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.08);}
 .pricing-card.featured{border-color:var(--accent);box-shadow:0 20px 60px rgba(26,26,110,0.12);}
 .pricing-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:8px;}
 .pricing-price{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--accent);margin-bottom:4px;}
@@ -43,8 +46,10 @@ section{padding:80px 5%;}.section-inner{max-width:1200px;margin:0 auto;}
 .pricing-features{list-style:none;text-align:left;margin-bottom:28px;}
 .pricing-features li{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:13px;border-bottom:1px solid var(--off-white);}
 .pricing-features li::before{content:'✓';color:var(--accent);font-weight:700;}
-.btn-primary{background:var(--accent);color:white;padding:13px 30px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;display:inline-block;}
-.btn-outline{background:transparent;color:var(--accent);padding:13px 30px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;border:2px solid var(--accent);display:inline-block;}
+.btn-primary{background:var(--accent);color:white;padding:13px 30px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;display:inline-block;transition:all 0.2s;}
+.btn-primary:hover{background:#2a2a9e;}
+.btn-outline{background:transparent;color:var(--accent);padding:13px 30px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;border:2px solid var(--accent);display:inline-block;transition:all 0.2s;}
+.btn-outline:hover{background:var(--accent);color:white;}
 .faq-list{max-width:720px;margin:0 auto;}.faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
 .faq-q{font-size:15px;font-weight:600;margin-bottom:10px;}.faq-a{font-size:14px;color:var(--muted);line-height:1.7;}
 .cta-section{background:var(--accent);color:white;text-align:center;padding:80px 5%;}
@@ -56,76 +61,127 @@ footer a{color:rgba(255,255,255,0.7);text-decoration:none;margin:0 10px;}.footer
 </style>
 </head>
 <body>
-<nav><a href="../index.html" class="nav-logo">Twin<span>Stance</span></a><div class="nav-links"><a href="../index.html#services">Services</a><a href="../index.html#packages">Packages</a><a href="../index.html#contact">Contact</a><a href="http://app.tssolutionsllp.com" class="nav-cta">📧 Email Tool</a></div></nav>
-<div class="hero"><div class="hero-inner"><div>
-  <div class="breadcrumb"><a href="../index.html">Home</a> → <a href="../index.html#services">Services</a> → Virtual Office</div>
-  <h1>A Professional Business Presence <em>Without the Office Cost</em></h1>
-  <p>Get a professional business address, digital workspace, and virtual team environment — without renting physical office space.</p>
-  <div class="hero-btns"><a href="../index.html#contact" class="btn-white">Get Started →</a><a href="../index.html#packages" class="btn-outline-white">View Packages</a></div>
-</div>
-<div class="hero-card"><h3>What's Included</h3><ul class="feature-list">
-  <li>Professional business address</li><li>Virtual team workspace</li><li>Digital document management</li><li>Team collaboration tools</li><li>Professional email setup</li><li>GST-ready address</li><li>Dedicated support</li>
-</ul></div></div></div>
-<section><div class="section-inner">
-  <div class="section-tag">Features</div>
-  <h2 class="section-title">Everything a Physical Office Gives You — Virtually</h2>
-  <p class="section-sub">Perfect for startups, freelancers, and remote teams that want to look professional without paying for office rent.</p>
-  <div class="features-grid">
-    <div class="feature-card"><div class="feature-icon">🏢</div><h3>Business Address</h3><p>A professional registered business address you can use on your website, business cards, and GST registration.</p></div>
-    <div class="feature-card"><div class="feature-icon">💼</div><h3>Digital Workspace</h3><p>Cloud-based workspace for your team with file sharing, task management, and communication tools.</p></div>
-    <div class="feature-card"><div class="feature-icon">👥</div><h3>Team Collaboration</h3><p>Virtual environment for your team to collaborate, share files, and stay aligned — from anywhere.</p></div>
-    <div class="feature-card"><div class="feature-icon">📧</div><h3>Professional Email</h3><p>Business email addresses for your team on your own domain. Looks professional to every client.</p></div>
-    <div class="feature-card"><div class="feature-icon">📁</div><h3>Document Management</h3><p>Secure cloud storage and document management for all your business files and contracts.</p></div>
-    <div class="feature-card"><div class="feature-icon">📞</div><h3>Support & Onboarding</h3><p>We set everything up and train your team. Dedicated support whenever you need help.</p></div>
+<nav>
+  <a href="../index.html" class="nav-logo">Twin<span>Stance</span></a>
+  <div class="nav-links">
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#packages">Packages</a>
+    <a href="../index.html#contact">Contact</a>
+    <a href="nexreach.html" class="nav-cta">🚀 NexReach Suite</a>
   </div>
-</div></section>
-<section class="process-bg"><div class="section-inner">
-  <div class="section-tag" style="text-align:center;display:block;">Pricing</div>
-  <h2 class="section-title" style="text-align:center;">Virtual Office Plans</h2>
-  <p style="text-align:center;color:var(--muted);margin-bottom:48px;font-size:15px;">Billed monthly per user. Cancel anytime with 30 days notice. One-time setup fee discussed during consultation. All prices exclude GST.</p>
-  <div class="pricing-grid">
-    <div class="pricing-card featured">
-      <div class="pricing-name">Basic Virtual Office</div>
-      <div class="pricing-price">₹2,999 <span>/ user / month</span></div>
-      <div class="pricing-setup">Per user · Minimum 1 user · + One-time setup fee</div>
-      <ul class="pricing-features">
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="breadcrumb"><a href="../index.html">Home</a> → <a href="../index.html#services">Services</a> → Virtual Office</div>
+      <h1>A Professional Business Presence <em>Without the Office Cost</em></h1>
+      <p>Get a professional business address, digital workspace, and virtual team environment — without renting physical office space. From $20/user/month.</p>
+      <div class="hero-btns">
+        <a href="../index.html#contact" class="btn-white">Get Started →</a>
+        <a href="../index.html#packages" class="btn-outline-white">View Packages</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>What's Included</h3>
+      <ul class="feature-list">
         <li>Professional business address</li>
-        <li>Up to 3 team users</li>
-        <li>Digital workspace access</li>
-        <li>Professional email setup</li>
-        <li>Document cloud storage</li>
+        <li>Virtual team workspace</li>
+        <li>Digital document management</li>
         <li>Team collaboration tools</li>
-        <li>Standard support</li>
+        <li>Professional email setup</li>
+        <li>GST-ready address</li>
+        <li>Dedicated support</li>
       </ul>
-      <a href="../index.html#contact" class="btn-primary">Get Started →</a>
-    </div>
-    <div class="pricing-card">
-      <div class="pricing-name">Digital Environment</div>
-      <div class="pricing-price" style="font-size:28px;">Contact Us</div>
-      <div class="pricing-setup">3+ users · Custom pricing</div>
-      <ul class="pricing-features">
-        <li>Everything in Basic</li>
-        <li>Unlimited team users</li>
-        <li>Custom integrations</li>
-        <li>Advanced collaboration tools</li>
-        <li>Custom domain setup</li>
-        <li>Dedicated account manager</li>
-        <li>Priority support</li>
-      </ul>
-      <a href="../index.html#contact" class="btn-outline">Contact for Pricing →</a>
     </div>
   </div>
-</div></section>
-<section><div class="section-inner">
-  <div class="section-tag" style="text-align:center;display:block;">FAQ</div>
-  <h2 class="section-title" style="text-align:center;">Common Questions</h2>
-  <div class="faq-list">
-    <div class="faq-item"><div class="faq-q">Can I use the address for GST registration?</div><div class="faq-a">Yes. Our business address can be used for GST registration, company registration, and official business correspondence.</div></div>
-    <div class="faq-item"><div class="faq-q">Is this suitable for a registered LLP or Pvt Ltd?</div><div class="faq-a">Yes. Our virtual office address is suitable for registered companies. We can provide the necessary documentation.</div></div>
-    <div class="faq-item"><div class="faq-q">How does per-user pricing work?</div><div class="faq-a">You pay ₹2,999 per user per month. So 2 users = ₹5,998/month, 3 users = ₹8,997/month, and so on. For teams larger than 5 users, contact us for a custom bulk rate.</div></div>
-    <div class="faq-item"><div class="faq-q">How quickly can we get set up?</div><div class="faq-a">We can have your virtual office set up within 2–3 business days after payment and paperwork.</div></div>
+</div>
+
+<section>
+  <div class="section-inner">
+    <div class="section-tag">Features</div>
+    <h2 class="section-title">Everything a Physical Office Gives You — Virtually</h2>
+    <p class="section-sub">Perfect for startups, freelancers, and remote teams that want to look professional without paying for office rent.</p>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">🏢</div><h3>Business Address</h3><p>A professional registered business address you can use on your website, business cards, and official registrations.</p></div>
+      <div class="feature-card"><div class="feature-icon">💼</div><h3>Digital Workspace</h3><p>Cloud-based workspace for your team with file sharing, task management, and communication tools.</p></div>
+      <div class="feature-card"><div class="feature-icon">👥</div><h3>Team Collaboration</h3><p>Virtual environment for your team to collaborate, share files, and stay aligned — from anywhere in the world.</p></div>
+      <div class="feature-card"><div class="feature-icon">📧</div><h3>Professional Email</h3><p>Business email addresses for your team on your own domain. Looks professional to every client.</p></div>
+      <div class="feature-card"><div class="feature-icon">📁</div><h3>Document Management</h3><p>Secure cloud storage and document management for all your business files and contracts.</p></div>
+      <div class="feature-card"><div class="feature-icon">📞</div><h3>Support &amp; Onboarding</h3><p>We set everything up and train your team. Dedicated support whenever you need help.</p></div>
+    </div>
   </div>
-</div></section>
-<div class="cta-section"><h2>Ready for a Professional Business Presence?</h2><p>Get your virtual office set up in days, not weeks. Contact us for a free consultation.</p><a href="../index.html#contact" class="btn-white" style="color:var(--accent);">Get Free Consultation →</a></div>
-<footer><div class="footer-links"><a href="../index.html">Home</a><a href="../privacy-policy.html">Privacy Policy</a><a href="../refund-policy.html">Refund Policy</a><a href="../terms.html">Terms & Conditions</a></div>© 2025 TwinStance Solutions LLP. All rights reserved.</footer>
-</body></html>
+</section>
+
+<section class="process-bg">
+  <div class="section-inner">
+    <div class="section-tag" style="text-align:center;display:block;">Pricing</div>
+    <h2 class="section-title" style="text-align:center;">Virtual Office Plans</h2>
+    <p style="text-align:center;color:var(--muted);margin-bottom:12px;font-size:15px;">Billed monthly per user. Cancel anytime with 30 days notice.</p>
+    <p style="text-align:center;color:var(--muted);margin-bottom:48px;font-size:13px;">One-time setup fee discussed during consultation. All prices in USD.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card featured">
+        <div class="pricing-name">Basic Virtual Office</div>
+        <div class="pricing-price">$20 <span>/ user / month</span></div>
+        <div class="pricing-setup">Per user · Minimum 1 user · + One-time setup fee</div>
+        <ul class="pricing-features">
+          <li>Professional business address</li>
+          <li>Up to 3 team users</li>
+          <li>Digital workspace access</li>
+          <li>Professional email setup</li>
+          <li>Document cloud storage</li>
+          <li>Team collaboration tools</li>
+          <li>Standard support</li>
+        </ul>
+        <a href="../index.html#contact" class="btn-primary">Get Started →</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">Digital Environment</div>
+        <div class="pricing-price" style="font-size:28px;margin-top:8px;">Contact Us</div>
+        <div class="pricing-setup">3+ users · Custom pricing available</div>
+        <ul class="pricing-features">
+          <li>Everything in Basic</li>
+          <li>Unlimited team users</li>
+          <li>Custom integrations</li>
+          <li>Advanced collaboration tools</li>
+          <li>Custom domain setup</li>
+          <li>Dedicated account manager</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="../index.html#contact" class="btn-outline">Contact for Pricing →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="section-tag" style="text-align:center;display:block;">FAQ</div>
+    <h2 class="section-title" style="text-align:center;">Common Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q">Can I use the address for GST registration?</div><div class="faq-a">Yes. Our business address can be used for GST registration, company registration, and official business correspondence. We provide the necessary documentation.</div></div>
+      <div class="faq-item"><div class="faq-q">Is this suitable for a registered LLP or Pvt Ltd?</div><div class="faq-a">Yes. Our virtual office address is suitable for registered companies. We can provide the necessary documentation for compliance purposes.</div></div>
+      <div class="faq-item"><div class="faq-q">How does per-user pricing work?</div><div class="faq-a">You pay $20 per user per month. So 2 users = $40/month, 3 users = $60/month, and so on. For teams larger than 5 users, contact us for a custom bulk rate.</div></div>
+      <div class="faq-item"><div class="faq-q">How quickly can we get set up?</div><div class="faq-a">We can have your virtual office set up within 2–3 business days after payment and paperwork are completed.</div></div>
+      <div class="faq-item"><div class="faq-q">What currency are your prices in?</div><div class="faq-a">All prices are in USD. We accept international payments via bank transfer, Wise, PayPal, and other methods discussed during consultation.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2>Ready for a Professional Business Presence?</h2>
+  <p>Get your virtual office set up in days, not weeks. Contact us for a free consultation.</p>
+  <a href="../index.html#contact" class="btn-white" style="color:#1a3a4a;">Get Free Consultation →</a>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../index.html">Home</a>
+    <a href="../privacy-policy.html">Privacy Policy</a>
+    <a href="../refund-policy.html">Refund Policy</a>
+    <a href="../terms.html">Terms &amp; Conditions</a>
+  </div>
+  © 2025 TwinStance Solutions LLP. All rights reserved.
+</footer>
+</body>
+</html>
