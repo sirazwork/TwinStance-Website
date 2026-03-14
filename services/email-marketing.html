@@ -467,9 +467,9 @@ footer a:hover{color:white;}
             <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;overflow:hidden;">
               <table style="width:100%;border-collapse:collapse;font-size:11px;">
                 <tr style="color:#6b6b80;border-bottom:1px solid #2a2a3a;background:#1c1c27;"><th style="padding:9px 12px;text-align:left;">Email</th><th style="padding:9px 12px;text-align:left;">Name</th><th style="padding:9px 12px;">Tag</th><th style="padding:9px 12px;">Status</th></tr>
-                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,0.4);"><td style="padding:9px 12px;">sample@business.com</td><td style="padding:9px 12px;">Ramesh K.</td><td style="padding:9px 12px;text-align:center;"><span style="background:rgba(108,99,255,0.2);color:#6c63ff;padding:2px 7px;border-radius:10px;">property</span></td><td style="padding:9px 12px;text-align:center;"><span style="color:#2ed573;">● Active</span></td></tr>
-                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,0.4);background:rgba(255,255,255,0.02);"><td style="padding:9px 12px;">hello@company.in</td><td style="padding:9px 12px;">Priya S.</td><td style="padding:9px 12px;text-align:center;"><span style="background:rgba(255,165,2,0.2);color:#ffa502;padding:2px 7px;border-radius:10px;">restaurant</span></td><td style="padding:9px 12px;text-align:center;"><span style="color:#2ed573;">● Active</span></td></tr>
-                <tr style="color:#e8e8f0;"><td style="padding:9px 12px;">contact@clinic.org</td><td style="padding:9px 12px;">Dr. Anil M.</td><td style="padding:9px 12px;text-align:center;"><span style="background:rgba(46,213,115,0.2);color:#2ed573;padding:2px 7px;border-radius:10px;">clinic</span></td><td style="padding:9px 12px;text-align:center;"><span style="color:#2ed573;">● Active</span></td></tr>
+                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,0.4);"><td style="padding:9px 12px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b4c7d5d9c4d8d1f4d6c1c7dddad1c7c79ad7dbd9">[email&#160;protected]</a></td><td style="padding:9px 12px;">Ramesh K.</td><td style="padding:9px 12px;text-align:center;"><span style="background:rgba(108,99,255,0.2);color:#6c63ff;padding:2px 7px;border-radius:10px;">property</span></td><td style="padding:9px 12px;text-align:center;"><span style="color:#2ed573;">● Active</span></td></tr>
+                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,0.4);background:rgba(255,255,255,0.02);"><td style="padding:9px 12px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="94fcf1f8f8fbd4f7fbf9e4f5faedbafdfa">[email&#160;protected]</a></td><td style="padding:9px 12px;">Priya S.</td><td style="padding:9px 12px;text-align:center;"><span style="background:rgba(255,165,2,0.2);color:#ffa502;padding:2px 7px;border-radius:10px;">restaurant</span></td><td style="padding:9px 12px;text-align:center;"><span style="color:#2ed573;">● Active</span></td></tr>
+                <tr style="color:#e8e8f0;"><td style="padding:9px 12px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="385b57564c595b4c785b545156515b16574a5f">[email&#160;protected]</a></td><td style="padding:9px 12px;">Dr. Anil M.</td><td style="padding:9px 12px;text-align:center;"><span style="background:rgba(46,213,115,0.2);color:#2ed573;padding:2px 7px;border-radius:10px;">clinic</span></td><td style="padding:9px 12px;text-align:center;"><span style="color:#2ed573;">● Active</span></td></tr>
               </table>
             </div>
           </div>
@@ -609,7 +609,7 @@ footer a:hover{color:white;}
   © 2025 TwinStance Solutions LLP. All rights reserved. · NexReach is a product of TwinStance Solutions.
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Fade-in observer
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
@@ -641,21 +641,3 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     elapsed += 0.1;
     const total = durations[cur];
     const pct = (elapsed / total) * 100;
-    const pb = document.getElementById('demoProgressBar');
-    const tm = document.getElementById('demoTimer');
-    if (pb) pb.style.width = Math.min(pct, 100) + '%';
-    if (tm) tm.textContent = Math.max(0, Math.ceil(total - elapsed)) + 's';
-    if (elapsed >= total) {
-      elapsed = 0;
-      cur = (cur + 1) % 6;
-      showScreen(cur);
-      if (pb) pb.style.width = '0%';
-    }
-  }
-
-  showScreen(0);
-  ticker = setInterval(tick, 100);
-})();
-</script>
-</body>
-</html>
