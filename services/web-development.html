@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" href="../favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Web Development Services | TwinStance Solutions</title>
-<meta name="description" content="Professional website design and development delivered in 24–48 hours. Mobile-friendly, SEO-ready, built to convert. Starting from ₹7,999/year.">
+<meta name="description" content="Professional website design and development delivered in 24–48 hours. Mobile-friendly, SEO-ready, built to convert. Starting from $399/year.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--white:#fff;--off-white:#f8f7f4;--border:#e5e2dc;--text:#1a1a1a;--muted:#6b6b6b;--accent:#1a1a6e;--accent2:#e63946;}
@@ -54,19 +55,28 @@ section{padding:80px 5%;}
 .step-num{width:60px;height:60px;border-radius:50%;background:var(--accent);color:white;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
 .step h3{font-size:15px;font-weight:600;margin-bottom:8px;}
 .step p{font-size:13px;color:var(--muted);}
-.pricing-card{background:white;border:2px solid var(--accent);border-radius:24px;padding:48px;max-width:600px;margin:0 auto;text-align:center;box-shadow:0 20px 60px rgba(26,26,110,0.1);}
-.pricing-tag{display:inline-block;background:var(--accent);color:white;padding:4px 16px;border-radius:100px;font-size:12px;font-weight:700;margin-bottom:16px;}
-.pricing-price{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:var(--accent);margin-bottom:4px;}
-.pricing-price span{font-size:18px;font-weight:400;color:var(--muted);font-family:'Outfit',sans-serif;}
-.pricing-setup{font-size:14px;color:var(--muted);margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border);}
-.pricing-features{list-style:none;text-align:left;margin-bottom:32px;}
-.pricing-features li{display:flex;align-items:center;gap:10px;padding:9px 0;font-size:14px;border-bottom:1px solid var(--off-white);}
-.pricing-features li::before{content:'✓';color:var(--accent);font-weight:700;}
+.packages-section{background:var(--off-white);}
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+.package-card{background:white;border-radius:20px;padding:36px;border:1px solid var(--border);position:relative;transition:all 0.3s;}
+.package-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.08);}
+.package-card.popular{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);}
+.popular-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:white;padding:4px 16px;border-radius:100px;font-size:12px;font-weight:700;white-space:nowrap;}
+.package-name{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;}
+.package-price{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:var(--accent);margin-bottom:4px;}
+.package-price span{font-size:16px;font-weight:400;color:var(--muted);font-family:'Outfit',sans-serif;}
+.package-desc{font-size:13px;color:var(--muted);margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border);}
+.package-features{list-style:none;margin-bottom:32px;}
+.package-features li{display:flex;align-items:center;gap:10px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--off-white);}
+.package-features li::before{content:'✓';color:var(--accent);font-weight:700;font-size:13px;flex-shrink:0;}
+.package-features li.no::before{content:'✕';color:#ccc;}
+.package-features li.no{color:var(--muted);}
+.btn-package{display:block;text-align:center;padding:13px;border-radius:10px;font-weight:600;font-size:14px;text-decoration:none;transition:all 0.2s;border:2px solid var(--accent);color:var(--accent);}
+.btn-package:hover,.package-card.popular .btn-package{background:var(--accent);color:white;}
 .btn-primary{background:var(--accent);color:white;padding:14px 36px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
 .btn-primary:hover{background:#2a2a9e;transform:translateY(-2px);box-shadow:0 8px 25px rgba(26,26,110,0.25);}
 .faq-list{max-width:720px;margin:0 auto;}
 .faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
-.faq-q{font-size:15px;font-weight:600;margin-bottom:10px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.faq-q{font-size:15px;font-weight:600;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;}
 .faq-a{font-size:14px;color:var(--muted);line-height:1.7;}
 .cta-section{background:var(--accent);color:white;text-align:center;padding:80px 5%;}
 .cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,42px);font-weight:700;margin-bottom:16px;}
@@ -75,7 +85,8 @@ footer{background:var(--text);color:rgba(255,255,255,0.6);padding:30px 5%;text-a
 footer a{color:rgba(255,255,255,0.7);text-decoration:none;margin:0 10px;}
 footer a:hover{color:white;}
 .footer-links{margin-bottom:12px;}
-@media(max-width:768px){.hero-inner{grid-template-columns:1fr;}.hero-card{display:none;}.features-grid{grid-template-columns:1fr;}.process-steps{grid-template-columns:1fr 1fr;}.process-steps::before{display:none;}.nav-links{display:none;}}
+@media(max-width:1024px){.packages-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.hero-inner{grid-template-columns:1fr;}.hero-card{display:none;}.features-grid{grid-template-columns:1fr;}.process-steps{grid-template-columns:1fr 1fr;}.process-steps::before{display:none;}.packages-grid{grid-template-columns:1fr;}.nav-links{display:none;}}
 </style>
 </head>
 <body>
@@ -86,7 +97,7 @@ footer a:hover{color:white;}
     <a href="../index.html#packages">Packages</a>
     <a href="../index.html#blog">Blog</a>
     <a href="../index.html#contact">Contact</a>
-    <a href="http://app.tssolutionsllp.com" class="nav-cta">📧 Email Tool</a>
+    <a href="nexreach.html" class="nav-cta">🚀 NexReach Suite</a>
   </div>
 </nav>
 
@@ -95,7 +106,7 @@ footer a:hover{color:white;}
     <div>
       <div class="breadcrumb"><a href="../index.html">Home</a> → <a href="../index.html#services">Services</a> → Web Development</div>
       <h1>Websites That <em>Convert</em> Visitors Into Customers</h1>
-      <p>Fast, modern, mobile-friendly websites delivered in 24–48 hours. Built to rank on Google and turn visitors into paying customers.</p>
+      <p>Fast, modern, mobile-friendly websites delivered in 24–48 hours. Built to rank on Google and turn visitors into paying customers. Starting from $399/year.</p>
       <div class="hero-btns">
         <a href="../index.html#contact" class="btn-white">Get Started →</a>
         <a href="../index.html#packages" class="btn-outline-white">View Packages</a>
@@ -108,7 +119,7 @@ footer a:hover{color:white;}
         <li>Mobile responsive on all devices</li>
         <li>SEO optimized from day one</li>
         <li>Fast loading speed</li>
-        <li>Contact form & WhatsApp button</li>
+        <li>Contact form &amp; WhatsApp button</li>
         <li>Delivered in 24–48 hours</li>
         <li>One yearly payment, no surprises</li>
       </ul>
@@ -126,7 +137,7 @@ footer a:hover{color:white;}
       <div class="feature-card"><div class="feature-icon">📱</div><h3>Mobile First</h3><p>Over 70% of your visitors are on mobile. Your website looks perfect on every screen size.</p></div>
       <div class="feature-card"><div class="feature-icon">🔍</div><h3>SEO Ready</h3><p>Proper meta tags, headings, schema markup, and sitemap — ready for Google from day one.</p></div>
       <div class="feature-card"><div class="feature-icon">🎨</div><h3>Custom Design</h3><p>No templates or cookie-cutter designs. Every website is unique and matches your brand perfectly.</p></div>
-      <div class="feature-card"><div class="feature-icon">🔒</div><h3>Secure & SSL</h3><p>Free SSL certificate on every website. Your visitors see the padlock — building trust instantly.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔒</div><h3>Secure &amp; SSL</h3><p>Free SSL certificate on every website. Your visitors see the padlock — building trust instantly.</p></div>
       <div class="feature-card"><div class="feature-icon">🛠️</div><h3>Easy to Update</h3><p>We build websites that are easy to update. Change text, images, and prices without any coding.</p></div>
     </div>
   </div>
@@ -145,41 +156,83 @@ footer a:hover{color:white;}
   </div>
 </section>
 
-<section>
+<section class="packages-section" id="packages">
   <div class="section-inner">
     <div class="section-tag" style="text-align:center;display:block;">Pricing</div>
-    <h2 class="section-title" style="text-align:center;">Simple, Transparent Pricing</h2>
-    <div class="pricing-card">
-      <div class="pricing-tag">Web Development</div>
-      <div class="pricing-price">₹7,999 <span>/ year</span></div>
-      <div class="pricing-setup">+ One-time setup fee (discussed during consultation)</div>
-      <ul class="pricing-features">
-        <li>Custom designed website</li>
-        <li>Up to 5 pages included</li>
-        <li>Mobile responsive design</li>
-        <li>SEO optimized</li>
-        <li>Contact form & WhatsApp button</li>
-        <li>SSL certificate included</li>
-        <li>Fast loading speed</li>
-        <li>1 month free support</li>
-        <li>Delivered in 24–48 hours</li>
-      </ul>
-      <a href="../index.html#contact" class="btn-primary">Get Started Today →</a>
-      <p style="font-size:12px;color:var(--muted);margin-top:16px;">No hidden fees. Cancel anytime. Governed by our <a href="../refund-policy.html">Refund Policy</a>.</p>
+    <h2 class="section-title" style="text-align:center;">Choose Your Website Package</h2>
+    <p style="text-align:center;color:var(--muted);font-size:14px;margin-bottom:48px;">One yearly payment. No monthly bills. No hidden fees. All prices in USD.</p>
+    <div class="packages-grid">
+      <div class="package-card">
+        <div class="package-name">Starter Site</div>
+        <div class="package-price">$399 <span>/ year</span></div>
+        <div class="package-desc">Perfect for small businesses wanting a fast, professional online presence.</div>
+        <ul class="package-features">
+          <li>Up to 5 pages</li>
+          <li>Mobile responsive design</li>
+          <li>Basic SEO setup</li>
+          <li>Contact form &amp; WhatsApp button</li>
+          <li>SSL certificate included</li>
+          <li>Delivered in 24–48 hours</li>
+          <li>1 month free support</li>
+          <li class="no">Blog section</li>
+          <li class="no">Google Business Profile setup</li>
+        </ul>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:12px;">+ One-time setup fee (discussed in consultation)</div>
+        <a href="../index.html#contact" class="btn-package">Get Started →</a>
+      </div>
+      <div class="package-card popular">
+        <div class="popular-badge">⭐ Most Popular</div>
+        <div class="package-name">Business Site</div>
+        <div class="package-price">$599 <span>/ year</span></div>
+        <div class="package-desc">Everything a growing business needs to stand out and convert visitors.</div>
+        <ul class="package-features">
+          <li>Up to 10 pages</li>
+          <li>Custom design with your branding</li>
+          <li>Advanced SEO optimization</li>
+          <li>Blog section included</li>
+          <li>Google Business Profile setup</li>
+          <li>Contact form &amp; WhatsApp</li>
+          <li>3 months free support</li>
+          <li>Delivered in 24–48 hours</li>
+          <li>SSL certificate included</li>
+        </ul>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:12px;">+ One-time setup fee (discussed in consultation)</div>
+        <a href="../index.html#contact" class="btn-package">Get Started →</a>
+      </div>
+      <div class="package-card">
+        <div class="package-name">Premium Site</div>
+        <div class="package-price">$899 <span>/ year</span></div>
+        <div class="package-desc">Full-featured website with everything for maximum online impact.</div>
+        <ul class="package-features">
+          <li>Unlimited pages</li>
+          <li>Premium custom design</li>
+          <li>Full SEO setup &amp; content</li>
+          <li>Blog, portfolio &amp; gallery</li>
+          <li>Payment gateway integration</li>
+          <li>Advanced contact forms</li>
+          <li>6 months free support</li>
+          <li>Priority delivery in 24 hours</li>
+          <li>SSL certificate included</li>
+        </ul>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:12px;">+ One-time setup fee (discussed in consultation)</div>
+        <a href="../index.html#contact" class="btn-package">Get Started →</a>
+      </div>
     </div>
+    <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:28px;">All prices in USD. No hidden fees. See our <a href="../refund-policy.html" style="color:var(--accent);">Refund Policy</a>.</p>
   </div>
 </section>
 
-<section class="process-bg">
+<section>
   <div class="section-inner">
     <div class="section-tag" style="text-align:center;display:block;">FAQ</div>
     <h2 class="section-title" style="text-align:center;">Frequently Asked Questions</h2>
     <div class="faq-list">
       <div class="faq-item"><div class="faq-q">How long does it take to build my website?</div><div class="faq-a">Standard websites are delivered within 24–48 hours after we receive all your content and requirements. Larger or more complex sites may take slightly longer.</div></div>
       <div class="faq-item"><div class="faq-q">Do I need to provide content?</div><div class="faq-a">Ideally yes — your logo, photos, and text. But if you don't have content ready, we can write basic content for you and use placeholder images to get started.</div></div>
-      <div class="faq-item"><div class="faq-q">What if I want changes after delivery?</div><div class="faq-a">You get 1 month of free support after delivery for minor changes. Major redesigns are quoted separately.</div></div>
-      <div class="faq-item"><div class="faq-q">Will my website rank on Google?</div><div class="faq-a">We build every website with SEO best practices. However, ranking takes time and depends on competition. For active SEO, check our SEO Services.</div></div>
-      <div class="faq-item"><div class="faq-q">What is the setup fee?</div><div class="faq-a">The setup fee covers domain configuration, hosting setup, and initial customization. The exact amount is discussed during your consultation based on your requirements.</div></div>
+      <div class="faq-item"><div class="faq-q">What if I want changes after delivery?</div><div class="faq-a">You get free support after delivery for minor changes (1 month on Starter, 3 months on Business, 6 months on Premium). Major redesigns are quoted separately.</div></div>
+      <div class="faq-item"><div class="faq-q">Will my website rank on Google?</div><div class="faq-a">We build every website with SEO best practices. However, ranking takes time and depends on competition. For active SEO, check our <a href="seo-services.html" style="color:var(--accent);">SEO Services</a>.</div></div>
+      <div class="faq-item"><div class="faq-q">What is the setup fee?</div><div class="faq-a">The setup fee covers domain configuration, hosting setup, and initial customization. The exact amount is discussed during your free consultation based on your requirements.</div></div>
+      <div class="faq-item"><div class="faq-q">What currency are your prices in?</div><div class="faq-a">All prices are in USD. We accept international payments via bank transfer, Wise, PayPal, and other methods discussed during consultation.</div></div>
     </div>
   </div>
 </section>
@@ -195,7 +248,7 @@ footer a:hover{color:white;}
     <a href="../index.html">Home</a>
     <a href="../privacy-policy.html">Privacy Policy</a>
     <a href="../refund-policy.html">Refund Policy</a>
-    <a href="../terms.html">Terms & Conditions</a>
+    <a href="../terms.html">Terms &amp; Conditions</a>
   </div>
   © 2025 TwinStance Solutions LLP. All rights reserved.
 </footer>
