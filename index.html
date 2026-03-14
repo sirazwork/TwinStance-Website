@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="TwinStance Solutions — Web Development, SEO, PPC, App Development & Digital Marketing. We help small businesses grow online. Based in India.">
-<meta name="keywords" content="web development, SEO, PPC, app development, digital marketing, India, TwinStance">
+<meta name="description" content="TwinStance Solutions — Web Development, SEO, PPC, App Development & Digital Marketing. We help businesses grow online.">
+<meta name="keywords" content="web development, SEO, PPC, app development, digital marketing, TwinStance">
 <meta property="og:title" content="TwinStance Solutions — Grow Your Business Online">
-<meta property="og:description" content="Professional web development, SEO, PPC & app development services. Professional web and digital services for businesses in India.">
+<meta property="og:description" content="Professional web development, SEO, PPC & app development services for businesses worldwide.">
 <title>TwinStance Solutions | Web Development & Digital Marketing</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a6e'/><text y='72' x='50' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='bold' fill='white'>TS</text></svg>">
 <link rel="icon" type="image/png" href="favicon.png">
@@ -14,281 +14,185 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --white: #ffffff;
-  --off-white: #f8f7f4;
-  --light: #f0ede8;
-  --border: #e5e2dc;
-  --text: #1a1a1a;
-  --muted: #6b6b6b;
-  --accent: #1a1a6e;
-  --accent2: #e63946;
-  --accent-light: #eeeef8;
-  --gold: #c9a84c;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Outfit', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+:root{--white:#fff;--off-white:#f8f7f4;--light:#f0ede8;--border:#e5e2dc;--text:#1a1a1a;--muted:#6b6b6b;--accent:#1a1a6e;--accent2:#e63946;--accent-light:#eeeef8;--gold:#c9a84c;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;transition:box-shadow 0.3s;}
+nav.scrolled{box-shadow:0 4px 30px rgba(0,0,0,0.08);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--accent);text-decoration:none;}
+.nav-logo span{color:var(--accent2);}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--accent);}
+.nav-cta{background:var(--accent);color:white!important;padding:10px 22px;border-radius:8px;font-weight:600!important;transition:background 0.2s!important;}
+.nav-cta:hover{background:#2a2a9e!important;color:white!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:all 0.3s;}
+.mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:white;border-bottom:1px solid var(--border);padding:20px 5%;z-index:99;}
+.mobile-menu a{display:block;padding:12px 0;color:var(--text);text-decoration:none;font-size:15px;border-bottom:1px solid var(--border);}
+.mobile-menu a:last-child{border-bottom:none;}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 5% 80px;background:var(--white);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(26,26,110,0.05) 0%,transparent 70%);pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(230,57,70,0.05) 0%,transparent 70%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px;margin:0 auto;width:100%;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--accent-light);color:var(--accent);padding:6px 16px;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:24px;border:1px solid rgba(26,26,110,0.15);}
+.hero-tag::before{content:'●';font-size:8px;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,5vw,62px);font-weight:900;line-height:1.1;margin-bottom:24px;}
+.hero h1 em{font-style:italic;color:var(--accent2);}
+.hero p{font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:36px;max-width:480px;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-primary{background:var(--accent);color:white;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{background:#2a2a9e;transform:translateY(-2px);box-shadow:0 8px 25px rgba(26,26,110,0.25);}
+.btn-outline{background:transparent;color:var(--accent);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px;border:2px solid var(--accent);transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-outline:hover{background:var(--accent);color:white;}
+.hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.hero-stat-val{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--accent);}
+.hero-stat-label{font-size:13px;color:var(--muted);margin-top:2px;}
+.hero-visual{position:relative;}
+.hero-card-main{background:var(--accent);color:white;border-radius:20px;padding:36px;box-shadow:0 30px 60px rgba(26,26,110,0.2);animation:float 6s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+.hero-card-main h3{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:8px;}
+.hero-card-main p{font-size:14px;opacity:0.8;margin-bottom:24px;}
+.mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.mini-stat{background:rgba(255,255,255,0.1);border-radius:12px;padding:16px;}
+.mini-stat-val{font-size:24px;font-weight:700;}
+.mini-stat-label{font-size:12px;opacity:0.7;margin-top:2px;}
+.hero-card-float{position:absolute;bottom:-20px;left:-40px;background:white;border-radius:14px;padding:16px 20px;box-shadow:0 10px 40px rgba(0,0,0,0.12);display:flex;align-items:center;gap:12px;animation:float2 5s ease-in-out infinite;}
+@keyframes float2{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+.hero-card-float2{position:absolute;top:-20px;right:-20px;background:white;border-radius:14px;padding:16px 20px;box-shadow:0 10px 40px rgba(0,0,0,0.12);animation:float3 7s ease-in-out infinite;}
+@keyframes float3{0%,100%{transform:translateY(0);}50%{transform:translateY(10px);}}
+.float-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.float-text{font-size:13px;font-weight:600;}
+.float-sub{font-size:11px;color:var(--muted);}
+section{padding:100px 5%;}
+.section-inner{max-width:1200px;margin:0 auto;}
+.section-tag{display:inline-block;background:var(--accent-light);color:var(--accent);padding:4px 14px;border-radius:100px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:700;margin-bottom:16px;line-height:1.2;}
+.section-sub{color:var(--muted);font-size:16px;line-height:1.7;max-width:560px;}
+.section-header{margin-bottom:60px;}
+.section-header.center{text-align:center;}
+.section-header.center .section-sub{margin:0 auto;}
+.services-bg{background:var(--off-white);}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.service-card{background:white;border-radius:16px;padding:28px;border:1px solid var(--border);transition:all 0.3s;cursor:pointer;text-decoration:none;color:var(--text);display:block;}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.08);border-color:var(--accent);}
+.service-icon{width:52px;height:52px;border-radius:14px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;transition:background 0.3s;}
+.service-card:hover .service-icon{background:var(--accent);}
+.service-card h3{font-size:16px;font-weight:600;margin-bottom:10px;}
+.service-card p{font-size:13px;color:var(--muted);line-height:1.6;}
+.service-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--accent);margin-top:16px;text-decoration:none;}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.why-list{display:flex;flex-direction:column;gap:24px;margin-top:40px;}
+.why-item{display:flex;gap:16px;align-items:flex-start;}
+.why-num{width:36px;height:36px;border-radius:10px;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;}
+.why-item h4{font-size:15px;font-weight:600;margin-bottom:4px;}
+.why-item p{font-size:13px;color:var(--muted);line-height:1.6;}
+.why-visual{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.why-box{background:var(--off-white);border-radius:16px;padding:28px;border:1px solid var(--border);}
+.why-box.accent{background:var(--accent);color:white;}
+.why-box.accent .why-box-val{color:white;}
+.why-box.accent .why-box-label{color:rgba(255,255,255,0.7);}
+.why-box-val{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--accent);}
+.why-box-label{font-size:13px;color:var(--muted);margin-top:4px;}
+.why-box-icon{font-size:28px;margin-bottom:12px;}
+.packages-bg{background:var(--off-white);}
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.package-card{background:white;border-radius:20px;padding:36px;border:1px solid var(--border);position:relative;transition:all 0.3s;}
+.package-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.08);}
+.package-card.popular{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);}
+.popular-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:white;padding:4px 16px;border-radius:100px;font-size:12px;font-weight:700;white-space:nowrap;}
+.package-name{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;}
+.package-price{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:var(--accent);margin-bottom:4px;}
+.package-price span{font-size:16px;font-weight:400;color:var(--muted);font-family:'Outfit',sans-serif;}
+.package-desc{font-size:13px;color:var(--muted);margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border);}
+.package-features{list-style:none;margin-bottom:32px;}
+.package-features li{display:flex;align-items:center;gap:10px;font-size:14px;padding:7px 0;color:var(--text);}
+.package-features li::before{content:'✓';color:var(--accent);font-weight:700;font-size:13px;flex-shrink:0;}
+.package-features li.no::before{content:'✕';color:var(--border);}
+.package-features li.no{color:var(--muted);}
+.btn-package{display:block;text-align:center;padding:13px;border-radius:10px;font-weight:600;font-size:14px;text-decoration:none;transition:all 0.2s;border:2px solid var(--accent);color:var(--accent);}
+.btn-package:hover,.package-card.popular .btn-package{background:var(--accent);color:white;}
 
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  padding: 0 5%;
-  display: flex; align-items: center; justify-content: space-between;
-  height: 70px;
-  transition: box-shadow 0.3s;
-}
-nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
-.nav-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--accent); text-decoration: none; }
-.nav-logo span { color: var(--accent2); }
-.nav-links { display: flex; align-items: center; gap: 32px; }
-.nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover { color: var(--accent); }
-.nav-cta { background: var(--accent); color: white !important; padding: 10px 22px; border-radius: 8px; font-weight: 600 !important; transition: background 0.2s !important; }
-.nav-cta:hover { background: #2a2a9e !important; color: white !important; }
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
-.mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: white; border-bottom: 1px solid var(--border); padding: 20px 5%; z-index: 99; }
-.mobile-menu a { display: block; padding: 12px 0; color: var(--text); text-decoration: none; font-size: 15px; border-bottom: 1px solid var(--border); }
-.mobile-menu a:last-child { border-bottom: none; }
+/* TESTIMONIALS SCROLL */
+.testimonials-outer{overflow:hidden;position:relative;padding:0 0 20px;}
+.testimonials-outer::before,.testimonials-outer::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none;}
+.testimonials-outer::before{left:0;background:linear-gradient(to right,var(--white),transparent);}
+.testimonials-outer::after{right:0;background:linear-gradient(to left,var(--white),transparent);}
+.testimonials-track{display:flex;gap:24px;animation:scrollTestimonials 50s linear infinite;width:max-content;}
+.testimonials-track:hover{animation-play-state:paused;}
+@keyframes scrollTestimonials{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.testimonial-card{background:var(--off-white);border-radius:16px;padding:28px;border:1px solid var(--border);width:340px;flex-shrink:0;}
+.stars{color:var(--gold);font-size:14px;margin-bottom:16px;letter-spacing:2px;}
+.testimonial-text{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:20px;font-style:italic;}
+.testimonial-author{display:flex;align-items:center;gap:12px;}
+.author-avatar{width:42px;height:42px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:15px;flex-shrink:0;}
+.author-name{font-size:14px;font-weight:600;}
+.author-role{font-size:12px;color:var(--muted);}
 
-/* HERO */
-.hero {
-  min-height: 100vh; display: flex; align-items: center;
-  padding: 120px 5% 80px;
-  background: var(--white);
-  position: relative; overflow: hidden;
-}
-.hero::before {
-  content: ''; position: absolute; top: -200px; right: -200px;
-  width: 700px; height: 700px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(26,26,110,0.05) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero::after {
-  content: ''; position: absolute; bottom: -100px; left: -100px;
-  width: 400px; height: 400px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(230,57,70,0.05) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; width: 100%; }
-.hero-tag { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-light); color: var(--accent); padding: 6px 16px; border-radius: 100px; font-size: 13px; font-weight: 600; margin-bottom: 24px; border: 1px solid rgba(26,26,110,0.15); }
-.hero-tag::before { content: '●'; font-size: 8px; animation: pulse 2s infinite; }
-@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(38px, 5vw, 62px); font-weight: 900; line-height: 1.1; margin-bottom: 24px; }
-.hero h1 em { font-style: italic; color: var(--accent2); }
-.hero p { font-size: 17px; color: var(--muted); line-height: 1.7; margin-bottom: 36px; max-width: 480px; }
-.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-primary { background: var(--accent); color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
-.btn-primary:hover { background: #2a2a9e; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(26,26,110,0.25); }
-.btn-outline { background: transparent; color: var(--accent); padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px; border: 2px solid var(--accent); transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
-.btn-outline:hover { background: var(--accent); color: white; }
-.hero-stats { display: flex; gap: 40px; margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--border); }
-.hero-stat-val { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--accent); }
-.hero-stat-label { font-size: 13px; color: var(--muted); margin-top: 2px; }
-.hero-visual { position: relative; }
-.hero-card-main {
-  background: var(--accent); color: white; border-radius: 20px; padding: 36px;
-  box-shadow: 0 30px 60px rgba(26,26,110,0.2);
-  animation: float 6s ease-in-out infinite;
-}
-@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-.hero-card-main h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 8px; }
-.hero-card-main p { font-size: 14px; opacity: 0.8; margin-bottom: 24px; }
-.mini-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.mini-stat { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; }
-.mini-stat-val { font-size: 24px; font-weight: 700; }
-.mini-stat-label { font-size: 12px; opacity: 0.7; margin-top: 2px; }
-.hero-card-float {
-  position: absolute; bottom: -20px; left: -40px;
-  background: white; border-radius: 14px; padding: 16px 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.12); display: flex; align-items: center; gap: 12px;
-  animation: float2 5s ease-in-out infinite;
-}
-@keyframes float2 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-.hero-card-float2 {
-  position: absolute; top: -20px; right: -20px;
-  background: white; border-radius: 14px; padding: 16px 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
-  animation: float3 7s ease-in-out infinite;
-}
-@keyframes float3 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
-.float-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-.float-text { font-size: 13px; font-weight: 600; }
-.float-sub { font-size: 11px; color: var(--muted); }
+/* NEXREACH BANNER */
+.tool-banner{background:linear-gradient(135deg,#0a0a1a 0%,#1a1a6e 60%,#2a1a6e 100%);color:white;border-radius:24px;padding:60px;display:flex;align-items:center;justify-content:space-between;gap:40px;margin-left:auto;margin-right:auto;max-width:1200px;position:relative;overflow:hidden;}
+.tool-banner::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(108,99,255,0.3) 0%,transparent 70%);}
+.tool-banner h2{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;margin-bottom:12px;}
+.tool-banner p{font-size:15px;opacity:0.85;max-width:480px;line-height:1.6;}
+.tool-banner-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;}
+.tool-badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;padding:4px 12px;border-radius:100px;font-size:12px;font-weight:600;}
+.btn-white{background:white;color:var(--accent);padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px;white-space:nowrap;transition:all 0.2s;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,0.2);}
 
-/* SECTION COMMON */
-section { padding: 100px 5%; }
-.section-inner { max-width: 1200px; margin: 0 auto; }
-.section-tag { display: inline-block; background: var(--accent-light); color: var(--accent); padding: 4px 14px; border-radius: 100px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
-.section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
-.section-sub { color: var(--muted); font-size: 16px; line-height: 1.7; max-width: 560px; }
-.section-header { margin-bottom: 60px; }
-.section-header.center { text-align: center; }
-.section-header.center .section-sub { margin: 0 auto; }
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.blog-card{border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:all 0.3s;text-decoration:none;color:var(--text);display:block;}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.08);}
+.blog-thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:48px;}
+.blog-body{padding:24px;}
+.blog-tag{display:inline-block;background:var(--accent-light);color:var(--accent);padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:10px;}
+.blog-card h3{font-size:16px;font-weight:600;margin-bottom:8px;line-height:1.4;}
+.blog-card p{font-size:13px;color:var(--muted);line-height:1.6;}
+.blog-meta{display:flex;gap:12px;margin-top:16px;font-size:12px;color:var(--muted);}
 
-/* SERVICES */
-.services-bg { background: var(--off-white); }
-.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.service-card {
-  background: white; border-radius: 16px; padding: 28px;
-  border: 1px solid var(--border); transition: all 0.3s; cursor: pointer;
-  text-decoration: none; color: var(--text); display: block;
-}
-.service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); border-color: var(--accent); }
-.service-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; transition: background 0.3s; }
-.service-card:hover .service-icon { background: var(--accent); }
-.service-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
-.service-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
-.service-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--accent); margin-top: 16px; text-decoration: none; }
+.contact-bg{background:var(--off-white);}
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:80px;align-items:start;}
+.contact-info{display:flex;flex-direction:column;gap:24px;margin-top:40px;}
+.contact-item{display:flex;gap:16px;align-items:flex-start;}
+.contact-icon{width:44px;height:44px;border-radius:12px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.contact-item h4{font-size:14px;font-weight:600;margin-bottom:4px;}
+.contact-item p,.contact-item a{font-size:14px;color:var(--muted);text-decoration:none;}
+.contact-item a:hover{color:var(--accent);}
+.contact-form{background:white;border-radius:20px;padding:40px;border:1px solid var(--border);}
+.form-group{margin-bottom:20px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+label{display:block;font-size:13px;font-weight:600;margin-bottom:8px;color:var(--text);}
+input,select,textarea{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:10px;font-family:'Outfit',sans-serif;font-size:14px;color:var(--text);background:var(--off-white);outline:none;transition:border-color 0.2s;}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);background:white;}
+textarea{resize:vertical;min-height:120px;}
+.btn-submit{width:100%;background:var(--accent);color:white;padding:14px;border-radius:10px;border:none;font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all 0.2s;}
+.btn-submit:hover{background:#2a2a9e;}
+.btn-submit:disabled{opacity:0.7;cursor:not-allowed;}
 
-/* WHY US */
-.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.why-list { display: flex; flex-direction: column; gap: 24px; margin-top: 40px; }
-.why-item { display: flex; gap: 16px; align-items: flex-start; }
-.why-num { width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
-.why-item h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
-.why-item p { font-size: 13px; color: var(--muted); line-height: 1.6; }
-.why-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.why-box { background: var(--off-white); border-radius: 16px; padding: 28px; border: 1px solid var(--border); }
-.why-box.accent { background: var(--accent); color: white; }
-.why-box.accent .why-box-val { color: white; }
-.why-box.accent .why-box-label { color: rgba(255,255,255,0.7); }
-.why-box-val { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--accent); }
-.why-box-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
-.why-box-icon { font-size: 28px; margin-bottom: 12px; }
+footer{background:var(--text);color:rgba(255,255,255,0.85);padding:60px 5% 30px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;max-width:1200px;margin:0 auto;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.1);}
+.footer-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:white;margin-bottom:16px;}
+.footer-logo span{color:var(--accent2);}
+.footer-desc{font-size:13px;line-height:1.7;opacity:0.7;margin-bottom:20px;}
+.footer-socials{display:flex;gap:12px;}
+.social-btn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;text-decoration:none;transition:background 0.2s;}
+.social-btn:hover{background:var(--accent);}
+.footer-col h4{font-size:13px;font-weight:700;color:white;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;margin-bottom:10px;transition:color 0.2s;}
+.footer-col a:hover{color:white;}
+.footer-bottom{max-width:1200px;margin:24px auto 0;display:flex;justify-content:space-between;align-items:center;font-size:12px;opacity:0.5;}
 
-/* PACKAGES */
-.packages-bg { background: var(--off-white); }
-.packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.package-card { background: white; border-radius: 20px; padding: 36px; border: 1px solid var(--border); position: relative; transition: all 0.3s; }
-.package-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
-.package-card.popular { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
-.popular-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 4px 16px; border-radius: 100px; font-size: 12px; font-weight: 700; white-space: nowrap; }
-.package-name { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
-.package-price { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
-.package-price span { font-size: 16px; font-weight: 400; color: var(--muted); font-family: 'Outfit', sans-serif; }
-.package-desc { font-size: 13px; color: var(--muted); margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
-.package-features { list-style: none; margin-bottom: 32px; }
-.package-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; padding: 7px 0; color: var(--text); }
-.package-features li::before { content: '✓'; color: var(--accent); font-weight: 700; font-size: 13px; flex-shrink: 0; }
-.package-features li.no::before { content: '✕'; color: var(--border); }
-.package-features li.no { color: var(--muted); }
-.btn-package { display: block; text-align: center; padding: 13px; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.2s; border: 2px solid var(--accent); color: var(--accent); }
-.btn-package:hover, .package-card.popular .btn-package { background: var(--accent); color: white; }
-
-/* TESTIMONIALS */
-.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.testimonial-card { background: var(--off-white); border-radius: 16px; padding: 28px; border: 1px solid var(--border); }
-.stars { color: var(--gold); font-size: 14px; margin-bottom: 16px; letter-spacing: 2px; }
-.testimonial-text { font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
-.testimonial-author { display: flex; align-items: center; gap: 12px; }
-.author-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 15px; }
-.author-name { font-size: 14px; font-weight: 600; }
-.author-role { font-size: 12px; color: var(--muted); }
-
-/* EMAIL TOOL BANNER */
-.tool-banner {
-  background: var(--accent); color: white; border-radius: 24px; padding: 60px;
-  display: flex; align-items: center; justify-content: space-between; gap: 40px;
-  margin: 0 5%; max-width: 1200px; margin-left: auto; margin-right: auto;
-}
-.tool-banner h2 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; margin-bottom: 12px; }
-.tool-banner p { font-size: 15px; opacity: 0.85; max-width: 480px; line-height: 1.6; }
-.btn-white { background: white; color: var(--accent); padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 15px; white-space: nowrap; transition: all 0.2s; }
-.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
-
-/* BLOG */
-.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.blog-card { border-radius: 16px; overflow: hidden; border: 1px solid var(--border); transition: all 0.3s; text-decoration: none; color: var(--text); display: block; }
-.blog-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
-.blog-thumb { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
-.blog-body { padding: 24px; }
-.blog-tag { display: inline-block; background: var(--accent-light); color: var(--accent); padding: 3px 10px; border-radius: 100px; font-size: 11px; font-weight: 700; margin-bottom: 10px; }
-.blog-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
-.blog-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
-.blog-meta { display: flex; gap: 12px; margin-top: 16px; font-size: 12px; color: var(--muted); }
-
-/* CONTACT */
-.contact-bg { background: var(--off-white); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start; }
-.contact-info { display: flex; flex-direction: column; gap: 24px; margin-top: 40px; }
-.contact-item { display: flex; gap: 16px; align-items: flex-start; }
-.contact-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-.contact-item h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
-.contact-item p, .contact-item a { font-size: 14px; color: var(--muted); text-decoration: none; }
-.contact-item a:hover { color: var(--accent); }
-.contact-form { background: white; border-radius: 20px; padding: 40px; border: 1px solid var(--border); }
-.form-group { margin-bottom: 20px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
-input, select, textarea { width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 14px; color: var(--text); background: var(--off-white); outline: none; transition: border-color 0.2s; }
-input:focus, select:focus, textarea:focus { border-color: var(--accent); background: white; }
-textarea { resize: vertical; min-height: 120px; }
-.btn-submit { width: 100%; background: var(--accent); color: white; padding: 14px; border-radius: 10px; border: none; font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
-.btn-submit:hover { background: #2a2a9e; }
-
-/* FOOTER */
-footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5% 30px; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; max-width: 1200px; margin: 0 auto; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: white; margin-bottom: 16px; }
-.footer-logo span { color: var(--accent2); }
-.footer-desc { font-size: 13px; line-height: 1.7; opacity: 0.7; margin-bottom: 20px; }
-.footer-socials { display: flex; gap: 12px; }
-.social-btn { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 16px; text-decoration: none; transition: background 0.2s; }
-.social-btn:hover { background: var(--accent); }
-.footer-col h4 { font-size: 13px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; }
-.footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
-.footer-col a:hover { color: white; }
-.footer-bottom { max-width: 1200px; margin: 24px auto 0; display: flex; justify-content: space-between; align-items: center; font-size: 12px; opacity: 0.5; }
-
-/* WHATSAPP */
-.whatsapp-btn {
-  position: fixed; bottom: 28px; right: 28px; z-index: 999;
-  width: 56px; height: 56px; border-radius: 50%; background: #25D366;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none;
-  animation: bounce 3s ease-in-out infinite; transition: transform 0.2s;
-}
-.whatsapp-btn:hover { transform: scale(1.1); }
-@keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-.whatsapp-btn svg { width: 30px; height: 30px; fill: white; }
-
-/* ANIMATIONS */
-.fade-in { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .packages-grid { grid-template-columns: 1fr 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-visual { display: none; }
-  .hero-stats { gap: 24px; }
-  .why-grid { grid-template-columns: 1fr; }
-  .why-visual { display: none; }
-  .packages-grid { grid-template-columns: 1fr; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .blog-grid { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .tool-banner { flex-direction: column; text-align: center; padding: 40px 24px; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; gap: 8px; }
-  .form-row { grid-template-columns: 1fr; }
-  section { padding: 60px 5%; }
-}
+.whatsapp-btn{position:fixed;bottom:28px;right:28px;z-index:999;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);text-decoration:none;animation:bounce 3s ease-in-out infinite;transition:transform 0.2s;}
+.whatsapp-btn:hover{transform:scale(1.1);}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+.whatsapp-btn svg{width:30px;height:30px;fill:white;}
+.fade-in{opacity:0;transform:translateY(30px);transition:all 0.7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr);}.packages-grid{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.hero-grid{grid-template-columns:1fr;}.hero-visual{display:none;}.hero-stats{gap:24px;}.why-grid{grid-template-columns:1fr;}.why-visual{display:none;}.packages-grid{grid-template-columns:1fr;}.blog-grid{grid-template-columns:1fr;}.contact-grid{grid-template-columns:1fr;}.tool-banner{flex-direction:column;text-align:center;padding:40px 24px;}.footer-grid{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;gap:8px;}.form-row{grid-template-columns:1fr;}section{padding:60px 5%;}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="navbar">
   <a href="index.html" class="nav-logo">Twin<span>Stance</span></a>
   <div class="nav-links">
@@ -296,25 +200,22 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
     <a href="#packages">Packages</a>
     <a href="#blog">Blog</a>
     <a href="#contact">Contact</a>
-    <a href="https://app.tssolutionsllp.com" target="_blank" class="nav-cta">📧 Email Tool</a>
+    <a href="services/nexreach.html" class="nav-cta">🚀 NexReach Suite</a>
   </div>
-  <div class="hamburger" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </div>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#services" onclick="toggleMenu()">Services</a>
   <a href="#packages" onclick="toggleMenu()">Packages</a>
   <a href="#blog" onclick="toggleMenu()">Blog</a>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
-  <a href="https://app.tssolutionsllp.com" target="_blank">📧 Email Marketing Tool</a>
+  <a href="services/nexreach.html" onclick="toggleMenu()">🚀 NexReach Suite</a>
 </div>
 
-<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-grid">
     <div>
-      <div class="hero-tag">India's Growing Digital Agency</div>
+      <div class="hero-tag">Global Digital Agency</div>
       <h1>We Help Businesses <em>Grow</em> Online — Fast</h1>
       <p>Professional web development, SEO, paid ads, and app development. One clear yearly price. Zero hidden fees. Results guaranteed.</p>
       <div class="hero-btns">
@@ -322,18 +223,9 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
         <a href="#contact" class="btn-outline">Get Free Consultation</a>
       </div>
       <div class="hero-stats">
-        <div>
-          <div class="hero-stat-val">24–48h</div>
-          <div class="hero-stat-label">Website Delivery</div>
-        </div>
-        <div>
-          <div class="hero-stat-val">₹0</div>
-          <div class="hero-stat-label">Hidden Fees</div>
-        </div>
-        <div>
-          <div class="hero-stat-val">8+</div>
-          <div class="hero-stat-label">Services Offered</div>
-        </div>
+        <div><div class="hero-stat-val">24–48h</div><div class="hero-stat-label">Website Delivery</div></div>
+        <div><div class="hero-stat-val">$0</div><div class="hero-stat-label">Hidden Fees</div></div>
+        <div><div class="hero-stat-val">8+</div><div class="hero-stat-label">Services Offered</div></div>
       </div>
     </div>
     <div class="hero-visual">
@@ -349,7 +241,7 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
       </div>
       <div class="hero-card-float">
         <div class="float-icon" style="background:#eef7ee;">🚀</div>
-        <div><div class="float-text">New campaign sent</div><div class="float-sub">290 emails delivered</div></div>
+        <div><div class="float-text">NexReach campaign sent</div><div class="float-sub">290 emails delivered</div></div>
       </div>
       <div class="hero-card-float2">
         <div class="float-icon" style="background:#fff3e0;">📈</div>
@@ -359,7 +251,6 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="services-bg" id="services">
   <div class="section-inner">
     <div class="section-header center fade-in">
@@ -368,59 +259,23 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
       <p class="section-sub">From building your website to marketing it — we handle it all under one roof.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card fade-in">
-        <div class="service-icon">🌐</div>
-        <h3>Web Development</h3>
-        <p>Fast, modern websites delivered in 24–48 hours. Mobile-friendly, SEO-ready, and built to convert.</p>
-        <a href="services/web-development.html" class="service-link">Learn more →</a>
-      </div>
-      <div class="service-card fade-in">
-        <div class="service-icon">🔍</div>
-        <h3>SEO Services</h3>
-        <p>Rank higher on Google. We optimize your website so customers find you first, not your competitors.</p>
-        <a href="services/seo-services.html" class="service-link">Learn more →</a>
-      </div>
-      <div class="service-card fade-in">
-        <div class="service-icon">📢</div>
-        <h3>PPC & Paid Ads</h3>
-        <p>Google Ads and Facebook campaigns that actually make money. No wasted budget.</p>
-        <a href="services/ppc-paid-ads.html" class="service-link">Learn more →</a>
-      </div>
-      <div class="service-card fade-in">
-        <div class="service-icon">🤖</div>
-        <h3>Android App Dev</h3>
-        <p>Custom Android apps built for your business. From concept to Play Store launch.</p>
-        <a href="services/android-app.html" class="service-link">Learn more →</a>
-      </div>
-      <div class="service-card fade-in">
-        <div class="service-icon">🍎</div>
-        <h3>iOS App Dev</h3>
-        <p>Professional iPhone and iPad apps. Native performance, beautiful design.</p>
-        <a href="services/ios-app.html" class="service-link">Learn more →</a>
-      </div>
-      <div class="service-card fade-in">
-        <div class="service-icon">🏢</div>
-        <h3>CRM Suite</h3>
-        <p>Manage your customers, leads, and sales pipeline in one simple system.</p>
-        <a href="services/crm-suite.html" class="service-link">Learn more →</a>
-      </div>
-      <div class="service-card fade-in">
-        <div class="service-icon">🏠</div>
-        <h3>Virtual Office</h3>
-        <p>Professional business address, call handling, and virtual office setup for your company.</p>
-        <a href="services/virtual-office.html" class="service-link">Learn more →</a>
-      </div>
+      <div class="service-card fade-in"><div class="service-icon">🌐</div><h3>Web Development</h3><p>Fast, modern websites delivered in 24–48 hours. Mobile-friendly, SEO-ready, and built to convert.</p><a href="services/web-development.html" class="service-link">Learn more →</a></div>
+      <div class="service-card fade-in"><div class="service-icon">🔍</div><h3>SEO Services</h3><p>Rank higher on Google. We optimize your website so customers find you first, not your competitors.</p><a href="services/seo-services.html" class="service-link">Learn more →</a></div>
+      <div class="service-card fade-in"><div class="service-icon">📢</div><h3>PPC & Paid Ads</h3><p>Google Ads and Facebook campaigns that actually make money. No wasted budget.</p><a href="services/ppc-paid-ads.html" class="service-link">Learn more →</a></div>
+      <div class="service-card fade-in"><div class="service-icon">🤖</div><h3>Android App Dev</h3><p>Custom Android apps built for your business. From concept to Play Store launch.</p><a href="services/android-app.html" class="service-link">Learn more →</a></div>
+      <div class="service-card fade-in"><div class="service-icon">🍎</div><h3>iOS App Dev</h3><p>Professional iPhone and iPad apps. Native performance, beautiful design.</p><a href="services/ios-app.html" class="service-link">Learn more →</a></div>
+      <div class="service-card fade-in"><div class="service-icon">🏢</div><h3>CRM Suite</h3><p>Manage your customers, leads, and sales pipeline in one simple system.</p><a href="services/crm-suite.html" class="service-link">Learn more →</a></div>
+      <div class="service-card fade-in"><div class="service-icon">🏠</div><h3>Virtual Office</h3><p>Professional business address, call handling, and virtual office setup for your company.</p><a href="services/virtual-office.html" class="service-link">Learn more →</a></div>
       <div class="service-card fade-in" style="border-color:var(--accent);background:var(--accent-light);">
-        <div class="service-icon" style="background:var(--accent);">📧</div>
-        <h3>Email Marketing Tool</h3>
-        <p>Our own AI-powered email marketing platform. Batch sending, spam protection, and full analytics.</p>
-        <a href="services/email-marketing.html" class="service-link" style="color:var(--accent2);">Learn more →</a>
+        <div class="service-icon" style="background:var(--accent);">🚀</div>
+        <h3>NexReach Suite</h3>
+        <p>All-in-one outreach platform — email marketing, drip campaigns, SMS marketing, AI writer & analytics.</p>
+        <a href="services/nexreach.html" class="service-link" style="color:var(--accent2);">Learn more →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY US -->
 <section id="why">
   <div class="section-inner">
     <div class="why-grid">
@@ -428,57 +283,28 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
         <div class="section-tag fade-in">Why TwinStance</div>
         <h2 class="section-title fade-in">We're Different — <br>Here's How</h2>
         <div class="why-list">
-          <div class="why-item fade-in">
-            <div class="why-num">1</div>
-            <div><h4>Website Ready in 24–48 Hours</h4><p>Most agencies take weeks. We deliver in days — without cutting corners on quality.</p></div>
-          </div>
-          <div class="why-item fade-in">
-            <div class="why-num">2</div>
-            <div><h4>Transparent Pricing, Always</h4><p>Every service has clear, upfront pricing. No surprises, no upsells, no hidden fees ever.</p></div>
-          </div>
-          <div class="why-item fade-in">
-            <div class="why-num">3</div>
-            <div><h4>All Services Under One Roof</h4><p>From website to app to SEO to ads — we handle everything so you don't need multiple agencies.</p></div>
-          </div>
-          <div class="why-item fade-in">
-            <div class="why-num">4</div>
-            <div><h4>Personal Attention, Always</h4><p>You deal directly with us. No account managers, no runaround — real, fast communication.</p></div>
-          </div>
+          <div class="why-item fade-in"><div class="why-num">1</div><div><h4>Website Ready in 24–48 Hours</h4><p>Most agencies take weeks. We deliver in days — without cutting corners on quality.</p></div></div>
+          <div class="why-item fade-in"><div class="why-num">2</div><div><h4>Transparent Pricing, Always</h4><p>Every service has clear, upfront pricing in USD. No surprises, no upsells, no hidden fees ever.</p></div></div>
+          <div class="why-item fade-in"><div class="why-num">3</div><div><h4>All Services Under One Roof</h4><p>From website to app to SEO to ads to NexReach outreach — everything in one place.</p></div></div>
+          <div class="why-item fade-in"><div class="why-num">4</div><div><h4>Personal Attention, Always</h4><p>You deal directly with us. No account managers, no runaround — real, fast communication.</p></div></div>
         </div>
       </div>
       <div class="why-visual fade-in">
-        <div class="why-box accent">
-          <div class="why-box-icon">⚡</div>
-          <div class="why-box-val">48h</div>
-          <div class="why-box-label">Average website delivery time</div>
-        </div>
-        <div class="why-box">
-          <div class="why-box-icon">🛡️</div>
-          <div class="why-box-val" style="color:var(--accent)">₹0</div>
-          <div class="why-box-label">Hidden fees, ever</div>
-        </div>
-        <div class="why-box">
-          <div class="why-box-icon">📊</div>
-          <div class="why-box-val" style="color:var(--accent)">8+</div>
-          <div class="why-box-label">Digital services offered</div>
-        </div>
-        <div class="why-box accent" style="background:var(--accent2)">
-          <div class="why-box-icon">🤝</div>
-          <div class="why-box-val">1:1</div>
-          <div class="why-box-label">Direct support, always</div>
-        </div>
+        <div class="why-box accent"><div class="why-box-icon">⚡</div><div class="why-box-val">48h</div><div class="why-box-label">Average website delivery time</div></div>
+        <div class="why-box"><div class="why-box-icon">🛡️</div><div class="why-box-val" style="color:var(--accent)">$0</div><div class="why-box-label">Hidden fees, ever</div></div>
+        <div class="why-box"><div class="why-box-icon">📊</div><div class="why-box-val" style="color:var(--accent)">8+</div><div class="why-box-label">Digital services offered</div></div>
+        <div class="why-box accent" style="background:var(--accent2)"><div class="why-box-icon">🤝</div><div class="why-box-val">1:1</div><div class="why-box-label">Direct support, always</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PACKAGES -->
 <section class="packages-bg" id="packages">
   <div class="section-inner">
     <div class="section-header center fade-in">
       <div class="section-tag">Pricing</div>
       <h2 class="section-title">Transparent Pricing for Every Business</h2>
-      <p class="section-sub" style="max-width:700px;margin-left:auto;margin-right:auto;">Every service is priced clearly. No surprises, no hidden fees. Click any service to see full details and pricing.</p>
+      <p class="section-sub" style="max-width:700px;margin-left:auto;margin-right:auto;">Every service is priced clearly in USD. No surprises, no hidden fees. Click any service to see full details.</p>
     </div>
 
     <!-- WEBSITE PACKAGES -->
@@ -487,13 +313,13 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
         <div style="width:40px;height:40px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">🌐</div>
         <div>
           <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;">Website Design & Development</h3>
-          <p style="font-size:13px;color:var(--muted);">One yearly payment. No monthly bills. No hidden fees. Cancel anytime.</p>
+          <p style="font-size:13px;color:var(--muted);">One yearly payment. No monthly bills. No hidden fees.</p>
         </div>
       </div>
       <div class="packages-grid">
         <div class="package-card fade-in">
           <div class="package-name">Starter Site</div>
-          <div class="package-price">₹7,999 <span>/ year</span></div>
+          <div class="package-price">$399 <span>/ year</span></div>
           <div class="package-desc">Perfect for small businesses wanting an online presence fast.</div>
           <ul class="package-features">
             <li>Up to 5 pages</li>
@@ -511,7 +337,7 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
         <div class="package-card popular fade-in">
           <div class="popular-badge">⭐ Most Popular</div>
           <div class="package-name">Business Site</div>
-          <div class="package-price">₹14,999 <span>/ year</span></div>
+          <div class="package-price">$599 <span>/ year</span></div>
           <div class="package-desc">Everything a growing business needs to stand out online.</div>
           <ul class="package-features">
             <li>Up to 10 pages</li>
@@ -528,7 +354,7 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
         </div>
         <div class="package-card fade-in">
           <div class="package-name">Premium Site</div>
-          <div class="package-price">₹24,999 <span>/ year</span></div>
+          <div class="package-price">$899 <span>/ year</span></div>
           <div class="package-desc">Full featured website with everything for maximum online impact.</div>
           <ul class="package-features">
             <li>Unlimited pages</li>
@@ -546,62 +372,60 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
       </div>
     </div>
 
-    <!-- MONTHLY SERVICES PRICING TABLE -->
+    <!-- MONTHLY SERVICES TABLE -->
     <div style="margin-bottom:56px;">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;">
         <div style="width:40px;height:40px;background:var(--accent2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">📊</div>
         <div>
           <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;">Monthly Services</h3>
-          <p style="font-size:13px;color:var(--muted);">Ongoing services billed monthly. Cancel anytime with 30 days notice. All include a one-time setup fee.</p>
+          <p style="font-size:13px;color:var(--muted);">Ongoing services billed monthly. Cancel anytime with 30 days notice.</p>
         </div>
       </div>
       <div style="overflow-x:auto;border-radius:16px;border:1px solid var(--border);">
         <table style="width:100%;border-collapse:collapse;font-size:14px;background:white;">
-          <thead>
-            <tr style="background:var(--accent);color:white;">
-              <th style="padding:16px 20px;text-align:left;font-weight:600;">Service</th>
-              <th style="padding:16px 20px;text-align:left;font-weight:600;">Starting Price</th>
-              <th style="padding:16px 20px;text-align:left;font-weight:600;">What You Get</th>
-              <th style="padding:16px 20px;text-align:left;font-weight:600;"></th>
-            </tr>
-          </thead>
+          <thead><tr style="background:var(--accent);color:white;">
+            <th style="padding:16px 20px;text-align:left;font-weight:600;">Service</th>
+            <th style="padding:16px 20px;text-align:left;font-weight:600;">Starting Price</th>
+            <th style="padding:16px 20px;text-align:left;font-weight:600;">What You Get</th>
+            <th style="padding:16px 20px;text-align:left;font-weight:600;"></th>
+          </tr></thead>
           <tbody>
             <tr style="border-bottom:1px solid var(--border);">
               <td style="padding:16px 20px;font-weight:600;">🔍 SEO Services</td>
-              <td style="padding:16px 20px;color:var(--accent);font-weight:700;">₹14,999 / month</td>
+              <td style="padding:16px 20px;color:var(--accent);font-weight:700;">$149 / month</td>
               <td style="padding:16px 20px;color:var(--muted);">Keyword research, on-page SEO, link building, monthly reports</td>
               <td style="padding:16px 20px;"><a href="services/seo-services.html" style="color:var(--accent);font-weight:600;text-decoration:none;white-space:nowrap;">Learn more →</a></td>
             </tr>
             <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
               <td style="padding:16px 20px;font-weight:600;">📢 PPC & Paid Ads</td>
-              <td style="padding:16px 20px;color:var(--accent);font-weight:700;">₹5,999 / month</td>
+              <td style="padding:16px 20px;color:var(--accent);font-weight:700;">$59 / month</td>
               <td style="padding:16px 20px;color:var(--muted);">Google Ads and Facebook Ads management (ad spend is separate)</td>
               <td style="padding:16px 20px;"><a href="services/ppc-paid-ads.html" style="color:var(--accent);font-weight:600;text-decoration:none;white-space:nowrap;">Learn more →</a></td>
             </tr>
             <tr style="border-bottom:1px solid var(--border);">
               <td style="padding:16px 20px;font-weight:600;">🏢 CRM Suite</td>
-              <td style="padding:16px 20px;color:var(--accent);font-weight:700;">₹15,999 / month</td>
+              <td style="padding:16px 20px;color:var(--accent);font-weight:700;">$79 / month</td>
               <td style="padding:16px 20px;color:var(--muted);">Lead pipeline, contact management, sales reports, team collaboration</td>
               <td style="padding:16px 20px;"><a href="services/crm-suite.html" style="color:var(--accent);font-weight:600;text-decoration:none;white-space:nowrap;">Learn more →</a></td>
             </tr>
             <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
               <td style="padding:16px 20px;font-weight:600;">🏠 Virtual Office</td>
-              <td style="padding:16px 20px;color:var(--accent);font-weight:700;">₹2,999 / month</td>
+              <td style="padding:16px 20px;color:var(--accent);font-weight:700;">$20 / person / month</td>
               <td style="padding:16px 20px;color:var(--muted);">Business address, digital workspace, professional emails, per user</td>
               <td style="padding:16px 20px;"><a href="services/virtual-office.html" style="color:var(--accent);font-weight:600;text-decoration:none;white-space:nowrap;">Learn more →</a></td>
             </tr>
             <tr>
-              <td style="padding:16px 20px;font-weight:600;">📧 Email Marketing Tool</td>
-              <td style="padding:16px 20px;color:var(--accent);font-weight:700;">From ₹1,299 / month</td>
-              <td style="padding:16px 20px;color:var(--muted);">AI email writer, batch sending, spam checker, analytics. Multiple plans available.</td>
-              <td style="padding:16px 20px;"><a href="services/email-marketing.html" style="color:var(--accent);font-weight:600;text-decoration:none;white-space:nowrap;">Learn more →</a></td>
+              <td style="padding:16px 20px;font-weight:600;">🚀 NexReach Suite</td>
+              <td style="padding:16px 20px;color:var(--accent);font-weight:700;">$50 / month <span style="font-size:12px;color:var(--muted);font-weight:400;">or $1,599 one-time</span></td>
+              <td style="padding:16px 20px;color:var(--muted);">Email marketing, drip campaigns, SMS marketing, AI writer, full analytics</td>
+              <td style="padding:16px 20px;"><a href="services/nexreach.html" style="color:var(--accent);font-weight:600;text-decoration:none;white-space:nowrap;">Learn more →</a></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
-    <!-- ONE TIME SERVICES -->
+    <!-- ONE TIME PROJECTS -->
     <div>
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;">
         <div style="width:40px;height:40px;background:#2ed573;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">⚡</div>
@@ -612,96 +436,80 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
         <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
-          <div>
-            <div style="font-size:22px;margin-bottom:8px;">🤖</div>
-            <h4 style="font-size:15px;font-weight:600;margin-bottom:4px;">Android App Development</h4>
-            <p style="font-size:12px;color:var(--muted);">Custom Android apps from concept to Play Store</p>
-          </div>
-          <div style="text-align:right;flex-shrink:0;">
-            <div style="font-size:13px;color:var(--muted);">Starting from</div>
-            <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--accent);">Custom</div>
-            <a href="services/android-app.html" style="font-size:12px;color:var(--accent);font-weight:600;text-decoration:none;">Get quote →</a>
-          </div>
+          <div><div style="font-size:22px;margin-bottom:8px;">🤖</div><h4 style="font-size:15px;font-weight:600;margin-bottom:4px;">Android App Development</h4><p style="font-size:12px;color:var(--muted);">Custom Android apps from concept to Play Store</p></div>
+          <div style="text-align:right;flex-shrink:0;"><div style="font-size:13px;color:var(--muted);">Starting from</div><div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--accent);">Custom</div><a href="services/android-app.html" style="font-size:12px;color:var(--accent);font-weight:600;text-decoration:none;">Get quote →</a></div>
         </div>
         <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
-          <div>
-            <div style="font-size:22px;margin-bottom:8px;">🍎</div>
-            <h4 style="font-size:15px;font-weight:600;margin-bottom:4px;">iOS App Development</h4>
-            <p style="font-size:12px;color:var(--muted);">Native iPhone and iPad apps from concept to App Store</p>
-          </div>
-          <div style="text-align:right;flex-shrink:0;">
-            <div style="font-size:13px;color:var(--muted);">Starting from</div>
-            <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--accent);">Custom</div>
-            <a href="services/ios-app.html" style="font-size:12px;color:var(--accent);font-weight:600;text-decoration:none;">Get quote →</a>
-          </div>
+          <div><div style="font-size:22px;margin-bottom:8px;">🍎</div><h4 style="font-size:15px;font-weight:600;margin-bottom:4px;">iOS App Development</h4><p style="font-size:12px;color:var(--muted);">Native iPhone and iPad apps from concept to App Store</p></div>
+          <div style="text-align:right;flex-shrink:0;"><div style="font-size:13px;color:var(--muted);">Starting from</div><div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--accent);">Custom</div><a href="services/ios-app.html" style="font-size:12px;color:var(--accent);font-weight:600;text-decoration:none;">Get quote →</a></div>
         </div>
-        <div style="background:white;border:1px solid var(--border);border-radius:16px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;grid-column:1/-1;">
-          <div>
-            <div style="font-size:22px;margin-bottom:8px;">📩</div>
-            <h4 style="font-size:15px;font-weight:600;margin-bottom:4px;">Whitelabel Email Marketing Platform</h4>
-            <p style="font-size:12px;color:var(--muted);">We build and deploy a fully branded email marketing web app under your brand. Your logo, your domain, your product.</p>
-          </div>
-          <div style="text-align:right;flex-shrink:0;">
-            <div style="font-size:13px;color:var(--muted);">Starting from</div>
-            <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--accent);">₹49,999</div>
-            <a href="email-marketing-platform.html" style="font-size:12px;color:var(--accent);font-weight:600;text-decoration:none;">Learn more →</a>
-          </div>
+        <div style="background:linear-gradient(135deg,#0a0a1a,#1a1a6e);border-radius:16px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;grid-column:1/-1;">
+          <div><div style="font-size:22px;margin-bottom:8px;">🚀</div><h4 style="font-size:15px;font-weight:600;margin-bottom:4px;color:white;">NexReach — Own the Full Suite Forever</h4><p style="font-size:12px;color:rgba(255,255,255,0.6);">Buy NexReach once and own it forever. Email marketing, drip campaigns, SMS marketing, AI writer — all fully branded.</p></div>
+          <div style="text-align:right;flex-shrink:0;"><div style="font-size:13px;color:rgba(255,255,255,0.6);">One-time purchase</div><div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:white;">$1,599</div><a href="services/nexreach.html" style="font-size:12px;color:#ffd166;font-weight:600;text-decoration:none;">Learn more →</a></div>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section id="testimonials">
+<section id="testimonials" style="padding-bottom:20px;">
   <div class="section-inner">
     <div class="section-header center fade-in">
       <div class="section-tag">Testimonials</div>
       <h2 class="section-title">What Our Clients Say</h2>
-      <p class="section-sub">Real feedback from businesses we've helped grow.</p>
+      <p class="section-sub">Real feedback from businesses we've helped grow around the world.</p>
     </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card fade-in">
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-text">"TwinStance built our restaurant website in just 2 days. We started getting online orders within the first week. Best investment we made."</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">R</div>
-          <div><div class="author-name">Rahul Mehta</div><div class="author-role">Restaurant Owner, Mumbai</div></div>
-        </div>
-      </div>
-      <div class="testimonial-card fade-in">
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-text">"Their SEO work got us to page 1 of Google in 3 months. Our enquiries have doubled and the pricing was totally transparent."</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">P</div>
-          <div><div class="author-name">Priya Sharma</div><div class="author-role">Salon Owner, Delhi</div></div>
-        </div>
-      </div>
-      <div class="testimonial-card fade-in">
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-text">"We needed an app for our delivery business. TwinStance delivered on time, within budget, and the app works flawlessly."</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">A</div>
-          <div><div class="author-name">Anil Kumar</div><div class="author-role">Logistics Business, Bangalore</div></div>
-        </div>
-      </div>
+  </div>
+  <div class="testimonials-outer">
+    <div class="testimonials-track">
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"TwinStance built our restaurant website in just 2 days. We started getting online orders within the first week. Best investment we made."</div><div class="testimonial-author"><div class="author-avatar">R</div><div><div class="author-name">Rahul Mehta</div><div class="author-role">Restaurant Owner, Mumbai</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"Their SEO work got us to page 1 of Google in 3 months. Our enquiries have doubled and the pricing was totally transparent — no surprises."</div><div class="testimonial-author"><div class="author-avatar">P</div><div><div class="author-name">Priya Sharma</div><div class="author-role">Salon Owner, Delhi</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"We needed an app for our delivery business. TwinStance delivered on time, within budget, and the app works flawlessly on all devices."</div><div class="testimonial-author"><div class="author-avatar">A</div><div><div class="author-name">Anil Kumar</div><div class="author-role">Logistics Business, Bangalore</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"NexReach completely transformed our outreach. Cold email open rates jumped from 8% to 34% in the first month. The drip campaign feature is a game changer."</div><div class="testimonial-author"><div class="author-avatar">S</div><div><div class="author-name">Samantha Lee</div><div class="author-role">Marketing Consultant, Singapore</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"TwinStance treated my small bakery like a major client. Our website looks stunning and has been driving real walk-ins since launch."</div><div class="testimonial-author"><div class="author-avatar">M</div><div><div class="author-name">Maria Santos</div><div class="author-role">Bakery Owner, Philippines</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"We bought the NexReach suite outright for $1,599 and it paid for itself in the very first campaign. Incredible value."</div><div class="testimonial-author"><div class="author-avatar">J</div><div><div class="author-name">James O'Brien</div><div class="author-role">SaaS Founder, Ireland</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"Their PPC work cut our cost-per-lead by 40%. Siraz personally reviews every campaign and communicates clearly. Rare to find this level of care."</div><div class="testimonial-author"><div class="author-avatar">K</div><div><div class="author-name">Kavitha Nair</div><div class="author-role">EdTech Startup, Chennai</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"The virtual office setup was seamless. We have a professional business address and email without the overhead costs. Worth every dollar."</div><div class="testimonial-author"><div class="author-avatar">D</div><div><div class="author-name">David Okafor</div><div class="author-role">Consultant, Lagos</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"TwinStance rebuilt our clinic website in under 48 hours. The contact form actually works and patients find us on Google now — previously we were invisible."</div><div class="testimonial-author"><div class="author-avatar">N</div><div><div class="author-name">Dr. Neha Verma</div><div class="author-role">Clinic Owner, Pune</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"I've worked with 3 digital agencies before TwinStance. None of them came close to this level of responsiveness and quality. Highly recommend."</div><div class="testimonial-author"><div class="author-avatar">T</div><div><div class="author-name">Thomas Müller</div><div class="author-role">Retail Store Owner, Germany</div></div></div></div>
+      <!-- Duplicate for seamless infinite scroll -->
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"TwinStance built our restaurant website in just 2 days. We started getting online orders within the first week. Best investment we made."</div><div class="testimonial-author"><div class="author-avatar">R</div><div><div class="author-name">Rahul Mehta</div><div class="author-role">Restaurant Owner, Mumbai</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"Their SEO work got us to page 1 of Google in 3 months. Our enquiries have doubled and the pricing was totally transparent — no surprises."</div><div class="testimonial-author"><div class="author-avatar">P</div><div><div class="author-name">Priya Sharma</div><div class="author-role">Salon Owner, Delhi</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"We needed an app for our delivery business. TwinStance delivered on time, within budget, and the app works flawlessly on all devices."</div><div class="testimonial-author"><div class="author-avatar">A</div><div><div class="author-name">Anil Kumar</div><div class="author-role">Logistics Business, Bangalore</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"NexReach completely transformed our outreach. Cold email open rates jumped from 8% to 34% in the first month. The drip campaign feature is a game changer."</div><div class="testimonial-author"><div class="author-avatar">S</div><div><div class="author-name">Samantha Lee</div><div class="author-role">Marketing Consultant, Singapore</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"TwinStance treated my small bakery like a major client. Our website looks stunning and has been driving real walk-ins since launch."</div><div class="testimonial-author"><div class="author-avatar">M</div><div><div class="author-name">Maria Santos</div><div class="author-role">Bakery Owner, Philippines</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"We bought the NexReach suite outright for $1,599 and it paid for itself in the very first campaign. Incredible value."</div><div class="testimonial-author"><div class="author-avatar">J</div><div><div class="author-name">James O'Brien</div><div class="author-role">SaaS Founder, Ireland</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"Their PPC work cut our cost-per-lead by 40%. Siraz personally reviews every campaign and communicates clearly. Rare to find this level of care."</div><div class="testimonial-author"><div class="author-avatar">K</div><div><div class="author-name">Kavitha Nair</div><div class="author-role">EdTech Startup, Chennai</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"The virtual office setup was seamless. We have a professional business address and email without the overhead costs. Worth every dollar."</div><div class="testimonial-author"><div class="author-avatar">D</div><div><div class="author-name">David Okafor</div><div class="author-role">Consultant, Lagos</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"TwinStance rebuilt our clinic website in under 48 hours. The contact form actually works and patients find us on Google now — previously we were invisible."</div><div class="testimonial-author"><div class="author-avatar">N</div><div><div class="author-name">Dr. Neha Verma</div><div class="author-role">Clinic Owner, Pune</div></div></div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"I've worked with 3 digital agencies before TwinStance. None of them came close to this level of responsiveness and quality. Highly recommend."</div><div class="testimonial-author"><div class="author-avatar">T</div><div><div class="author-name">Thomas Müller</div><div class="author-role">Retail Store Owner, Germany</div></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- EMAIL TOOL BANNER -->
-<div style="padding: 0 0 80px;">
+<!-- NEXREACH BANNER -->
+<div style="padding:60px 5%;">
   <div class="tool-banner fade-in">
-    <div>
-      <h2>Our AI-Powered Email Marketing Tool is Live</h2>
-      <p>Send up to 300 emails per day. Batch sending, spam score checker, AI email writer, full analytics. Built in India for Indian businesses.</p>
+    <div style="position:relative;z-index:1;">
+      <div style="display:inline-block;background:rgba(255,209,102,0.15);border:1px solid rgba(255,209,102,0.3);color:#ffd166;padding:4px 14px;border-radius:100px;font-size:12px;font-weight:700;margin-bottom:14px;letter-spacing:0.05em;">NEW PRODUCT</div>
+      <h2>Introducing NexReach — Your All-in-One Outreach Suite</h2>
+      <p>Email marketing, drip campaigns, SMS marketing, AI writer, full analytics — everything you need to reach and convert customers at scale.</p>
+      <div class="tool-banner-badges">
+        <span class="tool-badge">📧 Email Marketing</span>
+        <span class="tool-badge">💧 Drip Campaigns</span>
+        <span class="tool-badge">📱 SMS Marketing</span>
+        <span class="tool-badge">🤖 AI Writer</span>
+        <span class="tool-badge">📊 Full Analytics</span>
+      </div>
     </div>
-    <a href="services/email-marketing.html" class="btn-white">Learn More →</a>
+    <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-end;flex-shrink:0;position:relative;z-index:1;">
+      <a href="services/nexreach.html" class="btn-white">Learn More →</a>
+      <div style="font-size:13px;opacity:0.7;text-align:right;">$50/month or $1,599 one-time purchase</div>
+    </div>
   </div>
 </div>
 
-<!-- BLOG -->
 <section class="packages-bg" id="blog">
   <div class="section-inner">
     <div class="section-header center fade-in">
@@ -712,36 +520,20 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
     <div class="blog-grid">
       <a href="blog/why-your-business-needs-a-website.html" class="blog-card fade-in">
         <div class="blog-thumb" style="background:linear-gradient(135deg,#eeeef8,#d0d0f0);">🌐</div>
-        <div class="blog-body">
-          <div class="blog-tag">Web Development</div>
-          <h3>Why Your Business Needs a Website in 2025 (Not Just a WhatsApp Number)</h3>
-          <p>Over 800 million Indians are online. If your business is not on the web, you are invisible to most of them. Here is what a website actually does for you.</p>
-          <div class="blog-meta"><span>📅 March 2025</span><span>⏱ 5 min read</span></div>
-        </div>
+        <div class="blog-body"><div class="blog-tag">Web Development</div><h3>Why Your Business Needs a Website in 2025 (Not Just a WhatsApp Number)</h3><p>Over 800 million people are online. If your business isn't on the web, you're invisible to most of them.</p><div class="blog-meta"><span>📅 March 2025</span><span>⏱ 5 min read</span></div></div>
       </a>
       <a href="blog/how-to-send-emails-without-spam.html" class="blog-card fade-in">
         <div class="blog-thumb" style="background:linear-gradient(135deg,#fff0f0,#ffd0d0);">📧</div>
-        <div class="blog-body">
-          <div class="blog-tag">Email Marketing</div>
-          <h3>How to Send Cold Emails That Actually Get Replies (Without Landing in Spam)</h3>
-          <p>Most cold email campaigns fail because of three things: bad subject lines, wrong timing, and zero personalization. Here is how to fix all three.</p>
-          <div class="blog-meta"><span>📅 Feb 2025</span><span>⏱ 6 min read</span></div>
-        </div>
+        <div class="blog-body"><div class="blog-tag">Email Marketing</div><h3>How to Send Cold Emails That Actually Get Replies (Without Landing in Spam)</h3><p>Most cold email campaigns fail because of bad subject lines, wrong timing, and zero personalization.</p><div class="blog-meta"><span>📅 Feb 2025</span><span>⏱ 6 min read</span></div></div>
       </a>
       <a href="blog/seo-mistakes-small-businesses.html" class="blog-card fade-in">
         <div class="blog-thumb" style="background:linear-gradient(135deg,#f0fff4,#c8f0d8);">🔍</div>
-        <div class="blog-body">
-          <div class="blog-tag">SEO</div>
-          <h3>5 SEO Mistakes That Are Costing Indian Small Businesses Google Rankings</h3>
-          <p>Most small business websites in India make the same SEO errors. The good news is every single one of them is fixable in under a day.</p>
-          <div class="blog-meta"><span>📅 Jan 2025</span><span>⏱ 5 min read</span></div>
-        </div>
+        <div class="blog-body"><div class="blog-tag">SEO</div><h3>5 SEO Mistakes That Are Costing Small Businesses Google Rankings</h3><p>Most small business websites make the same SEO errors. Every single one is fixable in under a day.</p><div class="blog-meta"><span>📅 Jan 2025</span><span>⏱ 5 min read</span></div></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact-bg" id="contact">
   <div class="section-inner">
     <div class="contact-grid">
@@ -750,188 +542,119 @@ footer { background: var(--text); color: rgba(255,255,255,0.85); padding: 60px 5
         <h2 class="section-title fade-in">Let's Talk About Your Business</h2>
         <p class="section-sub fade-in">Free consultation. No pressure. We'll tell you honestly what you need.</p>
         <div class="contact-info">
-          <div class="contact-item fade-in">
-            <div class="contact-icon">📧</div>
-            <div>
-              <h4>Email Us</h4>
-              <a href="mailto:admin@tssolutionsllp.com">admin@tssolutionsllp.com</a><br>
-              <a href="mailto:support@tssolutionsllp.com">support@tssolutionsllp.com</a>
-            </div>
-          </div>
-          <div class="contact-item fade-in">
-            <div class="contact-icon">📱</div>
-            <div>
-              <h4>WhatsApp / Call</h4>
-              <a href="https://wa.me/919078686010">+91 90786 86010</a><br>
-              <a href="https://wa.me/917008712605">+91 70087 12605</a>
-            </div>
-          </div>
-          <div class="contact-item fade-in">
-            <div class="contact-icon">🌐</div>
-            <div>
-              <h4>Website</h4>
-              <a href="https://www.tssolutionsllp.com">www.tssolutionsllp.com</a>
-            </div>
-          </div>
+          <div class="contact-item fade-in"><div class="contact-icon">📧</div><div><h4>Email Us</h4><a href="mailto:siraz@tssolutionsllp.com">siraz@tssolutionsllp.com</a><br><a href="mailto:tssolutions@tssolutionsllp.com">tssolutions@tssolutionsllp.com</a></div></div>
+          <div class="contact-item fade-in"><div class="contact-icon">📱</div><div><h4>WhatsApp / Call</h4><a href="https://wa.me/919078686010">+91 90786 86010</a><br><a href="https://wa.me/917008712605">+91 70087 12605</a></div></div>
+          <div class="contact-item fade-in"><div class="contact-icon">🌐</div><div><h4>Website</h4><a href="https://www.tssolutionsllp.com">www.tssolutionsllp.com</a></div></div>
         </div>
       </div>
       <div class="contact-form fade-in">
         <h3 style="font-family:'Playfair Display',serif;font-size:22px;margin-bottom:24px;">Send Us a Message</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" id="contactName" placeholder="John Doe">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="8a0fa407-bef5-450d-8950-2f40f1cb2030">
+          <input type="hidden" name="subject" value="New Enquiry — TwinStance Website">
+          <input type="hidden" name="from_name" value="TwinStance Website">
+          <input type="hidden" name="redirect" value="false">
+          <div class="form-row">
+            <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="John Doe" required></div>
+            <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="john@example.com" required></div>
           </div>
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" id="contactEmail" placeholder="john@example.com">
+          <div class="form-row">
+            <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="+1 XXX XXX XXXX"></div>
+            <div class="form-group">
+              <label>Service Interested In</label>
+              <select name="service">
+                <option>Web Development</option>
+                <option>SEO Services</option>
+                <option>PPC &amp; Paid Ads</option>
+                <option>Android App</option>
+                <option>iOS App</option>
+                <option>CRM Suite</option>
+                <option>Virtual Office</option>
+                <option>NexReach Suite</option>
+                <option>Full Package</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" id="contactPhone" placeholder="+91 XXXXX XXXXX">
-          </div>
-          <div class="form-group">
-            <label>Service Interested In</label>
-            <select id="contactService">
-              <option>Web Development</option>
-              <option>SEO Services</option>
-              <option>PPC & Paid Ads</option>
-              <option>Android App</option>
-              <option>iOS App</option>
-              <option>CRM Suite</option>
-              <option>Virtual Office</option>
-              <option>Email Marketing Tool</option>
-              <option>Full Package</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Tell Us About Your Business</label>
-          <textarea id="contactMessage" placeholder="Briefly describe your business and what you need..."></textarea>
-        </div>
-        <button class="btn-submit" onclick="submitForm(this)">Send Message →</button>
-        <p style="font-size:12px;color:var(--muted);margin-top:12px;text-align:center;">We respond within 24 hours. Your info is never shared.</p>
+          <div class="form-group"><label>Tell Us About Your Business</label><textarea name="message" placeholder="Briefly describe your business and what you need..." required></textarea></div>
+          <button type="submit" class="btn-submit" id="submitBtn">Send Message →</button>
+          <div id="formResult" style="margin-top:12px;text-align:center;font-size:14px;min-height:20px;"></div>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;text-align:center;">We respond within 24 hours. Your info is never shared.</p>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div>
       <div class="footer-logo">Twin<span>Stance</span> Solutions</div>
-      <div class="footer-desc">We help small businesses grow online with professional web development, SEO, paid ads, and app development. Based in India, serving clients worldwide.</div>
+      <div class="footer-desc">We help businesses grow online with professional web development, SEO, paid ads, app development, and the NexReach outreach suite. Serving clients worldwide.</div>
       <div class="footer-socials">
         <a href="#" class="social-btn">in</a>
         <a href="https://wa.me/919078686010" class="social-btn">💬</a>
-        <a href="mailto:admin@tssolutionsllp.com" class="social-btn">✉</a>
+        <a href="mailto:siraz@tssolutionsllp.com" class="social-btn">✉</a>
       </div>
     </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <a href="#services">Web Development</a>
-      <a href="#services">SEO Services</a>
-      <a href="#services">PPC & Paid Ads</a>
-      <a href="#services">Android App Dev</a>
-      <a href="#services">iOS App Dev</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="#packages">Packages</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Contact</a>
-      <a href="app.html">Email Tool</a>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <a href="mailto:admin@tssolutionsllp.com">admin@tssolutionsllp.com</a>
-      <a href="https://wa.me/919078686010">+91 90786 86010</a>
-      <a href="https://wa.me/917008712605">+91 70087 12605</a>
-    </div>
+    <div class="footer-col"><h4>Services</h4><a href="#services">Web Development</a><a href="#services">SEO Services</a><a href="#services">PPC &amp; Paid Ads</a><a href="#services">Android App Dev</a><a href="#services">iOS App Dev</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="#packages">Packages</a><a href="#blog">Blog</a><a href="#contact">Contact</a><a href="services/nexreach.html">NexReach Suite</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="mailto:siraz@tssolutionsllp.com">siraz@tssolutionsllp.com</a><a href="https://wa.me/919078686010">+91 90786 86010</a><a href="https://wa.me/917008712605">+91 70087 12605</a></div>
   </div>
   <div class="footer-bottom" style="flex-direction:column;gap:12px;text-align:center;">
     <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;">
       <a href="privacy-policy.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:12px;">Privacy Policy</a>
       <a href="refund-policy.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:12px;">Refund Policy</a>
-      <a href="terms.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:12px;">Terms & Conditions</a>
+      <a href="terms.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:12px;">Terms &amp; Conditions</a>
     </div>
     <div style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:8px;">
       <div>© 2025 TwinStance Solutions LLP. All rights reserved.</div>
-      <div>Made with ❤️ in India</div>
+      <div>Made with ❤️ for clients worldwide</div>
     </div>
   </div>
 </footer>
 
-<!-- WHATSAPP BUTTON -->
 <a href="https://wa.me/919078686010?text=Hi%20TwinStance!%20I%20want%20to%20know%20more%20about%20your%20services." class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
-// Navbar scroll
-window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
-});
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20);});
+function toggleMenu(){const m=document.getElementById('mobileMenu');m.style.display=m.style.display==='block'?'none':'block';}
+const observer=new IntersectionObserver((entries)=>{entries.forEach((entry,i)=>{if(entry.isIntersecting){setTimeout(()=>entry.target.classList.add('visible'),i*80);}});},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 
-// Mobile menu
-function toggleMenu() {
-  const menu = document.getElementById('mobileMenu');
-  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-}
-
-// Fade in on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 80);
-    }
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// Contact form
-async function submitForm(btn) {
-  const form = btn.closest('.contact-form');
-  const name = form.querySelector('#contactName').value.trim();
-  const email = form.querySelector('#contactEmail').value.trim();
-  const phone = form.querySelector('#contactPhone').value.trim();
-  const service = form.querySelector('#contactService').value.trim();
-  const message = form.querySelector('#contactMessage').value.trim();
-
-  if (!name || !email) { alert('Please fill in your name and email.'); return; }
-
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-
+// Web3Forms submission
+const form = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const formResult = document.getElementById('formResult');
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+  formResult.textContent = '';
+  const data = Object.fromEntries(new FormData(form));
   try {
-    const res = await fetch('https://formspree.io/f/xpwzgkqb', {
+    const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ name, email, phone, service, message,
-        _replyto: email,
-        _subject: 'New Enquiry from ' + name + ' — TwinStance Website'
-      })
+      headers: {'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(data)
     });
-    if (res.ok) {
-      btn.textContent = '✅ Message Sent!';
-      btn.style.background = '#2ed573';
-      btn.style.color = '#000';
-      form.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
-      setTimeout(() => { btn.textContent = 'Send Message →'; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 4000);
-    } else {
-      throw new Error('Failed');
-    }
-  } catch(e) {
-    btn.textContent = 'Send Message →';
-    btn.disabled = false;
-    window.location.href = 'mailto:siraz@tssolutionslp.com?subject=Enquiry from ' + encodeURIComponent(name) + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\nService: ' + service + '\n\n' + message);
+    const json = await res.json();
+    if (json.success) {
+      submitBtn.textContent = '✅ Message Sent!';
+      submitBtn.style.background = '#2ed573';
+      formResult.style.color = '#2ed573';
+      formResult.textContent = "Thank you! We'll get back to you within 24 hours.";
+      form.reset();
+      setTimeout(()=>{submitBtn.textContent='Send Message →';submitBtn.style.background='';submitBtn.disabled=false;formResult.textContent='';},5000);
+    } else { throw new Error('failed'); }
+  } catch(err) {
+    submitBtn.textContent = 'Send Message →';
+    submitBtn.disabled = false;
+    formResult.style.color = '#e63946';
+    formResult.textContent = 'Something went wrong. Please email siraz@tssolutionsllp.com directly.';
   }
-}
+});
 </script>
 </body>
 </html>
