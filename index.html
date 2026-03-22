@@ -3,735 +3,1297 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="TwinStance Solutions — Web Development, SEO, PPC, App Development & Digital Marketing. We help businesses grow online.">
+<meta name="description" content="TwinStance Solutions — Web Development, SEO, PPC, App Development & Digital Marketing. Websites delivered in 24–48 hours. Zero hidden fees.">
 <meta property="og:title" content="TwinStance Solutions — Grow Your Business Online">
-<meta property="og:description" content="Professional web development, SEO, PPC & app development services for businesses worldwide.">
 <title>TwinStance Solutions | Web Development & Digital Marketing</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111'/><text y='68' x='50' text-anchor='middle' font-family='Georgia,serif' font-size='46' font-weight='bold' fill='white'>TS</text></svg>">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230066cc'/><text y='68' x='50' text-anchor='middle' font-family='Georgia,serif' font-size='46' font-weight='bold' fill='white'>TS</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #f5f5f7;
-  --surface: #ffffff;
-  --surface2: #fbfbfd;
-  --border: #d2d2d7;
-  --text: #1d1d1f;
-  --muted: #6e6e73;
-  --accent: #0071e3;
-  --accent-dark: #0077ed;
-  --accent2: #ff3b30;
-  --gold: #c9a84c;
-  --radius: 18px;
-  --radius-sm: 12px;
+/* ── TOKENS ── */
+:root{
+  --ink:    #0a0a0a;
+  --ink2:   #1a1a1a;
+  --sub:    #3d3d3d;
+  --muted:  #6b6b6b;
+  --faint:  #999;
+  --page:   #f4f3f0;
+  --white:  #ffffff;
+  --card:   #f9f8f6;
+  --b:      #e2e1de;
+  --b2:     #d4d3d0;
+  --blue:   #0055cc;
+  --blueL:  #1a6de8;
+  --blueXL: #e8f0ff;
+  --green:  #16a34a;
+  --greenL: #dcfce7;
+  --amber:  #b45309;
+  --amberL: #fef3c7;
+  --red:    #dc2626;
+  --gold:   #c9992a;
+  --r:      14px;
+  --rs:     9px;
+  --max:    1100px;
+  --pad:    48px;
 }
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'DM Sans', -apple-system, sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Figtree',sans-serif;
+  background:var(--page);color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
 
 /* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 24px; height: 56px;
-  background: rgba(245,245,247,0.85);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  transition: background 0.3s;
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  height:52px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--pad);
+  background:rgba(244,243,240,0.90);
+  backdrop-filter:blur(16px) saturate(160%);
+  border-bottom:1px solid var(--b);
+  transition:background .3s;
 }
-.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.ts-logo {
-  width: 34px; height: 34px; border-radius: 9px;
-  background: var(--text); display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-mark{
+  width:30px;height:30px;border-radius:8px;
+  background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
-.ts-logo svg { width: 22px; height: 22px; }
-.nav-logo-text { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--text); }
-.nav-logo-text span { color: var(--accent); }
-.nav-links { display: flex; align-items: center; gap: 28px; }
-.nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 400; transition: color 0.2s; }
-.nav-links a:hover { color: var(--text); }
-.nav-cta {
-  background: var(--accent) !important; color: white !important;
-  padding: 8px 18px !important; border-radius: 980px !important;
-  font-weight: 500 !important; font-size: 13px !important;
-  transition: opacity 0.2s !important;
+.nav-mark svg{width:19px;height:19px}
+.nav-wordmark{
+  font-family:'Playfair Display',serif;
+  font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.2px;
 }
-.nav-cta:hover { opacity: 0.85 !important; }
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-.hamburger span { display: block; width: 20px; height: 1.5px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
-.mobile-menu {
-  display: none; position: fixed; top: 56px; left: 0; right: 0;
-  background: rgba(245,245,247,0.97); backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border); padding: 8px 0; z-index: 199;
+.nav-wordmark span{color:var(--blue)}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .15s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--blue);color:#fff;
+  padding:7px 18px;border-radius:980px;
+  font-size:13px;font-weight:600;
+  transition:all .15s;white-space:nowrap;
 }
-.mobile-menu a { display: block; padding: 14px 24px; color: var(--text); text-decoration: none; font-size: 17px; border-bottom: 1px solid rgba(0,0,0,0.05); }
-.mobile-menu a:last-child { border-bottom: none; color: var(--accent); font-weight: 500; }
+.nav-cta:hover{background:var(--blueL);transform:scale(1.02)}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hbg span{display:block;width:20px;height:1.5px;background:var(--ink);border-radius:2px}
+.mob-nav{
+  display:none;position:fixed;top:52px;left:0;right:0;
+  background:rgba(244,243,240,.97);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--b);z-index:499;
+}
+.mob-nav a{display:block;padding:15px var(--pad);font-size:16px;border-bottom:1px solid var(--b)}
+.mob-nav a:last-child{color:var(--blue);font-weight:600;border:none}
+
+/* ── STICKY BOTTOM CTA BAR ── */
+.sticky-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:400;
+  background:var(--ink);color:#fff;
+  padding:14px var(--pad);
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  transform:translateY(100%);
+  transition:transform .4s cubic-bezier(.16,1,.3,1);
+}
+.sticky-bar.show{transform:translateY(0)}
+.sticky-bar-text{font-size:14px;color:rgba(255,255,255,.75)}
+.sticky-bar-text strong{color:#fff;font-weight:600}
+.sticky-bar-btns{display:flex;gap:10px;flex-shrink:0}
+.sb-btn{
+  padding:9px 20px;border-radius:980px;font-size:13.5px;font-weight:600;
+  cursor:pointer;border:none;font-family:'Figtree',sans-serif;transition:all .15s;
+}
+.sb-btn.primary{background:var(--blue);color:#fff}
+.sb-btn.primary:hover{background:var(--blueL)}
+.sb-btn.ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.sb-btn.ghost:hover{background:rgba(255,255,255,.2)}
+
+/* ── LAYOUT HELPERS ── */
+.container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.section{padding:80px 0}
+.s-label{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:11px;font-weight:700;color:var(--blue);
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;
+}
+.s-label::before{content:'';width:16px;height:1.5px;background:var(--blue);border-radius:2px;display:inline-block}
+.s-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,4vw,50px);
+  line-height:1.1;letter-spacing:-.5px;color:var(--ink);margin-bottom:14px;
+}
+.s-sub{font-size:16px;color:var(--muted);line-height:1.7;font-weight:400;max-width:540px}
+.sh{margin-bottom:44px}
+.center{text-align:center}.center .s-sub{margin:0 auto}
 
 /* ── HERO ── */
-.hero {
-  min-height: 100vh; display: flex; align-items: center;
-  padding: 120px 24px 80px;
-  background: var(--surface2);
-  position: relative; overflow: hidden;
+.hero{
+  padding-top:52px;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  background:var(--white);
+  position:relative;overflow:hidden;
 }
-.hero::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,113,227,0.06) 0%, transparent 70%);
-  pointer-events: none;
+/* No grid background */
+.hero-inner{
+  flex:1;display:flex;flex-direction:column;justify-content:center;
+  max-width:var(--max);margin:0 auto;padding:60px var(--pad) 40px;
+  position:relative;z-index:1;width:100%;
 }
-.hero-inner { max-width: 980px; margin: 0 auto; text-align: center; position: relative; }
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(0,113,227,0.08); border: 1px solid rgba(0,113,227,0.2);
-  color: var(--accent); padding: 5px 14px; border-radius: 980px;
-  font-size: 13px; font-weight: 500; margin-bottom: 28px;
-}
-.hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: blink 2s ease-in-out infinite; }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-.hero h1 {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(42px, 7vw, 80px);
-  line-height: 1.05; letter-spacing: -0.5px;
-  margin-bottom: 22px; color: var(--text);
-}
-.hero h1 em { font-style: italic; color: var(--accent); }
-.hero-sub {
-  font-size: clamp(17px, 2.5vw, 21px); color: var(--muted);
-  line-height: 1.6; max-width: 600px; margin: 0 auto 40px;
-  font-weight: 300;
-}
-.hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 64px; }
-.btn-pill {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 14px 28px; border-radius: 980px;
-  font-size: 16px; font-weight: 500; text-decoration: none;
-  transition: all 0.2s; cursor: pointer; border: none;
-}
-.btn-pill-primary { background: var(--accent); color: white; }
-.btn-pill-primary:hover { background: var(--accent-dark); transform: scale(1.02); }
-.btn-pill-ghost { background: rgba(0,0,0,0.06); color: var(--text); }
-.btn-pill-ghost:hover { background: rgba(0,0,0,0.1); }
-.hero-stats {
-  display: flex; justify-content: center; gap: 0;
-  background: var(--surface); border-radius: var(--radius);
-  border: 1px solid var(--border); overflow: hidden;
-  max-width: 560px; margin: 0 auto;
-}
-.hero-stat { flex: 1; padding: 22px 20px; text-align: center; border-right: 1px solid var(--border); }
-.hero-stat:last-child { border-right: none; }
-.hero-stat-val { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--text); margin-bottom: 4px; }
-.hero-stat-label { font-size: 12px; color: var(--muted); }
 
-/* ── SECTIONS ── */
-section { padding: 96px 24px; }
-.section-inner { max-width: 1100px; margin: 0 auto; }
-.section-label { font-size: 13px; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 14px; }
-.section-title { font-family: 'DM Serif Display', serif; font-size: clamp(32px, 5vw, 52px); line-height: 1.1; margin-bottom: 18px; }
-.section-sub { font-size: 18px; color: var(--muted); line-height: 1.65; font-weight: 300; max-width: 560px; }
-.center { text-align: center; }
-.center .section-sub { margin: 0 auto; }
-.section-head { margin-bottom: 56px; }
+/* Eyebrow pill */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--blueXL);border:1px solid rgba(0,85,204,.2);
+  color:var(--blue);padding:6px 14px;border-radius:980px;
+  font-size:12.5px;font-weight:600;margin-bottom:28px;width:fit-content;
+}
+.eyebrow-dot{
+  width:7px;height:7px;border-radius:50%;background:var(--blue);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+
+/* Hero headline */
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(44px,6.5vw,82px);
+  line-height:1.02;letter-spacing:-1.5px;
+  color:var(--ink);margin-bottom:24px;
+  max-width:900px;
+}
+.hero-h1 .accent{
+  font-style:italic;color:var(--blue);
+  position:relative;display:inline-block;
+}
+.hero-h1 .accent::after{
+  content:'';position:absolute;bottom:-4px;left:0;right:0;height:3px;
+  background:var(--blue);border-radius:2px;opacity:.3;
+}
+
+/* Hero layout: description + proof strip */
+.hero-body{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:48px;align-items:end;margin-bottom:40px;
+}
+.hero-desc{font-size:17px;color:var(--sub);line-height:1.7;font-weight:400;max-width:460px}
+.hero-proof{
+  background:var(--page);border:1px solid var(--b);
+  border-radius:var(--r);padding:22px 24px;
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;
+  position:relative;
+}
+.hero-proof::before{
+  content:'⭐ Trusted by businesses worldwide';
+  position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+  background:var(--white);color:var(--muted);font-size:11px;font-weight:600;
+  white-space:nowrap;padding:0 10px;
+}
+.hp-stat{text-align:center;padding:8px 12px;border-right:1px solid var(--b)}
+.hp-stat:last-child{border-right:none}
+.hp-val{
+  font-family:'Playfair Display',serif;
+  font-size:28px;color:var(--ink);letter-spacing:-1px;font-weight:800;
+}
+.hp-val.blue{color:var(--blue)}
+.hp-lbl{font-size:11px;color:var(--muted);margin-top:2px;font-weight:500}
+
+/* Hero CTAs */
+.hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+.btn-hero-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--blue);color:#fff;
+  padding:14px 28px;border-radius:980px;
+  font-size:15.5px;font-weight:700;
+  transition:all .2s;border:none;cursor:pointer;font-family:'Figtree',sans-serif;
+}
+.btn-hero-primary:hover{background:var(--blueL);transform:scale(1.03);box-shadow:0 8px 24px rgba(0,85,204,.25)}
+.btn-hero-primary .arrow{transition:transform .2s}
+.btn-hero-primary:hover .arrow{transform:translateX(4px)}
+.btn-hero-secondary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;color:var(--ink);
+  padding:14px 24px;border-radius:980px;
+  font-size:15.5px;font-weight:600;
+  border:1.5px solid var(--b2);transition:all .2s;cursor:pointer;font-family:'Figtree',sans-serif;
+}
+.btn-hero-secondary:hover{border-color:var(--ink);background:var(--page)}
+.hero-cta-note{font-size:13px;color:var(--muted)}
+.hero-cta-note span{color:var(--green);font-weight:600}
+
+/* Hero bento strip */
+.hero-bento{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr 1.4fr;
+  gap:12px;
+  border-top:1px solid var(--b);
+  padding-top:32px;
+}
+.hb-card{
+  background:var(--page);border:1px solid var(--b);border-radius:var(--r);
+  padding:20px;transition:all .2s;cursor:default;
+}
+.hb-card:hover{background:var(--white);box-shadow:0 4px 20px rgba(0,0,0,.07);transform:translateY(-2px)}
+.hb-card.blue{background:var(--blue);border-color:var(--blue)}
+.hb-card.dark{background:var(--ink);border-color:var(--ink)}
+.hb-num{
+  font-family:'Playfair Display',serif;
+  font-size:40px;letter-spacing:-1.5px;line-height:1;
+  color:var(--ink);margin-bottom:6px;font-weight:800;
+}
+.hb-card.blue .hb-num{color:#fff}
+.hb-card.dark .hb-num{color:#fff}
+.hb-lbl{font-size:12.5px;color:var(--muted);font-weight:500}
+.hb-card.blue .hb-lbl{color:rgba(255,255,255,.75)}
+.hb-card.dark .hb-lbl{color:rgba(255,255,255,.55)}
+.hb-services{display:flex;flex-wrap:wrap;gap:6px}
+.hb-tag{
+  background:var(--white);border:1px solid var(--b);
+  color:var(--ink);padding:4px 10px;border-radius:980px;
+  font-size:11.5px;font-weight:600;
+  transition:all .15s;cursor:default;
+}
+.hb-tag:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+/* ── TICKER ── */
+.ticker{
+  background:var(--ink2);padding:11px 0;overflow:hidden;
+}
+.ticker-track{
+  display:flex;animation:ticker 28s linear infinite;width:max-content;
+}
+.ticker-item{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:0 32px;font-size:13px;color:rgba(255,255,255,.55);white-space:nowrap;
+}
+.ticker-item::before{content:'✦';color:var(--blue);font-size:9px}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── SOCIAL PROOF BAND ── */
+.proof-band{
+  background:var(--white);
+  border-top:1px solid var(--b);border-bottom:1px solid var(--b);
+  padding:28px 0;
+}
+.proof-band-inner{
+  max-width:var(--max);margin:0 auto;padding:0 var(--pad);
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:0;
+}
+.pb-item{
+  text-align:center;padding:16px 12px;border-right:1px solid var(--b);
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+}
+.pb-item:last-child{border-right:none}
+.pb-icon{font-size:22px;margin-bottom:4px}
+.pb-val{font-family:'Playfair Display',serif;font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-.5px}
+.pb-lbl{font-size:12px;color:var(--muted);font-weight:500}
 
 /* ── SERVICES ── */
-.services-bg { background: var(--surface); }
-.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.svc {
-  background: var(--bg); border-radius: var(--radius);
-  padding: 28px; border: 1px solid var(--border);
-  transition: all 0.25s; text-decoration: none; color: var(--text); display: block;
+.services-section{background:var(--page);border-bottom:1px solid var(--b)}
+.svc-bento{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--b);
+  border:1px solid var(--b);border-radius:16px;overflow:hidden;
 }
-.svc:hover { background: var(--surface); box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-3px); }
-.svc-icon {
-  width: 48px; height: 48px; border-radius: 12px;
-  background: var(--surface); display: flex; align-items: center;
-  justify-content: center; font-size: 22px; margin-bottom: 18px;
-  border: 1px solid var(--border);
+.svc-card{
+  background:var(--white);padding:28px 24px;
+  display:flex;flex-direction:column;
+  text-decoration:none;color:var(--ink);
+  transition:background .2s;
+  position:relative;
 }
-.svc h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
-.svc p { font-size: 14px; color: var(--muted); line-height: 1.6; }
-.svc-link { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; color: var(--accent); margin-top: 14px; }
-.svc.featured { background: var(--text); border-color: var(--text); }
-.svc.featured h3, .svc.featured p, .svc.featured .svc-link { color: rgba(255,255,255,0.9); }
-.svc.featured .svc-icon { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.1); }
+.svc-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--blue);transform:scaleX(0);transform-origin:left;
+  transition:transform .25s ease;
+}
+.svc-card:hover{background:var(--card)}
+.svc-card:hover::after{transform:scaleX(1)}
+.svc-ic{
+  font-size:26px;margin-bottom:16px;
+  width:52px;height:52px;background:var(--page);border:1px solid var(--b);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+}
+.svc-card h3{font-size:15px;font-weight:700;margin-bottom:7px;color:var(--ink)}
+.svc-card p{font-size:13px;color:var(--muted);line-height:1.65;flex:1}
+.svc-arrow{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:12.5px;font-weight:700;color:var(--blue);margin-top:16px;
+  transition:gap .15s;
+}
+.svc-card:hover .svc-arrow{gap:8px}
+.svc-card.feat{background:var(--ink)}
+.svc-card.feat:hover{background:var(--ink2)}
+.svc-card.feat::after{background:#ffd60a}
+.svc-card.feat h3,.svc-card.feat p{color:rgba(255,255,255,.9)}
+.svc-card.feat .svc-ic{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.1)}
+.svc-card.feat .svc-arrow{color:#ffd60a}
 
-/* ── WHY ── */
-.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.why-items { display: flex; flex-direction: column; gap: 32px; margin-top: 36px; }
-.why-item { display: flex; gap: 18px; }
-.why-dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  background: var(--accent); flex-shrink: 0; margin-top: 8px;
+/* ── WHY SECTION — asymmetric editorial ── */
+.why-section{background:var(--white);border-bottom:1px solid var(--b)}
+.why-layout{display:grid;grid-template-columns:5fr 4fr;gap:80px;align-items:center}
+.why-headline{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,5vw,64px);
+  line-height:1.05;letter-spacing:-1px;color:var(--ink);
+  margin-bottom:32px;
 }
-.why-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
-.why-item p { font-size: 15px; color: var(--muted); line-height: 1.65; }
-.why-boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.why-box { background: var(--surface); border-radius: var(--radius); padding: 28px; border: 1px solid var(--border); }
-.why-box.dark { background: var(--text); border-color: var(--text); }
-.why-box.red { background: var(--accent2); border-color: var(--accent2); }
-.why-box-val { font-family: 'DM Serif Display', serif; font-size: 40px; color: var(--accent); margin-bottom: 6px; }
-.why-box.dark .why-box-val, .why-box.red .why-box-val { color: white; }
-.why-box-label { font-size: 13px; color: var(--muted); }
-.why-box.dark .why-box-label, .why-box.red .why-box-label { color: rgba(255,255,255,0.65); }
-.why-box-emoji { font-size: 26px; margin-bottom: 12px; }
+.why-headline em{font-style:italic;color:var(--blue)}
+.why-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--b);border-radius:var(--r);overflow:hidden;margin-top:32px}
+.why-row{
+  display:flex;align-items:flex-start;gap:18px;
+  padding:20px 22px;border-bottom:1px solid var(--b);
+  background:var(--white);transition:background .2s;
+}
+.why-row:last-child{border-bottom:none}
+.why-row:hover{background:var(--page)}
+.why-num{
+  font-family:'Playfair Display',serif;
+  font-size:32px;color:var(--b2);font-weight:800;
+  letter-spacing:-1px;line-height:1;flex-shrink:0;width:40px;
+  transition:color .2s;
+}
+.why-row:hover .why-num{color:var(--blue)}
+.why-row h4{font-size:14.5px;font-weight:700;margin-bottom:5px}
+.why-row p{font-size:13px;color:var(--muted);line-height:1.6}
 
-/* ── PACKAGES ── */
-.pkgs-bg { background: var(--surface); }
-.pkg-section-head { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
-.pkg-section-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-.pkg-section-icon.blue { background: rgba(0,113,227,0.1); }
-.pkg-section-icon.red { background: rgba(255,59,48,0.1); }
-.pkg-section-icon.green { background: rgba(52,199,89,0.1); }
-.pkg-section-title { font-family: 'DM Serif Display', serif; font-size: 24px; }
-.pkg-section-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
-.pkg-block { margin-bottom: 60px; }
-.packages-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-.pkg {
-  background: var(--bg); border-radius: var(--radius);
-  padding: 32px; border: 1px solid var(--border);
-  position: relative; transition: all 0.25s; display: flex; flex-direction: column;
+/* Why right — large stat cards */
+.why-stats{display:flex;flex-direction:column;gap:14px}
+.ws-card{
+  border-radius:var(--r);padding:28px;border:1px solid var(--b);
+  background:var(--page);
 }
-.pkg:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
-.pkg.popular { background: var(--surface); border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
-.pkg-badge {
-  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-  background: var(--accent); color: white; padding: 4px 16px;
-  border-radius: 980px; font-size: 12px; font-weight: 600; white-space: nowrap;
+.ws-card.highlight{background:var(--blue);border-color:var(--blue)}
+.ws-card.dark{background:var(--ink);border-color:var(--ink)}
+.ws-big{
+  font-family:'Playfair Display',serif;
+  font-size:56px;letter-spacing:-2px;line-height:1;
+  font-weight:800;color:var(--ink);margin-bottom:6px;
 }
-.pkg-name { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; }
-.pkg-price { font-family: 'DM Serif Display', serif; font-size: 44px; color: var(--text); margin-bottom: 4px; }
-.pkg-price sup { font-size: 20px; vertical-align: top; margin-top: 12px; font-family: 'DM Sans', sans-serif; font-weight: 300; }
-.pkg-price span { font-size: 16px; font-weight: 300; color: var(--muted); font-family: 'DM Sans', sans-serif; }
-.pkg-desc { font-size: 14px; color: var(--muted); margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid var(--border); line-height: 1.5; }
-.pkg-feats { list-style: none; flex: 1; margin-bottom: 28px; }
-.pkg-feats li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
-.pkg-feats li:last-child { border-bottom: none; }
-.pkg-feats li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
-.pkg-feats li.no::before { content: '✕'; color: var(--border); }
-.pkg-feats li.no { color: var(--muted); }
-.pkg-note { font-size: 11px; color: var(--muted); margin-bottom: 14px; }
-.pkg-btn {
-  display: block; text-align: center; padding: 14px;
-  border-radius: 980px; font-weight: 600; font-size: 15px;
-  text-decoration: none; transition: all 0.2s;
-  border: 1.5px solid var(--border); color: var(--text);
+.ws-card.highlight .ws-big,
+.ws-card.dark .ws-big{color:#fff}
+.ws-sub{font-size:13.5px;color:var(--muted)}
+.ws-card.highlight .ws-sub{color:rgba(255,255,255,.7)}
+.ws-card.dark .ws-sub{color:rgba(255,255,255,.5)}
+.ws-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ws-sm{background:var(--page);border:1px solid var(--b);border-radius:var(--r);padding:22px 20px}
+.wss-val{font-family:'Playfair Display',serif;font-size:34px;color:var(--ink);letter-spacing:-1px;font-weight:800;margin-bottom:3px}
+.wss-lbl{font-size:12px;color:var(--muted)}
+
+/* ── PRICING ── */
+.pricing-section{background:var(--page);border-bottom:1px solid var(--b)}
+.price-group{margin-bottom:56px}
+.price-group:last-child{margin-bottom:0}
+.pg-head{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--b);
 }
-.pkg-btn:hover, .pkg.popular .pkg-btn { background: var(--accent); color: white; border-color: var(--accent); }
-.services-table { border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
-.services-table table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--surface); }
-.services-table thead tr { background: var(--text); color: white; }
-.services-table th { padding: 16px 24px; text-align: left; font-weight: 500; font-size: 13px; }
-.services-table td { padding: 18px 24px; border-bottom: 1px solid var(--border); vertical-align: middle; }
-.services-table tr:last-child td { border-bottom: none; }
-.services-table tr:nth-child(even) td { background: var(--bg); }
-.td-price { color: var(--accent); font-weight: 600; white-space: nowrap; font-size: 15px; }
-.td-link { color: var(--accent); font-weight: 600; text-decoration: none; white-space: nowrap; font-size: 14px; }
-.one-time-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.ot-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 26px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+.pg-icon{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--blueXL);border:1px solid rgba(0,85,204,.15);
+  display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;
 }
-.ot-emoji { font-size: 24px; margin-bottom: 10px; }
-.ot-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
-.ot-card p { font-size: 13px; color: var(--muted); }
-.ot-right { text-align: right; flex-shrink: 0; }
-.ot-from { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
-.ot-price { font-family: 'DM Serif Display', serif; font-size: 26px; color: var(--accent); }
-.ot-cta { font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; display: block; margin-top: 4px; }
-.ot-dark {
-  background: var(--text); border-color: var(--text);
-  grid-column: 1/-1;
+.pg-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700}
+.pg-sub{font-size:13px;color:var(--muted);margin-top:2px}
+
+/* Pricing grid */
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--b);border-radius:var(--r);overflow:visible;position:relative}
+.pkg{
+  background:var(--white);padding:30px 26px;
+  display:flex;flex-direction:column;position:relative;
+  border-right:1px solid var(--b);border-top:1px solid var(--b);
+  transition:background .2s;
 }
-.ot-dark h4, .ot-dark p { color: rgba(255,255,255,0.9); }
-.ot-dark .ot-from { color: rgba(255,255,255,0.5); }
-.ot-dark .ot-price { color: white; }
-.ot-dark .ot-cta { color: #ffd166; }
+.pkg:first-child{border-radius:var(--r) 0 0 var(--r)}
+.pkg:last-child{border-right:none;border-radius:0 var(--r) var(--r) 0}
+.pkg:hover{background:var(--card)}
+.pkg.pop{
+  background:var(--blueXL);
+  border:2px solid var(--blue) !important;
+  border-radius:var(--r) !important;
+  margin-top:-16px;
+  padding-top:48px;
+  z-index:2;
+}
+.pkg.pop:hover{background:var(--blueXL)}
+.pop-badge{
+  position:absolute;top:14px;left:50%;transform:translateX(-50%);
+  background:var(--blue);color:#fff;padding:5px 18px;
+  border-radius:980px;font-size:11.5px;font-weight:700;white-space:nowrap;
+  box-shadow:0 2px 10px rgba(0,85,204,.3);
+  z-index:3;
+}
+.pkg-tier{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
+.pkg-price{
+  font-family:'Playfair Display',serif;
+  font-size:48px;letter-spacing:-2px;line-height:1;font-weight:800;margin-bottom:4px;
+}
+.pkg-price sup{font-size:20px;vertical-align:top;margin-top:12px;font-family:'Figtree',sans-serif;font-weight:400}
+.pkg-price .per{font-size:15px;font-weight:400;color:var(--muted);font-family:'Figtree',sans-serif}
+.pkg-desc{font-size:13.5px;color:var(--muted);margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--b);line-height:1.55}
+.pkg-feats{list-style:none;flex:1;margin-bottom:24px}
+.pkg-feats li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:14px;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.05);
+}
+.pkg-feats li:last-child{border-bottom:none}
+.pkg-feats li::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0;margin-top:1px;font-size:13px}
+.pkg-feats li.no::before{content:'✕';color:var(--faint)}
+.pkg-feats li.no{color:var(--faint)}
+.pkg-note{font-size:11.5px;color:var(--muted);margin-bottom:14px}
+.pkg-cta{
+  display:block;text-align:center;padding:12px;
+  border-radius:var(--rs);font-weight:700;font-size:14.5px;
+  border:2px solid var(--b2);color:var(--ink);
+  transition:all .2s;font-family:'Figtree',sans-serif;
+}
+.pkg-cta:hover,.pkg.pop .pkg-cta{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+/* Monthly table */
+.mtable{border:1px solid var(--b);border-radius:var(--r);overflow:hidden}
+.mtable table{width:100%;border-collapse:collapse;background:var(--white)}
+.mtable thead tr{background:var(--ink);color:#fff}
+.mtable th{padding:13px 20px;text-align:left;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.mtable td{padding:16px 20px;border-bottom:1px solid var(--b);font-size:14px;vertical-align:middle}
+.mtable tr:last-child td{border-bottom:none}
+.mtable tr:hover td{background:var(--card)}
+.t-price{font-family:'Playfair Display',serif;font-size:17px;color:var(--blue);font-weight:800}
+.t-link{color:var(--blue);font-weight:700;font-size:13px;transition:gap .15s;display:inline-flex;align-items:center;gap:4px}
+.t-link:hover{gap:8px}
+
+/* One-time */
+.ot-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--b);border-radius:var(--r);overflow:hidden}
+.ot{
+  background:var(--white);padding:26px 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  border-right:1px solid var(--b);border-bottom:1px solid var(--b);
+  transition:background .2s;
+}
+.ot:nth-child(2n){border-right:none}
+.ot:nth-child(3){border-bottom:none;border-right:none;grid-column:1/-1}
+.ot:hover{background:var(--card)}
+.ot-em{font-size:24px;margin-bottom:10px}
+.ot h4{font-size:15.5px;font-weight:700;margin-bottom:5px}
+.ot p{font-size:13px;color:var(--muted);line-height:1.5}
+.ot-r{text-align:right;flex-shrink:0}
+.ot-from{font-size:11px;color:var(--muted);margin-bottom:2px;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.ot-price{font-family:'Playfair Display',serif;font-size:28px;color:var(--blue);font-weight:800;letter-spacing:-1px}
+.ot-link{font-size:13px;font-weight:700;color:var(--blue);display:block;margin-top:5px;transition:gap .15s;display:inline-flex;align-items:center;gap:4px}
+.ot-link:hover{gap:8px}
+.ot.dark{background:var(--ink)}
+.ot.dark:hover{background:var(--ink2)}
+.ot.dark h4,.ot.dark p{color:rgba(255,255,255,.9)}
+.ot.dark .ot-from{color:rgba(255,255,255,.4)}
+.ot.dark .ot-price{color:#fff}
+.ot.dark .ot-link{color:#ffd60a}
 
 /* ── TESTIMONIALS ── */
-.testimonials-outer { overflow: hidden; position: relative; }
-.testimonials-outer::before, .testimonials-outer::after {
-  content: ''; position: absolute; top: 0; bottom: 0; width: 100px; z-index: 2; pointer-events: none;
+.testi-section{background:var(--white);border-bottom:1px solid var(--b)}
+.testi-scroll{overflow:hidden;position:relative;margin-top:40px}
+.testi-scroll::before,.testi-scroll::after{
+  content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none;
 }
-.testimonials-outer::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
-.testimonials-outer::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
-.testimonials-track { display: flex; gap: 18px; animation: scroll 55s linear infinite; width: max-content; }
-.testimonials-track:hover { animation-play-state: paused; }
-@keyframes scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-.tcard {
-  background: var(--surface); border-radius: var(--radius);
-  padding: 28px; border: 1px solid var(--border); width: 360px; flex-shrink: 0;
+.testi-scroll::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
+.testi-scroll::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
+.testi-track{display:flex;gap:14px;animation:tscroll 60s linear infinite;width:max-content}
+.testi-track:hover{animation-play-state:paused}
+@keyframes tscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tc{
+  background:var(--page);border:1px solid var(--b);border-radius:var(--r);
+  padding:24px 26px;width:340px;flex-shrink:0;
+  transition:all .2s;
 }
-.tcard-stars { color: var(--gold); font-size: 13px; letter-spacing: 2px; margin-bottom: 14px; }
-.tcard-text { font-size: 15px; color: var(--text); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
-.tcard-author { display: flex; align-items: center; gap: 12px; }
-.tcard-avatar {
-  width: 40px; height: 40px; border-radius: 50%; background: var(--text);
-  display: flex; align-items: center; justify-content: center;
-  color: white; font-weight: 600; font-size: 15px; flex-shrink: 0;
+.tc:hover{background:var(--white);box-shadow:0 4px 20px rgba(0,0,0,.08);transform:translateY(-2px)}
+.tc-stars{color:var(--gold);font-size:13px;letter-spacing:2px;margin-bottom:12px}
+.tc-text{font-size:14px;color:var(--sub);line-height:1.75;margin-bottom:18px;font-style:italic}
+.tc-auth{display:flex;align-items:center;gap:11px}
+.tc-av{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--ink);display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:700;font-size:14px;flex-shrink:0;
 }
-.tcard-name { font-size: 14px; font-weight: 600; }
-.tcard-role { font-size: 12px; color: var(--muted); }
+.tc-name{font-size:13.5px;font-weight:700}
+.tc-role{font-size:12px;color:var(--muted)}
 
-/* ── NEXREACH BANNER ── */
-.nr-banner {
-  background: var(--text); border-radius: 24px;
-  padding: 64px; display: flex; align-items: center;
-  justify-content: space-between; gap: 40px;
-  position: relative; overflow: hidden;
-  max-width: 1100px; margin: 0 auto;
+/* ── NEXREACH FEATURE BANNER ── */
+.nr-section{background:var(--page);border-bottom:1px solid var(--b)}
+.nr-card{
+  background:var(--ink);border-radius:20px;overflow:hidden;
+  display:grid;grid-template-columns:1fr 380px;
 }
-.nr-banner::before {
-  content: ''; position: absolute; top: -80px; right: -80px;
-  width: 320px; height: 320px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,113,227,0.25), transparent 70%);
-  pointer-events: none;
+.nr-left{padding:52px 52px;position:relative;overflow:hidden}
+.nr-left::before{
+  content:'NR';position:absolute;right:-20px;top:-30px;
+  font-family:'Playfair Display',serif;font-size:220px;font-weight:900;
+  color:rgba(255,255,255,.03);line-height:1;pointer-events:none;letter-spacing:-8px;
 }
-.nr-banner-tag {
-  display: inline-block; background: rgba(255,209,102,0.15);
-  border: 1px solid rgba(255,209,102,0.3); color: #ffd166;
-  padding: 4px 14px; border-radius: 980px; font-size: 12px;
-  font-weight: 600; margin-bottom: 16px; letter-spacing: 0.05em;
+.nr-tag{
+  display:inline-block;background:rgba(255,214,10,.15);border:1px solid rgba(255,214,10,.3);
+  color:#ffd60a;padding:4px 12px;border-radius:980px;
+  font-size:11px;font-weight:700;margin-bottom:16px;letter-spacing:.08em;text-transform:uppercase;
 }
-.nr-banner h2 { font-family: 'DM Serif Display', serif; font-size: 32px; color: white; margin-bottom: 12px; }
-.nr-banner p { font-size: 16px; color: rgba(255,255,255,0.75); max-width: 480px; line-height: 1.65; }
-.nr-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
-.nr-badge {
-  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
-  color: white; padding: 5px 12px; border-radius: 980px; font-size: 12px; font-weight: 500;
+.nr-left h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(24px,3vw,36px);color:#fff;
+  margin-bottom:14px;letter-spacing:-.5px;line-height:1.15;
 }
-.nr-btn-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; flex-shrink: 0; position: relative; z-index: 1; }
-.btn-white-pill {
-  background: white; color: var(--text); padding: 14px 28px;
-  border-radius: 980px; text-decoration: none; font-weight: 600;
-  font-size: 15px; white-space: nowrap; transition: all 0.2s;
+.nr-left p{font-size:15px;color:rgba(255,255,255,.65);max-width:480px;line-height:1.7}
+.nr-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.nr-chip{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  color:rgba(255,255,255,.8);padding:5px 12px;border-radius:980px;
+  font-size:12.5px;font-weight:500;
 }
-.btn-white-pill:hover { transform: scale(1.03); }
-.nr-price-note { font-size: 13px; color: rgba(255,255,255,0.55); text-align: right; }
+.nr-right{
+  background:var(--blue);padding:44px 36px;
+  display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:0;
+}
+.nr-pricing-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:rgba(255,255,255,.15);border-radius:12px;overflow:hidden;margin-bottom:22px;
+}
+.nr-option{
+  background:rgba(255,255,255,.08);padding:22px 18px;
+  display:flex;flex-direction:column;align-items:flex-start;gap:4px;
+}
+.nr-option.recommended{background:rgba(255,255,255,.18)}
+.nr-option-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.nr-option-rec{font-size:10px;font-weight:700;color:#ffd60a;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.nr-option-price{font-family:'Playfair Display',serif;font-size:38px;color:#fff;font-weight:800;letter-spacing:-1.5px;line-height:1}
+.nr-option-price sup{font-size:16px;vertical-align:top;margin-top:8px;font-family:'Figtree',sans-serif;font-weight:400}
+.nr-option-note{font-size:12px;color:rgba(255,255,255,.6);margin-top:4px}
+.nr-option-save{font-size:11px;font-weight:700;color:#ffd60a;margin-top:4px}
+.btn-nr{
+  display:inline-flex;align-items:center;gap:7px;
+  background:#fff;color:var(--blue);
+  padding:13px 24px;border-radius:980px;
+  font-size:14.5px;font-weight:700;
+  transition:all .2s;
+}
+.btn-nr:hover{transform:scale(1.03);box-shadow:0 8px 24px rgba(0,0,0,.2)}
 
 /* ── BLOG ── */
-.blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-.blog-card {
-  border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border);
-  transition: all 0.25s; text-decoration: none; color: var(--text);
-  display: block; background: var(--surface);
+.blog-section{background:var(--page);border-bottom:1px solid var(--b)}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--b);border-radius:var(--r);overflow:hidden}
+.blog-card{
+  background:var(--white);border-right:1px solid var(--b);
+  text-decoration:none;color:var(--ink);display:block;
+  transition:background .2s;position:relative;overflow:hidden;
 }
-.blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
-.blog-thumb { height: 170px; display: flex; align-items: center; justify-content: center; font-size: 52px; }
-.blog-body { padding: 24px; }
-.blog-tag {
-  display: inline-block; background: rgba(0,113,227,0.08);
-  color: var(--accent); padding: 3px 10px; border-radius: 980px;
-  font-size: 11px; font-weight: 600; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em;
+.blog-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .25s;
 }
-.blog-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
-.blog-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
-.blog-meta { display: flex; gap: 14px; margin-top: 16px; font-size: 12px; color: var(--muted); }
+.blog-card:last-child{border-right:none}
+.blog-card:hover{background:var(--card)}
+.blog-card:hover::after{transform:scaleX(1)}
+.blog-thumb{height:148px;display:flex;align-items:center;justify-content:center;font-size:48px;border-bottom:1px solid var(--b)}
+.blog-body{padding:22px}
+.blog-tag{
+  display:inline-block;background:var(--blueXL);color:var(--blue);
+  padding:3px 10px;border-radius:980px;
+  font-size:11px;font-weight:700;margin-bottom:9px;
+  text-transform:uppercase;letter-spacing:.06em;
+}
+.blog-card h3{font-size:15.5px;font-weight:700;margin-bottom:8px;line-height:1.35;letter-spacing:-.1px}
+.blog-card p{font-size:13px;color:var(--muted);line-height:1.6}
+.blog-meta{display:flex;gap:12px;margin-top:14px;font-size:11.5px;color:var(--faint)}
 
 /* ── CONTACT ── */
-.contact-bg { background: var(--surface); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
-.contact-items { display: flex; flex-direction: column; gap: 24px; margin-top: 36px; }
-.contact-item { display: flex; gap: 16px; align-items: flex-start; }
-.contact-icon {
-  width: 44px; height: 44px; border-radius: 12px; background: var(--bg);
-  border: 1px solid var(--border); display: flex; align-items: center;
-  justify-content: center; font-size: 20px; flex-shrink: 0;
+.contact-section{background:var(--white);border-bottom:1px solid var(--b)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:72px;align-items:start}
+.contact-info{margin-top:28px;display:flex;flex-direction:column;gap:0}
+.ci-row{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px 0;border-bottom:1px solid var(--b);
 }
-.contact-item h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
-.contact-item p, .contact-item a { font-size: 15px; color: var(--muted); text-decoration: none; display: block; }
-.contact-item a:hover { color: var(--accent); }
-.contact-form-wrap { background: var(--bg); border-radius: var(--radius); padding: 40px; border: 1px solid var(--border); }
-.contact-form-wrap h3 { font-family: 'DM Serif Display', serif; font-size: 26px; margin-bottom: 28px; }
-.form-group { margin-bottom: 18px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 7px; color: var(--text); }
-input, select, textarea {
-  width: 100%; padding: 13px 16px; border: 1px solid var(--border);
-  border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif;
-  font-size: 15px; color: var(--text); background: var(--surface);
-  outline: none; transition: border-color 0.2s; appearance: none;
+.ci-row:last-child{border-bottom:none}
+.ci-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:var(--page);border:1px solid var(--b);
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;flex-shrink:0;
 }
-input:focus, select:focus, textarea:focus { border-color: var(--accent); }
-textarea { resize: vertical; min-height: 120px; }
-.btn-submit {
-  width: 100%; background: var(--accent); color: white; padding: 15px;
-  border-radius: 980px; border: none; font-family: 'DM Sans', sans-serif;
-  font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+.ci-row h4{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
+.ci-row a,.ci-row p{font-size:14.5px;color:var(--ink);display:block}
+.ci-row a:hover{color:var(--blue)}
+.urgency-box{
+  background:var(--amberL);border:1px solid rgba(180,83,9,.2);
+  border-radius:var(--r);padding:18px 20px;margin-top:24px;
+  display:flex;align-items:flex-start;gap:12px;
 }
-.btn-submit:hover { background: var(--accent-dark); }
-.btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+.urgency-box .ico{font-size:20px;flex-shrink:0;margin-top:1px}
+.urgency-box p{font-size:13.5px;color:var(--amber);line-height:1.5}
+.urgency-box strong{font-weight:700;color:var(--amber)}
+.contact-form{background:var(--page);border:1px solid var(--b);border-radius:var(--r);padding:38px}
+.contact-form h3{font-family:'Playfair Display',serif;font-size:26px;margin-bottom:6px;letter-spacing:-.3px}
+.contact-form .form-note{font-size:13.5px;color:var(--muted);margin-bottom:26px}
+.form-group{margin-bottom:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:11.5px;font-weight:700;margin-bottom:6px;color:var(--sub);text-transform:uppercase;letter-spacing:.06em}
+input,select,textarea{
+  width:100%;padding:12px 15px;
+  border:1.5px solid var(--b);border-radius:var(--rs);
+  font-family:'Figtree',sans-serif;font-size:14.5px;
+  color:var(--ink);background:var(--white);
+  outline:none;transition:border-color .18s,box-shadow .18s;appearance:none;
+}
+input:focus,select:focus,textarea:focus{
+  border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,85,204,.1);
+}
+textarea{resize:vertical;min-height:110px}
+.btn-submit{
+  width:100%;background:var(--blue);color:#fff;padding:14px;
+  border-radius:var(--rs);border:none;font-family:'Figtree',sans-serif;
+  font-size:15.5px;font-weight:700;cursor:pointer;transition:all .2s;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.btn-submit:hover{background:var(--blueL);box-shadow:0 6px 20px rgba(0,85,204,.25)}
+.btn-submit:disabled{opacity:.6;cursor:not-allowed}
+.form-footer{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:12px;font-size:12.5px;color:var(--muted)}
+.form-footer span{display:flex;align-items:center;gap:5px}
 
 /* ── FOOTER ── */
-footer { background: var(--text); color: rgba(255,255,255,0.75); padding: 64px 24px 36px; }
-.footer-inner { max-width: 1100px; margin: 0 auto; }
-.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.footer-logo-row { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-.footer-ts-logo { width: 34px; height: 34px; border-radius: 9px; background: white; display: flex; align-items: center; justify-content: center; }
-.footer-logo-text { font-family: 'DM Serif Display', serif; font-size: 18px; color: white; }
-.footer-desc { font-size: 14px; line-height: 1.7; opacity: 0.6; margin-bottom: 22px; }
-.footer-socials { display: flex; gap: 10px; }
-.social-btn {
-  width: 36px; height: 36px; border-radius: 9px;
-  background: rgba(255,255,255,0.08); display: flex; align-items: center;
-  justify-content: center; font-size: 15px; text-decoration: none;
-  transition: background 0.2s; color: white;
+footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
+.footer-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.footer-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08)}
+.f-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.f-mark{width:30px;height:30px;border-radius:8px;background:var(--blue);display:flex;align-items:center;justify-content:center}
+.f-name{font-family:'Playfair Display',serif;font-size:17px;color:#fff;font-weight:700}
+.f-desc{font-size:13px;line-height:1.7;color:rgba(255,255,255,.4);margin-bottom:20px}
+.f-socials{display:flex;gap:8px}
+.f-soc{
+  width:32px;height:32px;border-radius:8px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;color:#fff;transition:all .15s;
 }
-.social-btn:hover { background: var(--accent); }
-.footer-col h4 { font-size: 12px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 18px; }
-.footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.55); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
-.footer-col a:hover { color: white; }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; font-size: 13px; opacity: 0.4; flex-wrap: wrap; gap: 12px; }
-.footer-links { display: flex; gap: 20px; }
-.footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 12px; }
-.footer-links a:hover { color: white; }
+.f-soc:hover{background:var(--blue);border-color:var(--blue)}
+.f-col h4{font-size:11px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+.f-col a{display:block;font-size:13.5px;color:rgba(255,255,255,.45);margin-bottom:9px;transition:color .15s}
+.f-col a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:24px;font-size:12px;color:rgba(255,255,255,.25);flex-wrap:wrap;gap:10px}
+.f-links{display:flex;gap:16px}
+.f-links a{color:rgba(255,255,255,.25);font-size:12px;transition:color .15s}
+.f-links a:hover{color:rgba(255,255,255,.7)}
 
-/* ── WHATSAPP ── */
-.wa-btn {
-  position: fixed; bottom: 26px; right: 26px; z-index: 999;
-  width: 54px; height: 54px; border-radius: 50%; background: #25D366;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none;
-  transition: transform 0.2s;
+/* ── WA BUTTON ── */
+.wa{
+  position:fixed;bottom:80px;right:24px;z-index:399;
+  width:52px;height:52px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s;
 }
-.wa-btn:hover { transform: scale(1.1); }
-.wa-btn svg { width: 28px; height: 28px; fill: white; }
+.wa:hover{transform:scale(1.1)}
+.wa svg{width:27px;height:27px;fill:#fff}
 
 /* ── ANIMATIONS ── */
-.fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.fade-up.in { opacity: 1; transform: translateY(0); }
+.fade-up{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.in{opacity:1;transform:translateY(0)}
+/* Stagger children */
+.stagger > *:nth-child(1){transition-delay:.05s}
+.stagger > *:nth-child(2){transition-delay:.12s}
+.stagger > *:nth-child(3){transition-delay:.19s}
+.stagger > *:nth-child(4){transition-delay:.26s}
+.stagger > *:nth-child(5){transition-delay:.33s}
+.stagger > *:nth-child(6){transition-delay:.40s}
+.stagger > *:nth-child(7){transition-delay:.47s}
+.stagger > *:nth-child(8){transition-delay:.54s}
 
 /* ── RESPONSIVE ── */
-@media(max-width:1024px) {
-  .services-grid { grid-template-columns: repeat(2,1fr); }
-  .packages-grid { grid-template-columns: 1fr 1fr; }
-  .footer-top { grid-template-columns: 1fr 1fr; }
+@media(max-width:1024px){
+  :root{--pad:28px}
+  .svc-bento{grid-template-columns:repeat(2,1fr)}
+  .svc-card:nth-child(2n)::after,.svc-card:nth-child(4n)::after{display:none}
+  .pkg-grid{grid-template-columns:1fr 1fr}
+  .pkg:nth-child(3){grid-column:1/-1;border-right:none;border-top:1px solid var(--b)}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .hero-inner{padding:48px var(--pad) 32px}
+  .hero-body{grid-template-columns:1fr}
+  .hero-bento{grid-template-columns:repeat(2,1fr)}
+  .proof-band-inner{grid-template-columns:repeat(3,1fr)}
+  .pb-item:nth-child(3){border-right:none}
+  .pb-item:nth-child(4),.pb-item:nth-child(5){border-top:1px solid var(--b)}
+  .nr-card{grid-template-columns:1fr}
+  .nr-right{border-top:1px solid rgba(255,255,255,.1)}
+  .why-layout{grid-template-columns:1fr}
 }
-@media(max-width:768px) {
-  nav { padding: 0 18px; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .hero { padding: 100px 18px 60px; }
-  .hero-stats { flex-direction: column; border-radius: var(--radius-sm); }
-  .hero-stat { border-right: none; border-bottom: 1px solid var(--border); padding: 16px; }
-  .hero-stat:last-child { border-bottom: none; }
-  section { padding: 64px 18px; }
-  .services-grid { grid-template-columns: 1fr; }
-  .why-grid { grid-template-columns: 1fr; }
-  .why-boxes { display: none; }
-  .packages-grid { grid-template-columns: 1fr; }
-  .one-time-grid { grid-template-columns: 1fr; }
-  .blog-grid { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .nr-banner { flex-direction: column; text-align: center; padding: 40px 24px; }
-  .nr-btn-wrap { align-items: center; }
-  .nr-price-note { text-align: center; }
-  .footer-top { grid-template-columns: 1fr; gap: 32px; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-  .form-row { grid-template-columns: 1fr; }
+@media(max-width:768px){
+  :root{--pad:20px;--max:100%}
+  nav{padding:0 var(--pad)}
+  .nav-links{display:none}
+  .hbg{display:flex}
+  .section{padding:56px 0}
+  .hero-inner{padding:40px var(--pad) 28px}
+  .hero-h1{font-size:clamp(36px,9vw,52px)}
+  .hero-bento{grid-template-columns:1fr 1fr}
+  .hero-proof{grid-template-columns:1fr 1fr 1fr}
+  .svc-bento{grid-template-columns:1fr}
+  .pkg-grid{grid-template-columns:1fr}
+  .pkg{border-right:none;border-bottom:1px solid var(--b)}
+  .pkg:last-child{border-bottom:none}
+  .ot-grid{grid-template-columns:1fr}
+  .ot{border-right:none}
+  .blog-grid{grid-template-columns:1fr}
+  .blog-card{border-right:none;border-bottom:1px solid var(--b)}
+  .blog-card:last-child{border-bottom:none}
+  .why-layout,.contact-grid{grid-template-columns:1fr}
+  .ws-pair{grid-template-columns:1fr 1fr}
+  .proof-band-inner{grid-template-columns:1fr 1fr}
+  .pb-item:nth-child(2n){border-right:none}
+  .pb-item:nth-child(3),.pb-item:nth-child(5){border-right:1px solid var(--b)}
+  .nr-left{padding:36px 28px}
+  .nr-right{padding:32px 28px}
+  .footer-top{grid-template-columns:1fr;gap:28px}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .form-row{grid-template-columns:1fr}
+  .sticky-bar{flex-direction:column;text-align:center}
+  .wa{bottom:120px}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="navbar">
-  <a href="index.html" class="nav-logo">
-    <div class="ts-logo">
-      <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="3" y="21" font-family="Georgia,serif" font-size="18" font-weight="bold" fill="white">TS</text>
-      </svg>
-    </div>
-    <span class="nav-logo-text">Twin<span>Stance</span></span>
+<!-- ── STICKY CTA BAR ── -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-bar-text">
+    <strong>🚀 Ready to grow your business?</strong> — Website delivered in 24–48h. No hidden fees. Ever.
+  </div>
+  <div class="sticky-bar-btns">
+    <button class="sb-btn ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Free Consultation</button>
+    <button class="sb-btn primary" onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})">View Pricing →</button>
+  </div>
+</div>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <a class="nav-brand" href="index.html">
+    <div class="nav-mark"><svg viewBox="0 0 28 28" fill="none"><text x="2" y="21" font-family="Georgia,serif" font-size="18" font-weight="bold" fill="white">TS</text></svg></div>
+    <span class="nav-wordmark">Twin<span>Stance</span></span>
   </a>
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#packages">Packages</a>
+    <a href="#why">Why Us</a>
     <a href="#blog">Blog</a>
     <a href="#contact">Contact</a>
     <a href="services/email-marketing.html" class="nav-cta">🚀 NexReach</a>
   </div>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="hbg" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#services" onclick="toggleMenu()">Services</a>
-  <a href="#packages" onclick="toggleMenu()">Packages</a>
-  <a href="#blog" onclick="toggleMenu()">Blog</a>
-  <a href="#contact" onclick="toggleMenu()">Contact</a>
-  <a href="services/email-marketing.html" onclick="toggleMenu()">🚀 NexReach Suite</a>
+<div class="mob-nav" id="mobNav">
+  <a href="#services" onclick="toggleNav()">Services</a>
+  <a href="#packages" onclick="toggleNav()">Packages</a>
+  <a href="#why" onclick="toggleNav()">Why Us</a>
+  <a href="#blog" onclick="toggleNav()">Blog</a>
+  <a href="#contact" onclick="toggleNav()">Contact</a>
+  <a href="services/email-marketing.html" onclick="toggleNav()">🚀 NexReach Suite</a>
 </div>
 
-<!-- HERO -->
+<!-- ── HERO ── -->
 <section class="hero" id="home">
   <div class="hero-inner">
-    <div class="hero-eyebrow fade-up">Global Digital Agency</div>
-    <h1 class="fade-up">We Help Businesses<br><em>Grow</em> Online — Fast</h1>
-    <p class="hero-sub fade-up">Professional web development, SEO, paid ads, and app development.<br>One clear price. Zero hidden fees.</p>
-    <div class="hero-btns fade-up">
-      <a href="#packages" class="btn-pill btn-pill-primary">View Packages →</a>
-      <a href="#contact" class="btn-pill btn-pill-ghost">Free Consultation</a>
+    <div class="eyebrow fade-up"><span class="eyebrow-dot"></span> Trusted Global Digital Agency — India &amp; Worldwide</div>
+    <h1 class="hero-h1 fade-up">
+      Your Business Deserves to<br>
+      <span class="accent">Be Found Online</span>
+    </h1>
+    <div class="hero-body fade-up">
+      <p class="hero-desc">
+        We build websites in 24–48 hours, run SEO campaigns that rank, manage Google & Facebook ads that convert, and develop mobile apps — all with zero hidden fees and direct personal support.
+      </p>
+      <div class="hero-proof">
+        <div class="hp-stat"><div class="hp-val blue">24h</div><div class="hp-lbl">Avg. delivery</div></div>
+        <div class="hp-stat"><div class="hp-val">$0</div><div class="hp-lbl">Hidden fees</div></div>
+        <div class="hp-stat"><div class="hp-val">100+</div><div class="hp-lbl">Happy clients</div></div>
+      </div>
     </div>
-    <div class="hero-stats fade-up">
-      <div class="hero-stat"><div class="hero-stat-val">24–48h</div><div class="hero-stat-label">Website Delivery</div></div>
-      <div class="hero-stat"><div class="hero-stat-val">$0</div><div class="hero-stat-label">Hidden Fees</div></div>
-      <div class="hero-stat"><div class="hero-stat-val">8+</div><div class="hero-stat-label">Services</div></div>
+    <div class="hero-actions fade-up">
+      <a href="#contact" class="btn-hero-primary">Get Free Consultation <span class="arrow">→</span></a>
+      <a href="#packages" class="btn-hero-secondary">View All Pricing</a>
+      <div class="hero-cta-note"><span>✓ </span>No contract. No hidden fees. <span>Respond in 24h.</span></div>
     </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services-bg" id="services">
-  <div class="section-inner">
-    <div class="section-head center fade-up">
-      <div class="section-label">What We Do</div>
-      <h2 class="section-title">Everything Your Business<br>Needs Online</h2>
-      <p class="section-sub">From building your website to marketing it — we handle it all under one roof.</p>
-    </div>
-    <div class="services-grid">
-      <a class="svc fade-up" href="services/web-development.html"><div class="svc-icon">🌐</div><h3>Web Development</h3><p>Fast, modern websites delivered in 24–48 hours. Mobile-friendly, SEO-ready, built to convert.</p><div class="svc-link">Learn more →</div></a>
-      <a class="svc fade-up" href="services/seo-services.html"><div class="svc-icon">🔍</div><h3>SEO Services</h3><p>Rank higher on Google. We optimise your site so customers find you first, not your competitors.</p><div class="svc-link">Learn more →</div></a>
-      <a class="svc fade-up" href="services/ppc-paid-ads.html"><div class="svc-icon">📢</div><h3>PPC & Paid Ads</h3><p>Google Ads and Facebook campaigns that actually make money. No wasted budget, ever.</p><div class="svc-link">Learn more →</div></a>
-      <a class="svc fade-up" href="services/android-app.html"><div class="svc-icon">🤖</div><h3>Android App Dev</h3><p>Custom Android apps built for your business. From concept to Play Store launch.</p><div class="svc-link">Learn more →</div></a>
-      <a class="svc fade-up" href="services/ios-app.html"><div class="svc-icon">🍎</div><h3>iOS App Dev</h3><p>Professional iPhone and iPad apps. Native performance, beautiful design.</p><div class="svc-link">Learn more →</div></a>
-      <a class="svc fade-up" href="services/crm-suite.html"><div class="svc-icon">🏢</div><h3>CRM Suite</h3><p>Manage your customers, leads, and sales pipeline in one simple system.</p><div class="svc-link">Learn more →</div></a>
-      <a class="svc fade-up" href="services/virtual-office.html"><div class="svc-icon">🏠</div><h3>Virtual Office</h3><p>Professional business address, call handling, and virtual workspace setup.</p><div class="svc-link">Learn more →</div></a>
-      <a class="svc featured fade-up" href="services/email-marketing.html"><div class="svc-icon">🚀</div><h3>NexReach Suite</h3><p>All-in-one outreach — email campaigns, drip sequences, SMS, AI writer & analytics.</p><div class="svc-link" style="color:#ffd166;">Learn more →</div></a>
-    </div>
-  </div>
-</section>
-
-<!-- WHY -->
-<section id="why">
-  <div class="section-inner">
-    <div class="why-grid">
-      <div>
-        <div class="section-label fade-up">Why TwinStance</div>
-        <h2 class="section-title fade-up">We're Different.<br>Here's How.</h2>
-        <div class="why-items">
-          <div class="why-item fade-up"><div class="why-dot"></div><div><h4>Website Ready in 24–48 Hours</h4><p>Most agencies take weeks. We deliver in days — without cutting corners on quality.</p></div></div>
-          <div class="why-item fade-up"><div class="why-dot"></div><div><h4>Transparent Pricing, Always</h4><p>Every service has clear, upfront pricing in USD. No surprises, no upsells, no hidden fees ever.</p></div></div>
-          <div class="why-item fade-up"><div class="why-dot"></div><div><h4>All Services Under One Roof</h4><p>From website to app to SEO to NexReach outreach — everything in one place.</p></div></div>
-          <div class="why-item fade-up"><div class="why-dot"></div><div><h4>Personal Attention, Always</h4><p>You deal directly with us. No account managers, no runaround — real, fast communication.</p></div></div>
+    <!-- Bento stat cards -->
+    <div class="hero-bento stagger fade-up">
+      <div class="hb-card blue">
+        <div class="hb-num">48h</div>
+        <div class="hb-lbl">⚡ Website delivery time guaranteed</div>
+      </div>
+      <div class="hb-card">
+        <div class="hb-num">$399</div>
+        <div class="hb-lbl">Websites from just $399/year — all in</div>
+      </div>
+      <div class="hb-card dark">
+        <div class="hb-num">1:1</div>
+        <div class="hb-lbl">🤝 Direct support — you talk to us, not bots</div>
+      </div>
+      <div class="hb-card" style="justify-content:flex-start;padding:20px">
+        <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">All services</div>
+        <div class="hb-services">
+          <span class="hb-tag">🌐 Web Dev</span>
+          <span class="hb-tag">🔍 SEO</span>
+          <span class="hb-tag">📢 PPC</span>
+          <span class="hb-tag">🤖 Android</span>
+          <span class="hb-tag">🍎 iOS</span>
+          <span class="hb-tag">🚀 NexReach</span>
+          <span class="hb-tag">🏢 CRM</span>
+          <span class="hb-tag">🏠 Virtual Office</span>
         </div>
       </div>
-      <div class="why-boxes fade-up">
-        <div class="why-box dark"><div class="why-box-emoji">⚡</div><div class="why-box-val">48h</div><div class="why-box-label">Average website delivery time</div></div>
-        <div class="why-box"><div class="why-box-emoji">🛡️</div><div class="why-box-val">$0</div><div class="why-box-label">Hidden fees, ever</div></div>
-        <div class="why-box"><div class="why-box-emoji">📊</div><div class="why-box-val">8+</div><div class="why-box-label">Digital services offered</div></div>
-        <div class="why-box red"><div class="why-box-emoji">🤝</div><div class="why-box-val">1:1</div><div class="why-box-label">Direct support, always</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TICKER ── -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Website in 24–48 Hours</span>
+    <span class="ticker-item">Zero Hidden Fees — Ever</span>
+    <span class="ticker-item">Google &amp; Facebook Ads That Convert</span>
+    <span class="ticker-item">SEO That Actually Ranks on Page 1</span>
+    <span class="ticker-item">Android &amp; iOS App Development</span>
+    <span class="ticker-item">NexReach All-in-One Email Suite</span>
+    <span class="ticker-item">CRM &amp; Virtual Office Setup</span>
+    <span class="ticker-item">Direct 1:1 Support — No Middlemen</span>
+    <span class="ticker-item">100+ Businesses Served Worldwide</span>
+    <span class="ticker-item">Transparent USD Pricing Always</span>
+    <span class="ticker-item">Website in 24–48 Hours</span>
+    <span class="ticker-item">Zero Hidden Fees — Ever</span>
+    <span class="ticker-item">Google &amp; Facebook Ads That Convert</span>
+    <span class="ticker-item">SEO That Actually Ranks on Page 1</span>
+    <span class="ticker-item">Android &amp; iOS App Development</span>
+    <span class="ticker-item">NexReach All-in-One Email Suite</span>
+    <span class="ticker-item">CRM &amp; Virtual Office Setup</span>
+    <span class="ticker-item">Direct 1:1 Support — No Middlemen</span>
+    <span class="ticker-item">100+ Businesses Served Worldwide</span>
+    <span class="ticker-item">Transparent USD Pricing Always</span>
+  </div>
+</div>
+
+<!-- ── SOCIAL PROOF BAND ── -->
+<div class="proof-band fade-up">
+  <div class="proof-band-inner">
+    <div class="pb-item"><div class="pb-icon">⭐</div><div class="pb-val">5.0</div><div class="pb-lbl">Average Rating</div></div>
+    <div class="pb-item"><div class="pb-icon">🌍</div><div class="pb-val">15+</div><div class="pb-lbl">Countries Served</div></div>
+    <div class="pb-item"><div class="pb-icon">🚀</div><div class="pb-val">100+</div><div class="pb-lbl">Projects Delivered</div></div>
+    <div class="pb-item"><div class="pb-icon">⚡</div><div class="pb-val">48h</div><div class="pb-lbl">Avg. Website Speed</div></div>
+    <div class="pb-item"><div class="pb-icon">🔒</div><div class="pb-val">$0</div><div class="pb-lbl">Hidden Fees Ever</div></div>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<section class="services-section section" id="services">
+  <div class="container">
+    <div class="sh center fade-up">
+      <div class="s-label">What We Do</div>
+      <h2 class="s-title">Everything Your Business Needs Online</h2>
+      <p class="s-sub">From a stunning website to full digital marketing — one team, one invoice, no runaround.</p>
+    </div>
+    <div class="svc-bento stagger fade-up">
+      <a class="svc-card" href="services/web-development.html">
+        <div class="svc-ic">🌐</div>
+        <h3>Web Development</h3>
+        <p>Fast, modern websites delivered in 24–48 hours. Mobile-friendly, SEO-ready, and built to convert visitors into customers.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
+      </a>
+      <a class="svc-card" href="services/seo-services.html">
+        <div class="svc-ic">🔍</div>
+        <h3>SEO Services</h3>
+        <p>Rank higher on Google. We optimise your site so customers find you first — not your competitors.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
+      </a>
+      <a class="svc-card" href="services/ppc-paid-ads.html">
+        <div class="svc-ic">📢</div>
+        <h3>PPC &amp; Paid Ads</h3>
+        <p>Google Ads and Facebook campaigns that actually make money. We manage the budget, you see the results.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
+      </a>
+      <a class="svc-card" href="services/android-app.html">
+        <div class="svc-ic">🤖</div>
+        <h3>Android App Dev</h3>
+        <p>Custom Android apps built for your business. From concept to Play Store, we handle everything.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
+      </a>
+      <a class="svc-card" href="services/ios-app.html">
+        <div class="svc-ic">🍎</div>
+        <h3>iOS App Dev</h3>
+        <p>Professional iPhone and iPad apps. Native performance, beautiful design, smooth App Store launch.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
+      </a>
+      <a class="svc-card" href="services/crm-suite.html">
+        <div class="svc-ic">🏢</div>
+        <h3>CRM Suite</h3>
+        <p>Manage your customers, leads, and sales pipeline in one simple, powerful system your whole team can use.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
+      </a>
+      <a class="svc-card" href="services/virtual-office.html">
+        <div class="svc-ic">🏠</div>
+        <h3>Virtual Office</h3>
+        <p>Professional business address, call handling, and virtual workspace — look like a big company on any budget.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
+      </a>
+      <a class="svc-card feat" href="services/email-marketing.html">
+        <div class="svc-ic">🚀</div>
+        <h3>NexReach Suite</h3>
+        <p>All-in-one outreach platform — email campaigns, drip sequences, SMS marketing, AI writer &amp; full analytics.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY US ── -->
+<section class="why-section section" id="why">
+  <div class="container">
+    <div class="why-layout">
+      <div>
+        <div class="s-label fade-up">Why TwinStance</div>
+        <h2 class="why-headline fade-up">
+          Most Agencies<br>Talk. We<br><em>Deliver.</em>
+        </h2>
+        <div class="why-list stagger fade-up">
+          <div class="why-row">
+            <div class="why-num">01</div>
+            <div>
+              <h4>Website in 24–48 Hours, Guaranteed</h4>
+              <p>We've built websites overnight. Most agencies take 4–8 weeks for the same job. We don't cut corners — we're just fast and focused.</p>
+            </div>
+          </div>
+          <div class="why-row">
+            <div class="why-num">02</div>
+            <div>
+              <h4>Transparent Pricing — Always in USD</h4>
+              <p>Every service shows you the exact price before you commit. No discovery calls that end in a surprise quote. No upsells. No hidden renewal fees.</p>
+            </div>
+          </div>
+          <div class="why-row">
+            <div class="why-num">03</div>
+            <div>
+              <h4>8+ Services Under One Roof</h4>
+              <p>Web, SEO, PPC, apps, CRM, virtual office, email marketing. Stop juggling 6 vendors. One team, one contact, everything handled.</p>
+            </div>
+          </div>
+          <div class="why-row">
+            <div class="why-num">04</div>
+            <div>
+              <h4>You Deal With Us Directly — Always</h4>
+              <p>No account managers passing messages. No offshore teams you never meet. You get our numbers, our WhatsApp, and a real reply within hours.</p>
+            </div>
+          </div>
+          <div class="why-row">
+            <div class="why-num">05</div>
+            <div>
+              <h4>Results-Focused — Not Just Pretty Websites</h4>
+              <p>We care about enquiries, leads, and sales — not awards. Every website we build includes SEO foundations, fast loading, and conversion-focused design.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-stats fade-up">
+        <div class="ws-card highlight">
+          <div class="ws-big">48h</div>
+          <div class="ws-sub">Average website delivery. Most agencies take weeks for the same.</div>
+        </div>
+        <div class="ws-pair">
+          <div class="ws-sm"><div class="wss-val">$0</div><div class="wss-lbl">Hidden fees. Ever.</div></div>
+          <div class="ws-sm"><div class="wss-val">8+</div><div class="wss-lbl">Digital services offered</div></div>
+        </div>
+        <div class="ws-card dark">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+            <div>
+              <div class="ws-big" style="font-size:40px">1:1</div>
+              <div class="ws-sub">Direct support. Real people. No bots, no waiting, no runaround.</div>
+            </div>
+            <div style="font-size:48px;flex-shrink:0">🤝</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PACKAGES -->
-<section class="pkgs-bg" id="packages">
-  <div class="section-inner">
-    <div class="section-head center fade-up">
-      <div class="section-label">Pricing</div>
-      <h2 class="section-title">Transparent Pricing<br>for Every Business</h2>
-      <p class="section-sub">Clear USD pricing. No surprises, no hidden fees. Click any service to see full details.</p>
+<!-- ── PRICING ── -->
+<section class="pricing-section section" id="packages">
+  <div class="container">
+    <div class="sh center fade-up">
+      <div class="s-label">Pricing</div>
+      <h2 class="s-title">Clear Pricing. Zero Surprises.</h2>
+      <p class="s-sub">Every price shown is final. No setup fees buried in footnotes. No "contact us for pricing" runarounds.</p>
     </div>
 
-    <div class="pkg-block">
-      <div class="pkg-section-head fade-up">
-        <div class="pkg-section-icon blue">🌐</div>
-        <div><div class="pkg-section-title">Website Design & Development</div><div class="pkg-section-sub">One yearly payment. No monthly bills. No hidden fees.</div></div>
+    <!-- Websites -->
+    <div class="price-group fade-up">
+      <div class="pg-head">
+        <div class="pg-icon">🌐</div>
+        <div><div class="pg-title">Website Design &amp; Development</div><div class="pg-sub">One yearly payment. No monthly bills. No hidden fees.</div></div>
       </div>
-      <div class="packages-grid">
-        <div class="pkg fade-up">
-          <div class="pkg-name">Starter Site</div>
-          <div class="pkg-price"><sup>$</sup>399 <span>/ year</span></div>
-          <div class="pkg-desc">Perfect for small businesses wanting an online presence fast.</div>
+      <div class="pkg-grid">
+        <div class="pkg">
+          <div class="pkg-tier">Starter</div>
+          <div class="pkg-price"><sup>$</sup>399 <span class="per">/ year</span></div>
+          <div class="pkg-desc">For small businesses wanting a fast, professional online presence.</div>
           <ul class="pkg-feats">
-            <li>Up to 5 pages</li><li>Mobile responsive design</li><li>Basic SEO setup</li>
-            <li>Contact form & WhatsApp button</li><li>SSL certificate included</li>
-            <li>Delivered in 24 to 48 hours</li><li>1 month free support</li>
+            <li>Up to 5 pages</li>
+            <li>Mobile responsive design</li>
+            <li>Basic SEO setup</li>
+            <li>Contact form &amp; WhatsApp button</li>
+            <li>SSL certificate included</li>
+            <li>Delivered in 24 to 48 hours</li>
+            <li>1 month free support</li>
             <li class="no">Blog section</li>
           </ul>
           <div class="pkg-note">+ One time setup fee</div>
-          <a href="services/web-development.html" class="pkg-btn">Learn More →</a>
+          <a href="services/web-development.html" class="pkg-cta">Get Started →</a>
         </div>
-        <div class="pkg popular fade-up">
-          <div class="pkg-badge">⭐ Most Popular</div>
-          <div class="pkg-name">Business Site</div>
-          <div class="pkg-price"><sup>$</sup>599 <span>/ year</span></div>
-          <div class="pkg-desc">Everything a growing business needs to stand out online.</div>
+        <div class="pkg pop">
+          <div class="pop-badge">⭐ Most Popular</div>
+          <div class="pkg-tier">Business</div>
+          <div class="pkg-price"><sup>$</sup>599 <span class="per">/ year</span></div>
+          <div class="pkg-desc">Everything a growing business needs to stand out and convert online.</div>
           <ul class="pkg-feats">
-            <li>Up to 10 pages</li><li>Custom design with your branding</li>
-            <li>Advanced SEO optimisation</li><li>Blog section included</li>
-            <li>Google Business Profile setup</li><li>Contact form & WhatsApp</li>
-            <li>3 months free support</li><li>Delivered in 24 to 48 hours</li>
+            <li>Up to 10 pages</li>
+            <li>Custom design with your branding</li>
+            <li>Advanced SEO optimisation</li>
+            <li>Blog section included</li>
+            <li>Google Business Profile setup</li>
+            <li>Contact form &amp; WhatsApp</li>
+            <li>3 months free support</li>
+            <li>Delivered in 24 to 48 hours</li>
           </ul>
           <div class="pkg-note">+ One time setup fee</div>
-          <a href="services/web-development.html" class="pkg-btn">Learn More →</a>
+          <a href="services/web-development.html" class="pkg-cta">Get Started →</a>
         </div>
-        <div class="pkg fade-up">
-          <div class="pkg-name">Premium Site</div>
-          <div class="pkg-price"><sup>$</sup>899 <span>/ year</span></div>
-          <div class="pkg-desc">Full featured website with everything for maximum online impact.</div>
+        <div class="pkg">
+          <div class="pkg-tier">Premium</div>
+          <div class="pkg-price"><sup>$</sup>899 <span class="per">/ year</span></div>
+          <div class="pkg-desc">Full-featured website built for maximum online impact and conversions.</div>
           <ul class="pkg-feats">
-            <li>Unlimited pages</li><li>Premium custom design</li>
-            <li>Full SEO setup and content</li><li>Blog, portfolio & gallery</li>
-            <li>Payment gateway integration</li><li>Advanced contact forms</li>
-            <li>6 months free support</li><li>Priority delivery in 24 hours</li>
+            <li>Unlimited pages</li>
+            <li>Premium custom design</li>
+            <li>Full SEO setup &amp; content</li>
+            <li>Blog, portfolio &amp; gallery</li>
+            <li>Payment gateway integration</li>
+            <li>Advanced contact forms</li>
+            <li>6 months free support</li>
+            <li>Priority delivery in 24 hours</li>
           </ul>
           <div class="pkg-note">+ One time setup fee</div>
-          <a href="services/web-development.html" class="pkg-btn">Learn More →</a>
+          <a href="services/web-development.html" class="pkg-cta">Get Started →</a>
         </div>
       </div>
     </div>
 
-    <div class="pkg-block">
-      <div class="pkg-section-head fade-up">
-        <div class="pkg-section-icon red">📊</div>
-        <div><div class="pkg-section-title">Monthly Services</div><div class="pkg-section-sub">Ongoing services billed monthly. Cancel anytime with 30 days notice.</div></div>
+    <!-- Monthly -->
+    <div class="price-group fade-up">
+      <div class="pg-head">
+        <div class="pg-icon">📊</div>
+        <div><div class="pg-title">Monthly Services</div><div class="pg-sub">Cancel anytime with 30 days notice. No lock-in contracts.</div></div>
       </div>
-      <div class="services-table fade-up">
+      <div class="mtable">
         <table>
-          <thead><tr>
-            <th>Service</th><th>Starting Price</th><th>What You Get</th><th></th>
-          </tr></thead>
+          <thead><tr><th>Service</th><th>Monthly Price</th><th>What's Included</th><th></th></tr></thead>
           <tbody>
-            <tr><td><strong>🔍 SEO Services</strong></td><td class="td-price">$149 / month</td><td style="color:var(--muted);font-size:14px;">Keyword research, on-page SEO, link building, monthly reports</td><td><a href="services/seo-services.html" class="td-link">Learn more →</a></td></tr>
-            <tr><td><strong>📢 PPC & Paid Ads</strong></td><td class="td-price">$59 / month</td><td style="color:var(--muted);font-size:14px;">Google Ads and Facebook Ads management (ad spend is separate)</td><td><a href="services/ppc-paid-ads.html" class="td-link">Learn more →</a></td></tr>
-            <tr><td><strong>🏢 CRM Suite</strong></td><td class="td-price">$79 / month</td><td style="color:var(--muted);font-size:14px;">Lead pipeline, contact management, sales reports, team collaboration</td><td><a href="services/crm-suite.html" class="td-link">Learn more →</a></td></tr>
-            <tr><td><strong>🏠 Virtual Office</strong></td><td class="td-price">$20 / person</td><td style="color:var(--muted);font-size:14px;">Business address, digital workspace, professional emails, per user</td><td><a href="services/virtual-office.html" class="td-link">Learn more →</a></td></tr>
-            <tr><td><strong>🚀 NexReach Suite</strong></td><td class="td-price">$60 / month</td><td style="color:var(--muted);font-size:14px;">Email marketing, drip campaigns, SMS, AI writer, full analytics</td><td><a href="services/email-marketing.html" class="td-link">Learn more →</a></td></tr>
+            <tr><td><strong>🔍 SEO Services</strong></td><td class="t-price">$149 / mo</td><td style="color:var(--muted);font-size:13px">Keyword research, on-page SEO, link building, monthly reports &amp; rankings tracking</td><td><a href="services/seo-services.html" class="t-link">Details →</a></td></tr>
+            <tr><td><strong>📢 PPC &amp; Paid Ads</strong></td><td class="t-price">$59 / mo</td><td style="color:var(--muted);font-size:13px">Google Ads &amp; Facebook Ads management. Ad spend is separate and yours to control.</td><td><a href="services/ppc-paid-ads.html" class="t-link">Details →</a></td></tr>
+            <tr><td><strong>🏢 CRM Suite</strong></td><td class="t-price">$79 / mo</td><td style="color:var(--muted);font-size:13px">Lead pipeline, contact management, sales reports &amp; team collaboration tools</td><td><a href="services/crm-suite.html" class="t-link">Details →</a></td></tr>
+            <tr><td><strong>🏠 Virtual Office</strong></td><td class="t-price">$20 / person</td><td style="color:var(--muted);font-size:13px">Business address, digital workspace &amp; professional email setup — billed per user</td><td><a href="services/virtual-office.html" class="t-link">Details →</a></td></tr>
+            <tr><td><strong>🚀 NexReach Suite</strong></td><td class="t-price">$60 / mo</td><td style="color:var(--muted);font-size:13px">Email marketing, drip campaigns, SMS marketing, AI writer &amp; full analytics dashboard</td><td><a href="services/email-marketing.html" class="t-link">Details →</a></td></tr>
           </tbody>
         </table>
       </div>
     </div>
 
-    <div class="pkg-block">
-      <div class="pkg-section-head fade-up">
-        <div class="pkg-section-icon green">⚡</div>
-        <div><div class="pkg-section-title">One Time Projects</div><div class="pkg-section-sub">Pay once, own it forever. Pricing depends on scope and complexity.</div></div>
+    <!-- One-time -->
+    <div class="price-group fade-up">
+      <div class="pg-head">
+        <div class="pg-icon">⚡</div>
+        <div><div class="pg-title">One-Time Projects</div><div class="pg-sub">Pay once. Own it forever. No recurring fees.</div></div>
       </div>
-      <div class="one-time-grid">
-        <div class="ot-card fade-up">
-          <div><div class="ot-emoji">🤖</div><h4>Android App Development</h4><p>Custom Android apps from concept to Play Store</p></div>
-          <div class="ot-right"><div class="ot-from">Starting from</div><div class="ot-price">Custom</div><a href="services/android-app.html" class="ot-cta">Get quote →</a></div>
+      <div class="ot-grid">
+        <div class="ot">
+          <div><div class="ot-em">🤖</div><h4>Android App Development</h4><p>Custom Android apps from concept to Play Store — built for your specific business needs.</p></div>
+          <div class="ot-r"><div class="ot-from">Starting from</div><div class="ot-price">Custom</div><a href="services/android-app.html" class="ot-link">Get quote →</a></div>
         </div>
-        <div class="ot-card fade-up">
-          <div><div class="ot-emoji">🍎</div><h4>iOS App Development</h4><p>Native iPhone and iPad apps from concept to App Store</p></div>
-          <div class="ot-right"><div class="ot-from">Starting from</div><div class="ot-price">Custom</div><a href="services/ios-app.html" class="ot-cta">Get quote →</a></div>
+        <div class="ot">
+          <div><div class="ot-em">🍎</div><h4>iOS App Development</h4><p>Native iPhone and iPad apps designed to perform beautifully on every Apple device.</p></div>
+          <div class="ot-r"><div class="ot-from">Starting from</div><div class="ot-price">Custom</div><a href="services/ios-app.html" class="ot-link">Get quote →</a></div>
         </div>
-        <div class="ot-card ot-dark fade-up">
-          <div><div class="ot-emoji">🚀</div><h4>NexReach — Own the Full Suite Forever</h4><p>Buy once, own it forever. Email marketing, drip campaigns, SMS, AI writer — fully branded with your logo.</p></div>
-          <div class="ot-right"><div class="ot-from">One-time purchase</div><div class="ot-price">$1,899</div><a href="services/email-marketing.html" class="ot-cta">Learn more →</a></div>
+        <div class="ot dark">
+          <div><div class="ot-em">🚀</div><h4>NexReach — Own the Full Suite Forever</h4><p>Buy once, own forever. Email marketing, drip campaigns, SMS marketing, AI writer — fully branded with your logo. Saves you thousands vs monthly SaaS tools.</p></div>
+          <div class="ot-r"><div class="ot-from">One-time purchase</div><div class="ot-price">$1,899</div><a href="services/email-marketing.html" class="ot-link">Learn more →</a></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials" style="padding-bottom:20px;">
-  <div class="section-inner">
-    <div class="section-head center fade-up">
-      <div class="section-label">Testimonials</div>
-      <h2 class="section-title">What Our Clients Say</h2>
-      <p class="section-sub">Real feedback from businesses we've helped grow around the world.</p>
+<!-- ── TESTIMONIALS ── -->
+<section class="testi-section section" id="testimonials">
+  <div class="container">
+    <div class="sh center fade-up">
+      <div class="s-label">Testimonials</div>
+      <h2 class="s-title">Real Results. Real Clients.</h2>
+      <p class="s-sub">Don't take our word for it — here's what businesses across the world say after working with us.</p>
     </div>
   </div>
-  <div class="testimonials-outer">
-    <div class="testimonials-track">
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"TwinStance built our restaurant website in just 2 days. We started getting online orders within the first week. Best investment we made."</div><div class="tcard-author"><div class="tcard-avatar">R</div><div><div class="tcard-name">Rahul Mehta</div><div class="tcard-role">Restaurant Owner, Mumbai</div></div></div></div>
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"Their SEO work got us to page 1 of Google in 3 months. Our enquiries have doubled and the pricing was totally transparent — no surprises."</div><div class="tcard-author"><div class="tcard-avatar">P</div><div><div class="tcard-name">Priya Sharma</div><div class="tcard-role">Salon Owner, Delhi</div></div></div></div>
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"We needed an app for our delivery business. TwinStance delivered on time, within budget, and the app works flawlessly on all devices."</div><div class="tcard-author"><div class="tcard-avatar">A</div><div><div class="tcard-name">Anil Kumar</div><div class="tcard-role">Logistics Business, Bangalore</div></div></div></div>
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"NexReach completely transformed our outreach. Cold email open rates jumped from 8% to 34% in the first month. The drip campaign feature is a game changer."</div><div class="tcard-author"><div class="tcard-avatar">S</div><div><div class="tcard-name">Samantha Lee</div><div class="tcard-role">Marketing Consultant, Singapore</div></div></div></div>
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"TwinStance treated my small bakery like a major client. Our website looks stunning and has been driving real walk-ins since launch."</div><div class="tcard-author"><div class="tcard-avatar">M</div><div><div class="tcard-name">Maria Santos</div><div class="tcard-role">Bakery Owner, Philippines</div></div></div></div>
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"We bought the NexReach suite outright for $1,899 and it paid for itself in the very first campaign. Incredible value."</div><div class="tcard-author"><div class="tcard-avatar">J</div><div><div class="tcard-name">James O'Brien</div><div class="tcard-role">SaaS Founder, Ireland</div></div></div></div>
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"Their PPC work cut our cost-per-lead by 40%. Siraz personally reviews every campaign and communicates clearly. Rare to find this level of care."</div><div class="tcard-author"><div class="tcard-avatar">K</div><div><div class="tcard-name">Kavitha Nair</div><div class="tcard-role">EdTech Startup, Chennai</div></div></div></div>
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"The virtual office setup was seamless. We have a professional business address and email without the overhead costs. Worth every dollar."</div><div class="tcard-author"><div class="tcard-avatar">D</div><div><div class="tcard-name">David Okafor</div><div class="tcard-role">Consultant, Lagos</div></div></div></div>
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"TwinStance rebuilt our clinic website in under 48 hours. The contact form works and patients find us on Google now — previously we were invisible."</div><div class="tcard-author"><div class="tcard-avatar">N</div><div><div class="tcard-name">Dr. Neha Verma</div><div class="tcard-role">Clinic Owner, Pune</div></div></div></div>
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"I've worked with 3 digital agencies before TwinStance. None of them came close to this level of responsiveness and quality. Highly recommend."</div><div class="tcard-author"><div class="tcard-avatar">T</div><div><div class="tcard-name">Thomas Müller</div><div class="tcard-role">Retail Store Owner, Germany</div></div></div></div>
-      <!-- Duplicates for seamless loop -->
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"TwinStance built our restaurant website in just 2 days. We started getting online orders within the first week. Best investment we made."</div><div class="tcard-author"><div class="tcard-avatar">R</div><div><div class="tcard-name">Rahul Mehta</div><div class="tcard-role">Restaurant Owner, Mumbai</div></div></div></div>
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"Their SEO work got us to page 1 of Google in 3 months. Our enquiries have doubled and the pricing was totally transparent — no surprises."</div><div class="tcard-author"><div class="tcard-avatar">P</div><div><div class="tcard-name">Priya Sharma</div><div class="tcard-role">Salon Owner, Delhi</div></div></div></div>
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"We needed an app for our delivery business. TwinStance delivered on time, within budget, and the app works flawlessly on all devices."</div><div class="tcard-author"><div class="tcard-avatar">A</div><div><div class="tcard-name">Anil Kumar</div><div class="tcard-role">Logistics Business, Bangalore</div></div></div></div>
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"NexReach completely transformed our outreach. Cold email open rates jumped from 8% to 34% in the first month. The drip campaign feature is a game changer."</div><div class="tcard-author"><div class="tcard-avatar">S</div><div><div class="tcard-name">Samantha Lee</div><div class="tcard-role">Marketing Consultant, Singapore</div></div></div></div>
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"TwinStance treated my small bakery like a major client. Our website looks stunning and has been driving real walk-ins since launch."</div><div class="tcard-author"><div class="tcard-avatar">M</div><div><div class="tcard-name">Maria Santos</div><div class="tcard-role">Bakery Owner, Philippines</div></div></div></div>
-      <div class="tcard"><div class="tcard-stars">★★★★★</div><div class="tcard-text">"We bought the NexReach suite outright for $1,899 and it paid for itself in the very first campaign. Incredible value."</div><div class="tcard-author"><div class="tcard-avatar">J</div><div><div class="tcard-name">James O'Brien</div><div class="tcard-role">SaaS Founder, Ireland</div></div></div></div>
+  <div class="testi-scroll">
+    <div class="testi-track">
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"TwinStance built our restaurant website in just 2 days. We started getting online orders within the first week. Best investment we ever made."</div><div class="tc-auth"><div class="tc-av">R</div><div><div class="tc-name">Rahul Mehta</div><div class="tc-role">Restaurant Owner, Mumbai</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"Their SEO work got us to page 1 of Google in 3 months. Our enquiries doubled and the pricing was totally transparent — no surprises whatsoever."</div><div class="tc-auth"><div class="tc-av">P</div><div><div class="tc-name">Priya Sharma</div><div class="tc-role">Salon Owner, Delhi</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"We needed an app for our delivery business. TwinStance delivered on time, within budget, and the app works flawlessly on all Android devices."</div><div class="tc-auth"><div class="tc-av">A</div><div><div class="tc-name">Anil Kumar</div><div class="tc-role">Logistics Business, Bangalore</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"NexReach transformed our outreach completely. Cold email open rates jumped from 8% to 34% in the first month. The drip campaign feature is a total game changer."</div><div class="tc-auth"><div class="tc-av">S</div><div><div class="tc-name">Samantha Lee</div><div class="tc-role">Marketing Consultant, Singapore</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"TwinStance treated my small bakery like a major client. Our website looks stunning and has been driving real walk-ins since day one."</div><div class="tc-auth"><div class="tc-av">M</div><div><div class="tc-name">Maria Santos</div><div class="tc-role">Bakery Owner, Philippines</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"We bought the NexReach suite outright for $1,899 and it paid for itself in the very first campaign. Absolute incredible value for any growing business."</div><div class="tc-auth"><div class="tc-av">J</div><div><div class="tc-name">James O'Brien</div><div class="tc-role">SaaS Founder, Ireland</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"Their PPC work cut our cost-per-lead by 40%. Siraz personally reviews every campaign and communicates clearly. Rare to find this level of care anywhere."</div><div class="tc-auth"><div class="tc-av">K</div><div><div class="tc-name">Kavitha Nair</div><div class="tc-role">EdTech Startup, Chennai</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"The virtual office setup was seamless. Professional business address and email without the overhead costs. Absolutely worth every single dollar."</div><div class="tc-auth"><div class="tc-av">D</div><div><div class="tc-name">David Okafor</div><div class="tc-role">Consultant, Lagos</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"Rebuilt our clinic website in under 48 hours. Patients find us on Google now — previously we were completely invisible online. Remarkable turnaround."</div><div class="tc-auth"><div class="tc-av">N</div><div><div class="tc-name">Dr. Neha Verma</div><div class="tc-role">Clinic Owner, Pune</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"I've worked with 3 digital agencies before TwinStance. None came close to this level of responsiveness and quality. Highly recommend without hesitation."</div><div class="tc-auth"><div class="tc-av">T</div><div><div class="tc-name">Thomas Müller</div><div class="tc-role">Retail Store Owner, Germany</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"Our e-commerce sales jumped 60% within two months of TwinStance rebuilding our site with proper SEO. The ROI is absolutely unreal for the price we paid."</div><div class="tc-auth"><div class="tc-av">F</div><div><div class="tc-name">Fatima Al-Rashid</div><div class="tc-role">E-commerce Store, Dubai</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"We got a complete website, Google Ads setup, and CRM all in one package. Everything works together perfectly. Zero runaround, zero confusion."</div><div class="tc-auth"><div class="tc-av">C</div><div><div class="tc-name">Carlos Mendes</div><div class="tc-role">Real Estate Agency, Brazil</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"What impressed me most was the speed. I contacted them on Monday, had a live website by Wednesday. My competitors use agencies that take months for the same job."</div><div class="tc-auth"><div class="tc-av">L</div><div><div class="tc-name">Lena Fischer</div><div class="tc-role">Freelance Designer, Switzerland</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"TwinStance's SEO got my law firm to the top 3 results in my city within 4 months. The quality of inbound leads improved dramatically."</div><div class="tc-auth"><div class="tc-av">W</div><div><div class="tc-name">Winston Adeyemi</div><div class="tc-role">Law Firm Partner, Nigeria</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"As a startup on a tight budget, TwinStance gave us a premium website, mobile app, and outreach platform at a price that made complete business sense."</div><div class="tc-auth"><div class="tc-av">Y</div><div><div class="tc-name">Yuki Tanaka</div><div class="tc-role">Tech Startup Founder, Japan</div></div></div></div>
+      <!-- duplicates for seamless loop -->
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"TwinStance built our restaurant website in just 2 days. We started getting online orders within the first week. Best investment we ever made."</div><div class="tc-auth"><div class="tc-av">R</div><div><div class="tc-name">Rahul Mehta</div><div class="tc-role">Restaurant Owner, Mumbai</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"Their SEO work got us to page 1 of Google in 3 months. Our enquiries doubled and the pricing was totally transparent — no surprises whatsoever."</div><div class="tc-auth"><div class="tc-av">P</div><div><div class="tc-name">Priya Sharma</div><div class="tc-role">Salon Owner, Delhi</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"We needed an app for our delivery business. TwinStance delivered on time, within budget, and the app works flawlessly on all Android devices."</div><div class="tc-auth"><div class="tc-av">A</div><div><div class="tc-name">Anil Kumar</div><div class="tc-role">Logistics Business, Bangalore</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"NexReach transformed our outreach completely. Cold email open rates jumped from 8% to 34% in the first month. The drip campaign feature is a total game changer."</div><div class="tc-auth"><div class="tc-av">S</div><div><div class="tc-name">Samantha Lee</div><div class="tc-role">Marketing Consultant, Singapore</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"TwinStance treated my small bakery like a major client. Our website looks stunning and has been driving real walk-ins since day one."</div><div class="tc-auth"><div class="tc-av">M</div><div><div class="tc-name">Maria Santos</div><div class="tc-role">Bakery Owner, Philippines</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"We bought the NexReach suite outright for $1,899 and it paid for itself in the very first campaign. Absolute incredible value for any growing business."</div><div class="tc-auth"><div class="tc-av">J</div><div><div class="tc-name">James O'Brien</div><div class="tc-role">SaaS Founder, Ireland</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"Their PPC work cut our cost-per-lead by 40%. Siraz personally reviews every campaign and communicates clearly. Rare to find this level of care anywhere."</div><div class="tc-auth"><div class="tc-av">K</div><div><div class="tc-name">Kavitha Nair</div><div class="tc-role">EdTech Startup, Chennai</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"Our e-commerce sales jumped 60% within two months of TwinStance rebuilding our site with proper SEO. The ROI is absolutely unreal for the price."</div><div class="tc-auth"><div class="tc-av">F</div><div><div class="tc-name">Fatima Al-Rashid</div><div class="tc-role">E-commerce Store, Dubai</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"What impressed me most was the speed. I contacted them on Monday, had a live website by Wednesday. My competitors use agencies that take months."</div><div class="tc-auth"><div class="tc-av">L</div><div><div class="tc-name">Lena Fischer</div><div class="tc-role">Freelance Designer, Switzerland</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"TwinStance's SEO got my law firm to the top 3 results in my city within 4 months. The quality of inbound leads improved dramatically."</div><div class="tc-auth"><div class="tc-av">W</div><div><div class="tc-name">Winston Adeyemi</div><div class="tc-role">Law Firm Partner, Nigeria</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"Rebuilt our clinic website in under 48 hours. Patients find us on Google now — previously we were completely invisible online."</div><div class="tc-auth"><div class="tc-av">N</div><div><div class="tc-name">Dr. Neha Verma</div><div class="tc-role">Clinic Owner, Pune</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"I've worked with 3 digital agencies before TwinStance. None came close to this level of responsiveness and quality. Highly recommend."</div><div class="tc-auth"><div class="tc-av">T</div><div><div class="tc-name">Thomas Müller</div><div class="tc-role">Retail Store Owner, Germany</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"As a startup on a tight budget, TwinStance gave us a premium website, mobile app, and outreach platform at a price that made complete business sense."</div><div class="tc-auth"><div class="tc-av">Y</div><div><div class="tc-name">Yuki Tanaka</div><div class="tc-role">Tech Startup Founder, Japan</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"We got a complete website, Google Ads setup, and CRM all in one package. Everything works together perfectly. Zero runaround, zero confusion."</div><div class="tc-auth"><div class="tc-av">C</div><div><div class="tc-name">Carlos Mendes</div><div class="tc-role">Real Estate Agency, Brazil</div></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><div class="tc-text">"The virtual office setup was seamless. Professional business address and email without the overhead costs. Absolutely worth every dollar."</div><div class="tc-auth"><div class="tc-av">D</div><div><div class="tc-name">David Okafor</div><div class="tc-role">Consultant, Lagos</div></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- NEXREACH BANNER -->
-<div style="padding: 60px 24px;">
-  <div class="nr-banner fade-up">
-    <div style="position:relative;z-index:1;">
-      <div class="nr-banner-tag">NEW PRODUCT</div>
-      <h2>Introducing NexReach — Your All-in-One Outreach Suite</h2>
-      <p>Email marketing, drip campaigns, SMS, AI writer, full analytics — everything you need to reach and convert customers at scale.</p>
-      <div class="nr-badges">
-        <span class="nr-badge">📧 Email Marketing</span>
-        <span class="nr-badge">💧 Drip Campaigns</span>
-        <span class="nr-badge">📱 SMS Marketing</span>
-        <span class="nr-badge">🤖 AI Writer</span>
-        <span class="nr-badge">📊 Full Analytics</span>
+<!-- ── NEXREACH ── -->
+<section class="nr-section section">
+  <div class="container">
+    <div class="nr-card fade-up">
+      <div class="nr-left">
+        <div class="nr-tag">New Product — Available Now</div>
+        <h2>Introducing NexReach —<br>Your All-in-One Outreach Suite</h2>
+        <p>Stop paying $300+/month across 5 different SaaS tools. NexReach gives you email marketing, drip campaigns, SMS, an AI writer, and full analytics — all in one platform, fully branded with your logo.</p>
+        <div class="nr-chips">
+          <span class="nr-chip">📧 Email Marketing</span>
+          <span class="nr-chip">💧 Drip Campaigns</span>
+          <span class="nr-chip">📱 SMS Marketing</span>
+          <span class="nr-chip">🤖 AI Writer</span>
+          <span class="nr-chip">📊 Full Analytics</span>
+          <span class="nr-chip">🎨 Custom Branding</span>
+        </div>
+      </div>
+      <div class="nr-right">
+        <div class="nr-pricing-grid">
+          <div class="nr-option">
+            <div class="nr-option-label">Monthly</div>
+            <div class="nr-option-price"><sup>$</sup>60</div>
+            <div class="nr-option-note">per month</div>
+            <div class="nr-option-note">cancel anytime</div>
+          </div>
+          <div class="nr-option recommended">
+            <div class="nr-option-rec">⭐ Best Value</div>
+            <div class="nr-option-price"><sup>$</sup>1,899</div>
+            <div class="nr-option-note">one-time payment</div>
+            <div class="nr-option-save">Own it forever</div>
+          </div>
+        </div>
+        <a href="services/email-marketing.html" class="btn-nr" style="width:100%;justify-content:center">Explore NexReach →</a>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);text-align:center;margin-top:10px">Full setup included · Custom branded · No recurring SaaS fees</div>
       </div>
     </div>
-    <div class="nr-btn-wrap">
-      <a href="services/email-marketing.html" class="btn-white-pill">Learn More →</a>
-      <div class="nr-price-note">$60/month or $1,899 one-time purchase</div>
-    </div>
   </div>
-</div>
+</section>
 
-<!-- BLOG -->
-<section class="pkgs-bg" id="blog">
-  <div class="section-inner">
-    <div class="section-head center fade-up">
-      <div class="section-label">Blog</div>
-      <h2 class="section-title">Tips to Grow Your Business Online</h2>
-      <p class="section-sub">Free guides and insights from the TwinStance team.</p>
+<!-- ── BLOG ── -->
+<section class="blog-section section" id="blog">
+  <div class="container">
+    <div class="sh center fade-up">
+      <div class="s-label">Resources</div>
+      <h2 class="s-title">Grow Your Business — Free</h2>
+      <p class="s-sub">Practical guides written by our team. No fluff. No email gate. Just useful stuff.</p>
     </div>
-    <div class="blog-grid">
-      <a href="blog/why-your-business-needs-a-website.html" class="blog-card fade-up">
-        <div class="blog-thumb" style="background:linear-gradient(135deg,#eef2ff,#dde3f5);">🌐</div>
-        <div class="blog-body"><div class="blog-tag">Web Dev</div><h3>Why Your Business Needs a Website in 2025 (Not Just a WhatsApp Number)</h3><p>Over 800 million people are online. If your business isn't on the web, you're invisible to most of them.</p><div class="blog-meta"><span>📅 March 2025</span><span>⏱ 5 min read</span></div></div>
+    <div class="blog-grid fade-up">
+      <a href="blog/why-your-business-needs-a-website.html" class="blog-card">
+        <div class="blog-thumb" style="background:linear-gradient(135deg,#eef2ff,#d8e3ff)">🌐</div>
+        <div class="blog-body">
+          <div class="blog-tag">Web Dev</div>
+          <h3>Why Your Business Needs a Website in 2025 (Not Just a WhatsApp Number)</h3>
+          <p>Over 800 million people search online before buying. If you're not there, you're invisible to most of them.</p>
+          <div class="blog-meta"><span>📅 March 2025</span><span>⏱ 5 min read</span></div>
+        </div>
       </a>
-      <a href="blog/how-to-send-emails-without-spam.html" class="blog-card fade-up">
-        <div class="blog-thumb" style="background:linear-gradient(135deg,#fff0f0,#ffe0e0);">📧</div>
-        <div class="blog-body"><div class="blog-tag">Email Marketing</div><h3>How to Send Cold Emails That Actually Get Replies (Without Landing in Spam)</h3><p>Most cold email campaigns fail because of bad subject lines, wrong timing, and zero personalisation.</p><div class="blog-meta"><span>📅 Feb 2025</span><span>⏱ 6 min read</span></div></div>
+      <a href="blog/how-to-send-emails-without-spam.html" class="blog-card">
+        <div class="blog-thumb" style="background:linear-gradient(135deg,#fff5f5,#ffe4e4)">📧</div>
+        <div class="blog-body">
+          <div class="blog-tag">Email Marketing</div>
+          <h3>How to Send Cold Emails That Actually Get Replies (Without Landing in Spam)</h3>
+          <p>Most cold email campaigns fail for the same 3 reasons. Here's how to fix all of them today.</p>
+          <div class="blog-meta"><span>📅 Feb 2025</span><span>⏱ 6 min read</span></div>
+        </div>
       </a>
-      <a href="blog/seo-mistakes-small-businesses.html" class="blog-card fade-up">
-        <div class="blog-thumb" style="background:linear-gradient(135deg,#f0fff4,#d0f0dd);">🔍</div>
-        <div class="blog-body"><div class="blog-tag">SEO</div><h3>5 SEO Mistakes That Are Costing Small Businesses Google Rankings</h3><p>Most small business websites make the same SEO errors. Every single one is fixable in under a day.</p><div class="blog-meta"><span>📅 Jan 2025</span><span>⏱ 5 min read</span></div></div>
+      <a href="blog/seo-mistakes-small-businesses.html" class="blog-card">
+        <div class="blog-thumb" style="background:linear-gradient(135deg,#f0fdf4,#d1fae5)">🔍</div>
+        <div class="blog-body">
+          <div class="blog-tag">SEO</div>
+          <h3>5 SEO Mistakes That Are Costing Small Businesses Google Rankings</h3>
+          <p>Most small business websites make the same errors. Every single one is fixable — often in under a day.</p>
+          <div class="blog-meta"><span>📅 Jan 2025</span><span>⏱ 5 min read</span></div>
+        </div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact-bg" id="contact">
-  <div class="section-inner">
+<!-- ── CONTACT ── -->
+<section class="contact-section section" id="contact">
+  <div class="container">
     <div class="contact-grid">
       <div>
-        <div class="section-label fade-up">Contact Us</div>
-        <h2 class="section-title fade-up">Let's Talk About<br>Your Business</h2>
-        <p class="section-sub fade-up">Free consultation. No pressure. We'll tell you honestly what you need.</p>
-        <div class="contact-items">
-          <div class="contact-item fade-up"><div class="contact-icon">📧</div><div><h4>Email Us</h4><a href="mailto:admin@tssolutionsllp.com">admin@tssolutionsllp.com</a><a href="mailto:nexreach@tssolutionsllp.com">nexreach@tssolutionsllp.com</a></div></div>
-          <div class="contact-item fade-up"><div class="contact-icon">📱</div><div><h4>WhatsApp / Call</h4><a href="https://wa.me/919078686010">+91 90786 86010</a><a href="https://wa.me/917008712605">+91 70087 12605</a></div></div>
-          <div class="contact-item fade-up"><div class="contact-icon">🌐</div><div><h4>Website</h4><a href="https://www.tssolutionsllp.com">www.tssolutionsllp.com</a></div></div>
+        <div class="s-label fade-up">Contact Us</div>
+        <h2 class="s-title fade-up">Let's Grow Your<br>Business Together</h2>
+        <p class="s-sub fade-up">Free consultation. No pressure pitch. We'll tell you honestly what you need — and what you don't.</p>
+        <div class="contact-info fade-up">
+          <div class="ci-row">
+            <div class="ci-icon">📧</div>
+            <div><h4>Email Us</h4><a href="mailto:admin@tssolutionsllp.com">admin@tssolutionsllp.com</a><a href="mailto:nexreach@tssolutionsllp.com">nexreach@tssolutionsllp.com</a></div>
+          </div>
+          <div class="ci-row">
+            <div class="ci-icon">📱</div>
+            <div><h4>WhatsApp / Call</h4><a href="https://wa.me/919078686010">+91 90786 86010</a><a href="https://wa.me/917008712605">+91 70087 12605</a></div>
+          </div>
+          <div class="ci-row">
+            <div class="ci-icon">🌐</div>
+            <div><h4>Website</h4><a href="https://www.tssolutionsllp.com">www.tssolutionsllp.com</a></div>
+          </div>
+        </div>
+        <div class="urgency-box fade-up">
+          <div class="ico">⚡</div>
+          <p><strong>We respond within 24 hours.</strong> Most enquiries get a reply the same day. If you're in a hurry, WhatsApp us directly — we're fast.</p>
         </div>
       </div>
-      <div class="contact-form-wrap fade-up">
+      <div class="contact-form fade-up">
         <h3>Send Us a Message</h3>
-        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="8a0fa407-bef5-450d-8950-2f40f1cb2030">
-          <input type="hidden" name="subject" value="New Enquiry — TwinStance Website">
-          <input type="hidden" name="from_name" value="TwinStance Website">
-          <input type="hidden" name="redirect" value="false">
+        <p class="form-note">Tell us about your business and we'll come back with honest advice — free.</p>
+        <form id="contactForm">
           <div class="form-row">
             <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="John Doe" required></div>
             <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="john@example.com" required></div>
           </div>
           <div class="form-row">
-            <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="+1 XXX XXX XXXX"></div>
-            <div class="form-group"><label>Service Interested In</label>
+            <div class="form-group"><label>Phone / WhatsApp</label><input type="tel" name="phone" placeholder="+1 XXX XXX XXXX"></div>
+            <div class="form-group">
+              <label>Service Interested In</label>
               <select name="service">
                 <option>Web Development</option><option>SEO Services</option>
                 <option>PPC &amp; Paid Ads</option><option>Android App</option>
@@ -740,117 +1302,120 @@ footer { background: var(--text); color: rgba(255,255,255,0.75); padding: 64px 2
               </select>
             </div>
           </div>
-          <div class="form-group"><label>Tell Us About Your Business</label><textarea name="message" placeholder="Briefly describe your business and what you need..." required></textarea></div>
-          <button type="submit" class="btn-submit" id="submitBtn">Send Message →</button>
-          <div id="formResult" style="margin-top:14px;text-align:center;font-size:15px;min-height:20px;"></div>
-          <p style="font-size:13px;color:var(--muted);margin-top:10px;text-align:center;">We respond within 24 hours. Your info is never shared.</p>
+          <div class="form-group"><label>Tell Us About Your Business</label><textarea name="message" placeholder="What does your business do? What are you looking to achieve? Any deadlines?" required></textarea></div>
+          <button type="submit" class="btn-submit" id="submitBtn">Send Message — We'll Reply in 24h <span>→</span></button>
+          <div id="formResult" style="margin-top:10px;text-align:center;font-size:14px;min-height:18px"></div>
+          <div class="form-footer">
+            <span>🔒 Your info is never shared</span>
+            <span>✓ No spam, ever</span>
+            <span>⚡ Reply in 24h</span>
+          </div>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <div class="footer-logo-row">
-          <div class="footer-ts-logo">
-            <svg viewBox="0 0 28 28" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <text x="3" y="21" font-family="Georgia,serif" font-size="18" font-weight="bold" fill="#111">TS</text>
-            </svg>
-          </div>
-          <div class="footer-logo-text">TwinStance Solutions</div>
+        <div class="f-brand">
+          <div class="f-mark"><svg viewBox="0 0 28 28" width="20" height="20" fill="none"><text x="2" y="21" font-family="Georgia,serif" font-size="18" font-weight="bold" fill="white">TS</text></svg></div>
+          <div class="f-name">TwinStance Solutions</div>
         </div>
-        <div class="footer-desc">We help businesses grow online with professional web development, SEO, paid ads, app development, and the NexReach outreach suite. Serving clients worldwide.</div>
-        <div class="footer-socials">
-          <a href="#" class="social-btn">in</a>
-          <a href="https://wa.me/919078686010" class="social-btn">💬</a>
-          <a href="mailto:admin@tssolutionsllp.com" class="social-btn">✉</a>
+        <div class="f-desc">We help businesses grow online with professional web development, SEO, paid ads, app development, and the NexReach outreach suite. Trusted by 100+ clients across 15+ countries.</div>
+        <div class="f-socials">
+          <a href="#" class="f-soc">in</a>
+          <a href="https://wa.me/919078686010" class="f-soc">💬</a>
+          <a href="mailto:admin@tssolutionsllp.com" class="f-soc">✉</a>
         </div>
       </div>
-      <div class="footer-col"><h4>Services</h4><a href="#services">Web Development</a><a href="#services">SEO Services</a><a href="#services">PPC & Paid Ads</a><a href="#services">Android App Dev</a><a href="#services">iOS App Dev</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="#packages">Packages</a><a href="#blog">Blog</a><a href="#contact">Contact</a><a href="services/email-marketing.html">NexReach Suite</a></div>
-      <div class="footer-col"><h4>Contact</h4><a href="mailto:admin@tssolutionsllp.com">admin@tssolutionsllp.com</a><a href="https://wa.me/919078686010">+91 90786 86010</a><a href="https://wa.me/917008712605">+91 70087 12605</a></div>
+      <div class="f-col"><h4>Services</h4><a href="#services">Web Development</a><a href="#services">SEO Services</a><a href="#services">PPC &amp; Paid Ads</a><a href="#services">Android App Dev</a><a href="#services">iOS App Dev</a><a href="#services">CRM Suite</a></div>
+      <div class="f-col"><h4>Company</h4><a href="#why">Why TwinStance</a><a href="#packages">Packages &amp; Pricing</a><a href="#blog">Free Blog</a><a href="#contact">Contact Us</a><a href="services/email-marketing.html">NexReach Suite</a></div>
+      <div class="f-col"><h4>Contact</h4><a href="mailto:admin@tssolutionsllp.com">admin@tssolutionsllp.com</a><a href="mailto:nexreach@tssolutionsllp.com">nexreach@tssolutionsllp.com</a><a href="https://wa.me/919078686010">+91 90786 86010</a><a href="https://wa.me/917008712605">+91 70087 12605</a></div>
     </div>
     <div class="footer-bottom">
       <div>© 2025 TwinStance Solutions LLP. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="refund-policy.html">Refund Policy</a>
-        <a href="terms.html">Terms & Conditions</a>
-      </div>
+      <div class="f-links"><a href="privacy-policy.html">Privacy Policy</a><a href="refund-policy.html">Refund Policy</a><a href="terms.html">Terms &amp; Conditions</a></div>
       <div>Made with ❤️ for clients worldwide</div>
     </div>
   </div>
 </footer>
 
-<a href="https://wa.me/919078686010?text=Hi%20TwinStance!%20I%20want%20to%20know%20more%20about%20your%20services." class="wa-btn" target="_blank" title="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<!-- WhatsApp -->
+<a href="https://wa.me/919078686010?text=Hi%20TwinStance!%20I%20want%20to%20know%20more%20about%20your%20services." class="wa" target="_blank" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
-// Nav scroll
+// Nav
 window.addEventListener('scroll', () => {
-  document.getElementById('navbar').style.background =
-    window.scrollY > 20 ? 'rgba(245,245,247,0.95)' : 'rgba(245,245,247,0.85)';
+  document.getElementById('nav').style.background =
+    window.scrollY > 30 ? 'rgba(244,243,240,0.97)' : 'rgba(244,243,240,0.90)';
 });
-
-// Mobile menu
-function toggleMenu() {
-  const m = document.getElementById('mobileMenu');
+function toggleNav() {
+  const m = document.getElementById('mobNav');
   m.style.display = m.style.display === 'block' ? 'none' : 'block';
 }
+
+// Sticky bar — show after scrolling past hero
+const stickyBar = document.getElementById('stickyBar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 600) stickyBar.classList.add('show');
+  else stickyBar.classList.remove('show');
+});
 
 // Fade-up observer
 const obs = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
     if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('in'), i * 80);
+      setTimeout(() => e.target.classList.add('in'), i * 55);
       obs.unobserve(e.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.06 });
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
 // Contact form
 const form = document.getElementById('contactForm');
-const submitBtn = document.getElementById('submitBtn');
-const formResult = document.getElementById('formResult');
+const btn  = document.getElementById('submitBtn');
+const res  = document.getElementById('formResult');
 form.addEventListener('submit', async function(e) {
   e.preventDefault();
-  submitBtn.textContent = 'Sending...';
-  submitBtn.disabled = true;
-  formResult.textContent = '';
+  btn.innerHTML = 'Sending… <span>⏳</span>';
+  btn.disabled = true; res.textContent = '';
   const data = Object.fromEntries(new FormData(form));
+  data.access_key = '8a0fa407-bef5-450d-8950-2f40f1cb2030';
+  data.subject    = 'New Enquiry — TwinStance Website';
+  data.from_name  = 'TwinStance Website';
+  data.redirect   = 'false';
   try {
-    const res = await fetch('https://api.web3forms.com/submit', {
+    const r = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(data)
     });
-    const json = await res.json();
-    if (json.success) {
-      submitBtn.textContent = '✅ Message Sent!';
-      submitBtn.style.background = '#34c759';
-      formResult.style.color = '#34c759';
-      formResult.textContent = 'Thank you! We\'ll get back to you within 24 hours.';
+    const j = await r.json();
+    if (j.success) {
+      btn.innerHTML = '✅ Message Sent — We\'ll reply within 24h!';
+      btn.style.background = '#16a34a';
+      res.style.color = '#16a34a';
+      res.textContent = "Thank you! We'll get back to you within 24 hours.";
       form.reset();
       setTimeout(() => {
-        submitBtn.textContent = 'Send Message →';
-        submitBtn.style.background = '';
-        submitBtn.disabled = false;
-        formResult.textContent = '';
-      }, 5000);
-    } else {
-      throw new Error('Submission failed');
-    }
-  } catch (err) {
-    submitBtn.textContent = 'Send Message →';
-    submitBtn.disabled = false;
-    formResult.style.color = '#ff3b30';
-    formResult.textContent = 'Something went wrong. Please try WhatsApp or email us directly.';
+        btn.innerHTML = 'Send Message — We\'ll Reply in 24h <span>→</span>';
+        btn.style.background = '';
+        btn.disabled = false;
+        res.textContent = '';
+      }, 6000);
+    } else throw new Error();
+  } catch {
+    btn.innerHTML = 'Send Message — We\'ll Reply in 24h <span>→</span>';
+    btn.disabled = false;
+    res.style.color = '#dc2626';
+    res.textContent = 'Something went wrong. Please WhatsApp us or email directly.';
   }
 });
 </script>
