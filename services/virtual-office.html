@@ -4,184 +4,1074 @@
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Virtual Office | TwinStance Solutions</title>
-<meta name="description" content="Professional virtual office setup — business address, digital workspace, professional email. From $20/user/month.">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="Your team, together — virtually. Walk up to colleagues' desks, join meeting rooms, collaborate in real time. No Zoom links. No missed calls. From $20/user/month.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--white:#fff;--off-white:#f8f7f4;--border:#e5e2dc;--text:#1a1a1a;--muted:#6b6b6b;--accent:#1a1a6e;--accent2:#e63946;}
-*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--white);}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%;height:70px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--accent);text-decoration:none;}.nav-logo span{color:var(--accent2);}
-.nav-links{display:flex;align-items:center;gap:28px;}.nav-links a{text-decoration:none;color:var(--muted);font-size:14px;transition:color 0.2s;}.nav-links a:hover{color:var(--accent);}
-.nav-cta{background:var(--accent);color:white!important;padding:10px 22px;border-radius:8px;font-weight:600!important;}
-.hero{padding:120px 5% 80px;background:linear-gradient(135deg,#1a3a4a 0%,#2e7d6b 100%);color:white;}
-.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
-.breadcrumb{font-size:13px;opacity:0.7;margin-bottom:16px;}.breadcrumb a{color:white;text-decoration:none;}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:900;line-height:1.1;margin-bottom:20px;}
-.hero h1 em{font-style:italic;color:#ffd166;}.hero p{font-size:16px;opacity:0.85;line-height:1.7;margin-bottom:32px;}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
-.btn-white{background:white;color:#1a3a4a;padding:13px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;transition:all 0.2s;}
-.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,0.2);}
-.btn-outline-white{background:transparent;color:white;padding:13px 28px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;border:2px solid rgba(255,255,255,0.5);}
-.hero-card{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:32px;}
-.hero-card h3{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:20px;}
-.feature-list{list-style:none;}.feature-list li{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:14px;opacity:0.9;}.feature-list li:last-child{border-bottom:none;}
-.feature-list li::before{content:'✓';background:rgba(255,255,255,0.2);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
-section{padding:80px 5%;}.section-inner{max-width:1200px;margin:0 auto;}
-.section-tag{display:inline-block;background:#eeeef8;color:var(--accent);padding:4px 14px;border-radius:100px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,38px);font-weight:700;margin-bottom:16px;line-height:1.2;}
-.section-sub{color:var(--muted);font-size:15px;line-height:1.7;max-width:560px;margin-bottom:48px;}
-.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.feature-card{background:var(--off-white);border-radius:16px;padding:28px;border:1px solid var(--border);transition:all 0.3s;}
-.feature-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.08);border-color:var(--accent);}
-.feature-icon{font-size:32px;margin-bottom:16px;}.feature-card h3{font-size:16px;font-weight:600;margin-bottom:10px;}.feature-card p{font-size:13px;color:var(--muted);line-height:1.6;}
-.process-bg{background:var(--off-white);}
-.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:900px;margin:0 auto;}
-.pricing-card{background:white;border:2px solid var(--border);border-radius:24px;padding:40px;text-align:center;transition:all 0.3s;}
-.pricing-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.08);}
-.pricing-card.featured{border-color:var(--accent);box-shadow:0 20px 60px rgba(26,26,110,0.12);}
-.pricing-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:8px;}
-.pricing-price{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--accent);margin-bottom:4px;}
-.pricing-price span{font-size:15px;font-weight:400;color:var(--muted);font-family:'Outfit',sans-serif;}
-.pricing-setup{font-size:13px;color:var(--muted);margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border);}
-.pricing-features{list-style:none;text-align:left;margin-bottom:28px;}
-.pricing-features li{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:13px;border-bottom:1px solid var(--off-white);}
-.pricing-features li::before{content:'✓';color:var(--accent);font-weight:700;}
-.btn-primary{background:var(--accent);color:white;padding:13px 30px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;display:inline-block;transition:all 0.2s;}
-.btn-primary:hover{background:#2a2a9e;}
-.btn-outline{background:transparent;color:var(--accent);padding:13px 30px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;border:2px solid var(--accent);display:inline-block;transition:all 0.2s;}
-.btn-outline:hover{background:var(--accent);color:white;}
-.faq-list{max-width:720px;margin:0 auto;}.faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
-.faq-q{font-size:15px;font-weight:600;margin-bottom:10px;}.faq-a{font-size:14px;color:var(--muted);line-height:1.7;}
-.cta-section{background:var(--accent);color:white;text-align:center;padding:80px 5%;}
-.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,42px);font-weight:700;margin-bottom:16px;}
-.cta-section p{font-size:16px;opacity:0.85;margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto;}
-footer{background:var(--text);color:rgba(255,255,255,0.6);padding:30px 5%;text-align:center;font-size:13px;}
-footer a{color:rgba(255,255,255,0.7);text-decoration:none;margin:0 10px;}.footer-links{margin-bottom:12px;}
-@media(max-width:768px){.hero-inner{grid-template-columns:1fr;}.hero-card{display:none;}.features-grid{grid-template-columns:1fr;}.pricing-grid{grid-template-columns:1fr;}.nav-links{display:none;}}
+:root{
+  --ink:#0f0f0f;--sub:#2d2d2d;--muted:#5f5f5f;--faint:#999;
+  --page:#f5f5f7;--white:#fff;--card:#f0f0f2;--b:#dddde0;
+  --green:#2bb34a;--greenD:#1e8c38;--greenXL:#e8f8ec;
+  --blue:#1a73e8;--blueXL:#e8f2ff;
+  --ink-dark:#0a0a0a;
+  --r:14px;--rs:9px;--max:1100px;--pad:52px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',sans-serif;color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  height:54px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--pad);
+  background:rgba(255,255,255,.92);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--b);transition:background .3s;
+}
+.nav-brand{display:flex;align-items:center;gap:9px;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--ink)}
+.nav-brand span{color:var(--green)}
+.nav-mark{width:30px;height:30px;border-radius:8px;background:var(--green);display:flex;align-items:center;justify-content:center}
+.nav-mark svg{width:18px;height:18px}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{font-size:13.5px;color:var(--muted);transition:color .15s;font-weight:400}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--green)!important;color:#fff!important;padding:7px 18px!important;border-radius:8px!important;font-weight:700!important;font-size:13px!important;transition:all .15s!important}
+.nav-cta:hover{background:var(--greenD)!important}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hbg span{display:block;width:20px;height:1.5px;background:var(--ink);border-radius:2px}
+.mob-nav{display:none;position:fixed;top:54px;left:0;right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--b);z-index:499}
+.mob-nav a{display:block;padding:15px var(--pad);font-size:16px;border-bottom:1px solid var(--b)}
+.mob-nav a:last-child{color:var(--green);font-weight:600;border:none}
+
+/* ── HERO ── */
+.hero{
+  padding-top:54px;
+  background:var(--white);
+  min-height:100vh;display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+}
+.hero-text-block{
+  text-align:center;padding:72px var(--pad) 40px;
+  position:relative;z-index:2;
+}
+.hero-breadcrumb{font-size:12.5px;color:var(--faint);margin-bottom:20px}
+.hero-breadcrumb a{color:var(--muted);transition:color .15s}
+.hero-breadcrumb a:hover{color:var(--ink)}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(38px,6vw,72px);
+  font-weight:900;line-height:1.04;letter-spacing:-1.5px;
+  color:var(--ink);margin-bottom:20px;
+}
+.hero h1 em{font-style:italic;color:var(--green)}
+.hero-sub{font-size:18px;color:var(--muted);line-height:1.7;max-width:560px;margin:0 auto 32px;font-weight:400}
+.btn-green{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--green);color:#fff;
+  padding:14px 30px;border-radius:980px;
+  font-size:16px;font-weight:700;transition:all .2s;
+  box-shadow:0 4px 20px rgba(43,179,74,.3);
+}
+.btn-green:hover{background:var(--greenD);transform:scale(1.03);box-shadow:0 8px 28px rgba(43,179,74,.4)}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;color:var(--ink);
+  padding:14px 26px;border-radius:980px;
+  font-size:16px;font-weight:600;
+  border:1.5px solid var(--b);transition:all .2s;
+}
+.btn-outline:hover{border-color:var(--ink);background:var(--page)}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ── ANIMATED OFFICE ── */
+.office-wrap{
+  flex:1;position:relative;
+  background:linear-gradient(180deg,#e8f4fd 0%,#c5dff5 30%,#a8ccf0 60%,#8fbde8 100%);
+  min-height:500px;overflow:hidden;margin-top:20px;
+}
+
+/* Sky & ground */
+.sky{position:absolute;inset:0;background:linear-gradient(180deg,#b8d8f5 0%,#d4eaf8 100%)}
+.hills{
+  position:absolute;bottom:30%;left:-5%;right:-5%;
+  height:260px;
+  background:linear-gradient(180deg,#5ba85c 0%,#4a9249 100%);
+  border-radius:50% 50% 0 0/60% 60% 0 0;
+}
+.hills2{
+  position:absolute;bottom:25%;left:-10%;right:-10%;
+  height:200px;
+  background:linear-gradient(180deg,#4a9249 0%,#3d7a3e 100%);
+  border-radius:50% 50% 0 0/60% 60% 0 0;
+  opacity:.8;
+}
+
+/* Office floor platform */
+.office-floor{
+  position:absolute;bottom:0;left:0;right:0;
+  height:60%;
+  background:linear-gradient(180deg,#2a2a2a 0%,#1e1e1e 100%);
+  border-top:4px solid #444;
+}
+.office-floor-inner{
+  position:absolute;inset:0;
+  background:repeating-linear-gradient(
+    90deg,rgba(255,255,255,.02) 0px,rgba(255,255,255,.02) 1px,transparent 1px,transparent 80px
+  ),repeating-linear-gradient(
+    0deg,rgba(255,255,255,.02) 0px,rgba(255,255,255,.02) 1px,transparent 1px,transparent 80px
+  );
+}
+
+/* Office rooms */
+.rooms-container{
+  position:absolute;bottom:15%;left:50%;transform:translateX(-50%);
+  width:min(800px,90%);display:flex;gap:0;
+}
+.room{
+  flex:1;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-bottom:none;
+  position:relative;
+  padding:12px 8px 8px;
+  display:flex;flex-direction:column;gap:4px;
+}
+.room:first-child{border-radius:8px 0 0 0}
+.room:last-child{border-radius:0 8px 0 0}
+.room-label{font-size:9px;color:rgba(255,255,255,.5);text-align:center;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.desk{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);
+  border-radius:4px;padding:5px;display:flex;flex-direction:column;align-items:center;gap:3px;
+  font-size:7px;color:rgba(255,255,255,.4);text-align:center;
+}
+.desk-icon{font-size:14px;line-height:1}
+
+/* Avatars */
+.avatar{
+  position:absolute;display:flex;flex-direction:column;align-items:center;gap:2px;
+  animation:float-avatar 3s ease-in-out infinite;
+  cursor:pointer;z-index:10;
+}
+.avatar:hover .av-bubble{opacity:1;transform:translateY(0)}
+.av-body{
+  width:36px;height:36px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;position:relative;
+  box-shadow:0 4px 12px rgba(0,0,0,.4);
+  border:2px solid rgba(255,255,255,.3);
+}
+.av-status{
+  position:absolute;bottom:-2px;right:-2px;
+  width:10px;height:10px;border-radius:50%;
+  border:2px solid #222;
+}
+.av-status.online{background:#2bb34a}
+.av-status.busy{background:#ffd166}
+.av-status.away{background:#999}
+.av-name{font-size:9px;color:#fff;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,.8);white-space:nowrap;background:rgba(0,0,0,.5);padding:1px 5px;border-radius:4px}
+.av-bubble{
+  position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%) translateY(4px);
+  background:#fff;border-radius:8px;padding:5px 10px;white-space:nowrap;
+  font-size:10px;font-weight:600;color:var(--ink);
+  box-shadow:0 4px 12px rgba(0,0,0,.2);
+  opacity:0;transition:all .2s;pointer-events:none;
+}
+.av-bubble::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#fff}
+
+@keyframes float-avatar{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+/* Avatar walk animation */
+.av-walk{animation:walk 8s linear infinite}
+@keyframes walk{
+  0%{left:10%}
+  40%{left:45%}
+  60%{left:45%}
+  100%{left:10%}
+}
+.av-walk2{animation:walk2 10s linear infinite}
+@keyframes walk2{
+  0%{right:15%}
+  50%{right:55%}
+  70%{right:55%}
+  100%{right:15%}
+}
+
+/* Speech bubbles floating */
+.speech{
+  position:absolute;background:#fff;border-radius:12px;padding:8px 14px;
+  font-size:11px;font-weight:600;color:var(--ink);
+  box-shadow:0 4px 16px rgba(0,0,0,.15);
+  animation:speech-pop 4s ease-in-out infinite;
+  white-space:nowrap;z-index:20;
+}
+.speech::after{content:'';position:absolute;bottom:-8px;left:20px;border:5px solid transparent;border-top-color:#fff}
+@keyframes speech-pop{0%,100%{opacity:0;transform:translateY(4px)}20%,80%{opacity:1;transform:translateY(0)}}
+
+/* Meeting room notification */
+.meeting-notif{
+  position:absolute;background:#2bb34a;color:#fff;
+  border-radius:10px;padding:8px 14px;font-size:11px;font-weight:700;
+  box-shadow:0 4px 16px rgba(43,179,74,.4);
+  animation:notif-pop 5s ease-in-out infinite 2s;
+  z-index:20;white-space:nowrap;
+}
+.meeting-notif::before{content:'📹 '}
+@keyframes notif-pop{0%,100%{opacity:0;transform:scale(.9)}15%,85%{opacity:1;transform:scale(1)}}
+
+/* Overlay label on office */
+.office-label{
+  position:absolute;top:20px;left:50%;transform:translateX(-50%);
+  background:rgba(0,0,0,.6);color:#fff;border-radius:980px;
+  padding:6px 18px;font-size:12px;font-weight:600;
+  display:flex;align-items:center;gap:8px;z-index:30;backdrop-filter:blur(8px);
+  white-space:nowrap;
+}
+.ol-dot{width:8px;height:8px;border-radius:50%;background:#2bb34a;animation:pulse2 1.5s ease-in-out infinite}
+@keyframes pulse2{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── SECTIONS ── */
+.section{padding:80px 0}
+.container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.s-tag{display:inline-flex;align-items:center;gap:7px;padding:4px 14px;border-radius:980px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+.s-tag.green{background:var(--greenXL);color:var(--greenD);border:1px solid rgba(43,179,74,.2)}
+.s-tag.dark{background:#1a1a1a;color:#fff;border:1px solid #333}
+.s-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,46px);font-weight:800;line-height:1.1;letter-spacing:-.5px;margin-bottom:14px}
+.s-sub{font-size:16px;color:var(--muted);line-height:1.7;max-width:560px;font-weight:400}
+.sh{margin-bottom:48px}
+.center{text-align:center}.center .s-sub{margin:0 auto}
+
+/* ── TRUSTED BY ── */
+.trusted{background:var(--white);border-top:1px solid var(--b);border-bottom:1px solid var(--b);padding:24px 0}
+.trusted-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:center}
+.trusted-label{font-size:12px;font-weight:600;color:var(--faint);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap}
+.trusted-logos{display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:center}
+.trusted-logo{font-size:13px;font-weight:700;color:var(--faint);letter-spacing:-.3px}
+
+/* ── FEATURE TABS ── */
+.tabs-section{background:var(--white);border-bottom:1px solid var(--b)}
+.tabs-intro{text-align:center;padding:0 var(--pad);margin-bottom:48px}
+.tabs-intro-sub{font-size:12.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:8px}
+.tabs-intro h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,48px);font-weight:900;letter-spacing:-.8px;line-height:1.1;margin-bottom:14px}
+.tabs-intro p{font-size:16px;color:var(--muted);max-width:580px;margin:0 auto;line-height:1.7}
+
+.tabs-nav{display:flex;gap:0;border:1px solid var(--b);border-radius:980px;overflow:hidden;width:fit-content;margin:0 auto 48px;background:var(--page)}
+.tab-btn{
+  padding:10px 22px;font-size:13.5px;font-weight:600;color:var(--muted);
+  background:transparent;border:none;cursor:pointer;font-family:'Figtree',sans-serif;
+  transition:all .2s;white-space:nowrap;
+}
+.tab-btn.active{background:var(--ink);color:#fff;border-radius:980px}
+
+/* Feature panels */
+.feat-panels{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.feat-panel{
+  background:var(--page);border:1px solid var(--b);border-radius:20px;
+  overflow:hidden;transition:all .2s;
+}
+.feat-panel.wide{grid-column:1/-1}
+.feat-panel:hover{box-shadow:0 8px 28px rgba(0,0,0,.08)}
+.fp-body{padding:28px 28px 0}
+.fp-body h3{font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px;letter-spacing:-.2px}
+.fp-body p{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:18px}
+.fp-checks{list-style:none;margin-bottom:20px}
+.fp-checks li{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--sub);padding:5px 0}
+.fp-checks li::before{content:'';width:18px;height:18px;border-radius:50%;background:var(--green);flex-shrink:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='white' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-size:10px;background-position:center;background-repeat:no-repeat}
+
+/* Animated feature visuals */
+.fp-visual{
+  margin-top:20px;min-height:180px;
+  position:relative;overflow:hidden;border-radius:0 0 12px 12px;
+}
+.fp-visual.office-view{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)}
+.fp-visual.meeting-view{background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%)}
+.fp-visual.collab-view{background:linear-gradient(135deg,#f0f4f8 0%,#e2ebf5 100%)}
+.fp-visual.vibes-view{background:linear-gradient(135deg,#1a0533 0%,#2d1045 100%)}
+
+/* Office view - top down */
+.office-topdown{
+  position:absolute;inset:20px;
+  border:1px solid rgba(255,255,255,.1);border-radius:10px;
+  display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);
+  gap:1px;background:rgba(255,255,255,.05);overflow:hidden;
+}
+.otd-room{
+  background:rgba(255,255,255,.04);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:6px;padding:8px;position:relative;
+}
+.otd-room-label{font-size:8px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.06em}
+.otd-avatar-mini{font-size:16px;position:relative}
+.otd-online{
+  position:absolute;bottom:-2px;right:-2px;width:7px;height:7px;border-radius:50%;
+  background:#2bb34a;border:1px solid #111;
+}
+.otd-meeting{background:rgba(43,179,74,.08);border:1px solid rgba(43,179,74,.2)}
+
+/* Walking avatar in office view */
+.walker{
+  position:absolute;font-size:20px;
+  animation:walk-topdown 6s ease-in-out infinite;
+  z-index:5;
+}
+@keyframes walk-topdown{
+  0%{left:10%;top:60%;opacity:0}
+  10%{opacity:1}
+  40%{left:40%;top:30%}
+  60%{left:40%;top:30%}
+  90%{left:70%;top:60%;opacity:1}
+  100%{left:70%;top:60%;opacity:0}
+}
+
+/* Meeting grid */
+.meeting-grid{
+  position:absolute;inset:16px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
+}
+.mg-tile{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);
+  border-radius:8px;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:4px;padding:8px;
+}
+.mg-tile.speaking{background:rgba(43,179,74,.12);border-color:rgba(43,179,74,.3);animation:speak-pulse 2s ease-in-out infinite}
+@keyframes speak-pulse{0%,100%{border-color:rgba(43,179,74,.3)}50%{border-color:rgba(43,179,74,.8)}}
+.mg-face{font-size:22px}
+.mg-name{font-size:8px;color:rgba(255,255,255,.5);font-weight:600}
+.mg-mic{font-size:10px}
+
+/* Collab visual */
+.whiteboard{
+  position:absolute;inset:16px;
+  background:#fff;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,.1);
+  overflow:hidden;
+}
+.wb-top{background:#f0f0f0;padding:6px 12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #ddd}
+.wb-tool{width:20px;height:20px;border-radius:4px;background:#ddd}
+.wb-avatars{display:flex;gap:4px;margin-left:auto}
+.wb-av{width:18px;height:18px;border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+.wb-canvas{flex:1;padding:12px;display:flex;align-items:center;justify-content:center}
+.wb-drawing{position:relative;width:100%;height:100px}
+.wb-line{position:absolute;background:var(--blue);border-radius:2px;height:2px;animation:draw-line 4s ease-in-out infinite}
+
+/* Vibes visual */
+.vibes-content{position:absolute;inset:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.vibes-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:6px}
+.vc-title{font-size:9px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.06em}
+.vc-emoji{font-size:24px;text-align:center}
+.vc-desc{font-size:9px;color:rgba(255,255,255,.6);text-align:center}
+
+/* ── NOT ALL TOOLS EQUAL ── */
+.compare-section{background:var(--ink-dark);color:#fff;padding:80px 0}
+.compare-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.compare-left h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:900;letter-spacing:-.5px;line-height:1.1;margin-bottom:18px}
+.compare-left p{font-size:15px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:32px}
+.compare-left strong{color:#fff}
+.compare-cols{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden}
+.cc{padding:24px 20px}
+.cc.old{background:rgba(255,255,255,.03)}
+.cc.new{background:rgba(43,179,74,.08);border-left:1px solid rgba(43,179,74,.2)}
+.cc-head{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;color:rgba(255,255,255,.5)}
+.cc.new .cc-head{color:var(--green)}
+.cc-item{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:rgba(255,255,255,.65);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.4}
+.cc-item:last-child{border-bottom:none}
+.cc-item-icon{font-size:14px;flex-shrink:0;margin-top:1px}
+
+/* ── TESTIMONIALS ── */
+.testi-section{background:var(--page);border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tc{background:var(--white);border:1px solid var(--b);border-radius:16px;padding:28px;transition:all .2s}
+.tc:hover{box-shadow:0 8px 28px rgba(0,0,0,.08);transform:translateY(-3px)}
+.tc-stars{color:#f59e0b;font-size:13px;letter-spacing:1px;margin-bottom:12px}
+.tc-text{font-size:14px;color:var(--sub);line-height:1.75;margin-bottom:18px;font-style:italic}
+.tc-auth{display:flex;align-items:center;gap:11px}
+.tc-av{width:36px;height:36px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;flex-shrink:0}
+.tc-name{font-size:13.5px;font-weight:700}
+.tc-role{font-size:12px;color:var(--muted)}
+
+/* ── STATS ── */
+.stats-section{background:var(--white);border-bottom:1px solid var(--b);padding:60px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--b);border-radius:16px;overflow:hidden;max-width:700px;margin:0 auto}
+.stat{text-align:center;padding:28px 20px;border-right:1px solid var(--b)}
+.stat:last-child{border-right:none}
+.stat-val{font-family:'Playfair Display',serif;font-size:40px;font-weight:900;letter-spacing:-1.5px;color:var(--ink);margin-bottom:6px}
+.stat-val span{color:var(--green)}
+.stat-lbl{font-size:13px;color:var(--muted)}
+
+/* ── PRICING ── */
+.pricing-section{background:var(--page);border-top:1px solid var(--b)}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:820px;margin:0 auto}
+.pc{
+  border-radius:20px;padding:38px 32px;border:1px solid var(--b);
+  background:var(--white);display:flex;flex-direction:column;
+  position:relative;transition:transform .2s,box-shadow .2s;
+}
+.pc:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.08)}
+.pc.featured{border:1.5px solid var(--green);box-shadow:0 0 0 1px var(--green)}
+.pc-badge{
+  position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:var(--green);color:#fff;padding:4px 18px;border-radius:980px;
+  font-size:11.5px;font-weight:700;white-space:nowrap;
+  box-shadow:0 3px 10px rgba(43,179,74,.3);
+}
+.pc-name{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.pc-price{font-family:'Playfair Display',serif;font-size:56px;font-weight:900;letter-spacing:-2px;line-height:1;color:var(--ink);margin-bottom:4px;display:flex;align-items:flex-start;gap:2px}
+.pc-price sup{font-size:24px;vertical-align:top;margin-top:12px;font-family:'Figtree',sans-serif;font-weight:400}
+.pc-period{font-size:13px;color:var(--muted);margin-bottom:18px}
+.pc-desc{font-size:13.5px;color:var(--sub);padding-bottom:18px;border-bottom:1px solid var(--b);margin-bottom:20px;line-height:1.6}
+.pc-feats{list-style:none;flex:1;margin-bottom:26px}
+.pc-feats li{display:flex;align-items:flex-start;gap:9px;font-size:14px;color:var(--sub);padding:8px 0;border-bottom:1px solid rgba(0,0,0,.04)}
+.pc-feats li:last-child{border-bottom:none}
+.pc-feats li::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0;margin-top:1px;font-size:13px}
+.pc-cta{
+  display:block;text-align:center;padding:13px;border-radius:var(--rs);
+  font-weight:700;font-size:14.5px;transition:all .2s;font-family:'Figtree',sans-serif;
+  border:1.5px solid var(--b);color:var(--ink);
+}
+.pc-cta:hover,.pc.featured .pc-cta{background:var(--green);color:#fff;border-color:var(--green)}
+.pc-cta.outline{border-color:var(--green);color:var(--green)}
+.pc-cta.outline:hover{background:var(--green);color:#fff}
+
+/* ── FAQ ── */
+.faq-section{background:var(--white);border-top:1px solid var(--b)}
+.faq-list{max-width:760px;margin:0 auto;border:1px solid var(--b);border-radius:16px;overflow:hidden}
+.faq-item{padding:22px 28px;border-bottom:1px solid var(--b);background:var(--white);transition:background .2s}
+.faq-item:last-child{border-bottom:none}
+.faq-item:hover{background:var(--page)}
+.faq-q{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.faq-a{font-size:13.5px;color:var(--muted);line-height:1.7}
+
+/* ── CTA ── */
+.cta-section{background:var(--green);color:#fff;text-align:center;padding:100px var(--pad);position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 70%);pointer-events:none}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,54px);color:#fff;margin-bottom:18px;letter-spacing:-.5px;position:relative;z-index:1}
+.cta-section h2 em{font-style:italic;color:rgba(255,255,255,.85)}
+.cta-section p{font-size:17px;color:rgba(255,255,255,.8);margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7;position:relative;z-index:1}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.btn-white-solid{background:#fff;color:var(--green);padding:14px 28px;border-radius:980px;font-size:16px;font-weight:700;transition:all .2s}
+.btn-white-solid:hover{transform:scale(1.03);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.btn-ghost-white2{background:transparent;color:#fff;padding:14px 24px;border-radius:980px;font-size:16px;font-weight:600;border:1.5px solid rgba(255,255,255,.5);transition:all .2s}
+.btn-ghost-white2:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.cta-note{font-size:13px;color:rgba(255,255,255,.6);margin-top:18px;position:relative;z-index:1}
+
+/* ── FOOTER ── */
+footer{background:var(--ink-dark);color:rgba(255,255,255,.5);padding:32px var(--pad);text-align:center;font-size:13px}
+.footer-links{margin-bottom:10px;display:flex;justify-content:center;flex-wrap:wrap;gap:4px}
+footer a{color:rgba(255,255,255,.5);transition:color .15s;margin:0 8px}
+footer a:hover{color:#fff}
+
+/* WA */
+.wa{position:fixed;bottom:22px;right:22px;z-index:999;width:50px;height:50px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.4);transition:transform .2s}
+.wa:hover{transform:scale(1.1)}
+.wa svg{width:26px;height:26px;fill:#fff}
+
+/* ANIM */
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.in{opacity:1;transform:translateY(0)}
+
+/* Tab content */
+.tab-content{display:none}
+.tab-content.active{display:grid}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  :root{--pad:28px}
+  .compare-inner{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr 1fr}
+  .feat-panels{grid-template-columns:1fr}
+  .feat-panel.wide{grid-column:auto}
+}
+@media(max-width:768px){
+  :root{--pad:20px}
+  nav{padding:0 var(--pad)}
+  .nav-links{display:none}
+  .hbg{display:flex}
+  .section{padding:56px 0}
+  .office-wrap{min-height:320px}
+  .rooms-container{display:none}
+  .stats-grid{grid-template-columns:1fr}
+  .stat{border-right:none;border-bottom:1px solid var(--b)}
+  .stat:last-child{border-bottom:none}
+  .pricing-grid{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .compare-cols{grid-template-columns:1fr}
+  .cc.new{border-left:none;border-top:1px solid rgba(43,179,74,.2)}
+  .tabs-nav{flex-wrap:wrap;border-radius:12px}
+  footer{padding:24px var(--pad)}
+}
 </style>
 </head>
 <body>
-<nav>
-  <a href="../index.html" class="nav-logo">Twin<span>Stance</span></a>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-brand" href="../index.html">
+    <div class="nav-mark"><svg viewBox="0 0 28 28" fill="none"><text x="2" y="21" font-family="Georgia,serif" font-size="18" font-weight="bold" fill="white">TS</text></svg></div>
+    Twin<span>Stance</span>
+  </a>
   <div class="nav-links">
     <a href="../index.html#services">Services</a>
     <a href="../index.html#packages">Packages</a>
     <a href="../index.html#contact">Contact</a>
-    <a href="email-marketing.html" class="nav-cta">🚀 NexReach Suite</a>
+    <a href="email-marketing.html" class="nav-cta">🚀 NexReach</a>
   </div>
+  <button class="hbg" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
+<div class="mob-nav" id="mobNav">
+  <a href="../index.html#services" onclick="toggleNav()">Services</a>
+  <a href="../index.html#packages" onclick="toggleNav()">Packages</a>
+  <a href="../index.html#contact" onclick="toggleNav()">Contact</a>
+  <a href="email-marketing.html" onclick="toggleNav()">🚀 NexReach Suite</a>
+</div>
 
+<!-- HERO -->
 <div class="hero">
-  <div class="hero-inner">
-    <div>
-      <div class="breadcrumb"><a href="../index.html">Home</a> → <a href="../index.html#services">Services</a> → Virtual Office</div>
-      <h1>A Professional Business Presence <em>Without the Office Cost</em></h1>
-      <p>Get a professional business address, digital workspace, and virtual team environment — without renting physical office space. From $20/user/month.</p>
-      <div class="hero-btns">
-        <a href="../index.html#contact" class="btn-white">Get Started →</a>
-        <a href="../index.html#packages" class="btn-outline-white">View Packages</a>
+  <div class="hero-text-block">
+    <div class="hero-breadcrumb"><a href="../index.html">Home</a> → <a href="../index.html#services">Services</a> → Virtual Office</div>
+    <h1>Your office is<br><em>everywhere now.</em></h1>
+    <p class="hero-sub">Walk up to a colleague's desk. Pop into a meeting room. No Zoom links. No missed calls. Just your team — together, online.</p>
+    <div class="hero-btns">
+      <a href="../index.html#contact" class="btn-green">Get Your Virtual Office →</a>
+      <a href="#features" class="btn-outline">See How It Works</a>
+    </div>
+  </div>
+
+  <!-- ANIMATED OFFICE ENVIRONMENT -->
+  <div class="office-wrap">
+    <div class="sky"></div>
+    <div class="hills2"></div>
+    <div class="hills"></div>
+    <div class="office-floor"><div class="office-floor-inner"></div></div>
+
+    <!-- Office rooms (top-down view style) -->
+    <div class="rooms-container">
+      <div class="room">
+        <div class="room-label">Engineering</div>
+        <div class="desk"><div class="desk-icon">💻</div>Rahul</div>
+        <div class="desk"><div class="desk-icon">💻</div>Anil</div>
+      </div>
+      <div class="room" style="background:rgba(43,179,74,.08);border-color:rgba(43,179,74,.2)">
+        <div class="room-label" style="color:rgba(43,179,74,.8)">📹 Board Room</div>
+        <div style="text-align:center;font-size:11px;color:rgba(255,255,255,.5);padding:10px 0">Meeting in progress · 3 people</div>
+        <div style="display:flex;justify-content:center;gap:8px;font-size:20px">👩‍💼 👨‍💼 👩‍💼</div>
+      </div>
+      <div class="room">
+        <div class="room-label">Design</div>
+        <div class="desk"><div class="desk-icon">🎨</div>Priya</div>
+        <div class="desk"><div class="desk-icon">🎨</div>Sara</div>
+      </div>
+      <div class="room" style="grid-column:span 1">
+        <div class="room-label">Reception</div>
+        <div class="desk"><div class="desk-icon">📞</div>Front Desk</div>
+      </div>
+      <div class="room">
+        <div class="room-label">Lounge ☕</div>
+        <div style="text-align:center;font-size:20px;padding:8px">🛋️</div>
       </div>
     </div>
-    <div class="hero-card">
-      <h3>What's Included</h3>
-      <ul class="feature-list">
-        <li>Professional business address</li>
-        <li>Virtual team workspace</li>
-        <li>Digital document management</li>
-        <li>Team collaboration tools</li>
-        <li>Professional email setup</li>
-        <li>GST-ready address</li>
-        <li>Dedicated support</li>
-      </ul>
+
+    <!-- Walking avatars -->
+    <div class="avatar av-walk" style="bottom:38%;left:10%">
+      <div class="av-body" style="background:#2bb34a">👨‍💼<div class="av-status online"></div></div>
+      <div class="av-name">Rahul</div>
+      <div class="av-bubble">Hey Priya, got a sec? 👋</div>
+    </div>
+
+    <div class="avatar" style="bottom:42%;right:22%;animation:float-avatar 4s ease-in-out infinite 1s">
+      <div class="av-body" style="background:#1a73e8">👩‍💼<div class="av-status online"></div></div>
+      <div class="av-name">Priya</div>
+      <div class="av-bubble">Sure, walking over! 😊</div>
+    </div>
+
+    <div class="avatar" style="bottom:36%;left:52%;animation:float-avatar 5s ease-in-out infinite .5s">
+      <div class="av-body" style="background:#9c27b0">👨‍💻<div class="av-status busy"></div></div>
+      <div class="av-name">Anil · DND</div>
+    </div>
+
+    <div class="avatar" style="bottom:44%;left:30%;animation:float-avatar 3.5s ease-in-out infinite 2s">
+      <div class="av-body" style="background:#e63946">👩‍🎨<div class="av-status online"></div></div>
+      <div class="av-name">Sara</div>
+      <div class="av-bubble">Joining the standup!</div>
+    </div>
+
+    <!-- Speech bubbles -->
+    <div class="speech" style="bottom:58%;left:22%;animation-delay:0s">📹 Board Room meeting started</div>
+    <div class="speech" style="bottom:55%;right:18%;animation-delay:2.5s;animation-duration:5s">🎵 Jamming to lo-fi beats</div>
+
+    <!-- Meeting notification -->
+    <div class="meeting-notif" style="bottom:65%;left:50%;transform:translateX(-50%)">Standup started · Join now</div>
+
+    <!-- Office label -->
+    <div class="office-label">
+      <span class="ol-dot"></span>
+      TwinStance Virtual Office · 7 people online
     </div>
   </div>
 </div>
 
-<section>
-  <div class="section-inner">
-    <div class="section-tag">Features</div>
-    <h2 class="section-title">Everything a Physical Office Gives You — Virtually</h2>
-    <p class="section-sub">Perfect for startups, freelancers, and remote teams that want to look professional without paying for office rent.</p>
-    <div class="features-grid">
-      <div class="feature-card"><div class="feature-icon">🏢</div><h3>Business Address</h3><p>A professional registered business address you can use on your website, business cards, and official registrations.</p></div>
-      <div class="feature-card"><div class="feature-icon">💼</div><h3>Digital Workspace</h3><p>Cloud-based workspace for your team with file sharing, task management, and communication tools.</p></div>
-      <div class="feature-card"><div class="feature-icon">👥</div><h3>Team Collaboration</h3><p>Virtual environment for your team to collaborate, share files, and stay aligned — from anywhere in the world.</p></div>
-      <div class="feature-card"><div class="feature-icon">📧</div><h3>Professional Email</h3><p>Business email addresses for your team on your own domain. Looks professional to every client.</p></div>
-      <div class="feature-card"><div class="feature-icon">📁</div><h3>Document Management</h3><p>Secure cloud storage and document management for all your business files and contracts.</p></div>
-      <div class="feature-card"><div class="feature-icon">📞</div><h3>Support &amp; Onboarding</h3><p>We set everything up and train your team. Dedicated support whenever you need help.</p></div>
+<!-- TRUSTED BY -->
+<div class="trusted">
+  <div class="trusted-inner">
+    <div class="trusted-label">Loved by teams at</div>
+    <div class="trusted-logos">
+      <div class="trusted-logo">Startups</div>
+      <div class="trusted-logo">Agencies</div>
+      <div class="trusted-logo">Consultants</div>
+      <div class="trusted-logo">Remote Teams</div>
+      <div class="trusted-logo">Freelancers</div>
+      <div class="trusted-logo">LLPs &amp; Pvt Ltd</div>
+    </div>
+  </div>
+</div>
+
+<!-- TABS FEATURE SECTION -->
+<section class="tabs-section section" id="features">
+  <div class="container">
+    <div class="tabs-intro fade-up">
+      <div class="tabs-intro-sub">Your team are more than green dots.</div>
+      <h2>Welcome to in-person, online.</h2>
+      <p>All the things you used to do in the office — walk up to colleagues' desks, pop into meeting rooms, celebrate wins, collaborate on whiteboards — now done virtually.</p>
+    </div>
+
+    <div class="tabs-nav fade-up" id="tabsNav">
+      <button class="tab-btn active" onclick="switchTab('productive')">🚀 Be More Productive</button>
+      <button class="tab-btn" onclick="switchTab('collaborate')">👥 Collaborate Remotely</button>
+      <button class="tab-btn" onclick="switchTab('vibes')">🎉 Good Vibes</button>
+      <button class="tab-btn" onclick="switchTab('meetings')">📹 Better Meetings</button>
+    </div>
+
+    <!-- TAB: Productive -->
+    <div class="tab-content active feat-panels" id="tab-productive">
+      <div class="feat-panel">
+        <div class="fp-body">
+          <h3>Less scheduled meetings, more quick sync-ups</h3>
+          <p>Need to catch up with a co-worker? Just walk over to their desk and start talking — just like you used to in a real office. No invite needed.</p>
+        </div>
+        <div class="fp-visual office-view">
+          <div class="office-topdown">
+            <div class="otd-room"><div class="otd-room-label">Engineering</div><div class="otd-avatar-mini">👨‍💻<div class="otd-online"></div></div></div>
+            <div class="otd-room otd-meeting"><div class="otd-room-label" style="color:rgba(43,179,74,.8)">📹 Meeting</div><div style="font-size:18px">👥</div></div>
+            <div class="otd-room"><div class="otd-room-label">Design</div><div class="otd-avatar-mini">👩‍🎨<div class="otd-online"></div></div></div>
+            <div class="otd-room"><div class="otd-room-label">Lounge</div><div style="font-size:16px">🛋️</div></div>
+            <div class="otd-room"><div class="otd-room-label">Reception</div></div>
+            <div class="otd-room"><div class="otd-room-label">Sales</div><div class="otd-avatar-mini">👩‍💼<div class="otd-online" style="background:#ffd166"></div></div></div>
+          </div>
+          <div class="walker">🧑‍💼</div>
+          <div class="speech" style="bottom:10px;left:30%;animation-duration:6s;font-size:10px">Walking to Design desk... 🚶</div>
+        </div>
+      </div>
+      <div class="feat-panel">
+        <div class="fp-body">
+          <h3>See what's happening at a glance</h3>
+          <p>Want to know who's around and who's working on what? Just take a peek around the office and you'll be up to speed.</p>
+          <ul class="fp-checks">
+            <li>Never miss a meeting</li>
+            <li>Know who to approach and who's on DND</li>
+            <li>Boost spontaneous interactions</li>
+          </ul>
+        </div>
+        <div class="fp-visual meeting-view" style="background:linear-gradient(135deg,#0a1628 0%,#0d1f3c 100%)">
+          <div style="position:absolute;inset:16px;display:flex;flex-direction:column;gap:8px">
+            <div style="font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;font-weight:600">Online Now</div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border-radius:8px;padding:8px 12px">
+                <span style="font-size:16px">👨‍💼</span>
+                <div style="flex:1"><div style="font-size:11px;color:#fff;font-weight:600">Rahul — CEO</div><div style="font-size:9px;color:rgba(255,255,255,.4)">Working on proposal</div></div>
+                <div style="width:8px;height:8px;border-radius:50%;background:#2bb34a"></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;background:rgba(43,179,74,.08);border:1px solid rgba(43,179,74,.2);border-radius:8px;padding:8px 12px">
+                <span style="font-size:16px">👩‍💼</span>
+                <div style="flex:1"><div style="font-size:11px;color:#fff;font-weight:600">Priya — Sales</div><div style="font-size:9px;color:rgba(43,179,74,.7)">📹 In Board Room meeting</div></div>
+                <div style="width:8px;height:8px;border-radius:50%;background:#2bb34a"></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border-radius:8px;padding:8px 12px">
+                <span style="font-size:16px">👨‍💻</span>
+                <div style="flex:1"><div style="font-size:11px;color:#fff;font-weight:600">Anil — Dev</div><div style="font-size:9px;color:rgba(255,165,0,.7)">🎧 Do Not Disturb</div></div>
+                <div style="width:8px;height:8px;border-radius:50%;background:#ffd166"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Collaborate -->
+    <div class="tab-content feat-panels" id="tab-collaborate">
+      <div class="feat-panel">
+        <div class="fp-body">
+          <h3>Work collaboratively with simultaneous screensharing</h3>
+          <p>Share your screen, upload PDFs, or work from a shared browser — all at the same time. Multiple people, one screen.</p>
+        </div>
+        <div class="fp-visual collab-view">
+          <div class="whiteboard">
+            <div class="wb-top">
+              <div class="wb-tool" style="background:#ef4444"></div>
+              <div class="wb-tool" style="background:#3b82f6"></div>
+              <div class="wb-tool" style="background:#22c55e"></div>
+              <div class="wb-avatars">
+                <div class="wb-av" style="background:#2bb34a">R</div>
+                <div class="wb-av" style="background:#1a73e8">P</div>
+                <div class="wb-av" style="background:#9c27b0">A</div>
+              </div>
+            </div>
+            <div style="padding:12px;display:flex;align-items:center;justify-content:center;height:110px;position:relative">
+              <div style="position:absolute;top:15px;left:20px;font-size:10px;color:#999;border:1px dashed #ddd;padding:6px 10px;border-radius:4px">Homepage wireframe</div>
+              <div style="position:absolute;top:40px;left:80px;width:60px;height:40px;border:2px solid #3b82f6;border-radius:6px;background:#eff6ff"></div>
+              <div style="position:absolute;top:55px;right:30px;width:40px;height:30px;border:2px solid #22c55e;border-radius:4px;background:#f0fdf4"></div>
+              <div style="position:absolute;bottom:15px;left:20px;font-size:9px;color:#ef4444">✏️ Rahul is drawing...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-panel">
+        <div class="fp-body">
+          <h3>Set up shared spaces for collaboration</h3>
+          <p>Spaces designed to spark conversation, innovation, and team spirit — whiteboards, shared browsers, high-fives for celebrating ideas.</p>
+          <ul class="fp-checks">
+            <li>Whiteboards and enhanced screensharing</li>
+            <li>High-fives and emotes for celebrating</li>
+            <li>Brings back that in-person collaboration feel</li>
+          </ul>
+        </div>
+        <div class="fp-visual office-view" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
+          <div style="position:absolute;inset:16px;display:flex;flex-direction:column;gap:10px">
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px;display:flex;align-items:center;gap:10px">
+              <span style="font-size:20px">📊</span>
+              <div>
+                <div style="font-size:11px;color:#fff;font-weight:600;margin-bottom:2px">Q1 Results — Shared screen</div>
+                <div style="font-size:9px;color:rgba(255,255,255,.4)">Priya is presenting · 4 watching</div>
+              </div>
+              <div style="margin-left:auto;font-size:9px;color:#2bb34a;font-weight:600">● LIVE</div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:8px;flex:1;text-align:center">
+                <div style="font-size:16px">🙌</div><div style="font-size:9px;color:rgba(255,255,255,.4)">High-five!</div>
+              </div>
+              <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:8px;flex:1;text-align:center">
+                <div style="font-size:16px">🎉</div><div style="font-size:9px;color:rgba(255,255,255,.4)">Celebrate</div>
+              </div>
+              <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:8px;flex:1;text-align:center">
+                <div style="font-size:16px">📝</div><div style="font-size:9px;color:rgba(255,255,255,.4)">Whiteboard</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Vibes -->
+    <div class="tab-content feat-panels" id="tab-vibes">
+      <div class="feat-panel">
+        <div class="fp-body">
+          <h3>Celebrate like you used to</h3>
+          <p>Birthday? Hit the gong. Big win? Release the confetti. Holidays? Make it snow. Your team culture lives here.</p>
+          <ul class="fp-checks">
+            <li>Birthday? Bring out the cake and celebrate</li>
+            <li>Big win? Hit the gong and release the confetti</li>
+            <li>Holidays? Decorate the office and make it snow!</li>
+          </ul>
+        </div>
+        <div class="fp-visual vibes-view">
+          <div class="vibes-content">
+            <div class="vibes-card">
+              <div class="vc-title">🎂 Birthday Today</div>
+              <div class="vc-emoji">🎉🎂🎈</div>
+              <div class="vc-desc">Happy Birthday Priya! 🥳</div>
+            </div>
+            <div class="vibes-card">
+              <div class="vc-title">🏆 Big Win!</div>
+              <div class="vc-emoji">🎊🔔🎺</div>
+              <div class="vc-desc">Deal closed! $50K 🚀</div>
+            </div>
+            <div class="vibes-card">
+              <div class="vc-title">🎵 Music Room</div>
+              <div class="vc-emoji">🎧🎶</div>
+              <div class="vc-desc">Lo-fi · 3 people listening</div>
+            </div>
+            <div class="vibes-card">
+              <div class="vc-title">☕ Water Cooler</div>
+              <div class="vc-emoji">🛋️💬</div>
+              <div class="vc-desc">Casual chat · Open space</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-panel">
+        <div class="fp-body">
+          <h3>Gather around the water cooler</h3>
+          <p>Shared jokes, memes, Friday chats — the culture you built in the office, now online. Because work isn't just work.</p>
+        </div>
+        <div class="fp-visual office-view" style="background:linear-gradient(135deg,#1a0533,#2d1045)">
+          <div style="position:absolute;inset:16px;display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;text-align:center">
+            <div style="font-size:36px">🎊</div>
+            <div style="font-size:13px;font-weight:700;color:#fff">The office is celebrating!</div>
+            <div style="display:flex;gap:8px;font-size:24px;animation:float-avatar 2s ease-in-out infinite">🎉🎈🎊🎉</div>
+            <div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:4px">5 people in the party room</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Meetings -->
+    <div class="tab-content feat-panels" id="tab-meetings">
+      <div class="feat-panel">
+        <div class="fp-body">
+          <h3>No more "can somebody send me the link?"</h3>
+          <p>Just walk to the meeting room and you're in — just like a real office. No Zoom link. No invite. No awkward wait.</p>
+        </div>
+        <div class="fp-visual meeting-view">
+          <div class="meeting-grid">
+            <div class="mg-tile speaking">
+              <div class="mg-face">👩‍💼</div>
+              <div class="mg-name">Priya</div>
+              <div class="mg-mic">🎤</div>
+            </div>
+            <div class="mg-tile">
+              <div class="mg-face">👨‍💼</div>
+              <div class="mg-name">Rahul</div>
+              <div class="mg-mic">🔇</div>
+            </div>
+            <div class="mg-tile">
+              <div class="mg-face">👨‍💻</div>
+              <div class="mg-name">Anil</div>
+              <div class="mg-mic">🔇</div>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:8px">
+            <div style="background:rgba(255,255,255,.1);border-radius:6px;padding:5px 10px;font-size:10px;color:rgba(255,255,255,.6)">📹 Camera On</div>
+            <div style="background:rgba(255,255,255,.1);border-radius:6px;padding:5px 10px;font-size:10px;color:rgba(255,255,255,.6)">🖥️ Share Screen</div>
+            <div style="background:rgba(255,99,99,.3);border-radius:6px;padding:5px 10px;font-size:10px;color:#ff9999">Leave</div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-panel">
+        <div class="fp-body">
+          <h3>Lock rooms for private conversations</h3>
+          <p>HR reviews, performance discussions, confidential deals — lock any room for complete privacy. TLS encrypted, nothing stored.</p>
+          <ul class="fp-checks">
+            <li>Lock meetings for extra privacy</li>
+            <li>TLS encrypted voice &amp; video</li>
+            <li>Enterprise-level roles &amp; permissions</li>
+          </ul>
+        </div>
+        <div class="fp-visual office-view" style="background:linear-gradient(135deg,#0a0a1a,#1a1a2e)">
+          <div style="position:absolute;inset:20px;display:flex;flex-direction:column;gap:10px">
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px;display:flex;align-items:center;gap:12px">
+              <span style="font-size:24px">🔒</span>
+              <div>
+                <div style="font-size:12px;font-weight:700;color:#fff">HR Room — Locked</div>
+                <div style="font-size:10px;color:rgba(255,255,255,.4)">Private meeting · Only invited members</div>
+              </div>
+            </div>
+            <div style="background:rgba(43,179,74,.08);border:1px solid rgba(43,179,74,.2);border-radius:10px;padding:10px;font-size:10px;color:rgba(43,179,74,.8)">
+              🛡️ Voice &amp; video encrypted with TLS · Not stored on any server
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="process-bg">
-  <div class="section-inner">
-    <div class="section-tag" style="text-align:center;display:block;">Pricing</div>
-    <h2 class="section-title" style="text-align:center;">Virtual Office Plans</h2>
-    <p style="text-align:center;color:var(--muted);margin-bottom:12px;font-size:15px;">Billed monthly per user. Cancel anytime with 30 days notice.</p>
-    <p style="text-align:center;color:var(--muted);margin-bottom:48px;font-size:13px;">One-time setup fee discussed during consultation. All prices in USD.</p>
-    <div class="pricing-grid">
-      <div class="pricing-card featured">
-        <div class="pricing-name">Basic Virtual Office</div>
-        <div class="pricing-price">$20 <span>/ user / month</span></div>
-        <div class="pricing-setup">Per user · Minimum 1 user · + One-time setup fee</div>
-        <ul class="pricing-features">
-          <li>Professional business address</li>
-          <li>Up to 3 team users</li>
-          <li>Digital workspace access</li>
-          <li>Professional email setup</li>
-          <li>Document cloud storage</li>
-          <li>Team collaboration tools</li>
-          <li>Standard support</li>
-        </ul>
-        <a href="../index.html#contact" class="btn-primary">Get Started →</a>
+<!-- COMPARE: NOT ALL TOOLS EQUAL -->
+<section class="compare-section">
+  <div class="compare-inner">
+    <div class="compare-left fade-up">
+      <div class="s-tag dark" style="margin-bottom:20px">Not all remote tools are equal</div>
+      <h2>Slack, Zoom, and Teams weren't built for this.</h2>
+      <p>They were built to improve the <strong>old way</strong> of working. And it shows. Channels, calendar links, siloed teams — that's not how people actually work together. <strong>Your virtual office is.</strong></p>
+    </div>
+    <div class="compare-cols fade-up">
+      <div class="cc old">
+        <div class="cc-head">❌ The Old Way</div>
+        <div class="cc-item"><span class="cc-item-icon">💬</span> Channels, chats and missed messages</div>
+        <div class="cc-item"><span class="cc-item-icon">📅</span> Calendar confusion and meeting mixups</div>
+        <div class="cc-item"><span class="cc-item-icon">🔗</span> "Can someone send me the Zoom link?"</div>
+        <div class="cc-item"><span class="cc-item-icon">🏝️</span> Siloed teams and culture chasms</div>
+        <div class="cc-item"><span class="cc-item-icon">🟢</span> Your team are just green dots</div>
+        <div class="cc-item"><span class="cc-item-icon">🙅</span> No spontaneous conversations ever</div>
       </div>
-      <div class="pricing-card">
-        <div class="pricing-name">Digital Environment</div>
-        <div class="pricing-price" style="font-size:28px;margin-top:8px;">Contact Us</div>
-        <div class="pricing-setup">3+ users · Custom pricing available</div>
-        <ul class="pricing-features">
+      <div class="cc new">
+        <div class="cc-head">✅ Virtual Office Way</div>
+        <div class="cc-item"><span class="cc-item-icon">🚶</span> Walk up to anyone's desk, instantly</div>
+        <div class="cc-item"><span class="cc-item-icon">🏢</span> Navigate to meeting rooms — no links</div>
+        <div class="cc-item"><span class="cc-item-icon">👁️</span> See who's around at a glance</div>
+        <div class="cc-item"><span class="cc-item-icon">🎉</span> Real team culture, online</div>
+        <div class="cc-item"><span class="cc-item-icon">👥</span> Your team feels like a team</div>
+        <div class="cc-item"><span class="cc-item-icon">⚡</span> Spontaneous sync-ups, always</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid fade-up">
+      <div class="stat"><div class="stat-val"><span>94</span>%</div><div class="stat-lbl">🥰 Feel more connected with colleagues</div></div>
+      <div class="stat"><div class="stat-val"><span>98</span>%</div><div class="stat-lbl">👩‍💻 Productivity increase reported per day</div></div>
+      <div class="stat"><div class="stat-val"><span>0</span>%</div><div class="stat-lbl">🤦 Awkward Zoom happy hours</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section section">
+  <div class="container">
+    <div class="sh center fade-up">
+      <div class="s-tag green">Client Stories</div>
+      <h2 class="s-title">Why teams love their virtual office</h2>
+    </div>
+    <div class="testi-grid fade-up">
+      <div class="tc">
+        <div class="tc-stars">★★★★★</div>
+        <div class="tc-text">"I didn't think a virtual office was for us, but I actually really like it. The team feels connected in a way Slack and Zoom never managed."</div>
+        <div class="tc-auth"><div class="tc-av">V</div><div><div class="tc-name">Vikram Nair</div><div class="tc-role">Agency Founder, Kochi</div></div></div>
+      </div>
+      <div class="tc">
+        <div class="tc-stars">★★★★★</div>
+        <div class="tc-text">"No more 'can someone send me the Zoom link?' We just walk into the meeting room. It sounds simple but it changed everything about how we work."</div>
+        <div class="tc-auth"><div class="tc-av">S</div><div><div class="tc-name">Sneha Patel</div><div class="tc-role">Startup Co-founder, Mumbai</div></div></div>
+      </div>
+      <div class="tc">
+        <div class="tc-stars">★★★★★</div>
+        <div class="tc-text">"Our remote team of 8 now feels like a close-knit team. Spontaneous conversations happen again. The culture came back."</div>
+        <div class="tc-auth"><div class="tc-av">R</div><div><div class="tc-name">Rohan Mehta</div><div class="tc-role">CTO, SaaS Startup, Bangalore</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section section" id="pricing">
+  <div class="container">
+    <div class="sh center fade-up">
+      <div class="s-tag green">Pricing</div>
+      <h2 class="s-title">Simple, Per-User Pricing</h2>
+      <p class="s-sub">Pay per user per month. Scale up or down any time. All prices in USD. Setup included.</p>
+    </div>
+    <div class="pricing-grid fade-up">
+      <div class="pc featured">
+        <div class="pc-badge">⭐ Most Popular</div>
+        <div class="pc-name">Basic Virtual Office</div>
+        <div class="pc-price"><sup>$</sup>20</div>
+        <div class="pc-period">per user · per month · min. 1 user</div>
+        <div class="pc-desc">For small teams wanting to work together online — with a real office feel, not just video calls.</div>
+        <ul class="pc-feats">
+          <li>Virtual office environment</li>
+          <li>Walk up to colleagues' desks</li>
+          <li>Meeting rooms (no links needed)</li>
+          <li>See who's online at a glance</li>
+          <li>Professional business address</li>
+          <li>Professional email setup</li>
+          <li>Document storage &amp; sharing</li>
+          <li>GST-ready address documentation</li>
+          <li>Setup &amp; onboarding included</li>
+        </ul>
+        <a href="../index.html#contact" class="pc-cta">Get Started →</a>
+      </div>
+      <div class="pc">
+        <div class="pc-name">Custom / Team</div>
+        <div class="pc-price" style="font-size:38px">Custom</div>
+        <div class="pc-period">5+ users · contact for pricing</div>
+        <div class="pc-desc">Larger teams with custom needs — integrations, dedicated support, and custom setup.</div>
+        <ul class="pc-feats">
           <li>Everything in Basic</li>
           <li>Unlimited team users</li>
           <li>Custom integrations</li>
-          <li>Advanced collaboration tools</li>
-          <li>Custom domain setup</li>
+          <li>Advanced permissions &amp; roles</li>
           <li>Dedicated account manager</li>
-          <li>Priority support</li>
+          <li>Priority WhatsApp support</li>
+          <li>Custom branding options</li>
+          <li>Custom reporting &amp; admin</li>
         </ul>
-        <a href="../index.html#contact" class="btn-outline">Contact for Pricing →</a>
+        <a href="../index.html#contact" class="pc-cta outline">Contact for Pricing →</a>
       </div>
     </div>
+    <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:22px">+ One-time setup fee applies. Billed monthly. Cancel anytime with 30 days notice.</p>
   </div>
 </section>
 
-<section>
-  <div class="section-inner">
-    <div class="section-tag" style="text-align:center;display:block;">FAQ</div>
-    <h2 class="section-title" style="text-align:center;">Common Questions</h2>
-    <div class="faq-list">
-      <div class="faq-item"><div class="faq-q">Can I use the address for GST registration?</div><div class="faq-a">Yes. Our business address can be used for GST registration, company registration, and official business correspondence. We provide the necessary documentation.</div></div>
-      <div class="faq-item"><div class="faq-q">Is this suitable for a registered LLP or Pvt Ltd?</div><div class="faq-a">Yes. Our virtual office address is suitable for registered companies. We can provide the necessary documentation for compliance purposes.</div></div>
-      <div class="faq-item"><div class="faq-q">How does per-user pricing work?</div><div class="faq-a">You pay $20 per user per month. So 2 users = $40/month, 3 users = $60/month, and so on. For teams larger than 5 users, contact us for a custom bulk rate.</div></div>
-      <div class="faq-item"><div class="faq-q">How quickly can we get set up?</div><div class="faq-a">We can have your virtual office set up within 2–3 business days after payment and paperwork are completed.</div></div>
-      <div class="faq-item"><div class="faq-q">What currency are your prices in?</div><div class="faq-a">All prices are in USD. We accept international payments via bank transfer, Wise, PayPal, and other methods discussed during consultation.</div></div>
+<!-- FAQ -->
+<section class="faq-section section">
+  <div class="container">
+    <div class="sh center fade-up">
+      <div class="s-tag green">FAQ</div>
+      <h2 class="s-title">Common Questions</h2>
+    </div>
+    <div class="faq-list fade-up">
+      <div class="faq-item"><div class="faq-q">How is this different from Zoom or Slack?</div><div class="faq-a">Zoom and Slack improve how meetings and messages work in the old way. Your virtual office replaces the office itself — your team has avatars, can walk around, pop into rooms, and collaborate spontaneously. No scheduling, no links, no missed messages.</div></div>
+      <div class="faq-item"><div class="faq-q">Do we need to download anything?</div><div class="faq-a">The virtual office works in the browser. Team members can also download a desktop app for the best experience. Nothing complicated — we handle the setup and onboarding for your entire team.</div></div>
+      <div class="faq-item"><div class="faq-q">How does per-user pricing work?</div><div class="faq-a">You pay $20 per user per month. 3 users = $60/month, 5 users = $100/month. For teams of 5 or more, contact us for a custom bulk rate.</div></div>
+      <div class="faq-item"><div class="faq-q">Can I use it for a registered LLP or Pvt Ltd?</div><div class="faq-a">Yes. The professional business address is GST-ready and suitable for company registrations. We provide the necessary documentation for compliance.</div></div>
+      <div class="faq-item"><div class="faq-q">Is voice and video secure?</div><div class="faq-a">Yes. All voice and video is encrypted with TLS and is not stored on any server. You can also lock individual meeting rooms for complete privacy.</div></div>
+      <div class="faq-item"><div class="faq-q">How long does setup take?</div><div class="faq-a">2–3 business days after payment. We configure everything, set up your office layout, onboard your team, and make sure everyone knows how to use it before we hand it over.</div></div>
     </div>
   </div>
 </section>
 
+<!-- CTA -->
 <div class="cta-section">
-  <h2>Ready for a Professional Business Presence?</h2>
-  <p>Get your virtual office set up in days, not weeks. Contact us for a free consultation.</p>
-  <a href="../index.html#contact" class="btn-white" style="color:#1a3a4a;">Get Free Consultation →</a>
+  <h2>Create a virtual office your<br><em>team actually loves.</em></h2>
+  <p>Stop making your team feel like disconnected green dots. Give them a real place to work — online, together.</p>
+  <div class="cta-btns">
+    <a href="../index.html#contact" class="btn-white-solid">Get Free Consultation →</a>
+    <a href="../index.html#packages" class="btn-ghost-white2">View All Services</a>
+  </div>
+  <div class="cta-note">$20/user/month · Setup in 2–3 days · Cancel anytime</div>
 </div>
 
 <footer>
   <div class="footer-links">
     <a href="../index.html">Home</a>
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#contact">Contact</a>
     <a href="../privacy-policy.html">Privacy Policy</a>
     <a href="../refund-policy.html">Refund Policy</a>
-    <a href="../terms.html">Terms &amp; Conditions</a>
+    <a href="../terms.html">Terms</a>
   </div>
   © 2025 TwinStance Solutions LLP. All rights reserved.
 </footer>
+
+<a href="https://wa.me/919078686010?text=Hi!%20I%20want%20to%20know%20more%20about%20the%20Virtual%20Office%20service." class="wa" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').style.background=window.scrollY>30?'rgba(255,255,255,0.97)':'rgba(255,255,255,0.92)';
+});
+function toggleNav(){
+  const m=document.getElementById('mobNav');
+  m.style.display=m.style.display==='block'?'none':'block';
+}
+
+// Tab switching
+function switchTab(tab) {
+  // Hide all
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  // Show selected
+  document.getElementById('tab-'+tab).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// Fade-up observer
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*60);obs.unobserve(e.target)}
+  });
+},{threshold:0.06});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+// Avatar bubble on hover
+document.querySelectorAll('.avatar').forEach(av => {
+  av.addEventListener('mouseenter', () => {
+    const bubble = av.querySelector('.av-bubble');
+    if (bubble) { bubble.style.opacity = '1'; bubble.style.transform = 'translateX(-50%) translateY(0)'; }
+  });
+  av.addEventListener('mouseleave', () => {
+    const bubble = av.querySelector('.av-bubble');
+    if (bubble) { bubble.style.opacity = '0'; bubble.style.transform = 'translateX(-50%) translateY(4px)'; }
+  });
+});
+</script>
 </body>
 </html>
