@@ -1,182 +1,632 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="NexReach by TwinStance — All-in-one outreach suite. Email marketing, drip campaigns, SMS marketing, AI writer, and full analytics.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NexReach by TwinStance — All-in-one outreach suite. Email marketing, drip campaigns, SMS marketing, AI writer, and full analytics. $60/month or $1,899 one-time.">
 <title>NexReach Suite | TwinStance Solutions</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236c63ff'/><text y='68' x='50' text-anchor='middle' font-family='Georgia,serif' font-size='46' font-weight='bold' fill='white'>NR</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--white:#fff;--off-white:#f8f7f4;--border:#e5e2dc;--text:#1a1a1a;--muted:#6b6b6b;--accent:#1a1a6e;--accent2:#e63946;--nr-purple:#6c63ff;--nr-dark:#0a0a1a;}
-*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--white);}
+/* ── TOKENS ── */
+:root{
+  --nr-bg:    #07071a;
+  --nr-bg2:   #0d0d22;
+  --nr-bg3:   #13132a;
+  --nr-b:     rgba(255,255,255,.08);
+  --nr-b2:    rgba(255,255,255,.13);
+  --nr-p:     #6c63ff;
+  --nr-pL:    #8b84ff;
+  --nr-pXL:   rgba(108,99,255,.12);
+  --nr-gold:  #ffd166;
+  --nr-green: #2ed573;
+  --nr-red:   #e63946;
+  --nr-amber: #ffa502;
+  --white:    #ffffff;
+  --text:     rgba(255,255,255,.92);
+  --sub:      rgba(255,255,255,.65);
+  --muted:    rgba(255,255,255,.38);
+  /* light sections */
+  --lbg:      #f8f7f4;
+  --lbg2:     #ffffff;
+  --lb:       #e5e2dc;
+  --ltext:    #1a1a1a;
+  --lmuted:   #6b6b6b;
+  --r:        14px;
+  --max:      1100px;
+  --pad:      52px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',sans-serif;color:var(--text);background:var(--nr-bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,26,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);padding:0 5%;height:70px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:white;text-decoration:none;}.nav-logo span{color:var(--accent2);}
-.nav-links{display:flex;align-items:center;gap:28px;}.nav-links a{text-decoration:none;color:rgba(255,255,255,0.6);font-size:14px;transition:color 0.2s;}.nav-links a:hover{color:white;}
-.nav-cta{background:var(--nr-purple)!important;color:white!important;padding:10px 22px;border-radius:8px;font-weight:600!important;}
-.nav-cta:hover{background:#5a52e8!important;}
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  height:54px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--pad);
+  background:rgba(7,7,26,.88);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--nr-b);
+  transition:background .3s;
+}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--white)}
+.nav-logo span{color:var(--nr-p)}
+.nav-mark{width:30px;height:30px;border-radius:8px;background:var(--nr-p);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;font-family:'Playfair Display',serif;letter-spacing:-.5px;flex-shrink:0}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{font-size:13.5px;color:var(--sub);transition:color .15s;font-weight:400}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{
+  background:var(--nr-p);color:#fff;
+  padding:7px 18px;border-radius:8px;
+  font-size:13px;font-weight:700;
+  transition:all .15s;
+}
+.nav-cta:hover{background:var(--nr-pL);transform:scale(1.02)}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hbg span{display:block;width:20px;height:1.5px;background:var(--white);border-radius:2px}
+.mob-nav{display:none;position:fixed;top:54px;left:0;right:0;background:rgba(7,7,26,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--nr-b);z-index:499}
+.mob-nav a{display:block;padding:15px var(--pad);font-size:16px;border-bottom:1px solid var(--nr-b)}
+.mob-nav a:last-child{color:var(--nr-pL);font-weight:600;border:none}
 
-/* HERO */
-.hero{padding:130px 5% 100px;background:var(--nr-dark);color:white;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(108,99,255,0.15) 0%,transparent 70%);pointer-events:none;}
-.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(230,57,70,0.08) 0%,transparent 70%);pointer-events:none;}
-.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1;}
-.breadcrumb{font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:16px;}.breadcrumb a{color:rgba(255,255,255,0.6);text-decoration:none;}.breadcrumb a:hover{color:white;}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(108,99,255,0.15);border:1px solid rgba(108,99,255,0.3);color:#a89eff;padding:6px 16px;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:20px;}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(34px,4.5vw,58px);font-weight:900;line-height:1.1;margin-bottom:20px;}
-.hero h1 em{font-style:italic;color:#ffd166;}
-.hero p{font-size:16px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:32px;max-width:500px;}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
-.btn-purple{background:var(--nr-purple);color:white;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
-.btn-purple:hover{background:#5a52e8;transform:translateY(-2px);box-shadow:0 8px 30px rgba(108,99,255,0.4);}
-.btn-outline-light{background:transparent;color:white;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px;border:2px solid rgba(255,255,255,0.25);transition:all 0.2s;}
-.btn-outline-light:hover{border-color:white;background:rgba(255,255,255,0.05);}
-.hero-pricing-pills{display:flex;gap:12px;flex-wrap:wrap;}
-.price-pill{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:12px 20px;text-align:center;}
-.price-pill .amount{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:white;}
-.price-pill .label{font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px;}
-.price-pill.highlight{background:rgba(108,99,255,0.15);border-color:rgba(108,99,255,0.4);}
-.price-pill.highlight .amount{color:#a89eff;}
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:54px 0 0;
+  position:relative;overflow:hidden;
+  background:var(--nr-bg);
+}
+/* Animated gradient orbs */
+.hero-orb1{
+  position:absolute;top:-200px;right:-100px;
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(108,99,255,.18) 0%,transparent 70%);
+  animation:float1 8s ease-in-out infinite;
+  pointer-events:none;
+}
+.hero-orb2{
+  position:absolute;bottom:-150px;left:-100px;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(230,57,70,.08) 0%,transparent 70%);
+  animation:float2 10s ease-in-out infinite;
+  pointer-events:none;
+}
+.hero-orb3{
+  position:absolute;top:40%;left:40%;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,209,102,.06) 0%,transparent 70%);
+  animation:float3 6s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,40px) scale(1.05)}}
+@keyframes float2{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
+@keyframes float3{0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,20px)}}
 
-/* Feature badges in hero */
-.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
-.hero-badge{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.8);padding:5px 12px;border-radius:100px;font-size:12px;font-weight:500;}
+.hero-inner{
+  max-width:var(--max);margin:0 auto;padding:80px var(--pad) 60px;
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
+  position:relative;z-index:1;width:100%;
+}
+.breadcrumb{font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.breadcrumb a{color:var(--sub);transition:color .15s}
+.breadcrumb a:hover{color:var(--white)}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(108,99,255,.12);border:1px solid rgba(108,99,255,.3);
+  color:var(--nr-pL);padding:6px 16px;border-radius:980px;
+  font-size:12.5px;font-weight:600;margin-bottom:22px;
+}
+.hero-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--nr-p);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,5vw,60px);
+  font-weight:900;line-height:1.05;letter-spacing:-.8px;
+  color:var(--white);margin-bottom:20px;
+}
+.hero h1 em{font-style:italic;color:var(--nr-gold)}
+.hero-desc{font-size:16px;color:var(--sub);line-height:1.75;margin-bottom:28px;max-width:460px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:28px}
+.hero-badge{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.75);padding:5px 12px;border-radius:980px;
+  font-size:12px;font-weight:500;
+}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.btn-purple{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--nr-p);color:#fff;
+  padding:13px 28px;border-radius:10px;
+  font-size:15px;font-weight:700;
+  transition:all .2s;
+}
+.btn-purple:hover{background:var(--nr-pL);transform:translateY(-2px);box-shadow:0 12px 30px rgba(108,99,255,.35)}
+.btn-ghost-light{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;color:var(--white);
+  padding:13px 24px;border-radius:10px;
+  font-size:15px;font-weight:600;
+  border:1.5px solid rgba(255,255,255,.2);
+  transition:all .2s;
+}
+.btn-ghost-light:hover{border-color:var(--white);background:rgba(255,255,255,.05)}
+
+/* Hero pricing split */
+.hero-pricing{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:12px;margin-top:4px;
+}
+.hp-opt{
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--nr-b);
+  border-radius:14px;
+  padding:20px 22px;
+  display:flex;flex-direction:column;gap:2px;
+}
+.hp-opt.best{
+  background:rgba(108,99,255,.13);
+  border-color:rgba(108,99,255,.4);
+}
+.hp-tag{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.hp-tag.gold{color:var(--nr-gold)}
+.hp-amount{font-family:'Playfair Display',serif;font-size:40px;font-weight:800;color:var(--white);letter-spacing:-1.5px;line-height:1}
+.hp-amount sup{font-size:17px;vertical-align:top;margin-top:10px;font-family:'Figtree',sans-serif;font-weight:400}
+.hp-note{font-size:12px;color:var(--muted);margin-top:4px}
+.hp-save{font-size:11px;color:var(--nr-gold);font-weight:600;margin-top:4px}
 
 /* App mockup */
-.app-mockup{background:#13131a;border:1px solid #2a2a3a;border-radius:20px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.6);}
-.app-bar{background:#0d0d1a;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #2a2a3a;}
-.app-dots{display:flex;gap:5px;}
-.app-dot{width:10px;height:10px;border-radius:50%;}
-.app-sidebar{width:150px;background:#0d0d1a;border-right:1px solid #2a2a3a;padding:12px 0;flex-shrink:0;}
-.app-nav-item{display:flex;align-items:center;gap:8px;padding:8px 12px;font-size:11px;color:#6b6b80;cursor:default;border-radius:6px;margin:0 6px 2px;}
-.app-nav-item.active{background:rgba(108,99,255,0.15);color:#a89eff;}
-.app-content{flex:1;padding:16px;overflow:hidden;}
-.app-layout{display:flex;height:280px;}
-.metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px;}
-.metric{background:#13131a;border:1px solid #2a2a3a;border-radius:8px;padding:10px;}
-.metric-val{font-size:18px;font-weight:700;font-family:'Playfair Display',serif;}
-.metric-label{font-size:10px;color:#6b6b80;margin-top:2px;}
-.recent-campaigns{background:#0d0d1a;border:1px solid #2a2a3a;border-radius:8px;padding:12px;font-size:11px;}
-.rc-header{color:#6b6b80;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;font-size:10px;}
-.rc-row{display:grid;grid-template-columns:1.5fr 0.7fr 0.5fr;gap:8px;padding:6px 0;border-bottom:1px solid rgba(42,42,58,0.4);color:#e8e8f0;align-items:center;}
-.rc-row:last-child{border-bottom:none;}
-.status-badge{padding:2px 8px;border-radius:20px;font-size:9px;font-weight:700;text-align:center;}
+.hero-mockup{
+  background:var(--nr-bg2);
+  border:1px solid var(--nr-b2);
+  border-radius:18px;overflow:hidden;
+  box-shadow:0 40px 80px rgba(0,0,0,.7),0 0 0 1px rgba(108,99,255,.1);
+  position:relative;
+}
+.mockup-bar{
+  background:var(--nr-bg3);padding:11px 16px;
+  display:flex;align-items:center;gap:8px;
+  border-bottom:1px solid var(--nr-b);
+}
+.mockup-dots{display:flex;gap:5px}
+.mdot{width:10px;height:10px;border-radius:50%}
+.mockup-url{
+  flex:1;background:rgba(255,255,255,.04);border-radius:5px;
+  padding:5px 10px;font-size:10px;color:var(--muted);
+  font-family:monospace;margin-left:8px;
+}
+.mockup-body{display:flex;height:300px}
+.mockup-sidebar{
+  width:148px;background:var(--nr-bg3);
+  border-right:1px solid var(--nr-b);
+  padding:12px 0;flex-shrink:0;
+}
+.ms-brand{
+  padding:0 12px 12px;border-bottom:1px solid var(--nr-b);
+  margin-bottom:8px;
+  font-family:'Playfair Display',serif;font-size:14px;font-weight:800;
+  color:var(--white);
+}
+.ms-brand span{color:var(--nr-p)}
+.ms-item{
+  display:flex;align-items:center;gap:7px;
+  padding:8px 12px;font-size:11px;color:#6b6b80;
+  margin:0 6px 2px;border-radius:7px;transition:all .2s;
+}
+.ms-item.active{background:rgba(108,99,255,.15);color:var(--nr-pL)}
+.mockup-content{flex:1;padding:16px;background:#09091a;overflow:hidden}
+.mc-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--white);margin-bottom:3px}
+.mc-sub{font-size:10px;color:#6b6b80;margin-bottom:12px}
+.mc-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:10px}
+.mc-metric{background:var(--nr-bg3);border:1px solid var(--nr-b);border-radius:8px;padding:8px 6px;text-align:center}
+.mcm-val{font-size:16px;font-weight:700;font-family:'Playfair Display',serif;margin-bottom:1px}
+.mcm-lbl{font-size:9px;color:#6b6b80}
+.mc-table{background:var(--nr-bg3);border:1px solid var(--nr-b);border-radius:8px;padding:10px}
+.mc-table-head{font-size:9px;color:#6b6b80;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:7px}
+.mc-row{display:grid;grid-template-columns:1.5fr .7fr .5fr;gap:4px;font-size:10px;color:#c8c8d8;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.mc-row:last-child{border-bottom:none}
 
-section{padding:80px 5%;}
-.section-inner{max-width:1200px;margin:0 auto;}
-.section-tag{display:inline-block;padding:4px 14px;border-radius:100px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;}
-.tag-light{background:#eeeef8;color:var(--accent);}
-.tag-dark{background:rgba(108,99,255,0.15);color:#a89eff;}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,40px);font-weight:700;margin-bottom:16px;line-height:1.2;}
-.section-sub{color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:48px;max-width:580px;}
+/* ── STATS BAND ── */
+.stats-band{
+  background:rgba(255,255,255,.02);
+  border-top:1px solid var(--nr-b);border-bottom:1px solid var(--nr-b);
+  padding:24px 0;
+}
+.stats-band-inner{
+  max-width:var(--max);margin:0 auto;padding:0 var(--pad);
+  display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+}
+.sb-item{
+  text-align:center;padding:12px 16px;border-right:1px solid var(--nr-b);
+}
+.sb-item:last-child{border-right:none}
+.sb-val{font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:4px}
+.sb-lbl{font-size:12px;color:var(--muted)}
 
-/* WHAT'S INCLUDED */
-.channels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.channel-card{border-radius:20px;padding:32px;border:1px solid var(--border);transition:all 0.3s;position:relative;overflow:hidden;}
-.channel-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
-.channel-card.email::before{background:linear-gradient(90deg,#6c63ff,#a89eff);}
-.channel-card.drip::before{background:linear-gradient(90deg,#2ed573,#00d4aa);}
-.channel-card.sms::before{background:linear-gradient(90deg,#ffa502,#ff6b35);}
-.channel-card.ai::before{background:linear-gradient(90deg,#ff6584,#e63946);}
-.channel-card.analytics::before{background:linear-gradient(90deg,#1a1a6e,#6c63ff);}
-.channel-card.contacts::before{background:linear-gradient(90deg,#00d4aa,#2ed573);}
-.channel-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.08);}
-.channel-icon{font-size:36px;margin-bottom:16px;}
-.channel-card h3{font-size:18px;font-weight:700;margin-bottom:10px;}
-.channel-card p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:16px;}
-.channel-features{list-style:none;}
-.channel-features li{font-size:12px;color:var(--muted);padding:4px 0;display:flex;align-items:center;gap:6px;}
-.channel-features li::before{content:'✓';color:var(--nr-purple);font-weight:700;flex-shrink:0;}
+/* ── SECTION BASE ── */
+.section{padding:80px 0}
+.container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.s-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:4px 14px;border-radius:980px;
+  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;
+}
+.s-tag.purple{background:rgba(108,99,255,.15);color:var(--nr-pL);border:1px solid rgba(108,99,255,.25)}
+.s-tag.light{background:rgba(255,255,255,.06);color:var(--sub);border:1px solid var(--nr-b)}
+.s-tag.dark-lght{background:rgba(108,99,255,.08);color:#6c63ff;border:1px solid rgba(108,99,255,.15)}
+.s-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,4vw,46px);
+  font-weight:800;line-height:1.08;letter-spacing:-.5px;margin-bottom:14px;
+}
+.s-sub{font-size:16px;color:var(--sub);line-height:1.7;max-width:560px;font-weight:400}
+.sh{margin-bottom:48px}
+.center{text-align:center}.center .s-sub{margin:0 auto}
 
-/* DEMO */
-.demo-bg{background:var(--nr-dark);}
+/* ── FEATURES GRID ── */
+.features-section{background:var(--nr-bg)}
+.feat-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--nr-b);border:1px solid var(--nr-b);
+  border-radius:18px;overflow:hidden;
+}
+.feat-card{
+  background:var(--nr-bg2);padding:32px 28px;
+  position:relative;transition:background .2s;
+  display:flex;flex-direction:column;
+}
+.feat-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  transform:scaleX(0);transform-origin:left;transition:transform .25s;
+}
+.feat-card:hover{background:var(--nr-bg3)}
+.feat-card:hover::after{transform:scaleX(1)}
+.feat-card.c1::after{background:linear-gradient(90deg,#6c63ff,#a89eff)}
+.feat-card.c2::after{background:linear-gradient(90deg,#2ed573,#00d4aa)}
+.feat-card.c3::after{background:linear-gradient(90deg,#ffa502,#ff6b35)}
+.feat-card.c4::after{background:linear-gradient(90deg,#ff6584,#e63946)}
+.feat-card.c5::after{background:linear-gradient(90deg,#ffd166,#ffaa00)}
+.feat-card.c6::after{background:linear-gradient(90deg,#00d4aa,#2ed573)}
+.feat-icon{
+  width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin-bottom:18px;flex-shrink:0;
+}
+.feat-card.c1 .feat-icon{background:rgba(108,99,255,.12);border:1px solid rgba(108,99,255,.2)}
+.feat-card.c2 .feat-icon{background:rgba(46,213,115,.1);border:1px solid rgba(46,213,115,.2)}
+.feat-card.c3 .feat-icon{background:rgba(255,165,2,.1);border:1px solid rgba(255,165,2,.2)}
+.feat-card.c4 .feat-icon{background:rgba(255,101,132,.1);border:1px solid rgba(255,101,132,.2)}
+.feat-card.c5 .feat-icon{background:rgba(255,209,102,.08);border:1px solid rgba(255,209,102,.15)}
+.feat-card.c6 .feat-icon{background:rgba(0,212,170,.1);border:1px solid rgba(0,212,170,.2)}
+.feat-card h3{font-size:17px;font-weight:700;color:var(--white);margin-bottom:9px}
+.feat-card p{font-size:13.5px;color:var(--sub);line-height:1.7;margin-bottom:16px;flex:1}
+.feat-list{list-style:none}
+.feat-list li{font-size:12.5px;color:var(--muted);padding:5px 0;display:flex;align-items:center;gap:7px;border-bottom:1px solid rgba(255,255,255,.04)}
+.feat-list li:last-child{border-bottom:none}
+.feat-list li::before{content:'✓';font-weight:800;flex-shrink:0;font-size:11px}
+.feat-card.c1 .feat-list li::before{color:var(--nr-p)}
+.feat-card.c2 .feat-list li::before{color:var(--nr-green)}
+.feat-card.c3 .feat-list li::before{color:var(--nr-amber)}
+.feat-card.c4 .feat-list li::before{color:#ff6584}
+.feat-card.c5 .feat-list li::before{color:var(--nr-gold)}
+.feat-card.c6 .feat-list li::before{color:#00d4aa}
 
-/* PRICING */
-.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:760px;margin:0 auto;}
-.pricing-card{border-radius:24px;padding:40px;border:1px solid var(--border);background:white;text-align:center;position:relative;transition:all 0.3s;}
-.pricing-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.08);}
-.pricing-card.featured{background:var(--nr-dark);border-color:var(--nr-purple);color:white;}
-.pricing-name{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:12px;}
-.pricing-card.featured .pricing-name{color:rgba(255,255,255,0.5);}
-.pricing-amount{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:var(--accent);margin-bottom:4px;line-height:1;}
-.pricing-card.featured .pricing-amount{color:white;}
-.pricing-period{font-size:14px;color:var(--muted);margin-bottom:6px;font-family:'Outfit',sans-serif;}
-.pricing-card.featured .pricing-period{color:rgba(255,255,255,0.5);}
-.pricing-subtitle{font-size:13px;color:var(--muted);margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border);}
-.pricing-card.featured .pricing-subtitle{color:rgba(255,255,255,0.5);border-color:rgba(255,255,255,0.1);}
-.pricing-features{list-style:none;text-align:left;margin-bottom:32px;}
-.pricing-features li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;font-size:13px;border-bottom:1px solid var(--off-white);}
-.pricing-card.featured .pricing-features li{border-color:rgba(255,255,255,0.07);color:rgba(255,255,255,0.85);}
-.pricing-features li::before{content:'✓';color:var(--nr-purple);font-weight:700;flex-shrink:0;margin-top:1px;}
-.btn-main{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.2s;border:2px solid var(--accent);color:var(--accent);}
-.btn-main:hover{background:var(--accent);color:white;}
-.btn-main-filled{background:var(--nr-purple);color:white;border-color:var(--nr-purple);}
-.btn-main-filled:hover{background:#5a52e8;border-color:#5a52e8;color:white;}
-.own-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--nr-purple);color:white;padding:4px 16px;border-radius:100px;font-size:12px;font-weight:700;white-space:nowrap;}
+/* ── DEMO ── */
+.demo-section{background:var(--nr-bg2);border-top:1px solid var(--nr-b)}
+.demo-wrapper{
+  background:var(--nr-bg3);border:1px solid var(--nr-b2);
+  border-radius:18px;overflow:hidden;
+  box-shadow:0 40px 100px rgba(0,0,0,.6);
+}
+.demo-bar{
+  background:var(--nr-bg);padding:10px 18px;
+  display:flex;align-items:center;gap:10px;
+  border-bottom:1px solid var(--nr-b);
+}
+.demo-dots{display:flex;gap:5px}
+.ddot{width:11px;height:11px;border-radius:50%}
+.demo-url{
+  flex:1;background:rgba(255,255,255,.04);border-radius:5px;
+  padding:5px 12px;font-size:11px;color:var(--muted);font-family:monospace;
+}
+.demo-body{display:flex;height:500px}
+.demo-sidebar{
+  width:190px;background:var(--nr-bg);
+  border-right:1px solid var(--nr-b);
+  padding:12px 0;flex-shrink:0;
+}
+.ds-brand{
+  padding:0 14px 12px;border-bottom:1px solid var(--nr-b);margin-bottom:8px;
+}
+.ds-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:800;color:var(--white)}
+.ds-name span{color:var(--nr-p)}
+.ds-sub2{font-size:10px;color:#6b6b80;margin-top:2px}
+.ds-item{
+  display:flex;align-items:center;gap:8px;
+  padding:9px 12px;font-size:12px;color:#6b6b80;
+  margin:0 8px 2px;border-radius:8px;transition:all .2s;
+}
+.ds-item.active{background:rgba(108,99,255,.15);color:var(--nr-pL)}
+.demo-content{flex:1;background:#05050f;overflow:hidden;position:relative}
+.dscreen{padding:24px;position:absolute;inset:0;overflow-y:auto}
+.demo-footer{
+  background:var(--nr-bg);padding:10px 20px;
+  display:flex;align-items:center;gap:12px;
+  border-top:1px solid var(--nr-b);
+}
+.df-label{font-size:11px;color:#6b6b80}
+.df-bar{flex:1;background:rgba(255,255,255,.06);border-radius:3px;height:3px}
+.df-progress{background:var(--nr-p);height:100%;border-radius:3px;transition:width .3s linear}
+.df-timer{font-size:10px;color:#6b6b80}
 
-/* COMPARE */
-.compare-table{width:100%;border-collapse:collapse;background:white;border-radius:16px;overflow:hidden;border:1px solid var(--border);}
-.compare-table th{padding:14px 20px;font-size:13px;font-weight:700;text-align:left;background:var(--accent);color:white;}
-.compare-table td{padding:13px 20px;font-size:13px;border-bottom:1px solid var(--border);}
-.compare-table tr:last-child td{border-bottom:none;}
-.compare-table tr:nth-child(even) td{background:var(--off-white);}
-.check{color:var(--nr-purple);font-weight:700;}
-.cross{color:#ccc;}
+/* ── PRICING ── */
+.pricing-section{
+  background:var(--nr-bg);
+  position:relative;overflow:hidden;
+}
+.pricing-section::before{
+  content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:800px;height:800px;border-radius:50%;
+  background:radial-gradient(circle,rgba(108,99,255,.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.pricing-intro{
+  font-size:13px;color:var(--muted);
+  background:rgba(255,255,255,.03);border:1px solid var(--nr-b);
+  border-radius:10px;padding:12px 18px;margin-bottom:44px;
+  text-align:center;
+}
+.pricing-intro strong{color:var(--sub)}
 
-/* FAQ */
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:900px;margin:0 auto;}
-.faq-item{padding:24px 28px;border-bottom:1px solid var(--border);}
-.faq-item:nth-child(odd){border-right:1px solid var(--border);}
-.faq-q{font-size:14px;font-weight:700;margin-bottom:8px;color:var(--text);}
-.faq-a{font-size:13px;color:var(--muted);line-height:1.7;}
+/* 3 columns */
+.pricing-split{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:20px;
+  position:relative;z-index:1;
+}
+.price-card{
+  border-radius:20px;padding:36px 30px;
+  border:1px solid var(--nr-b);
+  background:var(--nr-bg2);
+  display:flex;flex-direction:column;
+  position:relative;
+  transition:transform .2s,box-shadow .2s;
+}
+.price-card:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.price-card.featured{
+  background:var(--nr-bg2);
+  border:1.5px solid var(--nr-p);
+  box-shadow:0 0 0 1px var(--nr-p), 0 20px 60px rgba(108,99,255,.2);
+}
+.price-card.whitelabel{
+  background:linear-gradient(145deg,#0d0d22,#13132a);
+  border:1px solid rgba(255,209,102,.25);
+}
+.pc-badge{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:linear-gradient(135deg,#6c63ff,#a89eff);color:#fff;
+  padding:5px 20px;border-radius:980px;font-size:12px;font-weight:800;
+  white-space:nowrap;box-shadow:0 4px 14px rgba(108,99,255,.4);
+  letter-spacing:.03em;
+}
+.pc-badge.gold{
+  background:linear-gradient(135deg,#b7860b,#ffd166);
+  box-shadow:0 4px 14px rgba(255,209,102,.3);
+}
+.pc-name{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+.pc-price-wrap{margin-bottom:6px}
+.pc-price{
+  font-family:'Playfair Display',serif;
+  font-size:68px;font-weight:900;
+  line-height:1;letter-spacing:-3px;
+  color:var(--white);
+}
+.pc-price sup{font-size:26px;vertical-align:top;margin-top:14px;font-family:'Figtree',sans-serif;font-weight:400;letter-spacing:0}
+.pc-price .per{font-size:16px;font-weight:400;color:var(--muted);font-family:'Figtree',sans-serif;letter-spacing:0}
+.pc-period{font-size:13px;color:var(--muted);margin-bottom:20px}
+.pc-desc{
+  font-size:13.5px;color:var(--sub);
+  padding-bottom:18px;border-bottom:1px solid var(--nr-b);
+  margin-bottom:20px;line-height:1.6;
+}
+.pc-feats{list-style:none;flex:1;margin-bottom:26px}
+.pc-feats li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:13.5px;color:var(--sub);
+  padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);
+}
+.pc-feats li:last-child{border-bottom:none}
+.pc-feats li.yes::before{content:'✓';color:var(--nr-p);font-weight:800;flex-shrink:0;margin-top:1px;font-size:13px}
+.pc-feats li.no{color:var(--muted)}
+.pc-feats li.no::before{content:'✕';color:rgba(255,255,255,.2);font-weight:800;flex-shrink:0;margin-top:1px;font-size:13px}
+.price-card.whitelabel .pc-feats li.yes::before{color:var(--nr-gold)}
+.pc-feats li.bold{color:var(--white);font-weight:600}
+.pc-cta{
+  display:block;text-align:center;padding:14px;
+  border-radius:11px;font-weight:700;font-size:15px;
+  transition:all .2s;font-family:'Figtree',sans-serif;
+  border:1.5px solid var(--nr-b);color:var(--white);
+}
+.pc-cta:hover,.price-card.featured .pc-cta{background:var(--nr-p);color:#fff;border-color:var(--nr-p)}
+.price-card.featured .pc-cta:hover{background:var(--nr-pL);border-color:var(--nr-pL)}
+.price-card.whitelabel .pc-cta{border-color:rgba(255,209,102,.4);color:var(--nr-gold)}
+.price-card.whitelabel .pc-cta:hover{background:var(--nr-gold);color:#000;border-color:var(--nr-gold)}
 
-/* CTA */
-.cta-section{background:var(--nr-dark);color:white;text-align:center;padding:100px 5%;position:relative;overflow:hidden;}
-.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(108,99,255,0.12) 0%,transparent 70%);pointer-events:none;}
-.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,50px);font-weight:700;margin-bottom:16px;position:relative;z-index:1;}
-.cta-section p{font-size:16px;color:rgba(255,255,255,0.65);margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7;position:relative;z-index:1;}
-.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+/* Compare savings callout */
+.savings-callout{
+  background:rgba(255,209,102,.05);
+  border:1px solid rgba(255,209,102,.15);
+  border-radius:14px;padding:22px 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  max-width:100%;margin:24px auto 0;
+  position:relative;z-index:1;
+}
+.sc-left{font-size:14px;color:var(--sub);line-height:1.6}
+.sc-left strong{color:var(--nr-gold);font-weight:700}
+.sc-right{flex-shrink:0;text-align:right}
+.sc-big{font-family:'Playfair Display',serif;font-size:32px;font-weight:800;color:var(--nr-gold);letter-spacing:-1px}
+.sc-note{font-size:12px;color:var(--muted)}
 
-footer{background:#06060f;color:rgba(255,255,255,0.5);padding:30px 5%;text-align:center;font-size:13px;border-top:1px solid rgba(255,255,255,0.06);}
-footer a{color:rgba(255,255,255,0.5);text-decoration:none;margin:0 12px;transition:color 0.2s;}
-footer a:hover{color:white;}
-.footer-links{margin-bottom:12px;}
+/* ── COMPARE TABLE ── */
+.compare-section{background:var(--lbg);border-top:1px solid var(--lb)}
+.compare-table{
+  width:100%;border-collapse:collapse;
+  background:var(--lbg2);border-radius:16px;overflow:hidden;
+  border:1px solid var(--lb);font-size:13px;table-layout:fixed;
+}
+.compare-table thead tr{background:var(--nr-bg);color:#fff}
+.compare-table th{padding:13px 14px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;word-break:break-word}
+.compare-table th:first-child{width:22%;border-right:1px solid rgba(255,255,255,.08)}
+.compare-table th:not(:first-child){width:19.5%;text-align:center}
+.compare-table th.hl{color:var(--nr-pL)}
+.compare-table td{padding:11px 14px;border-bottom:1px solid var(--lb);color:var(--ltext);vertical-align:middle;word-break:break-word;line-height:1.4}
+.compare-table td:not(:first-child){text-align:center}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table tr:hover td{background:#f2f1ee}
+.ck{color:var(--nr-p);font-weight:800;font-size:15px}
+.cx{color:#ccc;font-size:15px}
+.cp{color:#f59e0b;font-size:12px;font-weight:600}
+.ct{font-size:11px;color:#9ca3af;display:block;margin-top:2px;font-weight:400}
+.compare-table .nr-row td:nth-child(2){background:rgba(108,99,255,.04)}
 
-.fade-in{opacity:1;transform:translateY(0);transition:all 0.6s ease;}
-.fade-in.visible{opacity:1;transform:translateY(0);}
+/* ── FAQ ── */
+.faq-section{background:var(--nr-bg);border-top:1px solid var(--nr-b)}
+.faq-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  border:1px solid var(--nr-b);border-radius:16px;overflow:hidden;
+}
+.faq-item{
+  padding:26px 28px;border-bottom:1px solid var(--nr-b);
+  background:var(--nr-bg2);transition:background .2s;
+}
+.faq-item:hover{background:var(--nr-bg3)}
+.faq-item:nth-child(odd){border-right:1px solid var(--nr-b)}
+.faq-item:nth-last-child(-n+2){border-bottom:none}
+.faq-q{font-size:14.5px;font-weight:700;color:var(--white);margin-bottom:9px}
+.faq-a{font-size:13.5px;color:var(--sub);line-height:1.7}
 
+/* ── CTA SECTION ── */
+.cta-section{
+  background:var(--nr-bg2);border-top:1px solid var(--nr-b);
+  padding:100px 0;text-align:center;position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(108,99,255,.1) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta-section h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,5vw,56px);
+  color:var(--white);margin-bottom:18px;
+  letter-spacing:-.5px;
+  position:relative;z-index:1;
+}
+.cta-section h2 em{font-style:italic;color:var(--nr-gold)}
+.cta-section p{font-size:17px;color:var(--sub);margin-bottom:40px;max-width:540px;margin-left:auto;margin-right:auto;line-height:1.7;position:relative;z-index:1}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.cta-note{font-size:13px;color:var(--muted);margin-top:20px;position:relative;z-index:1}
+
+/* ── FOOTER ── */
+footer{background:#04040f;border-top:1px solid rgba(255,255,255,.06);padding:28px var(--pad);text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);transition:color .15s;margin:0 10px}
+footer a:hover{color:var(--white)}
+.footer-links{margin-bottom:10px;display:flex;justify-content:center;flex-wrap:wrap;gap:4px}
+
+/* ── WA ── */
+.wa{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:52px;height:52px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s;
+}
+.wa:hover{transform:scale(1.1)}
+.wa svg{width:27px;height:27px;fill:#fff}
+
+/* ── ANIMATIONS ── */
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.in{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  :root{--pad:28px}
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-mockup-col{display:none}
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .pricing-split{grid-template-columns:1fr 1fr}
+  .price-card:nth-child(3){grid-column:1/-1}
+  .stats-band-inner{grid-template-columns:repeat(3,1fr)}
+  .sb-item:nth-child(3){border-right:none}
+  .sb-item:nth-child(4),.sb-item:nth-child(5){border-top:1px solid var(--nr-b)}
+}
 @media(max-width:768px){
-  .hero-inner{grid-template-columns:1fr;}
-  .hero-mockup-wrap{display:none;}
-  .channels-grid{grid-template-columns:1fr;}
-  .pricing-grid{grid-template-columns:1fr;}
-  .faq-grid{grid-template-columns:1fr;}
-  .faq-item:nth-child(odd){border-right:none;}
-  .nav-links{display:none;}
-  section{padding:60px 5%;}
+  :root{--pad:20px}
+  nav{padding:0 var(--pad)}
+  .nav-links{display:none}
+  .hbg{display:flex}
+  .section{padding:56px 0}
+  .feat-grid{grid-template-columns:1fr}
+  .pricing-split{grid-template-columns:1fr}
+  .price-card:nth-child(3){grid-column:auto}
+  .faq-grid{grid-template-columns:1fr}
+  .faq-item:nth-child(odd){border-right:none}
+  .faq-item:nth-last-child(-n+2){border-bottom:1px solid var(--nr-b)}
+  .faq-item:last-child{border-bottom:none}
+  .savings-callout{flex-direction:column;text-align:center}
+  .sc-right{text-align:center}
+  .stats-band-inner{grid-template-columns:repeat(2,1fr)}
+  .sb-item:nth-child(2){border-right:none}
+  .sb-item:nth-child(3){border-top:1px solid var(--nr-b);border-right:1px solid var(--nr-b)}
+  .sb-item:nth-child(4){border-top:1px solid var(--nr-b)}
+  .sb-item:nth-child(5){border-top:1px solid var(--nr-b);border-right:none}
+  footer{padding:24px var(--pad)}
+  .hero-pricing{grid-template-columns:1fr 1fr}
+  .compare-section{overflow-x:auto}
 }
 </style>
 </head>
 <body>
 
-<nav>
-  <a href="../index.html" class="nav-logo">Twin<span>Stance</span></a>
+<!-- ── NAV ── -->
+<nav id="nav">
+  <a class="nav-logo" href="../index.html">
+    <div class="nav-mark">NR</div>
+    Nex<span>Reach</span>
+  </a>
   <div class="nav-links">
-    <a href="../index.html#services">Services</a>
-    <a href="../index.html#packages">Pricing</a>
-    <a href="../index.html#contact">Contact</a>
-    <a href="https://app.tssolutionsllp.com" target="_blank" class="nav-cta">🚀 Try NexReach</a>
+    <a href="../index.html">← TwinStance</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="../index.html#contact" class="nav-cta">🚀 Get Access</a>
   </div>
+  <button class="hbg" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
+<div class="mob-nav" id="mobNav">
+  <a href="../index.html" onclick="toggleNav()">← Back to TwinStance</a>
+  <a href="#features" onclick="toggleNav()">Features</a>
+  <a href="#pricing" onclick="toggleNav()">Pricing</a>
+  <a href="#faq" onclick="toggleNav()">FAQ</a>
+  <a href="../index.html#contact" onclick="toggleNav()">🚀 Get Access</a>
+</div>
 
-<!-- HERO -->
-<div class="hero">
+<!-- ── HERO ── -->
+<section class="hero" id="home">
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-orb3"></div>
   <div class="hero-inner">
     <div>
-      <div class="breadcrumb"><a href="../index.html">Home</a> → <a href="../index.html#services">Services</a> → NexReach Suite</div>
-      <div class="hero-eyebrow">🚀 All-in-One Outreach Suite</div>
-      <h1>Reach More Customers.<br>Close More Deals. <em>Automatically.</em></h1>
-      <p>NexReach is your complete outreach platform — email marketing, drip campaigns, SMS marketing, AI writer, and deep analytics. One tool. Every channel.</p>
+      <div class="breadcrumb"><a href="../index.html">TwinStance</a> → <a href="../index.html#services">Services</a> → NexReach Suite</div>
+      <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span> All-in-One Outreach Suite</div>
+      <h1>Reach More Customers.<br>Close More Deals.<br><em>Automatically.</em></h1>
+      <p class="hero-desc">NexReach is your complete outreach platform — email marketing, drip campaigns, SMS, AI writer, and deep analytics. One tool. Every channel. One honest price.</p>
       <div class="hero-badges">
         <span class="hero-badge">📧 Email Marketing</span>
         <span class="hero-badge">💧 Drip Campaigns</span>
@@ -186,415 +636,481 @@ footer a:hover{color:white;}
         <span class="hero-badge">👥 Contact Management</span>
       </div>
       <div class="hero-btns">
-        <a href="../index.html#contact" class="btn-purple">Get Access →</a>
-        <a href="#pricing" class="btn-outline-light">See Pricing</a>
+        <a href="../index.html#contact" class="btn-purple">Get Access Now →</a>
+        <a href="#pricing" class="btn-ghost-light">See Pricing</a>
       </div>
-      <div class="hero-pricing-pills">
-        <div class="price-pill highlight"><div class="amount">$50<span style="font-size:14px;font-weight:400;color:rgba(255,255,255,0.5)">/mo</span></div><div class="label">Monthly subscription</div></div>
-        <div style="display:flex;align-items:center;color:rgba(255,255,255,0.3);font-size:13px;padding:0 4px;">or</div>
-        <div class="price-pill"><div class="amount">$1,599</div><div class="label">Own it forever — one-time</div></div>
-      </div>
-    </div>
-    <div class="hero-mockup-wrap">
-      <div class="app-mockup">
-        <div class="app-bar">
-          <div class="app-dots"><div class="app-dot" style="background:#ff5f57;"></div><div class="app-dot" style="background:#febc2e;"></div><div class="app-dot" style="background:#28c840;"></div></div>
-          <div style="flex:1;background:#1c1c27;border-radius:4px;padding:4px 10px;font-size:10px;color:rgba(255,255,255,0.2);font-family:monospace;margin-left:8px;">app.tssolutionsllp.com — NexReach</div>
+      <!-- Pricing split right in the hero -->
+      <div class="hero-pricing">
+        <div class="hp-opt">
+          <div class="hp-tag">Starter</div>
+          <div class="hp-amount"><sup>$</sup>60</div>
+          <div class="hp-note">per month · email only</div>
         </div>
-        <div class="app-layout">
-          <div class="app-sidebar">
-            <div style="padding:0 10px 10px;border-bottom:1px solid #2a2a3a;margin-bottom:8px;"><div style="font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:white;">Nex<span style="color:#6c63ff;">Reach</span></div></div>
-            <div class="app-nav-item active">📊 Dashboard</div>
-            <div class="app-nav-item">👥 Contacts</div>
-            <div class="app-nav-item">📧 Campaigns</div>
-            <div class="app-nav-item">💧 Drip Flows</div>
-            <div class="app-nav-item">📱 SMS</div>
-            <div class="app-nav-item">🤖 AI Writer</div>
-            <div class="app-nav-item">📈 Analytics</div>
+        <div class="hp-opt best">
+          <div class="hp-tag gold">⭐ Most Popular</div>
+          <div class="hp-amount"><sup>$</sup>150</div>
+          <div class="hp-note">per month · email + SMS + AI</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:var(--muted);margin-top:8px">Or own it forever — <strong style="color:var(--nr-gold)">WhiteLabel $1,899 one-time</strong> · Email via Brevo · SMS via your provider — you pay them directly</div>
+    </div>
+    <!-- Mockup -->
+    <div class="hero-mockup-col">
+      <div class="hero-mockup">
+        <div class="mockup-bar">
+          <div class="mockup-dots"><div class="mdot" style="background:#ff5f57"></div><div class="mdot" style="background:#febc2e"></div><div class="mdot" style="background:#28c840"></div></div>
+          <div class="mockup-url">app.tssolutionsllp.com — NexReach</div>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-sidebar">
+            <div class="ms-brand">Nex<span>Reach</span></div>
+            <div class="ms-item active">📊 Dashboard</div>
+            <div class="ms-item">👥 Contacts</div>
+            <div class="ms-item">📧 Campaigns</div>
+            <div class="ms-item">💧 Drip Flows</div>
+            <div class="ms-item">📱 SMS</div>
+            <div class="ms-item">🤖 AI Writer</div>
+            <div class="ms-item">📈 Analytics</div>
           </div>
-          <div class="app-content" style="background:#0a0a0f;">
-            <div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:white;margin-bottom:3px;">Dashboard</div>
-            <div style="font-size:10px;color:#6b6b80;margin-bottom:12px;">Your outreach overview</div>
-            <div class="metric-row">
-              <div class="metric"><div class="metric-val" style="color:#6c63ff;">4,060</div><div class="metric-label">Emails Sent</div></div>
-              <div class="metric"><div class="metric-val" style="color:#2ed573;">96%</div><div class="metric-label">Delivered</div></div>
-              <div class="metric"><div class="metric-val" style="color:#ffa502;">284</div><div class="metric-label">SMS Sent</div></div>
-              <div class="metric"><div class="metric-val" style="color:#ff6584;">32%</div><div class="metric-label">Open Rate</div></div>
+          <div class="mockup-content">
+            <div class="mc-title">Dashboard</div>
+            <div class="mc-sub">All channels overview</div>
+            <div class="mc-metrics">
+              <div class="mc-metric"><div class="mcm-val" style="color:#6c63ff">4,060</div><div class="mcm-lbl">Emails Sent</div></div>
+              <div class="mc-metric"><div class="mcm-val" style="color:#2ed573">96%</div><div class="mcm-lbl">Delivered</div></div>
+              <div class="mc-metric"><div class="mcm-val" style="color:#ffa502">284</div><div class="mcm-lbl">SMS Sent</div></div>
+              <div class="mc-metric"><div class="mcm-val" style="color:#ff6584">34%</div><div class="mcm-lbl">Open Rate</div></div>
             </div>
-            <div class="recent-campaigns">
-              <div class="rc-header">Active Campaigns</div>
-              <div class="rc-row"><span>Property Owners</span><span style="color:#2ed573;">✓ Done</span><span>290 sent</span></div>
-              <div class="rc-row"><span>Drip: Restaurant</span><span style="color:#6c63ff;">● Live</span><span>step 2/5</span></div>
-              <div class="rc-row"><span>SMS: Clinic</span><span style="color:#ffa502;">⏳ Queue</span><span>150</span></div>
+            <div class="mc-table">
+              <div class="mc-table-head">Active Campaigns</div>
+              <div class="mc-row"><span>Property Owners</span><span style="color:#2ed573">✓ Done</span><span>290 sent</span></div>
+              <div class="mc-row"><span>Restaurant Drip</span><span style="color:#6c63ff">● Live</span><span>Step 2/5</span></div>
+              <div class="mc-row"><span>Clinic SMS</span><span style="color:#ffa502">⏳ Queue</span><span>150</span></div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</section>
+
+<!-- ── STATS ── -->
+<div class="stats-band fade-up">
+  <div class="stats-band-inner">
+    <div class="sb-item"><div class="sb-val">300+</div><div class="sb-lbl">Emails/day included</div></div>
+    <div class="sb-item"><div class="sb-val">6</div><div class="sb-lbl">Channels in one tool</div></div>
+    <div class="sb-item"><div class="sb-val">96%</div><div class="sb-lbl">Avg. email delivery</div></div>
+    <div class="sb-item"><div class="sb-val">34%</div><div class="sb-lbl">Avg. open rate</div></div>
+    <div class="sb-item"><div class="sb-val">$0</div><div class="sb-lbl">Hidden fees, ever</div></div>
+  </div>
 </div>
 
-<!-- WHAT'S INCLUDED -->
-<section id="features">
-  <div class="section-inner">
-    <div style="text-align:center;margin-bottom:56px;" class="fade-in">
-      <div class="section-tag tag-light">What's Included</div>
-      <h2 class="section-title">Every Outreach Channel. One Platform.</h2>
-      <p class="section-sub" style="margin:0 auto;">NexReach isn't just an email tool — it's a complete customer outreach suite built to grow with your business.</p>
+<!-- ── FEATURES ── -->
+<section class="features-section section" id="features">
+  <div class="container">
+    <div class="sh center fade-up">
+      <div class="s-tag purple">What's Included</div>
+      <h2 class="s-title" style="color:var(--white)">Every Outreach Channel.<br>One Platform.</h2>
+      <p class="s-sub">NexReach isn't just an email tool — it's a complete outreach platform built to help you reach and convert customers across every channel.</p>
     </div>
-    <div class="channels-grid">
-      <div class="channel-card email fade-in">
-        <div class="channel-icon">📧</div>
+    <div class="feat-grid fade-up">
+      <div class="feat-card c1">
+        <div class="feat-icon">📧</div>
         <h3>Email Marketing</h3>
-        <p>Send targeted email campaigns to segmented lists with full delivery tracking, spam score checking, and batch sending to protect your sender reputation.</p>
-        <ul class="channel-features">
-          <li>Up to 300+ emails/day</li>
+        <p>Send targeted email campaigns with full delivery tracking, spam score checking, and smart batch sending to protect your sender reputation.</p>
+        <ul class="feat-list">
+          <li>300+ emails per day</li>
           <li>CSV contact import</li>
           <li>Batch sending with delays</li>
           <li>Spam score checker</li>
-          <li>Delivery & open tracking</li>
+          <li>Open & click tracking</li>
         </ul>
       </div>
-      <div class="channel-card drip fade-in">
-        <div class="channel-icon">💧</div>
+      <div class="feat-card c2">
+        <div class="feat-icon">💧</div>
         <h3>Drip Campaigns</h3>
-        <p>Set up automated email sequences that nurture leads on autopilot. Define triggers, delays, and conditions — NexReach does the rest while you sleep.</p>
-        <ul class="channel-features">
+        <p>Set up automated email sequences that nurture leads on autopilot — define triggers, delays, and conditions while you sleep.</p>
+        <ul class="feat-list">
           <li>Multi-step drip flows</li>
-          <li>Time-based triggers</li>
-          <li>Action-based branching</li>
-          <li>Pause / resume / edit live</li>
+          <li>Time & action-based triggers</li>
+          <li>Conditional branching</li>
+          <li>Pause, resume & edit live</li>
           <li>Per-contact journey tracking</li>
         </ul>
       </div>
-      <div class="channel-card sms fade-in">
-        <div class="channel-icon">📱</div>
+      <div class="feat-card c3">
+        <div class="feat-icon">📱</div>
         <h3>SMS Marketing</h3>
-        <p>Reach customers instantly with SMS campaigns. Higher open rates than email — messages land directly in their pocket. Perfect for promotions and reminders.</p>
-        <ul class="channel-features">
-          <li>Bulk SMS sending</li>
-          <li>Personalization tokens</li>
+        <p>Reach customers instantly in their pocket. SMS has 5× higher open rates than email — perfect for promotions and appointment reminders.</p>
+        <ul class="feat-list">
+          <li>Bulk SMS campaigns</li>
+          <li>Personalisation tokens</li>
           <li>Delivery reports</li>
           <li>Opt-out management</li>
-          <li>Campaign scheduling</li>
+          <li>Scheduled sending</li>
         </ul>
       </div>
-      <div class="channel-card ai fade-in">
-        <div class="channel-icon">🤖</div>
+      <div class="feat-card c4">
+        <div class="feat-icon">🤖</div>
         <h3>AI Writer</h3>
-        <p>Write compelling cold emails, subject lines, follow-ups, and SMS messages using the built-in AI writer. Improve tone, generate variants, and beat writer's block instantly.</p>
-        <ul class="channel-features">
+        <p>Write compelling cold emails, subject lines, follow-ups, and SMS copy using the built-in AI writer. Beat writer's block instantly.</p>
+        <ul class="feat-list">
           <li>Email body generator</li>
           <li>Subject line ideas</li>
-          <li>Tone improvement</li>
+          <li>Tone & rewrite tool</li>
           <li>SMS copy generator</li>
-          <li>Follow-up sequences</li>
+          <li>Follow-up sequence writer</li>
         </ul>
       </div>
-      <div class="channel-card analytics fade-in">
-        <div class="channel-icon">📊</div>
+      <div class="feat-card c5">
+        <div class="feat-icon">📊</div>
         <h3>Full Analytics</h3>
-        <p>See exactly how every campaign is performing. Track sends, deliveries, opens, clicks, and bounces — across email and SMS — in one clean dashboard.</p>
-        <ul class="channel-features">
+        <p>See exactly how every campaign performs across every channel — sends, opens, clicks, bounces, and SMS delivery in one clean dashboard.</p>
+        <ul class="feat-list">
           <li>Per-campaign reports</li>
           <li>Open & click rates</li>
-          <li>Bounce & unsubscribe tracking</li>
+          <li>Bounce & unsubscribe stats</li>
           <li>SMS delivery reports</li>
           <li>Exportable data</li>
         </ul>
       </div>
-      <div class="channel-card contacts fade-in">
-        <div class="channel-icon">👥</div>
+      <div class="feat-card c6">
+        <div class="feat-icon">👥</div>
         <h3>Contact Management</h3>
-        <p>Manage all your contacts in one place. Import via CSV, tag and segment by industry or campaign, and keep your lists clean with unsubscribe and bounce management.</p>
-        <ul class="channel-features">
+        <p>Import, tag, segment, and manage all your contacts in one place — with full unsubscribe and duplicate detection built in.</p>
+        <ul class="feat-list">
           <li>CSV bulk import</li>
           <li>Tag-based segmentation</li>
           <li>Unsubscribe management</li>
           <li>Duplicate detection</li>
-          <li>Contact search & filter</li>
+          <li>Search & filter</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TOOL DEMO -->
-<section class="demo-bg">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:48px;" class="fade-in">
-      <div class="section-tag tag-dark">Tool Preview</div>
-      <h2 class="section-title" style="color:white;">See NexReach in Action</h2>
-      <p style="color:rgba(255,255,255,0.45);font-size:14px;margin-top:8px;">Auto-playing walkthrough — all data is fictional for demonstration.</p>
+<!-- ── DEMO ── -->
+<section class="demo-section section">
+  <div class="container">
+    <div class="sh center fade-up">
+      <div class="s-tag light">Live Preview</div>
+      <h2 class="s-title" style="color:var(--white)">See NexReach in Action</h2>
+      <p class="s-sub" style="color:var(--muted);font-size:14px">Auto-playing walkthrough — all data is fictional for demonstration.</p>
     </div>
-    <div class="fade-in" style="background:#1c1c27;border-radius:16px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,0.7);border:1px solid #2a2a3a;">
-      <div style="background:#13131a;padding:10px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #2a2a3a;">
-        <div style="display:flex;gap:5px;"><div style="width:11px;height:11px;border-radius:50%;background:#ff5f57;"></div><div style="width:11px;height:11px;border-radius:50%;background:#febc2e;"></div><div style="width:11px;height:11px;border-radius:50%;background:#28c840;"></div></div>
-        <div style="flex:1;background:#1c1c27;border-radius:5px;padding:5px 12px;font-size:11px;color:rgba(255,255,255,0.25);font-family:monospace;">app.tssolutionsllp.com — NexReach Suite</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.2);">Simulated Demo</div>
+    <div class="demo-wrapper fade-up">
+      <div class="demo-bar">
+        <div class="demo-dots"><div class="ddot" style="background:#ff5f57"></div><div class="ddot" style="background:#febc2e"></div><div class="ddot" style="background:#28c840"></div></div>
+        <div class="demo-url">app.tssolutionsllp.com — NexReach Suite</div>
+        <div style="font-size:11px;color:var(--muted)">Simulated Demo</div>
       </div>
-      <div style="display:flex;height:520px;">
-        <div style="width:190px;background:#0d0d1a;border-right:1px solid #2a2a3a;padding:12px 0;flex-shrink:0;">
-          <div style="padding:0 14px 12px;border-bottom:1px solid #2a2a3a;margin-bottom:8px;">
-            <div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:white;">Nex<span style="color:#6c63ff;">Reach</span></div>
-            <div style="font-size:10px;color:#6b6b80;margin-top:2px;">Outreach Suite</div>
-          </div>
-          <div id="demoSidebar" style="padding:0 8px;">
-            <div class="dmnav" id="dmn0" style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:7px;font-size:12px;color:#6b6b80;cursor:default;margin-bottom:2px;">📊 Dashboard</div>
-            <div class="dmnav" id="dmn1" style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:7px;font-size:12px;color:#6b6b80;cursor:default;margin-bottom:2px;">👥 Contacts</div>
-            <div class="dmnav" id="dmn2" style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:7px;font-size:12px;color:#6b6b80;cursor:default;margin-bottom:2px;">📧 Campaigns</div>
-            <div class="dmnav" id="dmn3" style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:7px;font-size:12px;color:#6b6b80;cursor:default;margin-bottom:2px;">💧 Drip Flows</div>
-            <div class="dmnav" id="dmn4" style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:7px;font-size:12px;color:#6b6b80;cursor:default;margin-bottom:2px;">📱 SMS</div>
-            <div class="dmnav" id="dmn5" style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:7px;font-size:12px;color:#6b6b80;cursor:default;">📈 Analytics</div>
-          </div>
+      <div class="demo-body">
+        <div class="demo-sidebar">
+          <div class="ds-brand"><div class="ds-name">Nex<span>Reach</span></div><div class="ds-sub2">Outreach Suite</div></div>
+          <div id="dn0" class="ds-item active">📊 Dashboard</div>
+          <div id="dn1" class="ds-item">👥 Contacts</div>
+          <div id="dn2" class="ds-item">📧 Campaigns</div>
+          <div id="dn3" class="ds-item">💧 Drip Flows</div>
+          <div id="dn4" class="ds-item">📱 SMS</div>
+          <div id="dn5" class="ds-item">🤖 AI Writer</div>
         </div>
-        <div style="flex:1;overflow:hidden;background:#0a0a0f;position:relative;">
+        <div class="demo-content">
 
           <!-- Screen 0: Dashboard -->
-          <div class="dmscreen" id="dms0" style="padding:24px;position:absolute;inset:0;overflow-y:auto;">
-            <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:white;margin-bottom:3px;">Dashboard</div>
-            <div style="color:#6b6b80;font-size:12px;margin-bottom:18px;">All channels overview</div>
-            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;">
-              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;"><div style="font-size:20px;font-weight:700;color:#6c63ff;font-family:'Playfair Display',serif;" id="statC">4,060</div><div style="font-size:11px;color:#6b6b80;">Emails Sent</div></div>
-              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;"><div style="font-size:20px;font-weight:700;color:#2ed573;font-family:'Playfair Display',serif;">96.2%</div><div style="font-size:11px;color:#6b6b80;">Delivered</div></div>
-              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;"><div style="font-size:20px;font-weight:700;color:#ffa502;font-family:'Playfair Display',serif;">284</div><div style="font-size:11px;color:#6b6b80;">SMS Sent</div></div>
-              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;"><div style="font-size:20px;font-weight:700;color:#ff6584;font-family:'Playfair Display',serif;">32%</div><div style="font-size:11px;color:#6b6b80;">Open Rate</div></div>
+          <div class="dscreen" id="ds0">
+            <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--white);margin-bottom:3px">Dashboard</div>
+            <div style="font-size:12px;color:#6b6b80;margin-bottom:18px">All channels overview</div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px">
+              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px"><div style="font-size:22px;font-weight:700;color:#6c63ff;font-family:'Playfair Display',serif">4,060</div><div style="font-size:11px;color:#6b6b80">Emails Sent</div></div>
+              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px"><div style="font-size:22px;font-weight:700;color:#2ed573;font-family:'Playfair Display',serif">96.2%</div><div style="font-size:11px;color:#6b6b80">Delivered</div></div>
+              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px"><div style="font-size:22px;font-weight:700;color:#ffa502;font-family:'Playfair Display',serif">284</div><div style="font-size:11px;color:#6b6b80">SMS Sent</div></div>
+              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px"><div style="font-size:22px;font-weight:700;color:#ff6584;font-family:'Playfair Display',serif">34%</div><div style="font-size:11px;color:#6b6b80">Open Rate</div></div>
             </div>
-            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:16px;">
-              <div style="font-size:12px;font-weight:600;color:white;margin-bottom:12px;">Active Campaigns (All Channels)</div>
-              <table style="width:100%;border-collapse:collapse;font-size:11px;">
-                <tr style="color:#6b6b80;border-bottom:1px solid #2a2a3a;"><th style="padding:6px 8px;text-align:left;font-weight:500;">Name</th><th style="padding:6px 8px;">Type</th><th style="padding:6px 8px;">Status</th><th style="padding:6px 8px;">Sent</th></tr>
-                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,0.4);"><td style="padding:8px;">Property Owners Mar</td><td style="padding:8px;text-align:center;"><span style="color:#a89eff;font-size:10px;">EMAIL</span></td><td style="padding:8px;text-align:center;"><span style="background:rgba(46,213,115,0.2);color:#2ed573;padding:2px 7px;border-radius:20px;font-size:10px;">Done</span></td><td style="padding:8px;text-align:center;">290</td></tr>
-                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,0.4);"><td style="padding:8px;">Restaurant Drip</td><td style="padding:8px;text-align:center;"><span style="color:#2ed573;font-size:10px;">DRIP</span></td><td style="padding:8px;text-align:center;"><span style="background:rgba(108,99,255,0.2);color:#6c63ff;padding:2px 7px;border-radius:20px;font-size:10px;">Live</span></td><td style="padding:8px;text-align:center;">Step 2</td></tr>
-                <tr style="color:#e8e8f0;"><td style="padding:8px;">Clinic Reminder</td><td style="padding:8px;text-align:center;"><span style="color:#ffa502;font-size:10px;">SMS</span></td><td style="padding:8px;text-align:center;"><span style="background:rgba(255,165,2,0.2);color:#ffa502;padding:2px 7px;border-radius:20px;font-size:10px;">Queue</span></td><td style="padding:8px;text-align:center;">0</td></tr>
+            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px">
+              <div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:10px">Active Campaigns</div>
+              <table style="width:100%;border-collapse:collapse;font-size:11px">
+                <tr style="color:#6b6b80;border-bottom:1px solid #2a2a3a"><th style="padding:6px 8px;text-align:left;font-weight:500">Campaign</th><th style="padding:6px 8px">Type</th><th style="padding:6px 8px">Status</th><th style="padding:6px 8px">Sent</th></tr>
+                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,.4)"><td style="padding:8px">Property Owners Mar</td><td style="padding:8px;text-align:center"><span style="color:#a89eff;font-size:10px">EMAIL</span></td><td style="padding:8px;text-align:center"><span style="background:rgba(46,213,115,.15);color:#2ed573;padding:2px 8px;border-radius:20px;font-size:10px">Done</span></td><td style="padding:8px;text-align:center">290</td></tr>
+                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,.4)"><td style="padding:8px">Restaurant Drip</td><td style="padding:8px;text-align:center"><span style="color:#2ed573;font-size:10px">DRIP</span></td><td style="padding:8px;text-align:center"><span style="background:rgba(108,99,255,.2);color:#6c63ff;padding:2px 8px;border-radius:20px;font-size:10px">Live</span></td><td style="padding:8px;text-align:center">Step 2</td></tr>
+                <tr style="color:#e8e8f0"><td style="padding:8px">Clinic Reminder</td><td style="padding:8px;text-align:center"><span style="color:#ffa502;font-size:10px">SMS</span></td><td style="padding:8px;text-align:center"><span style="background:rgba(255,165,2,.15);color:#ffa502;padding:2px 8px;border-radius:20px;font-size:10px">Queue</span></td><td style="padding:8px;text-align:center">0</td></tr>
               </table>
             </div>
           </div>
 
-          <!-- Screen 1: Drip Flows -->
-          <div class="dmscreen" id="dms1" style="padding:24px;position:absolute;inset:0;overflow-y:auto;display:none;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-              <div><div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:white;">Drip Flows</div><div style="font-size:12px;color:#6b6b80;">Automated multi-step email sequences</div></div>
-              <div style="background:#6c63ff;color:white;padding:6px 14px;border-radius:7px;font-size:11px;">+ New Flow</div>
-            </div>
-            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:16px;margin-bottom:12px;">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-                <div><div style="font-size:13px;font-weight:600;color:white;">Restaurant Onboarding</div><div style="font-size:11px;color:#6b6b80;margin-top:2px;">5 steps · 140 contacts enrolled</div></div>
-                <span style="background:rgba(108,99,255,0.2);color:#6c63ff;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;">LIVE</span>
+          <!-- Screen 1: Drip -->
+          <div class="dscreen" id="ds1" style="display:none">
+            <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--white);margin-bottom:3px">Drip Flows</div>
+            <div style="font-size:12px;color:#6b6b80;margin-bottom:16px">Automated multi-step email sequences</div>
+            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:16px;margin-bottom:12px">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+                <div><div style="font-size:13px;font-weight:600;color:var(--white)">Restaurant Onboarding</div><div style="font-size:11px;color:#6b6b80;margin-top:2px">5 steps · 140 contacts enrolled</div></div>
+                <span style="background:rgba(108,99,255,.2);color:#6c63ff;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700">LIVE</span>
               </div>
-              <div style="display:flex;align-items:center;gap:0;">
-                <div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:8px;padding:8px 12px;font-size:10px;color:#e8e8f0;text-align:center;min-width:80px;">📧 Email 1<br><span style="color:#2ed573;">97 sent</span></div>
-                <div style="width:20px;height:1px;background:#2a2a3a;"></div>
-                <div style="background:#1c1c27;border:1px solid #6c63ff;border-radius:8px;padding:8px 12px;font-size:10px;color:#a89eff;text-align:center;min-width:80px;">📧 Email 2<br><span style="color:#6c63ff;">● active</span></div>
-                <div style="width:20px;height:1px;background:#2a2a3a;"></div>
-                <div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:8px;padding:8px 12px;font-size:10px;color:#6b6b80;text-align:center;min-width:80px;">⏰ Wait 3d<br><span style="color:#6b6b80;">pending</span></div>
-                <div style="width:20px;height:1px;background:#2a2a3a;"></div>
-                <div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:8px;padding:8px 12px;font-size:10px;color:#6b6b80;text-align:center;min-width:80px;">📧 Email 3<br><span style="color:#6b6b80;">upcoming</span></div>
+              <div style="display:flex;align-items:center;gap:0;overflow-x:auto">
+                <div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:8px;padding:10px 12px;font-size:10px;color:#e8e8f0;text-align:center;min-width:90px;flex-shrink:0">📧 Email 1<br><span style="color:#2ed573">97 sent</span></div>
+                <div style="width:20px;height:1px;background:#2a2a3a;flex-shrink:0"></div>
+                <div style="background:#1c1c27;border:1px solid #6c63ff;border-radius:8px;padding:10px 12px;font-size:10px;color:#a89eff;text-align:center;min-width:90px;flex-shrink:0">📧 Email 2<br><span style="color:#6c63ff">● active</span></div>
+                <div style="width:20px;height:1px;background:#2a2a3a;flex-shrink:0"></div>
+                <div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:8px;padding:10px 12px;font-size:10px;color:#6b6b80;text-align:center;min-width:90px;flex-shrink:0">⏰ Wait 3d<br><span>pending</span></div>
+                <div style="width:20px;height:1px;background:#2a2a3a;flex-shrink:0"></div>
+                <div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:8px;padding:10px 12px;font-size:10px;color:#6b6b80;text-align:center;min-width:90px;flex-shrink:0">📧 Email 3<br><span>upcoming</span></div>
               </div>
             </div>
-            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;">
-              <div style="display:flex;justify-content:space-between;align-items:center;">
-                <div><div style="font-size:13px;font-weight:600;color:white;">Cold Outreach Sequence</div><div style="font-size:11px;color:#6b6b80;margin-top:2px;">3 steps · 58 contacts · paused</div></div>
-                <span style="background:rgba(255,165,2,0.15);color:#ffa502;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;">PAUSED</span>
+            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div><div style="font-size:13px;font-weight:600;color:var(--white)">Cold Outreach Sequence</div><div style="font-size:11px;color:#6b6b80;margin-top:2px">3 steps · 58 contacts · paused</div></div>
+                <span style="background:rgba(255,165,2,.15);color:#ffa502;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700">PAUSED</span>
               </div>
             </div>
           </div>
 
           <!-- Screen 2: SMS -->
-          <div class="dmscreen" id="dms2" style="padding:24px;position:absolute;inset:0;overflow-y:auto;display:none;">
-            <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:white;margin-bottom:3px;">SMS Campaigns</div>
-            <div style="font-size:12px;color:#6b6b80;margin-bottom:16px;">Send bulk SMS to your contact lists</div>
-            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:16px;margin-bottom:12px;">
-              <div style="font-size:11px;color:#ffa502;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">📱 New SMS Campaign</div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
-                <div><div style="font-size:10px;color:#6b6b80;margin-bottom:4px;">Campaign Name</div><div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:7px 10px;font-size:12px;color:#e8e8f0;">Clinic April Reminder</div></div>
-                <div><div style="font-size:10px;color:#6b6b80;margin-bottom:4px;">Contact List</div><div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:7px 10px;font-size:12px;color:#6c63ff;">Clinic Contacts (150)</div></div>
+          <div class="dscreen" id="ds2" style="display:none">
+            <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--white);margin-bottom:3px">SMS Campaigns</div>
+            <div style="font-size:12px;color:#6b6b80;margin-bottom:16px">Bulk SMS to your contact lists</div>
+            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:16px">
+              <div style="font-size:11px;color:#ffa502;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">📱 New SMS Campaign</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+                <div><div style="font-size:10px;color:#6b6b80;margin-bottom:4px">Campaign Name</div><div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:7px 10px;font-size:12px;color:#e8e8f0">Clinic April Reminder</div></div>
+                <div><div style="font-size:10px;color:#6b6b80;margin-bottom:4px">Contact List</div><div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:7px 10px;font-size:12px;color:#6c63ff">Clinic Contacts (150)</div></div>
               </div>
-              <div style="margin-bottom:10px;"><div style="font-size:10px;color:#6b6b80;margin-bottom:4px;">Message (160 chars max)</div><div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:9px 10px;font-size:12px;color:#e8e8f0;line-height:1.6;">Hi {{first_name}}, your appointment at City Clinic is confirmed for Friday 2pm. Reply STOP to unsubscribe.</div></div>
-              <div style="font-size:10px;color:#2ed573;margin-bottom:12px;">✓ 112 chars · Personalized · Opt-out included</div>
-              <div style="background:#ffa502;color:#000;padding:7px 16px;border-radius:7px;font-size:11px;font-weight:700;display:inline-block;">📱 Send to 150 Contacts</div>
+              <div style="margin-bottom:10px"><div style="font-size:10px;color:#6b6b80;margin-bottom:4px">Message</div><div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:9px 10px;font-size:12px;color:#e8e8f0;line-height:1.6">Hi {{first_name}}, your appointment at City Clinic is confirmed for Friday 2pm. Reply STOP to unsubscribe.</div></div>
+              <div style="font-size:10px;color:#2ed573;margin-bottom:12px">✓ 112 chars · Personalised · Opt-out included</div>
+              <div style="background:#ffa502;color:#000;padding:8px 16px;border-radius:8px;font-size:11px;font-weight:700;display:inline-block">📱 Send to 150 Contacts</div>
             </div>
           </div>
 
           <!-- Screen 3: AI Writer -->
-          <div class="dmscreen" id="dms3" style="padding:24px;position:absolute;inset:0;overflow-y:auto;display:none;">
-            <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:white;margin-bottom:3px;">AI Writer</div>
-            <div style="font-size:12px;color:#6b6b80;margin-bottom:16px;">Generate high-converting email and SMS copy instantly</div>
-            <div style="background:rgba(108,99,255,0.08);border:1px solid rgba(108,99,255,0.25);border-radius:10px;padding:14px;margin-bottom:14px;">
-              <div style="font-size:10px;color:#a89eff;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">🤖 What do you want to write?</div>
-              <div style="background:#0d0d1a;border:1px solid #2a2a3a;border-radius:6px;padding:9px 12px;font-size:12px;color:#e8e8f0;margin-bottom:10px;" id="aiPrompt">Cold email to restaurant owners offering website design services...</div>
-              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
-                <div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:5px 12px;font-size:11px;color:#e8e8f0;">📧 Email body</div>
-                <div style="background:rgba(108,99,255,0.15);border:1px solid rgba(108,99,255,0.3);border-radius:6px;padding:5px 12px;font-size:11px;color:#a89eff;">💡 Subject lines</div>
-                <div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:5px 12px;font-size:11px;color:#e8e8f0;">📱 SMS copy</div>
+          <div class="dscreen" id="ds3" style="display:none">
+            <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--white);margin-bottom:3px">AI Writer</div>
+            <div style="font-size:12px;color:#6b6b80;margin-bottom:16px">Generate high-converting copy instantly</div>
+            <div style="background:rgba(108,99,255,.08);border:1px solid rgba(108,99,255,.25);border-radius:10px;padding:14px;margin-bottom:14px">
+              <div style="font-size:10px;color:#a89eff;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">🤖 What do you want to write?</div>
+              <div style="background:#0d0d1a;border:1px solid #2a2a3a;border-radius:6px;padding:9px 12px;font-size:12px;color:#e8e8f0;margin-bottom:10px">Cold email to restaurant owners offering website design services...</div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+                <div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:5px 12px;font-size:11px;color:#e8e8f0">📧 Email body</div>
+                <div style="background:rgba(108,99,255,.15);border:1px solid rgba(108,99,255,.3);border-radius:6px;padding:5px 12px;font-size:11px;color:#a89eff">💡 Subject lines</div>
+                <div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:5px 12px;font-size:11px;color:#e8e8f0">📱 SMS copy</div>
               </div>
-              <div style="background:#6c63ff;color:white;padding:7px 16px;border-radius:7px;font-size:11px;font-weight:600;display:inline-block;" id="aiBtn">✨ Generate with AI</div>
+              <div style="background:#6c63ff;color:white;padding:8px 16px;border-radius:8px;font-size:11px;font-weight:700;display:inline-block">✨ Generate with AI</div>
             </div>
-            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;" id="aiOutput">
-              <div style="font-size:10px;color:#6b6b80;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Generated Output</div>
-              <div style="font-size:12px;color:#e8e8f0;line-height:1.7;" id="aiText">Subject: Quick question about your restaurant's website...<br><br>Hi {{first_name}},<br><br>I noticed your restaurant doesn't have a website yet — or the current one might not be driving new customers. We build modern restaurant websites in under 48 hours, starting at $399/year.<br><br>Would a 5-min call make sense this week?</div>
+            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px">
+              <div style="font-size:10px;color:#6b6b80;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">Generated Output</div>
+              <div style="font-size:12px;color:#e8e8f0;line-height:1.75">Subject: Quick question about your restaurant's website...<br><br>Hi {{first_name}},<br><br>I noticed your restaurant might not have a modern website yet. We build restaurant sites in 48 hours from $399/year.<br><br>Worth a 5-min call this week?</div>
             </div>
           </div>
 
           <!-- Screen 4: Analytics -->
-          <div class="dmscreen" id="dms4" style="padding:24px;position:absolute;inset:0;overflow-y:auto;display:none;">
-            <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:white;margin-bottom:3px;">Analytics</div>
-            <div style="font-size:12px;color:#6b6b80;margin-bottom:18px;">All channels — email & SMS performance</div>
-            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;">
-              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;text-align:center;"><div style="font-size:20px;font-weight:700;color:#6c63ff;">4,060</div><div style="font-size:11px;color:#6b6b80;">Emails Sent</div></div>
-              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;text-align:center;"><div style="font-size:20px;font-weight:700;color:#2ed573;">96.2%</div><div style="font-size:11px;color:#6b6b80;">Email Delivered</div></div>
-              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;text-align:center;"><div style="font-size:20px;font-weight:700;color:#ffa502;">284</div><div style="font-size:11px;color:#6b6b80;">SMS Sent</div></div>
-              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;text-align:center;"><div style="font-size:20px;font-weight:700;color:#ff6584;">32.4%</div><div style="font-size:11px;color:#6b6b80;">Avg Open Rate</div></div>
+          <div class="dscreen" id="ds4" style="display:none">
+            <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--white);margin-bottom:3px">Analytics</div>
+            <div style="font-size:12px;color:#6b6b80;margin-bottom:18px">All channels — email &amp; SMS performance</div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px">
+              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;text-align:center"><div style="font-size:20px;font-weight:700;color:#6c63ff">4,060</div><div style="font-size:11px;color:#6b6b80">Emails Sent</div></div>
+              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;text-align:center"><div style="font-size:20px;font-weight:700;color:#2ed573">96.2%</div><div style="font-size:11px;color:#6b6b80">Delivered</div></div>
+              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;text-align:center"><div style="font-size:20px;font-weight:700;color:#ffa502">284</div><div style="font-size:11px;color:#6b6b80">SMS Sent</div></div>
+              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;text-align:center"><div style="font-size:20px;font-weight:700;color:#ff6584">34.4%</div><div style="font-size:11px;color:#6b6b80">Avg Open Rate</div></div>
             </div>
-            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:16px;">
-              <div style="font-size:12px;font-weight:600;color:white;margin-bottom:14px;">Campaign Breakdown</div>
-              <div style="margin-bottom:12px;"><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px;"><span style="color:#e8e8f0;">Property Owners (Email)</span><span style="color:#2ed573;">290 sent · 97% delivered</span></div><div style="background:#1c1c27;border-radius:3px;height:6px;"><div style="background:linear-gradient(90deg,#6c63ff,#2ed573);height:100%;width:97%;border-radius:3px;"></div></div></div>
-              <div style="margin-bottom:12px;"><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px;"><span style="color:#e8e8f0;">Restaurant Drip (Drip)</span><span style="color:#a89eff;">140 active · step 2 of 5</span></div><div style="background:#1c1c27;border-radius:3px;height:6px;"><div style="background:linear-gradient(90deg,#6c63ff,#a89eff);height:100%;width:48%;border-radius:3px;" id="bar1"></div></div></div>
-              <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px;"><span style="color:#e8e8f0;">Clinic SMS (SMS)</span><span style="color:#ffa502;">284 sent · 98% delivered</span></div><div style="background:#1c1c27;border-radius:3px;height:6px;"><div style="background:linear-gradient(90deg,#ffa502,#2ed573);height:100%;width:98%;border-radius:3px;" id="bar2"></div></div></div>
+            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px">
+              <div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:12px">Campaign Breakdown</div>
+              <div style="margin-bottom:10px"><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px"><span style="color:#e8e8f0">Property Owners (Email)</span><span style="color:#2ed573">290 sent · 97% delivered</span></div><div style="background:#1c1c27;border-radius:3px;height:6px"><div style="background:linear-gradient(90deg,#6c63ff,#2ed573);height:100%;width:97%;border-radius:3px"></div></div></div>
+              <div style="margin-bottom:10px"><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px"><span style="color:#e8e8f0">Restaurant Drip (Drip)</span><span style="color:#a89eff">140 active · step 2 of 5</span></div><div style="background:#1c1c27;border-radius:3px;height:6px"><div style="background:linear-gradient(90deg,#6c63ff,#a89eff);height:100%;width:48%;border-radius:3px"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px"><span style="color:#e8e8f0">Clinic SMS (SMS)</span><span style="color:#ffa502">284 sent · 98% delivered</span></div><div style="background:#1c1c27;border-radius:3px;height:6px"><div style="background:linear-gradient(90deg,#ffa502,#2ed573);height:100%;width:98%;border-radius:3px"></div></div></div>
             </div>
           </div>
 
-          <!-- Screen 5: Dashboard 2 (loops back) -->
-          <div class="dmscreen" id="dms5" style="padding:24px;position:absolute;inset:0;overflow-y:auto;display:none;">
-            <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:white;margin-bottom:3px;">Contacts</div>
-            <div style="font-size:12px;color:#6b6b80;margin-bottom:16px;">3,240 contacts across all lists</div>
-            <div style="display:flex;gap:8px;margin-bottom:14px;">
-              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:7px;padding:6px 14px;font-size:11px;color:#e8e8f0;">All (3,240)</div>
-              <div style="background:rgba(108,99,255,0.15);border:1px solid rgba(108,99,255,0.3);border-radius:7px;padding:6px 14px;font-size:11px;color:#a89eff;">property (890)</div>
-              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:7px;padding:6px 14px;font-size:11px;color:#e8e8f0;">restaurant (640)</div>
-              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:7px;padding:6px 14px;font-size:11px;color:#e8e8f0;">clinic (150)</div>
+          <!-- Screen 5: Contacts -->
+          <div class="dscreen" id="ds5" style="display:none">
+            <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--white);margin-bottom:3px">Contacts</div>
+            <div style="font-size:12px;color:#6b6b80;margin-bottom:16px">3,240 contacts across all lists</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
+              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:7px;padding:6px 14px;font-size:11px;color:#e8e8f0">All (3,240)</div>
+              <div style="background:rgba(108,99,255,.15);border:1px solid rgba(108,99,255,.3);border-radius:7px;padding:6px 14px;font-size:11px;color:#a89eff">property (890)</div>
+              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:7px;padding:6px 14px;font-size:11px;color:#e8e8f0">restaurant (640)</div>
+              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:7px;padding:6px 14px;font-size:11px;color:#e8e8f0">clinic (150)</div>
             </div>
-            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;overflow:hidden;">
-              <table style="width:100%;border-collapse:collapse;font-size:11px;">
-                <tr style="color:#6b6b80;border-bottom:1px solid #2a2a3a;background:#1c1c27;"><th style="padding:9px 12px;text-align:left;">Email</th><th style="padding:9px 12px;text-align:left;">Name</th><th style="padding:9px 12px;">Tag</th><th style="padding:9px 12px;">Status</th></tr>
-                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,0.4);"><td style="padding:9px 12px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b4c7d5d9c4d8d1f4d6c1c7dddad1c7c79ad7dbd9">[email&#160;protected]</a></td><td style="padding:9px 12px;">Ramesh K.</td><td style="padding:9px 12px;text-align:center;"><span style="background:rgba(108,99,255,0.2);color:#6c63ff;padding:2px 7px;border-radius:10px;">property</span></td><td style="padding:9px 12px;text-align:center;"><span style="color:#2ed573;">● Active</span></td></tr>
-                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,0.4);background:rgba(255,255,255,0.02);"><td style="padding:9px 12px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="94fcf1f8f8fbd4f7fbf9e4f5faedbafdfa">[email&#160;protected]</a></td><td style="padding:9px 12px;">Priya S.</td><td style="padding:9px 12px;text-align:center;"><span style="background:rgba(255,165,2,0.2);color:#ffa502;padding:2px 7px;border-radius:10px;">restaurant</span></td><td style="padding:9px 12px;text-align:center;"><span style="color:#2ed573;">● Active</span></td></tr>
-                <tr style="color:#e8e8f0;"><td style="padding:9px 12px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="385b57564c595b4c785b545156515b16574a5f">[email&#160;protected]</a></td><td style="padding:9px 12px;">Dr. Anil M.</td><td style="padding:9px 12px;text-align:center;"><span style="background:rgba(46,213,115,0.2);color:#2ed573;padding:2px 7px;border-radius:10px;">clinic</span></td><td style="padding:9px 12px;text-align:center;"><span style="color:#2ed573;">● Active</span></td></tr>
+            <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;overflow:hidden">
+              <table style="width:100%;border-collapse:collapse;font-size:11px">
+                <tr style="color:#6b6b80;border-bottom:1px solid #2a2a3a;background:#1c1c27"><th style="padding:9px 12px;text-align:left">Email</th><th style="padding:9px 12px;text-align:left">Name</th><th style="padding:9px 12px">Tag</th><th style="padding:9px 12px">Status</th></tr>
+                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,.4)"><td style="padding:9px 12px">ramesh@example.com</td><td style="padding:9px 12px">Ramesh K.</td><td style="padding:9px 12px;text-align:center"><span style="background:rgba(108,99,255,.2);color:#6c63ff;padding:2px 7px;border-radius:10px">property</span></td><td style="padding:9px 12px;text-align:center"><span style="color:#2ed573">● Active</span></td></tr>
+                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,.4);background:rgba(255,255,255,.02)"><td style="padding:9px 12px">priya@example.com</td><td style="padding:9px 12px">Priya S.</td><td style="padding:9px 12px;text-align:center"><span style="background:rgba(255,165,2,.2);color:#ffa502;padding:2px 7px;border-radius:10px">restaurant</span></td><td style="padding:9px 12px;text-align:center"><span style="color:#2ed573">● Active</span></td></tr>
+                <tr style="color:#e8e8f0"><td style="padding:9px 12px">anil@example.com</td><td style="padding:9px 12px">Dr. Anil M.</td><td style="padding:9px 12px;text-align:center"><span style="background:rgba(46,213,115,.2);color:#2ed573;padding:2px 7px;border-radius:10px">clinic</span></td><td style="padding:9px 12px;text-align:center"><span style="color:#2ed573">● Active</span></td></tr>
               </table>
             </div>
           </div>
         </div>
       </div>
-      <div style="background:#0d0d1a;padding:10px 20px;display:flex;align-items:center;gap:12px;border-top:1px solid #2a2a3a;">
-        <div style="font-size:11px;color:#6b6b80;" id="demoLabel">Dashboard</div>
-        <div style="flex:1;background:#1c1c27;border-radius:3px;height:3px;"><div id="demoProgressBar" style="background:#6c63ff;height:100%;width:0%;border-radius:3px;transition:width 0.3s linear;"></div></div>
-        <div style="font-size:10px;color:#6b6b80;" id="demoTimer">6s</div>
+      <div class="demo-footer">
+        <div class="df-label" id="demoLabel">Dashboard</div>
+        <div class="df-bar"><div class="df-progress" id="demoBar"></div></div>
+        <div class="df-timer" id="demoTimer">6s</div>
       </div>
     </div>
-    <p style="text-align:center;color:rgba(255,255,255,0.2);font-size:12px;margin-top:16px;">Simulated demo — all names and data are fictional. Contact us to see the live tool.</p>
+    <p style="text-align:center;color:var(--muted);font-size:12.5px;margin-top:16px">Simulated demo — all names and data are fictional. <a href="../index.html#contact" style="color:var(--nr-pL)">Contact us</a> to see the live tool.</p>
   </div>
 </section>
 
-<!-- PRICING -->
-<section id="pricing">
-  <div class="section-inner">
-    <div style="text-align:center;margin-bottom:56px;" class="fade-in">
-      <div class="section-tag tag-light">Pricing</div>
-      <h2 class="section-title">Simple, Honest Pricing</h2>
-      <p class="section-sub" style="margin:0 auto;">Subscribe monthly and cancel anytime — or own NexReach forever with a one-time purchase. No hidden fees.</p>
+<!-- ── PRICING ── -->
+<section class="pricing-section section" id="pricing">
+  <div class="container">
+    <div class="sh center fade-up">
+      <div class="s-tag purple">Pricing</div>
+      <h2 class="s-title" style="color:var(--white)">Simple, Honest Pricing.</h2>
+      <p class="s-sub">Subscribe monthly and cancel anytime — or own NexReach forever with one payment. No hidden fees. No surprises. Ever.</p>
     </div>
-    <div class="pricing-grid fade-in">
-      <div class="pricing-card">
-        <div class="pricing-name">Monthly Plan</div>
-        <div class="pricing-amount">$50</div>
-        <div class="pricing-period">per month</div>
-        <div class="pricing-subtitle">Cancel anytime with 30 days notice. Includes onboarding support.</div>
-        <ul class="pricing-features">
-          <li>Email marketing (300+/day)</li>
-          <li>Drip campaign automation</li>
-          <li>SMS marketing</li>
-          <li>AI email & SMS writer</li>
-          <li>Contact management & tagging</li>
-          <li>CSV bulk import</li>
-          <li>Spam score checker</li>
-          <li>Full campaign analytics</li>
-          <li>Unsubscribe management</li>
-          <li>Email support</li>
+    <div class="pricing-intro fade-up">
+      <strong>Setup and onboarding included.</strong> You pay your email provider (Brevo) and SMS provider (Twilio) directly at their rates — <strong>zero hidden markups</strong> from us. Brevo's free plan includes 300 emails/day.
+    </div>
+    <div class="pricing-split fade-up">
+
+      <!-- Starter -->
+      <div class="price-card">
+        <div class="pc-name">Starter</div>
+        <div class="pc-price-wrap">
+          <div class="pc-price"><sup>$</sup>60<span class="per">/mo</span></div>
+        </div>
+        <div class="pc-period">Billed monthly · cancel anytime</div>
+        <div class="pc-desc">Perfect for small businesses getting started with email outreach. Connect your own Brevo account — 300 emails/day free on Brevo's free plan.</div>
+        <ul class="pc-feats">
+          <li class="yes">Up to 300 emails/day <span style="color:var(--nr-green);font-size:11px;font-weight:600">(free via Brevo)</span></li>
+          <li class="yes">Unlimited contacts</li>
+          <li class="yes">Email campaigns</li>
+          <li class="yes">Spam score checker</li>
+          <li class="yes">Basic analytics</li>
+          <li class="yes">CSV import &amp; export</li>
+          <li class="no">SMS campaigns</li>
+          <li class="no">Drip sequences</li>
+          <li class="no">AI email writing</li>
+          <li class="yes">Setup &amp; onboarding included</li>
         </ul>
-        <a href="../index.html#contact" class="btn-main">Get Started →</a>
+        <a href="../index.html#contact" class="pc-cta">Get Started →</a>
       </div>
-      <div class="pricing-card featured">
-        <div class="own-badge">💡 Best Value</div>
-        <div class="pricing-name">Own It Forever</div>
-        <div class="pricing-amount">$1,599</div>
-        <div class="pricing-period">one-time payment</div>
-        <div class="pricing-subtitle">Pay once. Own it forever. Zero recurring fees. Yours to keep and use indefinitely.</div>
-        <ul class="pricing-features">
-          <li>Everything in Monthly Plan</li>
-          <li>Unlimited use forever</li>
-          <li>No recurring payments ever</li>
-          <li>Priority WhatsApp support</li>
-          <li>Custom onboarding session</li>
-          <li>Free feature updates</li>
-          <li>Data export at any time</li>
-          <li>Dedicated setup assistance</li>
+
+      <!-- Growth -->
+      <div class="price-card featured">
+        <div class="pc-badge">⭐ Most Popular</div>
+        <div class="pc-name">Growth</div>
+        <div class="pc-price-wrap">
+          <div class="pc-price"><sup>$</sup>150<span class="per">/mo</span></div>
+        </div>
+        <div class="pc-period">Billed monthly · cancel anytime</div>
+        <div class="pc-desc">For growing teams who need email, SMS, and automation together. Email costs paid directly to Brevo — SMS costs paid directly to your SMS provider. Zero markups from us.</div>
+        <ul class="pc-feats">
+          <li class="yes bold">Unlimited emails/day <span style="color:var(--muted);font-size:11px;font-weight:400">(Brevo rates apply)</span></li>
+          <li class="yes">Unlimited contacts</li>
+          <li class="yes">Email campaigns</li>
+          <li class="yes">SMS campaigns <span style="color:var(--muted);font-size:11px;font-weight:400">(Twilio rates apply)</span></li>
+          <li class="yes">Drip sequences (email + SMS)</li>
+          <li class="yes">AI email writing assistant</li>
+          <li class="yes">Pipeline / CRM view</li>
+          <li class="yes">Email templates library</li>
+          <li class="yes">Conversations inbox</li>
+          <li class="yes">Full analytics dashboard</li>
+          <li class="yes">Setup &amp; onboarding included</li>
         </ul>
-        <a href="../index.html#contact" class="btn-main btn-main-filled">Buy Now — $1,599 →</a>
+        <a href="../index.html#contact" class="pc-cta">Get Started →</a>
+      </div>
+
+      <!-- WhiteLabel -->
+      <div class="price-card whitelabel">
+        <div class="pc-badge gold">🏷️ One-Time Payment</div>
+        <div class="pc-name">WhiteLabel</div>
+        <div class="pc-price-wrap">
+          <div class="pc-price"><sup>$</sup>1,899</div>
+        </div>
+        <div class="pc-period">One-time · forever yours</div>
+        <div class="pc-desc">Own the platform. Your brand, your clients. Zero monthly fees — ever.</div>
+        <ul class="pc-feats">
+          <li class="yes bold">Full platform ownership</li>
+          <li class="yes">Your own branding &amp; domain</li>
+          <li class="yes">Unlimited everything</li>
+          <li class="yes">All features included</li>
+          <li class="yes">Source code included</li>
+          <li class="yes">Full setup &amp; onboarding</li>
+          <li class="yes">No monthly platform fees</li>
+        </ul>
+        <a href="../index.html#contact" class="pc-cta">Get Started →</a>
+      </div>
+
+    </div>
+    <!-- Savings callout -->
+    <div class="savings-callout fade-up">
+      <div class="sc-left">
+        <strong>🧮 Do the math:</strong> At $150/month (Growth), you'll pay <strong>$1,800/year</strong>.<br>
+        The $1,899 WhiteLabel pays for itself in just over <strong>1 year</strong> — then it's free forever. Own it, brand it, keep it.
+      </div>
+      <div class="sc-right">
+        <div class="sc-big">$1,800</div>
+        <div class="sc-note">saved per year after breakeven</div>
       </div>
     </div>
-    <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:28px;">Both plans include a one-time setup and onboarding. See our <a href="../refund-policy.html" style="color:var(--accent);">Refund Policy</a>.</p>
+    <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:24px">All plans include setup and onboarding. See our <a href="../refund-policy.html" style="color:var(--nr-pL)">Refund Policy</a>.</p>
   </div>
 </section>
 
-<!-- VS COMPARISON -->
-<section style="background:var(--off-white);">
-  <div class="section-inner">
-    <div style="text-align:center;margin-bottom:48px;" class="fade-in">
-      <div class="section-tag tag-light">Why NexReach?</div>
-      <h2 class="section-title">NexReach vs. Other Tools</h2>
-      <p class="section-sub" style="margin:0 auto;">Other tools charge you separately for email, SMS, drip, and analytics. NexReach bundles everything at a fraction of the cost.</p>
+<!-- ── COMPARE ── -->
+<section class="compare-section section">
+  <div class="container">
+    <div class="sh center fade-up">
+      <div class="s-tag dark-lght">Why NexReach?</div>
+      <h2 class="s-title" style="color:var(--ltext)">NexReach vs. Other Tools</h2>
+      <p class="s-sub" style="color:var(--lmuted)">Other tools charge $300+/month across separate email, SMS, and automation platforms. NexReach bundles everything at a fraction of the cost — including vs GoHighLevel which charges extra for every SMS.</p>
     </div>
-    <div class="fade-in" style="overflow-x:auto;border-radius:16px;">
+    <div class="fade-up" style="overflow-x:auto;border-radius:16px">
       <table class="compare-table">
-        <thead><tr>
-          <th>Feature</th>
-          <th style="color:#a89eff;background:#1a1a6e;">NexReach ($50/mo)</th>
-          <th>Mailchimp ($135/mo+)</th>
-          <th>ActiveCampaign ($149/mo+)</th>
-        </tr></thead>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="hl">NexReach (from $60/mo)</th>
+            <th>Mailchimp ($135/mo+)</th>
+            <th>ActiveCampaign ($149/mo+)</th>
+            <th>GoHighLevel ($97/mo+)</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td>Email Campaigns</td><td style="text-align:center;"><span class="check">✓</span></td><td style="text-align:center;"><span class="check">✓</span></td><td style="text-align:center;"><span class="check">✓</span></td></tr>
-          <tr><td>Drip / Automation</td><td style="text-align:center;"><span class="check">✓</span></td><td style="text-align:center;"><span style="color:#ffa502;">Paid add-on</span></td><td style="text-align:center;"><span class="check">✓</span></td></tr>
-          <tr><td>SMS Marketing</td><td style="text-align:center;"><span class="check">✓</span></td><td style="text-align:center;"><span class="cross">✕</span></td><td style="text-align:center;"><span style="color:#ffa502;">Extra cost</span></td></tr>
-          <tr><td>AI Writer</td><td style="text-align:center;"><span class="check">✓</span></td><td style="text-align:center;"><span style="color:#ffa502;">Paid plan only</span></td><td style="text-align:center;"><span style="color:#ffa502;">Limited</span></td></tr>
-          <tr><td>Spam Score Checker</td><td style="text-align:center;"><span class="check">✓</span></td><td style="text-align:center;"><span class="cross">✕</span></td><td style="text-align:center;"><span class="cross">✕</span></td></tr>
-          <tr><td>One-time purchase option</td><td style="text-align:center;"><span class="check">✓ $1,599</span></td><td style="text-align:center;"><span class="cross">✕</span></td><td style="text-align:center;"><span class="cross">✕</span></td></tr>
-          <tr><td>Direct support (WhatsApp)</td><td style="text-align:center;"><span class="check">✓</span></td><td style="text-align:center;"><span class="cross">✕</span></td><td style="text-align:center;"><span class="cross">✕</span></td></tr>
+          <tr class="nr-row"><td>Email Campaigns</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td></tr>
+          <tr class="nr-row"><td>Drip / Automation</td><td><span class="ck">✓</span></td><td><span class="cp">Paid add-on</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td></tr>
+          <tr class="nr-row"><td>SMS Marketing</td><td><span class="ck">✓</span><span class="ct">Growth+ · via Twilio</span></td><td><span class="cx">✕</span></td><td><span class="cp">Extra cost</span></td><td><span class="cp">Extra per SMS</span></td></tr>
+          <tr class="nr-row"><td>AI Writer</td><td><span class="ck">✓</span><span class="ct">Growth+ included</span></td><td><span class="cp">Paid plan only</span></td><td><span class="cp">Limited</span></td><td><span class="ck">✓</span></td></tr>
+          <tr class="nr-row"><td>Spam Score Checker</td><td><span class="ck">✓</span></td><td><span class="cx">✕</span></td><td><span class="cx">✕</span></td><td><span class="cx">✕</span></td></tr>
+          <tr class="nr-row"><td>One-Time Purchase</td><td><span class="ck">✓</span><span class="ct">$1,899 WhiteLabel</span></td><td><span class="cx">✕</span></td><td><span class="cx">✕</span></td><td><span class="cx">✕</span></td></tr>
+          <tr class="nr-row"><td>WhatsApp Support</td><td><span class="ck">✓</span></td><td><span class="cx">✕</span></td><td><span class="cx">✕</span></td><td><span class="cx">✕</span></td></tr>
+          <tr class="nr-row"><td>Learning Curve</td><td><span style="color:var(--nr-p);font-weight:700;font-size:12px">Simple</span></td><td><span class="cp">Moderate</span></td><td><span class="cp">Steep</span></td><td><span class="cp">Very Steep</span></td></tr>
+          <tr class="nr-row"><td><strong>Monthly Cost</strong></td><td><strong style="color:#6c63ff;font-size:14px">$60/mo</strong></td><td><span style="color:#dc2626;font-weight:700">$135+</span></td><td><span style="color:#dc2626;font-weight:700">$149+</span></td><td><span style="color:#dc2626;font-weight:700">$97+</span></td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section>
-  <div class="section-inner">
-    <div style="text-align:center;margin-bottom:48px;" class="fade-in">
-      <div class="section-tag tag-light">FAQ</div>
-      <h2 class="section-title">Common Questions</h2>
+<!-- ── FAQ ── -->
+<section class="faq-section section" id="faq">
+  <div class="container">
+    <div class="sh center fade-up">
+      <div class="s-tag light">FAQ</div>
+      <h2 class="s-title" style="color:var(--white)">Common Questions</h2>
     </div>
-    <div class="faq-grid fade-in">
-      <div class="faq-item"><div class="faq-q">What is included in NexReach?</div><div class="faq-a">Email marketing, drip campaigns, SMS marketing, AI writer, contact management, spam checker, and full analytics — all in one platform.</div></div>
-      <div class="faq-item"><div class="faq-q">What's the difference between $50/mo and $1,599?</div><div class="faq-a">The monthly plan gives you access for as long as you pay. The $1,599 one-time purchase means you own NexReach forever with no recurring fees — same features, no monthly bills.</div></div>
-      <div class="faq-item"><div class="faq-q">How many emails can I send per day?</div><div class="faq-a">300+ emails per day using our delivery infrastructure. Batch sending with configurable delays keeps your sender reputation clean and deliverability high.</div></div>
-      <div class="faq-item"><div class="faq-q">Does NexReach include SMS globally?</div><div class="faq-a">SMS is available in most countries. Coverage and per-SMS costs depend on your region. Contact us to confirm availability in your country before purchasing.</div></div>
-      <div class="faq-item"><div class="faq-q">Can I import my existing contacts?</div><div class="faq-a">Yes. You can import contacts via CSV with bulk upload and preview before confirming. You can also export your list at any time.</div></div>
-      <div class="faq-item"><div class="faq-q">Do I need technical knowledge to use it?</div><div class="faq-a">No. NexReach is built to be simple. We also include onboarding support to get you set up and running your first campaign on day one.</div></div>
-      <div class="faq-item"><div class="faq-q">What happens to my data if I cancel?</div><div class="faq-a">You can export all your contacts and campaign data before cancelling. We do not retain your data after account closure.</div></div>
+    <div class="faq-grid fade-up">
+      <div class="faq-item"><div class="faq-q">What's included in NexReach?</div><div class="faq-a">Email marketing, drip campaigns, SMS marketing, AI writer, contact management, spam score checker, and full analytics — all in one platform at one price.</div></div>
+      <div class="faq-item"><div class="faq-q">What's the difference between $60/mo and $1,899?</div><div class="faq-a">The monthly plan gives you access for as long as you pay. The $1,899 one-time purchase means you own NexReach forever with no recurring fees. Same features — no monthly bills ever again.</div></div>
+      <div class="faq-item"><div class="faq-q">How many emails can I send per day?</div><div class="faq-a">300+ emails per day. Batch sending with configurable delays protects your sender reputation and keeps deliverability high.</div></div>
+      <div class="faq-item"><div class="faq-q">Does NexReach support SMS globally?</div><div class="faq-a">SMS is available in most countries. Coverage and per-SMS costs depend on your region. Contact us before purchasing to confirm availability in your country.</div></div>
+      <div class="faq-item"><div class="faq-q">Can I import my existing contacts?</div><div class="faq-a">Yes — CSV bulk import with preview before confirming. You can also export all your contact data at any time.</div></div>
+      <div class="faq-item"><div class="faq-q">Do I need technical knowledge to use it?</div><div class="faq-a">No. NexReach is built to be straightforward. We also include an onboarding session to get you set up and running your first campaign on day one.</div></div>
+      <div class="faq-item"><div class="faq-q">What happens to my data if I cancel?</div><div class="faq-a">You can export all contacts and campaign data before cancelling. We do not retain your data after account closure.</div></div>
       <div class="faq-item"><div class="faq-q">Is there a free trial?</div><div class="faq-a">No free trial — but you can view the live tool at app.tssolutionsllp.com and reach out via WhatsApp or email with any questions before committing.</div></div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
+<!-- ── CTA ── -->
 <div class="cta-section">
-  <h2>Ready to Reach More Customers?</h2>
-  <p>Get started with NexReach today. Email marketing, drip campaigns, SMS — all in one place, at one honest price.</p>
+  <h2>Ready to <em>Reach More</em><br>Customers?</h2>
+  <p>Get started with NexReach today. Email marketing, drip campaigns, SMS — all in one place, at one honest price. $60/month or own it forever for $1,899.</p>
   <div class="cta-btns">
     <a href="../index.html#contact" class="btn-purple">Get Access Now →</a>
-    <a href="https://app.tssolutionsllp.com" target="_blank" class="btn-outline-light">View Live Tool</a>
+    <a href="https://app.tssolutionsllp.com" target="_blank" class="btn-ghost-light">View Live Tool</a>
   </div>
-  <div style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.35);">$50/month · or $1,599 one-time · No hidden fees</div>
+  <div class="cta-note">$60/month · or $1,899 one-time · No hidden fees · Cancel anytime</div>
 </div>
 
 <footer>
@@ -609,35 +1125,70 @@ footer a:hover{color:white;}
   © 2025 TwinStance Solutions LLP. All rights reserved. · NexReach is a product of TwinStance Solutions.
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Fade-in observer
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 80);
+<a href="https://wa.me/919078686010?text=Hi!%20I%20want%20to%20know%20more%20about%20NexReach." class="wa" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// Nav
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').style.background=window.scrollY>30?'rgba(7,7,26,0.97)':'rgba(7,7,26,0.88)';
+});
+function toggleNav(){
+  const m=document.getElementById('mobNav');
+  m.style.display=m.style.display==='block'?'none':'block';
+}
+
+// Fade-up observer
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('in'),i*60);
+      obs.unobserve(e.target);
+    }
   });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+},{threshold:0.06});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
 // Demo player
 (function(){
-  const screens = ['Dashboard','Drip Flows','SMS Campaigns','AI Writer','Analytics','Contacts'];
-  const durations = [6, 6, 5, 7, 5, 5];
-  let cur = 0, elapsed = 0, ticker;
+  const screens=['Dashboard','Drip Flows','SMS Campaigns','AI Writer','Analytics','Contacts'];
+  const durations=[6,6,5,7,5,5];
+  const navIdx=[0,3,2,5,5,1];
+  let cur=0,elapsed=0,ticker;
 
-  const navMap = [0, 3, 4, 5, 5, 1]; // which sidebar nav item to highlight
-
-  function showScreen(idx) {
-    for (let i = 0; i < 6; i++) {
-      const s = document.getElementById('dms' + i);
-      if (s) s.style.display = i === idx ? 'block' : 'none';
-      const n = document.getElementById('dmn' + i);
-      if (n) { n.style.background = i === navMap[idx] ? 'rgba(108,99,255,0.15)' : 'transparent'; n.style.color = i === navMap[idx] ? '#a89eff' : '#6b6b80'; }
+  function showScreen(idx){
+    for(let i=0;i<6;i++){
+      const s=document.getElementById('ds'+i);
+      if(s)s.style.display=i===idx?'block':'none';
+      const n=document.getElementById('dn'+i);
+      if(n){
+        n.style.background=i===navIdx[idx]?'rgba(108,99,255,.15)':'transparent';
+        n.style.color=i===navIdx[idx]?'#a89eff':'#6b6b80';
+      }
     }
-    const lbl = document.getElementById('demoLabel');
-    if (lbl) lbl.textContent = screens[idx];
+    const lbl=document.getElementById('demoLabel');
+    if(lbl)lbl.textContent=screens[idx];
   }
 
-  function tick() {
-    elapsed += 0.1;
-    const total = durations[cur];
-    const pct = (elapsed / total) * 100;
+  function tick(){
+    elapsed+=0.1;
+    const total=durations[cur];
+    const pct=(elapsed/total)*100;
+    const bar=document.getElementById('demoBar');
+    const timer=document.getElementById('demoTimer');
+    if(bar)bar.style.width=Math.min(pct,100)+'%';
+    if(timer)timer.textContent=Math.max(0,Math.ceil(total-elapsed))+'s';
+    if(elapsed>=total){
+      elapsed=0;
+      cur=(cur+1)%6;
+      showScreen(cur);
+    }
+  }
+
+  showScreen(0);
+  ticker=setInterval(tick,100);
+})();
+</script>
+</body>
+</html>
