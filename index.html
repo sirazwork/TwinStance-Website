@@ -429,10 +429,12 @@ nav{
 .pkg-tier{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
 .pkg-price{
   font-family:'Playfair Display',serif;
-  font-size:48px;letter-spacing:-2px;line-height:1;font-weight:800;margin-bottom:4px;
+  font-size:48px;letter-spacing:-2px;line-height:1;font-weight:800;margin-bottom:2px;
+  display:flex;align-items:flex-start;gap:2px;
 }
-.pkg-price sup{font-size:20px;vertical-align:top;margin-top:12px;font-family:'Figtree',sans-serif;font-weight:400}
-.pkg-price .per{font-size:15px;font-weight:400;color:var(--muted);font-family:'Figtree',sans-serif}
+.pkg-price sup{font-size:20px;vertical-align:top;margin-top:10px;font-family:'Figtree',sans-serif;font-weight:400;flex-shrink:0}
+.pkg-price-num{line-height:1}
+.pkg-price .per{display:block;font-size:13px;font-weight:500;color:var(--muted);font-family:'Figtree',sans-serif;letter-spacing:0;line-height:1;margin-top:6px;align-self:flex-end;padding-bottom:4px}
 .pkg-desc{font-size:13.5px;color:var(--muted);margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--b);line-height:1.55}
 .pkg-feats{list-style:none;flex:1;margin-bottom:24px}
 .pkg-feats li{
@@ -1033,7 +1035,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
       <div class="pkg-grid">
         <div class="pkg">
           <div class="pkg-tier">Starter</div>
-          <div class="pkg-price"><sup>$</sup>399 <span class="per">/ year</span></div>
+          <div class="pkg-price"><sup>$</sup><span class="pkg-price-num">399</span><span class="per">/ year</span></div>
           <div class="pkg-desc">For small businesses wanting a fast, professional online presence.</div>
           <ul class="pkg-feats">
             <li>Up to 5 pages</li>
@@ -1051,7 +1053,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
         <div class="pkg pop">
           <div class="pop-badge">⭐ Most Popular</div>
           <div class="pkg-tier">Business</div>
-          <div class="pkg-price"><sup>$</sup>599 <span class="per">/ year</span></div>
+          <div class="pkg-price"><sup>$</sup><span class="pkg-price-num">599</span><span class="per">/ year</span></div>
           <div class="pkg-desc">Everything a growing business needs to stand out and convert online.</div>
           <ul class="pkg-feats">
             <li>Up to 10 pages</li>
@@ -1068,7 +1070,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
         </div>
         <div class="pkg">
           <div class="pkg-tier">Premium</div>
-          <div class="pkg-price"><sup>$</sup>899 <span class="per">/ year</span></div>
+          <div class="pkg-price"><sup>$</sup><span class="pkg-price-num">899</span><span class="per">/ year</span></div>
           <div class="pkg-desc">Full-featured website built for maximum online impact and conversions.</div>
           <ul class="pkg-feats">
             <li>Unlimited pages</li>
@@ -1266,7 +1268,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
         <div class="contact-info fade-up">
           <div class="ci-row">
             <div class="ci-icon">📧</div>
-            <div><h4>Email Us</h4><a href="mailto:admin@tssolutionsllp.com">admin@tssolutionsllp.com</a><a href="mailto:nexreach@tssolutionsllp.com">nexreach@tssolutionsllp.com</a></div>
+            <div><h4>Email Us</h4><a href="/cdn-cgi/l/email-protection#3e5f5a5357507e4a4d4d51524b4a5751504d52524e105d5153"><span class="__cf_email__" data-cfemail="4120252c282f013532322e2d3435282e2f322d2d316f222e2c">[email&#160;protected]</span></a><a href="/cdn-cgi/l/email-protection#a1cfc4d9d3c4c0c2c9e1d5d2d2cecdd4d5c8cecfd2cdcdd18fc2cecc"><span class="__cf_email__" data-cfemail="3d5358454f585c5e557d494e4e525148495452534e51514d135e5250">[email&#160;protected]</span></a></div>
           </div>
           <div class="ci-row">
             <div class="ci-icon">📱</div>
@@ -1329,12 +1331,12 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
         <div class="f-socials">
           <a href="#" class="f-soc">in</a>
           <a href="https://wa.me/919078686010" class="f-soc">💬</a>
-          <a href="mailto:admin@tssolutionsllp.com" class="f-soc">✉</a>
+          <a href="/cdn-cgi/l/email-protection#b6d7d2dbdfd8f6c2c5c5d9dac3c2dfd9d8c5dadac698d5d9db" class="f-soc">✉</a>
         </div>
       </div>
       <div class="f-col"><h4>Services</h4><a href="#services">Web Development</a><a href="#services">SEO Services</a><a href="#services">PPC &amp; Paid Ads</a><a href="#services">Android App Dev</a><a href="#services">iOS App Dev</a><a href="#services">CRM Suite</a></div>
       <div class="f-col"><h4>Company</h4><a href="#why">Why TwinStance</a><a href="#packages">Packages &amp; Pricing</a><a href="#blog">Free Blog</a><a href="#contact">Contact Us</a><a href="services/email-marketing.html">NexReach Suite</a></div>
-      <div class="f-col"><h4>Contact</h4><a href="mailto:admin@tssolutionsllp.com">admin@tssolutionsllp.com</a><a href="mailto:nexreach@tssolutionsllp.com">nexreach@tssolutionsllp.com</a><a href="https://wa.me/919078686010">+91 90786 86010</a><a href="https://wa.me/917008712605">+91 70087 12605</a></div>
+      <div class="f-col"><h4>Contact</h4><a href="/cdn-cgi/l/email-protection#9afbfef7f3f4daeee9e9f5f6efeef3f5f4e9f6f6eab4f9f5f7"><span class="__cf_email__" data-cfemail="3253565f5b5c724641415d5e47465b5d5c415e5e421c515d5f">[email&#160;protected]</span></a><a href="/cdn-cgi/l/email-protection#7618130e041317151e36020505191a03021f1918051a1a065815191b"><span class="__cf_email__" data-cfemail="19777c616b7c787a71596d6a6a76756c6d7076776a757569377a7674">[email&#160;protected]</span></a><a href="https://wa.me/919078686010">+91 90786 86010</a><a href="https://wa.me/917008712605">+91 70087 12605</a></div>
     </div>
     <div class="footer-bottom">
       <div>© 2025 TwinStance Solutions LLP. All rights reserved.</div>
@@ -1349,7 +1351,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Nav
 window.addEventListener('scroll', () => {
   document.getElementById('nav').style.background =
@@ -1399,7 +1401,7 @@ form.addEventListener('submit', async function(e) {
     });
     const j = await r.json();
     if (j.success) {
-      btn.innerHTML = '✅ Message Sent — We\'ll reply within 24h!';
+      btn.textContent = '✅ Message Sent — We\'ll reply within 24h!';
       btn.style.background = '#16a34a';
       res.style.color = '#16a34a';
       res.textContent = "Thank you! We'll get back to you within 24 hours.";
