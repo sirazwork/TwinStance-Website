@@ -1388,37 +1388,39 @@ form.addEventListener('submit', async function(e) {
   btn.innerHTML = 'Sending… <span>⏳</span>';
   btn.disabled = true; res.textContent = '';
   const data = Object.fromEntries(new FormData(form));
-  data.access_key = '8a0fa407-bef5-450d-8950-2f40f1cb2030';
-  data.subject    = 'New Enquiry — TwinStance Website';
-  data.from_name  = 'TwinStance Website';
-  data.redirect   = 'false';
   try {
-    const r = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data)
-    });
-    const j = await r.json();
-    if (j.success) {
-      btn.textContent = '✅ Message Sent — We\'ll reply within 24h!';
-      btn.style.background = '#16a34a';
-      res.style.color = '#16a34a';
-      res.textContent = "Thank you! We'll get back to you within 24 hours.";
-      form.reset();
-      setTimeout(() => {
-        btn.innerHTML = 'Send Message — We\'ll Reply in 24h <span>→</span>';
-        btn.style.background = '';
-        btn.disabled = false;
-        res.textContent = '';
-      }, 6000);
-    } else throw new Error();
-  } catch {
+  const payload = Object.fromEntries(new FormData(form));
+  payload.source_url = window.location.href;
+
+  const r = await fetch('https://app.tssolutionsllp.com/public-api/ts/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+
+  const j = await r.json();
+  if (!r.ok || !j.success) throw new Error(j.error || 'Submission failed');
+
+  btn.textContent = '✅ Message Sent — We\'ll reply within 24h!';
+  btn.style.background = '#16a34a';
+  res.style.color = '#16a34a';
+  res.textContent = j.message || "Thank you! We'll get back to you within 24 hours.";
+  form.reset();
+
+  setTimeout(() => {
     btn.innerHTML = 'Send Message — We\'ll Reply in 24h <span>→</span>';
+    btn.style.background = '';
     btn.disabled = false;
-    res.style.color = '#dc2626';
-    res.textContent = 'Something went wrong. Please WhatsApp us or email directly.';
-  }
+    res.textContent = '';
+  }, 6000);
+} catch (err) {
+  btn.innerHTML = 'Send Message — We\'ll Reply in 24h <span>→</span>';
+  btn.disabled = false;
+  res.style.color = '#dc2626';
+  res.textContent = err.message || 'Something went wrong. Please WhatsApp us or email directly.';
+}
 });
 </script>
 </body>
 </html>
+
