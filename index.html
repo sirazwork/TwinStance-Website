@@ -589,6 +589,26 @@ nav{
 }
 .btn-nr:hover{transform:scale(1.03);box-shadow:0 8px 24px rgba(0,0,0,.2)}
 
+/* WYNTIQ product backlink section */
+.wyntiq-section{background:var(--white);border-bottom:1px solid var(--b)}
+.wyntiq-card{background:linear-gradient(135deg,#07111f,#10213a);border-radius:20px;overflow:hidden;color:#fff;display:grid;grid-template-columns:1.05fr .95fr;border:1px solid rgba(255,255,255,.08);box-shadow:0 18px 52px rgba(10,10,10,.16)}
+.wyntiq-left{padding:52px;position:relative;overflow:hidden}
+.wyntiq-left::before{content:'W';position:absolute;right:10px;top:-48px;font-family:'Playfair Display',serif;font-size:240px;font-weight:900;color:rgba(255,255,255,.035);line-height:1;pointer-events:none}
+.wyntiq-tag{display:inline-block;background:rgba(201,153,42,.16);border:1px solid rgba(201,153,42,.35);color:#f0c85e;padding:5px 13px;border-radius:980px;font-size:11px;font-weight:800;margin-bottom:16px;letter-spacing:.08em;text-transform:uppercase}
+.wyntiq-left h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.4vw,42px);line-height:1.12;letter-spacing:-.6px;margin-bottom:14px}
+.wyntiq-left p{font-size:15px;color:rgba(255,255,255,.68);line-height:1.75;max-width:540px}
+.wyntiq-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.wyntiq-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:980px;font-size:13.5px;font-weight:800;transition:.18s}
+.wyntiq-btn.primary{background:#c9992a;color:#07111f}
+.wyntiq-btn.ghost{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:#fff}
+.wyntiq-btn:hover{transform:translateY(-1px)}
+.wyntiq-right{background:rgba(255,255,255,.06);padding:38px;display:grid;gap:12px}
+.wyntiq-link{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:15px 16px;border-radius:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);transition:.18s}
+.wyntiq-link:hover{background:rgba(255,255,255,.13);transform:translateX(2px)}
+.wyntiq-link strong{font-size:14px;color:#fff}
+.wyntiq-link span{display:block;font-size:12px;color:rgba(255,255,255,.55);line-height:1.45;margin-top:2px}
+.wyntiq-link b{color:#f0c85e;font-size:18px}
+
 /* ── BLOG ── */
 .blog-section{background:var(--page);border-bottom:1px solid var(--b)}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--b);border-radius:var(--r);overflow:hidden}
@@ -755,6 +775,8 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
   .blog-card{border-right:none;border-bottom:1px solid var(--b)}
   .blog-card:last-child{border-bottom:none}
   .why-layout,.contact-grid{grid-template-columns:1fr}
+  .wyntiq-card{grid-template-columns:1fr}
+  .wyntiq-left,.wyntiq-right{padding:32px 24px}
   .ws-pair{grid-template-columns:1fr 1fr}
   .proof-band-inner{grid-template-columns:1fr 1fr}
   .pb-item:nth-child(2n){border-right:none}
@@ -1228,6 +1250,31 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
   </div>
 </section>
 
+<!-- WYNTIQ -->
+<section class="wyntiq-section section" id="wyntiq">
+  <div class="container">
+    <div class="wyntiq-card fade-up">
+      <div class="wyntiq-left">
+        <div class="wyntiq-tag">TwinStance Product</div>
+        <h2>WYNTIQ - offline-first logistics command for field operations</h2>
+        <p>WYNTIQ is built by TwinStance Solutions LLP for teams that need inventory, material requests, approvals, QR tracking, assets, audit trails, and sync support in remote or disconnected environments.</p>
+        <div class="wyntiq-actions">
+          <a class="wyntiq-btn primary" href="https://www.wyntiq.com/">Visit WYNTIQ</a>
+          <a class="wyntiq-btn ghost" href="https://www.wyntiq.com/trial">Request Trial</a>
+          <a class="wyntiq-btn ghost" href="https://www.wyntiq.com/pricing">Pricing</a>
+          <a class="wyntiq-btn ghost" href="mailto:contact@wyntiq.com">contact@wyntiq.com</a>
+        </div>
+      </div>
+      <div class="wyntiq-right">
+        <a class="wyntiq-link" href="https://www.wyntiq.com/offline-inventory-management-software"><span><strong>Offline Inventory Management</strong><span>Stock, requests, QR identity, and audit records without internet dependency.</span></span><b>&rarr;</b></a>
+        <a class="wyntiq-link" href="https://www.wyntiq.com/defence-logistics-software"><span><strong>Defence Logistics Software</strong><span>Material readiness, approvals, issue flow, and accountable field records.</span></span><b>&rarr;</b></a>
+        <a class="wyntiq-link" href="https://www.wyntiq.com/remote-site-logistics-software"><span><strong>Remote Site Logistics</strong><span>Mining, oil and gas, disaster response, and remote operational teams.</span></span><b>&rarr;</b></a>
+        <a class="wyntiq-link" href="https://www.wyntiq.com/qr-inventory-tracking"><span><strong>QR Inventory Tracking</strong><span>Scannable identity for stock, assets, kits, tools, and material requests.</span></span><b>&rarr;</b></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── BLOG ── -->
 <section class="blog-section section" id="blog">
   <div class="container">
@@ -1346,7 +1393,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
         </div>
       </div>
       <div class="f-col"><h4>Services</h4><a href="#services">Web Development</a><a href="#services">SEO Services</a><a href="#services">PPC &amp; Paid Ads</a><a href="#services">Android App Dev</a><a href="#services">iOS App Dev</a><a href="services/virtual-office.html">Virtual Office</a></div>
-      <div class="f-col"><h4>Company</h4><a href="#why">Why TwinStance</a><a href="#packages">Packages &amp; Pricing</a><a href="#blog">Free Blog</a><a href="#contact">Contact Us</a><a href="services/email-marketing.html">NexReach Suite</a></div>
+      <div class="f-col"><h4>Company</h4><a href="#why">Why TwinStance</a><a href="#packages">Packages &amp; Pricing</a><a href="#blog">Free Blog</a><a href="#contact">Contact Us</a><a href="services/email-marketing.html">NexReach Suite</a><a href="https://www.wyntiq.com/">WYNTIQ</a></div>
       <div class="f-col"><h4>Contact</h4><a href="/cdn-cgi/l/email-protection#9afbfef7f3f4daeee9e9f5f6efeef3f5f4e9f6f6eab4f9f5f7"><span class="__cf_email__" data-cfemail="3253565f5b5c724641415d5e47465b5d5c415e5e421c515d5f">[email&#160;protected]</span></a><a href="/cdn-cgi/l/email-protection#7618130e041317151e36020505191a03021f1918051a1a065815191b"><span class="__cf_email__" data-cfemail="19777c616b7c787a71596d6a6a76756c6d7076776a757569377a7674">[email&#160;protected]</span></a><a href="https://wa.me/919078686010">+91 90786 86010</a><a href="https://wa.me/917008712605">+91 70087 12605</a></div>
     </div>
     <div class="footer-bottom">
@@ -1435,4 +1482,3 @@ form.addEventListener('submit', async function(e) {
 </script>
 </body>
 </html>
-
