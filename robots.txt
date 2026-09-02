@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /siraz-personal-portfolio-8k4m/
+Disallow: /portfolio.html
 
 Sitemap: https://www.tssolutionsllp.com/sitemap.xml
