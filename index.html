@@ -1092,7 +1092,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
             <li class="no">Blog section</li>
           </ul>
           <div class="pkg-note">+ One time setup fee</div>
-          <a href="services/web-development.html" class="pkg-cta">Get Started →</a>
+          <a href="checkout.html?item=website-starter" data-add-product="website-starter" class="pkg-cta">Add to cart →</a>
         </div>
         <div class="pkg pop">
           <div class="pop-badge">⭐ Most Popular</div>
@@ -1110,7 +1110,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
             <li>Delivered in 24 to 48 hours</li>
           </ul>
           <div class="pkg-note">+ One time setup fee</div>
-          <a href="services/web-development.html" class="pkg-cta">Get Started →</a>
+          <a href="checkout.html?item=website-business" data-add-product="website-business" class="pkg-cta">Add to cart →</a>
         </div>
         <div class="pkg">
           <div class="pkg-tier">Premium</div>
@@ -1127,7 +1127,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
             <li>Priority delivery in 24 hours</li>
           </ul>
           <div class="pkg-note">+ One time setup fee</div>
-          <a href="services/web-development.html" class="pkg-cta">Get Started →</a>
+          <a href="checkout.html?item=website-premium" data-add-product="website-premium" class="pkg-cta">Add to cart →</a>
         </div>
       </div>
     </div>
@@ -1490,5 +1490,7 @@ form.addEventListener('submit', async function(e) {
 }
 });
 </script>
+<a href="cart.html" data-cart-link style="position:fixed;top:85px;right:20px;z-index:99;background:#0055d4;color:#fff;padding:10px 18px;border-radius:24px;text-decoration:none;font:600 14px system-ui;box-shadow:0 4px 20px #0003">Cart (0)</a>
+<script src="js/store.js"></script>
 </body>
 </html>
