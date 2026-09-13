@@ -604,6 +604,7 @@ footer a:hover{color:var(--white)}
   .hero-pricing{grid-template-columns:1fr 1fr}
   .compare-section{overflow-x:auto}
 }
+.bundle-offer{scroll-margin-top:100px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;margin:30px 0 44px;padding:38px;border:1px solid #ffd16640;border-radius:24px;background:linear-gradient(125deg,#211b36,#111125);align-items:center;text-align:left}.bundle-label{font-size:11px;font-weight:800;letter-spacing:1.7px;color:var(--nr-gold)}.bundle-offer h3{font-size:clamp(26px,3vw,38px);line-height:1.15;margin:16px 0}.bundle-offer p{color:#c8c6dc;line-height:1.6;margin:12px 0}.bundle-offer .bundle-fine{font-size:12px;color:#aaa7bd}.bundle-buy{display:flex;flex-direction:column;gap:8px;padding-left:30px;border-left:1px solid #ffffff20}.bundle-buy s{font-size:18px;color:#aaa7bd}.bundle-buy strong{font-size:46px;line-height:1.1;letter-spacing:-2px}.bundle-buy span,.bundle-buy small{font-size:12px;color:#c8c6dc}.bundle-button{background:var(--nr-gold);color:#171323;padding:15px 20px;text-align:center;border-radius:10px;font-weight:700;text-decoration:none;margin-top:12px}.bundle-buy small{text-align:center}@media(max-width:700px){.bundle-offer{grid-template-columns:1fr;padding:24px;gap:22px}.bundle-buy{border-left:0;border-top:1px solid #ffffff20;padding:24px 0 0}}
 </style>
 </head>
 <body>
@@ -975,14 +976,14 @@ footer a:hover{color:var(--white)}
     <div class="pricing-intro fade-up">
       <strong>Setup and onboarding included.</strong> You pay your email provider (Brevo) and SMS provider (Twilio) directly at their rates — <strong>zero hidden markups</strong> from us. Email and SMS credits are not included in CRM packages. Sending allowances depend on your provider's free or paid plan.
     </div>
-    <div class="fade-up" style="margin:24px auto 30px;max-width:980px;padding:22px 26px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);border-radius:12px;color:var(--white);line-height:1.6">
-      <strong style="color:var(--nr-gold);font-size:18px">NexReach Website Bundle — <s style="font-size:.7em;opacity:.65">US$1,899</s> US$1,299 one-time</strong><br>
-      Lifetime access to the white-label NexReach CRM, plus a conversion-ready Business website included for your first 12 months. From year 2, website hosting, maintenance and support are $599 USD/year. CRM access remains included; email, SMS, WhatsApp, AI and other third-party usage fees are billed separately at provider rates.
-    </div>
-    <div id="bundle-checkout" style="max-width:600px;margin:0 auto 30px;text-align:center">
-      <p style="color:var(--nr-gold)">Limited-time offer · NexReach + Website Bundle</p>
-      <div id="paypal-container-SQJZ7UZRGHFJL"></div>
-      <p style="font-size:12px;color:var(--muted)">Applicable tax is shown at PayPal checkout. Website renewal: US$599/year from year 2.</p>
+    <div id="bundle-checkout" class="bundle-offer">
+      <div><span class="bundle-label">LIMITED-TIME OFFER · SAVE US$600</span>
+      <h3>Your CRM. Your website.<br>One powerful start.</h3>
+      <p>Lifetime WhiteLabel NexReach access, plus a Business website free for year one.</p>
+      <p class="bundle-fine">Website hosting, maintenance and support: US$599/year from year two. Email, SMS and other provider usage billed separately.</p></div>
+      <div class="bundle-buy"><s>US$1,899</s><strong>US$1,299</strong><span>one-time · lifetime CRM access</span>
+      <a href="../checkout.html?item=nexreach-bundle" data-add-product="nexreach-bundle" class="bundle-button">Add bundle to cart →</a>
+      <small>Review your order before payment</small></div>
     </div>
     <div class="pricing-split fade-up">
 
@@ -1006,9 +1007,7 @@ footer a:hover{color:var(--white)}
           <li class="no">AI email writing</li>
           <li class="yes">Setup &amp; onboarding included</li>
         </ul>
-        <div id="paypal-button-container-P-17L1821667003311HNKSTKVY" data-subscription-plan="P-17L1821667003311HNKSTKVY" data-subscription-name="NexReach Starter" style="margin-top:20px"></div>
-        <p data-subscription-status role="status" style="font-size:13px;color:var(--muted)">Recurring subscription. Review the amount and billing terms in PayPal before subscribing. After payment, contact us for account setup.</p>
-        <a href="../index.html#contact" class="pc-cta">Questions? Contact us →</a>
+        <a href="../checkout.html?item=nexreach-starter" data-add-product="nexreach-starter" class="pc-cta">Add to cart →</a>
       </div>
 
       <!-- Growth -->
@@ -1033,9 +1032,7 @@ footer a:hover{color:var(--white)}
           <li class="yes">Full analytics dashboard</li>
           <li class="yes">Setup &amp; onboarding included</li>
         </ul>
-        <div id="paypal-button-container-P-56S306891G633150MNKSTLIY" data-subscription-plan="P-56S306891G633150MNKSTLIY" data-subscription-name="NexReach Growth" style="margin-top:20px"></div>
-        <p data-subscription-status role="status" style="font-size:13px;color:var(--muted)">Recurring subscription. Review the amount and billing terms in PayPal before subscribing. After payment, contact us for account setup.</p>
-        <a href="../index.html#contact" class="pc-cta">Questions? Contact us →</a>
+        <a href="../checkout.html?item=nexreach-growth" data-add-product="nexreach-growth" class="pc-cta">Add to cart →</a>
       </div>
 
       <!-- WhiteLabel -->
@@ -1059,7 +1056,7 @@ footer a:hover{color:var(--white)}
           <li class="yes">Full setup &amp; onboarding</li>
           <li class="yes">No monthly platform fees</li>
         </ul>
-        <a href="#bundle-checkout" class="pc-cta">Get Started →</a>
+        <a href="../checkout.html?item=nexreach-bundle" data-add-product="nexreach-bundle" class="pc-cta">Add to cart →</a>
       </div>
 
     </div>
@@ -1221,14 +1218,9 @@ document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
   ticker=setInterval(tick,100);
 })();
 </script>
-<script src="https://www.paypal.com/sdk/js?client-id=BAAfRhztmnf6iCIs6D_Ye6ovjpL8ozQTcxxXAM9GcN_ndM6nxNcTYgRcXDZlsA8e6XtKIV4zp38hfqxr3E&amp;components=hosted-buttons&amp;disable-funding=venmo&amp;currency=USD"></script>
-<script>
-if (window.paypal && paypal.HostedButtons) {
-  paypal.HostedButtons({ hostedButtonId: 'SQJZ7UZRGHFJL' }).render('#paypal-container-SQJZ7UZRGHFJL');
-} else {
-  document.getElementById('paypal-container-SQJZ7UZRGHFJL').textContent = 'PayPal could not load. Please refresh or contact us to arrange checkout.';
-}
-</script>
-<script src="../js/paypal-subscriptions.js"></script>
+
+
+<a href="../cart.html" data-cart-link style="position:fixed;top:85px;right:20px;z-index:99;background:#ffd166;color:#171323;border:1px solid #ffffff44;padding:10px 18px;border-radius:24px;text-decoration:none;font:600 14px system-ui;box-shadow:0 4px 20px #0003">Cart (0)</a>
+<script src="../js/store.js"></script>
 </body>
 </html>
