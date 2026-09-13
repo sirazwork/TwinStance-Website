@@ -193,7 +193,7 @@ footer a:hover{color:white;}
           <li class="no">Google Business Profile setup</li>
         </ul>
         <div style="font-size:11px;color:var(--muted);margin-bottom:12px;">+ One-time setup fee (discussed in consultation)</div>
-        <a href="../index.html#contact" class="btn-package">Get Started →</a>
+        <div id="paypal-container-LWUA6M6TDKV78"></div>
       </div>
       <div class="package-card popular">
         <div class="popular-badge">⭐ Most Popular</div>
@@ -212,7 +212,7 @@ footer a:hover{color:white;}
           <li>SSL certificate included</li>
         </ul>
         <div style="font-size:11px;color:var(--muted);margin-bottom:12px;">+ One-time setup fee (discussed in consultation)</div>
-        <a href="../index.html#contact" class="btn-package">Get Started →</a>
+        <div id="paypal-container-6YU68FW7P92SQ"></div>
       </div>
       <div class="package-card">
         <div class="package-name">Premium Site</div>
@@ -230,10 +230,10 @@ footer a:hover{color:white;}
           <li>SSL certificate included</li>
         </ul>
         <div style="font-size:11px;color:var(--muted);margin-bottom:12px;">+ One-time setup fee (discussed in consultation)</div>
-        <a href="../index.html#contact" class="btn-package">Get Started →</a>
+        <div id="paypal-container-N4GJZAD52XBSG"></div>
       </div>
     </div>
-    <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:28px;">All prices in USD. No hidden fees. See our <a href="../refund-policy.html" style="color:var(--accent);">Refund Policy</a>.</p>
+    <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:28px;">All prices in USD. Applicable tax is shown at PayPal checkout. See our <a href="../refund-policy.html" style="color:var(--accent);">Refund Policy</a>.</p>
   </div>
 </section>
 
@@ -267,5 +267,16 @@ footer a:hover{color:white;}
   </div>
   © 2025 TwinStance Solutions LLP. All rights reserved.
 </footer>
+<script src="https://www.paypal.com/sdk/js?client-id=BAAfRhztmnf6iCIs6D_Ye6ovjpL8ozQTcxxXAM9GcN_ndM6nxNcTYgRcXDZlsA8e6XtKIV4zp38hfqxr3E&amp;components=hosted-buttons&amp;disable-funding=venmo&amp;currency=USD"></script>
+<script>
+['LWUA6M6TDKV78', '6YU68FW7P92SQ', 'N4GJZAD52XBSG'].forEach(function(id) {
+  var container = document.getElementById('paypal-container-' + id);
+  if (window.paypal && paypal.HostedButtons) {
+    paypal.HostedButtons({ hostedButtonId: id }).render('#paypal-container-' + id);
+  } else {
+    container.textContent = 'PayPal could not load. Please refresh or contact us to arrange checkout.';
+  }
+});
+</script>
 </body>
 </html>
