@@ -25,7 +25,7 @@ nav { background: rgba(244,243,240,.94); }
 .nav-logo, .nav-links a:hover { color: var(--text); }
 .hbg span { background: var(--text); }
 .mob-nav { background: rgba(244,243,240,.98); }
-.nav-cta, .nav-links .nav-cta:hover { color: #fff; }
+.nav-links .nav-cta, .nav-links .nav-cta:hover { color: #fff; }
 .nav-links .nav-cta:hover { background: var(--nr-pL); }
 
 .hero { background: #fff; }
