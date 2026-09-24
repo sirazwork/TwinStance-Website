@@ -30,9 +30,9 @@
   --nr-bg3:   #13132a;
   --nr-b:     rgba(255,255,255,.08);
   --nr-b2:    rgba(255,255,255,.13);
-  --nr-p:     #6c63ff;
-  --nr-pL:    #8b84ff;
-  --nr-pXL:   rgba(108,99,255,.12);
+  --nr-p:     #0055cc;
+  --nr-pL:    #1a6de8;
+  --nr-pXL:   rgba(0,85,204,.12);
   --nr-gold:  #ffd166;
   --nr-green: #2ed573;
   --nr-red:   #e63946;
@@ -98,7 +98,7 @@ nav{
 .hero-orb1{
   position:absolute;top:-200px;right:-100px;
   width:700px;height:700px;border-radius:50%;
-  background:radial-gradient(circle,rgba(108,99,255,.18) 0%,transparent 70%);
+  background:radial-gradient(circle,rgba(0,85,204,.18) 0%,transparent 70%);
   animation:float1 8s ease-in-out infinite;
   pointer-events:none;
 }
@@ -130,7 +130,7 @@ nav{
 .breadcrumb a:hover{color:var(--white)}
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(108,99,255,.12);border:1px solid rgba(108,99,255,.3);
+  background:rgba(0,85,204,.12);border:1px solid rgba(0,85,204,.3);
   color:var(--nr-pL);padding:6px 16px;border-radius:980px;
   font-size:12.5px;font-weight:600;margin-bottom:22px;
 }
@@ -158,7 +158,7 @@ nav{
   font-size:15px;font-weight:700;
   transition:all .2s;
 }
-.btn-purple:hover{background:var(--nr-pL);transform:translateY(-2px);box-shadow:0 12px 30px rgba(108,99,255,.35)}
+.btn-purple:hover{background:var(--nr-pL);transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,85,204,.35)}
 .btn-ghost-light{
   display:inline-flex;align-items:center;gap:8px;
   background:transparent;color:var(--white);
@@ -182,8 +182,8 @@ nav{
   display:flex;flex-direction:column;gap:2px;
 }
 .hp-opt.best{
-  background:rgba(108,99,255,.13);
-  border-color:rgba(108,99,255,.4);
+  background:rgba(0,85,204,.13);
+  border-color:rgba(0,85,204,.4);
 }
 .hp-tag{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
 .hp-tag.gold{color:var(--nr-gold)}
@@ -197,7 +197,7 @@ nav{
   background:var(--nr-bg2);
   border:1px solid var(--nr-b2);
   border-radius:18px;overflow:hidden;
-  box-shadow:0 40px 80px rgba(0,0,0,.7),0 0 0 1px rgba(108,99,255,.1);
+  box-shadow:0 40px 80px rgba(0,0,0,.7),0 0 0 1px rgba(0,85,204,.1);
   position:relative;
 }
 .mockup-bar{
@@ -230,7 +230,7 @@ nav{
   padding:8px 12px;font-size:11px;color:#6b6b80;
   margin:0 6px 2px;border-radius:7px;transition:all .2s;
 }
-.ms-item.active{background:rgba(108,99,255,.15);color:var(--nr-pL)}
+.ms-item.active{background:rgba(0,85,204,.15);color:var(--nr-pL)}
 .mockup-content{flex:1;padding:16px;background:#09091a;overflow:hidden}
 .mc-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--white);margin-bottom:3px}
 .mc-sub{font-size:10px;color:#6b6b80;margin-bottom:12px}
@@ -268,9 +268,9 @@ nav{
   padding:4px 14px;border-radius:980px;
   font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;
 }
-.s-tag.purple{background:rgba(108,99,255,.15);color:var(--nr-pL);border:1px solid rgba(108,99,255,.25)}
+.s-tag.purple{background:rgba(0,85,204,.15);color:var(--nr-pL);border:1px solid rgba(0,85,204,.25)}
 .s-tag.light{background:rgba(255,255,255,.06);color:var(--sub);border:1px solid var(--nr-b)}
-.s-tag.dark-lght{background:rgba(108,99,255,.08);color:#6c63ff;border:1px solid rgba(108,99,255,.15)}
+.s-tag.dark-lght{background:rgba(0,85,204,.08);color:#0055cc;border:1px solid rgba(0,85,204,.15)}
 .s-title{
   font-family:'Playfair Display',serif;
   font-size:clamp(28px,4vw,46px);
@@ -298,7 +298,7 @@ nav{
 }
 .feat-card:hover{background:var(--nr-bg3)}
 .feat-card:hover::after{transform:scaleX(1)}
-.feat-card.c1::after{background:linear-gradient(90deg,#6c63ff,#a89eff)}
+.feat-card.c1::after{background:linear-gradient(90deg,#0055cc,#6ea8ff)}
 .feat-card.c2::after{background:linear-gradient(90deg,#2ed573,#00d4aa)}
 .feat-card.c3::after{background:linear-gradient(90deg,#ffa502,#ff6b35)}
 .feat-card.c4::after{background:linear-gradient(90deg,#ff6584,#e63946)}
@@ -309,7 +309,7 @@ nav{
   display:flex;align-items:center;justify-content:center;
   font-size:22px;margin-bottom:18px;flex-shrink:0;
 }
-.feat-card.c1 .feat-icon{background:rgba(108,99,255,.12);border:1px solid rgba(108,99,255,.2)}
+.feat-card.c1 .feat-icon{background:rgba(0,85,204,.12);border:1px solid rgba(0,85,204,.2)}
 .feat-card.c2 .feat-icon{background:rgba(46,213,115,.1);border:1px solid rgba(46,213,115,.2)}
 .feat-card.c3 .feat-icon{background:rgba(255,165,2,.1);border:1px solid rgba(255,165,2,.2)}
 .feat-card.c4 .feat-icon{background:rgba(255,101,132,.1);border:1px solid rgba(255,101,132,.2)}
@@ -363,7 +363,7 @@ nav{
   padding:9px 12px;font-size:12px;color:#6b6b80;
   margin:0 8px 2px;border-radius:8px;transition:all .2s;
 }
-.ds-item.active{background:rgba(108,99,255,.15);color:var(--nr-pL)}
+.ds-item.active{background:rgba(0,85,204,.15);color:var(--nr-pL)}
 .demo-content{flex:1;background:#05050f;overflow:hidden;position:relative}
 .dscreen{padding:24px;position:absolute;inset:0;overflow-y:auto}
 .demo-footer{
@@ -385,7 +385,7 @@ nav{
   content:'';position:absolute;top:50%;left:50%;
   transform:translate(-50%,-50%);
   width:800px;height:800px;border-radius:50%;
-  background:radial-gradient(circle,rgba(108,99,255,.06) 0%,transparent 70%);
+  background:radial-gradient(circle,rgba(0,85,204,.06) 0%,transparent 70%);
   pointer-events:none;
 }
 .pricing-intro{
@@ -415,7 +415,7 @@ nav{
 .price-card.featured{
   background:var(--nr-bg2);
   border:1.5px solid var(--nr-p);
-  box-shadow:0 0 0 1px var(--nr-p), 0 20px 60px rgba(108,99,255,.2);
+  box-shadow:0 0 0 1px var(--nr-p), 0 20px 60px rgba(0,85,204,.2);
 }
 .price-card.whitelabel{
   background:linear-gradient(145deg,#0d0d22,#13132a);
@@ -423,9 +423,9 @@ nav{
 }
 .pc-badge{
   position:absolute;top:-14px;left:50%;transform:translateX(-50%);
-  background:linear-gradient(135deg,#6c63ff,#a89eff);color:#fff;
+  background:linear-gradient(135deg,#0055cc,#6ea8ff);color:#fff;
   padding:5px 20px;border-radius:980px;font-size:12px;font-weight:800;
-  white-space:nowrap;box-shadow:0 4px 14px rgba(108,99,255,.4);
+  white-space:nowrap;box-shadow:0 4px 14px rgba(0,85,204,.4);
   letter-spacing:.03em;
 }
 .pc-badge.gold{
@@ -506,7 +506,7 @@ nav{
 .cx{color:#ccc;font-size:15px}
 .cp{color:#f59e0b;font-size:12px;font-weight:600}
 .ct{font-size:11px;color:#9ca3af;display:block;margin-top:2px;font-weight:400}
-.compare-table .nr-row td:nth-child(2){background:rgba(108,99,255,.04)}
+.compare-table .nr-row td:nth-child(2){background:rgba(0,85,204,.04)}
 
 /* ── FAQ ── */
 .faq-section{background:var(--nr-bg);border-top:1px solid var(--nr-b)}
@@ -533,7 +533,7 @@ nav{
   content:'';position:absolute;top:50%;left:50%;
   transform:translate(-50%,-50%);
   width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,rgba(108,99,255,.1) 0%,transparent 70%);
+  background:radial-gradient(circle,rgba(0,85,204,.1) 0%,transparent 70%);
   pointer-events:none;
 }
 .cta-section h2{
@@ -606,6 +606,7 @@ footer a:hover{color:var(--white)}
 }
 .bundle-offer{scroll-margin-top:100px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;margin:30px 0 44px;padding:38px;border:1px solid #ffd16640;border-radius:24px;background:linear-gradient(125deg,#211b36,#111125);align-items:center;text-align:left}.bundle-label{font-size:11px;font-weight:800;letter-spacing:1.7px;color:var(--nr-gold)}.bundle-offer h3{font-size:clamp(26px,3vw,38px);line-height:1.15;margin:16px 0}.bundle-offer p{color:#c8c6dc;line-height:1.6;margin:12px 0}.bundle-offer .bundle-fine{font-size:12px;color:#aaa7bd}.bundle-buy{display:flex;flex-direction:column;gap:8px;padding-left:30px;border-left:1px solid #ffffff20}.bundle-buy s{font-size:18px;color:#aaa7bd}.bundle-buy strong{font-size:46px;line-height:1.1;letter-spacing:-2px}.bundle-buy span,.bundle-buy small{font-size:12px;color:#c8c6dc}.bundle-button{background:var(--nr-gold);color:#171323;padding:15px 20px;text-align:center;border-radius:10px;font-weight:700;text-decoration:none;margin-top:12px}.bundle-buy small{text-align:center}@media(max-width:700px){.bundle-offer{grid-template-columns:1fr;padding:24px;gap:22px}.bundle-buy{border-left:0;border-top:1px solid #ffffff20;padding:24px 0 0}}
 </style>
+<link rel="stylesheet" href="../css/nexreach-theme.css">
 </head>
 <body>
 
@@ -692,7 +693,7 @@ footer a:hover{color:var(--white)}
             <div class="mc-title">Dashboard</div>
             <div class="mc-sub">All channels overview</div>
             <div class="mc-metrics">
-              <div class="mc-metric"><div class="mcm-val" style="color:#6c63ff">4,060</div><div class="mcm-lbl">Emails Sent</div></div>
+              <div class="mc-metric"><div class="mcm-val" style="color:#0055cc">4,060</div><div class="mcm-lbl">Emails Sent</div></div>
               <div class="mc-metric"><div class="mcm-val" style="color:#2ed573">96%</div><div class="mcm-lbl">Delivered</div></div>
               <div class="mc-metric"><div class="mcm-val" style="color:#ffa502">284</div><div class="mcm-lbl">SMS Sent</div></div>
               <div class="mc-metric"><div class="mcm-val" style="color:#ff6584">34%</div><div class="mcm-lbl">Open Rate</div></div>
@@ -700,7 +701,7 @@ footer a:hover{color:var(--white)}
             <div class="mc-table">
               <div class="mc-table-head">Active Campaigns</div>
               <div class="mc-row"><span>Property Owners</span><span style="color:#2ed573">✓ Done</span><span>290 sent</span></div>
-              <div class="mc-row"><span>Restaurant Drip</span><span style="color:#6c63ff">● Live</span><span>Step 2/5</span></div>
+              <div class="mc-row"><span>Restaurant Drip</span><span style="color:#0055cc">● Live</span><span>Step 2/5</span></div>
               <div class="mc-row"><span>Clinic SMS</span><span style="color:#ffa502">⏳ Queue</span><span>150</span></div>
             </div>
           </div>
@@ -837,7 +838,7 @@ footer a:hover{color:var(--white)}
             <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--white);margin-bottom:3px">Dashboard</div>
             <div style="font-size:12px;color:#6b6b80;margin-bottom:18px">All channels overview</div>
             <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px">
-              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px"><div style="font-size:22px;font-weight:700;color:#6c63ff;font-family:'Playfair Display',serif">4,060</div><div style="font-size:11px;color:#6b6b80">Emails Sent</div></div>
+              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px"><div style="font-size:22px;font-weight:700;color:#0055cc;font-family:'Playfair Display',serif">4,060</div><div style="font-size:11px;color:#6b6b80">Emails Sent</div></div>
               <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px"><div style="font-size:22px;font-weight:700;color:#2ed573;font-family:'Playfair Display',serif">96.2%</div><div style="font-size:11px;color:#6b6b80">Delivered</div></div>
               <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px"><div style="font-size:22px;font-weight:700;color:#ffa502;font-family:'Playfair Display',serif">284</div><div style="font-size:11px;color:#6b6b80">SMS Sent</div></div>
               <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px"><div style="font-size:22px;font-weight:700;color:#ff6584;font-family:'Playfair Display',serif">34%</div><div style="font-size:11px;color:#6b6b80">Open Rate</div></div>
@@ -846,8 +847,8 @@ footer a:hover{color:var(--white)}
               <div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:10px">Active Campaigns</div>
               <table style="width:100%;border-collapse:collapse;font-size:11px">
                 <tr style="color:#6b6b80;border-bottom:1px solid #2a2a3a"><th style="padding:6px 8px;text-align:left;font-weight:500">Campaign</th><th style="padding:6px 8px">Type</th><th style="padding:6px 8px">Status</th><th style="padding:6px 8px">Sent</th></tr>
-                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,.4)"><td style="padding:8px">Property Owners Mar</td><td style="padding:8px;text-align:center"><span style="color:#a89eff;font-size:10px">EMAIL</span></td><td style="padding:8px;text-align:center"><span style="background:rgba(46,213,115,.15);color:#2ed573;padding:2px 8px;border-radius:20px;font-size:10px">Done</span></td><td style="padding:8px;text-align:center">290</td></tr>
-                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,.4)"><td style="padding:8px">Restaurant Drip</td><td style="padding:8px;text-align:center"><span style="color:#2ed573;font-size:10px">DRIP</span></td><td style="padding:8px;text-align:center"><span style="background:rgba(108,99,255,.2);color:#6c63ff;padding:2px 8px;border-radius:20px;font-size:10px">Live</span></td><td style="padding:8px;text-align:center">Step 2</td></tr>
+                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,.4)"><td style="padding:8px">Property Owners Mar</td><td style="padding:8px;text-align:center"><span style="color:#6ea8ff;font-size:10px">EMAIL</span></td><td style="padding:8px;text-align:center"><span style="background:rgba(46,213,115,.15);color:#2ed573;padding:2px 8px;border-radius:20px;font-size:10px">Done</span></td><td style="padding:8px;text-align:center">290</td></tr>
+                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,.4)"><td style="padding:8px">Restaurant Drip</td><td style="padding:8px;text-align:center"><span style="color:#2ed573;font-size:10px">DRIP</span></td><td style="padding:8px;text-align:center"><span style="background:rgba(0,85,204,.2);color:#0055cc;padding:2px 8px;border-radius:20px;font-size:10px">Live</span></td><td style="padding:8px;text-align:center">Step 2</td></tr>
                 <tr style="color:#e8e8f0"><td style="padding:8px">Clinic Reminder</td><td style="padding:8px;text-align:center"><span style="color:#ffa502;font-size:10px">SMS</span></td><td style="padding:8px;text-align:center"><span style="background:rgba(255,165,2,.15);color:#ffa502;padding:2px 8px;border-radius:20px;font-size:10px">Queue</span></td><td style="padding:8px;text-align:center">0</td></tr>
               </table>
             </div>
@@ -860,12 +861,12 @@ footer a:hover{color:var(--white)}
             <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:16px;margin-bottom:12px">
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
                 <div><div style="font-size:13px;font-weight:600;color:var(--white)">Restaurant Onboarding</div><div style="font-size:11px;color:#6b6b80;margin-top:2px">5 steps · 140 contacts enrolled</div></div>
-                <span style="background:rgba(108,99,255,.2);color:#6c63ff;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700">LIVE</span>
+                <span style="background:rgba(0,85,204,.2);color:#0055cc;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700">LIVE</span>
               </div>
               <div style="display:flex;align-items:center;gap:0;overflow-x:auto">
                 <div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:8px;padding:10px 12px;font-size:10px;color:#e8e8f0;text-align:center;min-width:90px;flex-shrink:0">📧 Email 1<br><span style="color:#2ed573">97 sent</span></div>
                 <div style="width:20px;height:1px;background:#2a2a3a;flex-shrink:0"></div>
-                <div style="background:#1c1c27;border:1px solid #6c63ff;border-radius:8px;padding:10px 12px;font-size:10px;color:#a89eff;text-align:center;min-width:90px;flex-shrink:0">📧 Email 2<br><span style="color:#6c63ff">● active</span></div>
+                <div style="background:#1c1c27;border:1px solid #0055cc;border-radius:8px;padding:10px 12px;font-size:10px;color:#6ea8ff;text-align:center;min-width:90px;flex-shrink:0">📧 Email 2<br><span style="color:#0055cc">● active</span></div>
                 <div style="width:20px;height:1px;background:#2a2a3a;flex-shrink:0"></div>
                 <div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:8px;padding:10px 12px;font-size:10px;color:#6b6b80;text-align:center;min-width:90px;flex-shrink:0">⏰ Wait 3d<br><span>pending</span></div>
                 <div style="width:20px;height:1px;background:#2a2a3a;flex-shrink:0"></div>
@@ -888,7 +889,7 @@ footer a:hover{color:var(--white)}
               <div style="font-size:11px;color:#ffa502;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">📱 New SMS Campaign</div>
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
                 <div><div style="font-size:10px;color:#6b6b80;margin-bottom:4px">Campaign Name</div><div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:7px 10px;font-size:12px;color:#e8e8f0">Clinic April Reminder</div></div>
-                <div><div style="font-size:10px;color:#6b6b80;margin-bottom:4px">Contact List</div><div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:7px 10px;font-size:12px;color:#6c63ff">Clinic Contacts (150)</div></div>
+                <div><div style="font-size:10px;color:#6b6b80;margin-bottom:4px">Contact List</div><div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:7px 10px;font-size:12px;color:#0055cc">Clinic Contacts (150)</div></div>
               </div>
               <div style="margin-bottom:10px"><div style="font-size:10px;color:#6b6b80;margin-bottom:4px">Message</div><div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:9px 10px;font-size:12px;color:#e8e8f0;line-height:1.6">Hi {{first_name}}, your appointment at City Clinic is confirmed for Friday 2pm. Reply STOP to unsubscribe.</div></div>
               <div style="font-size:10px;color:#2ed573;margin-bottom:12px">✓ 112 chars · Personalised · Opt-out included</div>
@@ -900,15 +901,15 @@ footer a:hover{color:var(--white)}
           <div class="dscreen" id="ds3" style="display:none">
             <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--white);margin-bottom:3px">AI Writer</div>
             <div style="font-size:12px;color:#6b6b80;margin-bottom:16px">Generate high-converting copy instantly</div>
-            <div style="background:rgba(108,99,255,.08);border:1px solid rgba(108,99,255,.25);border-radius:10px;padding:14px;margin-bottom:14px">
-              <div style="font-size:10px;color:#a89eff;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">🤖 What do you want to write?</div>
+            <div style="background:rgba(0,85,204,.08);border:1px solid rgba(0,85,204,.25);border-radius:10px;padding:14px;margin-bottom:14px">
+              <div style="font-size:10px;color:#6ea8ff;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">🤖 What do you want to write?</div>
               <div style="background:#0d0d1a;border:1px solid #2a2a3a;border-radius:6px;padding:9px 12px;font-size:12px;color:#e8e8f0;margin-bottom:10px">Cold email to restaurant owners offering website design services...</div>
               <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
                 <div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:5px 12px;font-size:11px;color:#e8e8f0">📧 Email body</div>
-                <div style="background:rgba(108,99,255,.15);border:1px solid rgba(108,99,255,.3);border-radius:6px;padding:5px 12px;font-size:11px;color:#a89eff">💡 Subject lines</div>
+                <div style="background:rgba(0,85,204,.15);border:1px solid rgba(0,85,204,.3);border-radius:6px;padding:5px 12px;font-size:11px;color:#6ea8ff">💡 Subject lines</div>
                 <div style="background:#1c1c27;border:1px solid #2a2a3a;border-radius:6px;padding:5px 12px;font-size:11px;color:#e8e8f0">📱 SMS copy</div>
               </div>
-              <div style="background:#6c63ff;color:white;padding:8px 16px;border-radius:8px;font-size:11px;font-weight:700;display:inline-block">✨ Generate with AI</div>
+              <div style="background:#0055cc;color:white;padding:8px 16px;border-radius:8px;font-size:11px;font-weight:700;display:inline-block">✨ Generate with AI</div>
             </div>
             <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px">
               <div style="font-size:10px;color:#6b6b80;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">Generated Output</div>
@@ -921,15 +922,15 @@ footer a:hover{color:var(--white)}
             <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--white);margin-bottom:3px">Analytics</div>
             <div style="font-size:12px;color:#6b6b80;margin-bottom:18px">All channels — email &amp; SMS performance</div>
             <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px">
-              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;text-align:center"><div style="font-size:20px;font-weight:700;color:#6c63ff">4,060</div><div style="font-size:11px;color:#6b6b80">Emails Sent</div></div>
+              <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;text-align:center"><div style="font-size:20px;font-weight:700;color:#0055cc">4,060</div><div style="font-size:11px;color:#6b6b80">Emails Sent</div></div>
               <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;text-align:center"><div style="font-size:20px;font-weight:700;color:#2ed573">96.2%</div><div style="font-size:11px;color:#6b6b80">Delivered</div></div>
               <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;text-align:center"><div style="font-size:20px;font-weight:700;color:#ffa502">284</div><div style="font-size:11px;color:#6b6b80">SMS Sent</div></div>
               <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px;text-align:center"><div style="font-size:20px;font-weight:700;color:#ff6584">34.4%</div><div style="font-size:11px;color:#6b6b80">Avg Open Rate</div></div>
             </div>
             <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;padding:14px">
               <div style="font-size:12px;font-weight:600;color:var(--white);margin-bottom:12px">Campaign Breakdown</div>
-              <div style="margin-bottom:10px"><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px"><span style="color:#e8e8f0">Property Owners (Email)</span><span style="color:#2ed573">290 sent · 97% delivered</span></div><div style="background:#1c1c27;border-radius:3px;height:6px"><div style="background:linear-gradient(90deg,#6c63ff,#2ed573);height:100%;width:97%;border-radius:3px"></div></div></div>
-              <div style="margin-bottom:10px"><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px"><span style="color:#e8e8f0">Restaurant Drip (Drip)</span><span style="color:#a89eff">140 active · step 2 of 5</span></div><div style="background:#1c1c27;border-radius:3px;height:6px"><div style="background:linear-gradient(90deg,#6c63ff,#a89eff);height:100%;width:48%;border-radius:3px"></div></div></div>
+              <div style="margin-bottom:10px"><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px"><span style="color:#e8e8f0">Property Owners (Email)</span><span style="color:#2ed573">290 sent · 97% delivered</span></div><div style="background:#1c1c27;border-radius:3px;height:6px"><div style="background:linear-gradient(90deg,#0055cc,#2ed573);height:100%;width:97%;border-radius:3px"></div></div></div>
+              <div style="margin-bottom:10px"><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px"><span style="color:#e8e8f0">Restaurant Drip (Drip)</span><span style="color:#6ea8ff">140 active · step 2 of 5</span></div><div style="background:#1c1c27;border-radius:3px;height:6px"><div style="background:linear-gradient(90deg,#0055cc,#6ea8ff);height:100%;width:48%;border-radius:3px"></div></div></div>
               <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px"><span style="color:#e8e8f0">Clinic SMS (SMS)</span><span style="color:#ffa502">284 sent · 98% delivered</span></div><div style="background:#1c1c27;border-radius:3px;height:6px"><div style="background:linear-gradient(90deg,#ffa502,#2ed573);height:100%;width:98%;border-radius:3px"></div></div></div>
             </div>
           </div>
@@ -940,14 +941,14 @@ footer a:hover{color:var(--white)}
             <div style="font-size:12px;color:#6b6b80;margin-bottom:16px">3,240 contacts across all lists</div>
             <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
               <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:7px;padding:6px 14px;font-size:11px;color:#e8e8f0">All (3,240)</div>
-              <div style="background:rgba(108,99,255,.15);border:1px solid rgba(108,99,255,.3);border-radius:7px;padding:6px 14px;font-size:11px;color:#a89eff">property (890)</div>
+              <div style="background:rgba(0,85,204,.15);border:1px solid rgba(0,85,204,.3);border-radius:7px;padding:6px 14px;font-size:11px;color:#6ea8ff">property (890)</div>
               <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:7px;padding:6px 14px;font-size:11px;color:#e8e8f0">restaurant (640)</div>
               <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:7px;padding:6px 14px;font-size:11px;color:#e8e8f0">clinic (150)</div>
             </div>
             <div style="background:#13131a;border:1px solid #2a2a3a;border-radius:10px;overflow:hidden">
               <table style="width:100%;border-collapse:collapse;font-size:11px">
                 <tr style="color:#6b6b80;border-bottom:1px solid #2a2a3a;background:#1c1c27"><th style="padding:9px 12px;text-align:left">Email</th><th style="padding:9px 12px;text-align:left">Name</th><th style="padding:9px 12px">Tag</th><th style="padding:9px 12px">Status</th></tr>
-                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,.4)"><td style="padding:9px 12px">ramesh@example.com</td><td style="padding:9px 12px">Ramesh K.</td><td style="padding:9px 12px;text-align:center"><span style="background:rgba(108,99,255,.2);color:#6c63ff;padding:2px 7px;border-radius:10px">property</span></td><td style="padding:9px 12px;text-align:center"><span style="color:#2ed573">● Active</span></td></tr>
+                <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,.4)"><td style="padding:9px 12px">ramesh@example.com</td><td style="padding:9px 12px">Ramesh K.</td><td style="padding:9px 12px;text-align:center"><span style="background:rgba(0,85,204,.2);color:#0055cc;padding:2px 7px;border-radius:10px">property</span></td><td style="padding:9px 12px;text-align:center"><span style="color:#2ed573">● Active</span></td></tr>
                 <tr style="color:#e8e8f0;border-bottom:1px solid rgba(42,42,58,.4);background:rgba(255,255,255,.02)"><td style="padding:9px 12px">priya@example.com</td><td style="padding:9px 12px">Priya S.</td><td style="padding:9px 12px;text-align:center"><span style="background:rgba(255,165,2,.2);color:#ffa502;padding:2px 7px;border-radius:10px">restaurant</span></td><td style="padding:9px 12px;text-align:center"><span style="color:#2ed573">● Active</span></td></tr>
                 <tr style="color:#e8e8f0"><td style="padding:9px 12px">anil@example.com</td><td style="padding:9px 12px">Dr. Anil M.</td><td style="padding:9px 12px;text-align:center"><span style="background:rgba(46,213,115,.2);color:#2ed573;padding:2px 7px;border-radius:10px">clinic</span></td><td style="padding:9px 12px;text-align:center"><span style="color:#2ed573">● Active</span></td></tr>
               </table>
@@ -1103,7 +1104,7 @@ footer a:hover{color:var(--white)}
           <tr class="nr-row"><td>One-Time Purchase</td><td><span class="ck">✓</span><span class="ct"><s>US$1,899</s> US$1,299 WhiteLabel + website free year 1; website US$599/year from year 2</span></td><td><span class="cx">✕</span></td><td><span class="cx">✕</span></td><td><span class="cx">✕</span></td></tr>
           <tr class="nr-row"><td>WhatsApp Support</td><td><span class="ck">✓</span></td><td><span class="cx">✕</span></td><td><span class="cx">✕</span></td><td><span class="cx">✕</span></td></tr>
           <tr class="nr-row"><td>Learning Curve</td><td><span style="color:var(--nr-p);font-weight:700;font-size:12px">Simple</span></td><td><span class="cp">Moderate</span></td><td><span class="cp">Steep</span></td><td><span class="cp">Very Steep</span></td></tr>
-          <tr class="nr-row"><td><strong>Monthly Cost</strong></td><td><strong style="color:#6c63ff;font-size:14px">$60/mo</strong></td><td><span style="color:#dc2626;font-weight:700">$135+</span></td><td><span style="color:#dc2626;font-weight:700">$149+</span></td><td><span style="color:#dc2626;font-weight:700">$97+</span></td></tr>
+          <tr class="nr-row"><td><strong>Monthly Cost</strong></td><td><strong style="color:#0055cc;font-size:14px">$60/mo</strong></td><td><span style="color:#dc2626;font-weight:700">$135+</span></td><td><span style="color:#dc2626;font-weight:700">$149+</span></td><td><span style="color:#dc2626;font-weight:700">$97+</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -1191,8 +1192,8 @@ document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
       if(s)s.style.display=i===idx?'block':'none';
       const n=document.getElementById('dn'+i);
       if(n){
-        n.style.background=i===navIdx[idx]?'rgba(108,99,255,.15)':'transparent';
-        n.style.color=i===navIdx[idx]?'#a89eff':'#6b6b80';
+        n.style.background=i===navIdx[idx]?'rgba(0,85,204,.15)':'transparent';
+        n.style.color=i===navIdx[idx]?'#6ea8ff':'#6b6b80';
       }
     }
     const lbl=document.getElementById('demoLabel');

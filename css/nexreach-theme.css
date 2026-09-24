@@ -1,0 +1,114 @@
+/* Keep the NexReach sales page in TwinStance's white / warm-neutral / blue palette. */
+:root {
+  --nr-bg: #f4f3f0;
+  --nr-bg2: #ffffff;
+  --nr-bg3: #e8f0ff;
+  --nr-b: #e2e1de;
+  --nr-b2: #d4d3d0;
+  --nr-p: #0055cc;
+  --nr-pL: #1a6de8;
+  --nr-pXL: #e8f0ff;
+  --nr-gold: #b45309;
+  --nr-green: #16a34a;
+  --nr-red: #dc2626;
+  --nr-amber: #b45309;
+  --text: #0a0a0a;
+  --sub: #3d3d3d;
+  --muted: #6b6b6b;
+  --lbg: #f4f3f0;
+  --lbg2: #ffffff;
+  --lb: #e2e1de;
+}
+
+body { color: var(--text); background: var(--nr-bg); }
+nav { background: rgba(244,243,240,.94); }
+.nav-logo, .nav-links a:hover { color: var(--text); }
+.hbg span { background: var(--text); }
+.mob-nav { background: rgba(244,243,240,.98); }
+.nav-cta, .nav-links .nav-cta:hover { color: #fff; }
+.nav-links .nav-cta:hover { background: var(--nr-pL); }
+
+.hero { background: #fff; }
+.hero-orb1 { background: radial-gradient(circle,rgba(0,85,204,.09),transparent 70%); }
+.hero-orb2 { background: radial-gradient(circle,rgba(201,153,42,.07),transparent 70%); }
+.hero-orb3 { background: radial-gradient(circle,rgba(0,85,204,.05),transparent 70%); }
+.breadcrumb a:hover { color: var(--nr-p); }
+.hero-eyebrow, .s-tag.purple, .s-tag.dark-lght {
+  background: var(--nr-pXL);
+  border-color: rgba(0,85,204,.2);
+  color: var(--nr-p);
+}
+.hero h1, .hp-amount { color: var(--text); }
+.hero h1 em { color: var(--nr-p); }
+.hero-badge { background: var(--nr-bg); border-color: var(--nr-b); color: var(--sub); }
+.btn-purple:hover { box-shadow: 0 12px 30px rgba(0,85,204,.2); }
+.btn-ghost-light { color: var(--nr-p); border-color: rgba(0,85,204,.28); }
+.btn-ghost-light:hover { border-color: var(--nr-p); background: var(--nr-pXL); }
+.hp-opt { background: var(--nr-bg); }
+.hp-opt.best { background: var(--nr-pXL); border-color: rgba(0,85,204,.35); }
+.hp-tag.gold, .hp-save { color: var(--nr-p); }
+
+/* The CRM previews are illustrations of the app UI; retain a dark canvas. */
+.hero-mockup, .demo-wrapper {
+  --nr-bg: #070f22;
+  --nr-bg2: #0d1830;
+  --nr-bg3: #15213d;
+  --nr-b: rgba(255,255,255,.09);
+  --nr-b2: rgba(255,255,255,.14);
+  --nr-pL: #86b0ff;
+  --sub: rgba(255,255,255,.68);
+  --muted: rgba(255,255,255,.44);
+}
+.hero-mockup { box-shadow: 0 24px 60px rgba(10,31,73,.18); }
+.demo-wrapper { box-shadow: 0 24px 60px rgba(10,31,73,.16); }
+.mockup-content, .demo-content { background: #081327; }
+.ms-item.active, .ds-item.active { background: rgba(0,85,204,.26); }
+.mc-row { color: #d9e4f8; border-color: rgba(255,255,255,.07); }
+
+.stats-band { background: var(--nr-pXL); }
+.features-section .s-title, .demo-section .s-title,
+.pricing-section .s-title, .faq-section .s-title { color: var(--text) !important; }
+.sb-val, .feat-card h3, .pc-price, .pc-feats li.bold, .faq-q, .cta-section h2 { color: var(--text); }
+.feat-list li, .pc-feats li { border-color: var(--nr-b); }
+.feat-card.c1::after { background: linear-gradient(90deg,#0055cc,#6ea8ff); }
+.feat-card.c1 .feat-icon { background: var(--nr-pXL); border-color: rgba(0,85,204,.2); }
+.s-tag.light { background: #fff; }
+.pricing-intro { background: #fff; }
+.pricing-section::before, .cta-section::before {
+  background: radial-gradient(circle,rgba(0,85,204,.06),transparent 70%);
+}
+
+.price-card:hover { box-shadow: 0 18px 42px rgba(10,31,73,.12); }
+.price-card.featured { box-shadow: 0 0 0 1px var(--nr-p),0 20px 48px rgba(0,85,204,.12); }
+.price-card.whitelabel { background: var(--nr-pXL); border-color: rgba(0,85,204,.28); }
+.pc-badge { background: var(--nr-p); box-shadow: 0 4px 14px rgba(0,85,204,.2); }
+.pc-badge.gold { background: #c9992a; box-shadow: 0 4px 14px rgba(201,153,42,.2); }
+.pc-feats li.no::before { color: #a8adb6; }
+.pc-cta { color: var(--nr-p); border-color: rgba(0,85,204,.28); }
+.price-card.whitelabel .pc-feats li.yes::before { color: var(--nr-p); }
+.price-card.whitelabel .pc-cta { color: #fff; background: var(--nr-p); border-color: var(--nr-p); }
+.price-card.whitelabel .pc-cta:hover { color: #fff; background: var(--nr-pL); border-color: var(--nr-pL); }
+
+.bundle-offer { background: var(--nr-pXL); border-color: rgba(0,85,204,.25); }
+.bundle-offer h3, .bundle-buy strong { color: var(--text); }
+.bundle-offer p, .bundle-offer .bundle-fine, .bundle-buy span, .bundle-buy small { color: var(--sub); }
+.bundle-buy { border-color: rgba(0,85,204,.22); }
+.bundle-buy s { color: var(--muted); }
+.bundle-label { color: var(--nr-p); }
+.bundle-button { background: var(--nr-p); color: #fff; }
+.bundle-button:hover { background: var(--nr-pL); }
+.savings-callout { background: #fff8e7; border-color: #eedbad; }
+.sc-left strong, .sc-big { color: #8c5e10; }
+.compare-table thead tr { background: var(--nr-p); color: #fff; }
+.compare-table th.hl { color: #fff; }
+.compare-table .nr-row td:nth-child(2) { background: rgba(0,85,204,.05); }
+.faq-item:hover { background: #f9fbff; }
+.cta-section h2 em { color: var(--nr-p); }
+footer { background: #0a0a0a; color: rgba(255,255,255,.55); }
+footer a { color: rgba(255,255,255,.65); }
+a[data-cart-link] { background: var(--nr-p) !important; color: #fff !important; border-color: var(--nr-p) !important; }
+
+@media (max-width: 700px) {
+  .bundle-buy { border-color: rgba(0,85,204,.22); }
+}
+
