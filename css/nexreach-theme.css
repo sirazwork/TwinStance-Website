@@ -86,6 +86,7 @@ nav { background: rgba(244,243,240,.94); }
 .pc-feats li.no::before { color: #a8adb6; }
 .pc-cta { color: var(--nr-p); border-color: rgba(0,85,204,.28); }
 .price-card.whitelabel .pc-feats li.yes::before { color: var(--nr-p); }
+.price-card.whitelabel .fx-estimate { color: var(--nr-p) !important; }
 .price-card.whitelabel .pc-cta { color: #fff; background: var(--nr-p); border-color: var(--nr-p); }
 .price-card.whitelabel .pc-cta:hover { color: #fff; background: var(--nr-pL); border-color: var(--nr-pL); }
 
