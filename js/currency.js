@@ -48,12 +48,15 @@
   let rates = null;
   let loading = null;
   function usdValue(element) {
+    if (element.dataset.fxUsd) return Number(element.dataset.fxUsd);
     const source = element.classList.contains('store-price')
       ? element.querySelector('strong')?.textContent || ''
       : element.textContent;
     const matches = [...source.matchAll(/(?:US)?\$\s*([\d,]+)(?:\.\d+)?/g)];
     const last = matches.at(-1);
-    return last ? Number(last[1].replaceAll(',', '')) : null;
+    const amount = last ? Number(last[1].replaceAll(',', '')) : null;
+    if (Number.isFinite(amount)) element.dataset.fxUsd = String(amount);
+    return amount;
   }
   function format(value, currency) {
     const locale = currency === 'INR' ? 'en-IN' : currency === 'NZD' ? 'en-NZ' : 'en-AU';
