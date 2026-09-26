@@ -110,6 +110,9 @@
           style: { shape: 'rect', color: 'gold', layout: 'vertical', label: 'subscribe' },
           createSubscription: function (_, actions) {
             const options = { plan_id: product.plan };
+            // Opaque NexReach payment reference only; PayPal's verified server event confirms payment.
+            const paymentReference = new URLSearchParams(window.location.search).get('nr_payment');
+            if (/^nr_[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/.test(paymentReference || '')) options.custom_id = paymentReference;
             if (id === 'nexreach-starter') options.quantity = 1;
             return actions.subscription.create(options);
           },
