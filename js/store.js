@@ -62,7 +62,7 @@
       updateBadge();
       if (!cart.length) {
         list.append(el('h2', '', 'Your cart is empty'), el('p', 'store-muted', 'Choose a package to get started.'));
-        list.append(anchor('Explore NexReach', 'services/email-marketing.html#pricing', 'store-button'));
+        list.append(anchor('Explore NexReach', 'https://www.ainexreach.com', 'store-button'));
         return;
       }
       cart.forEach(id => {
