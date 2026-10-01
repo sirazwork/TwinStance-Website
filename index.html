@@ -414,7 +414,7 @@ nav{
 .pg-sub{font-size:13px;color:var(--muted);margin-top:2px}
 
 /* Pricing grid */
-.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--b);border-radius:var(--r);overflow:visible;position:relative}
+.pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--b);border-radius:var(--r);overflow:visible;position:relative}
 .pkg{
   background:var(--white);padding:30px 26px;
   display:flex;flex-direction:column;position:relative;
@@ -747,7 +747,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
   .svc-bento{grid-template-columns:repeat(2,1fr)}
   .svc-card:nth-child(2n)::after,.svc-card:nth-child(4n)::after{display:none}
   .pkg-grid{grid-template-columns:1fr 1fr}
-  .pkg:nth-child(3){grid-column:1/-1;border-right:none;border-top:1px solid var(--b)}
+  .pkg:nth-child(2n){border-right:none}
   .footer-top{grid-template-columns:1fr 1fr}
   .hero-inner{padding:48px var(--pad) 32px}
   .hero-body{grid-template-columns:1fr}
@@ -1078,7 +1078,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
     <div class="price-group fade-up">
       <div class="pg-head">
         <div class="pg-icon">🌐</div>
-        <div><div class="pg-title">Website Design &amp; Development</div><div class="pg-sub">One yearly payment. No monthly bills. No hidden fees.</div></div>
+        <div><div class="pg-title">Website Design &amp; Development</div><div class="pg-sub">Three yearly website plans, plus our complete AI Growth Suite.</div></div>
       </div>
       <div class="pkg-grid">
         <div class="pkg">
@@ -1121,7 +1121,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
           <div class="pkg-price"><sup>$</sup><span class="pkg-price-num">899</span><span class="per">/ year</span></div>
           <div class="pkg-desc">Full-featured website built for maximum online impact and conversions.</div>
           <ul class="pkg-feats">
-            <li>Unlimited pages</li>
+            <li>Up to 20 pages</li>
             <li>Premium custom design</li>
             <li>Full SEO setup &amp; content</li>
             <li>Blog, portfolio &amp; gallery</li>
@@ -1129,9 +1129,29 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:56px 0 32px}
             <li>Advanced contact forms</li>
             <li>6 months free support</li>
             <li>Priority delivery in 24 hours</li>
+            <li>Optional AI-enabled website add-on: +$99/month</li>
           </ul>
-          <div class="pkg-note">+ One time setup fee</div>
+          <div class="pkg-note">+ One time setup fee · AI add-on available with Premium only</div>
           <a href="checkout.html?item=website-premium" data-add-product="website-premium" class="pkg-cta">Add to cart →</a>
+        </div>
+        <div class="pkg">
+          <div class="pkg-tier">AI Growth Suite</div>
+          <div class="pkg-price"><sup>$</sup><span class="pkg-price-num">1,499</span><span class="per">/ month</span></div>
+          <div class="pkg-desc">Website, AI CRM and automated sales follow-up in one managed growth system.</div>
+          <ul class="pkg-feats">
+            <li>Premium AI-enabled website with unlimited pages</li>
+            <li>NexReach AI-enabled CRM</li>
+            <li>AI website assistant, lead capture &amp; qualification</li>
+            <li>Automated inbound &amp; outbound AI calling</li>
+            <li>Automated follow-ups &amp; callbacks</li>
+            <li>Automated email &amp; SMS campaigns</li>
+            <li>Sales pipeline &amp; CRM automation</li>
+            <li>Quotations &amp; payment-link workflows</li>
+            <li>Full SEO setup &amp; content</li>
+            <li>Priority support &amp; ongoing AI/workflow updates</li>
+          </ul>
+          <div class="pkg-note">Third-party AI, telephony, SMS and email usage charges may apply separately.</div>
+          <a href="#contact" class="pkg-cta">Start AI Growth Suite →</a>
         </div>
       </div>
     </div>
