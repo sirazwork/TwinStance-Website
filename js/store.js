@@ -2,12 +2,15 @@
   'use strict';
   const root = new URL('../', document.currentScript.src);
   const products = {
-    'nexreach-starter': { name: 'NexReach Starter', price: 60, period: '/ month', group: 'crm', plan: 'P-17L1821667003311HNKSTKVY', description: 'Email outreach essentials for your business.', terms: 'Monthly subscription. Email provider charges are separate. Contact us after payment for account setup.' },
-    'nexreach-growth': { name: 'NexReach Growth', price: 150, period: '/ month', group: 'crm', plan: 'P-56S306891G633150MNKSTLIY', description: 'Email, SMS and automation in one workspace.', terms: 'Monthly subscription. Email, SMS, AI and other provider charges are separate. Contact us after payment for account setup.' },
+    'nexreach-starter': { name: 'NexReach AI Starter', price: 69, period: '/ month', group: 'crm', plan: 'P-2R7697226R8960052NK55BYQ', signupPlan: 'starter', description: 'Email outreach essentials for your business.', terms: 'Monthly subscription. Email provider charges are separate. Account activation requires verified payment.' },
+    'nexreach-growth': { name: 'NexReach AI Growth', price: 149, period: '/ month', group: 'crm', plan: 'P-9CR797063G4345035NK55CTQ', signupPlan: 'growth', description: 'Email, SMS and automation in one workspace.', terms: 'Monthly subscription. Email, SMS, AI and other provider charges are separate. Account activation requires verified payment.' },
+    'nexreach-ai-pro': { name: 'NexReach AI Pro', price: 249, period: '/ month', group: 'crm', plan: 'P-75F5571134437354VNK55DKY', signupPlan: 'ai_pro', description: 'NexReach CRM with AI calling and sales automation.', terms: 'Monthly subscription. Third-party provider usage is separate. Account activation requires verified payment.' },
     'nexreach-bundle': { name: 'NexReach + Website Bundle', price: 1299, old: 1899, period: 'one-time', group: 'crm', hosted: 'SQJZ7UZRGHFJL', description: 'Lifetime WhiteLabel CRM access. Business website free for year one.', terms: 'Website hosting, maintenance and support renew at US$599/year from year two. CRM access remains included. Provider usage is separate. Website renewal is not automatically set up by this checkout.' },
     'website-starter': { name: 'Website Starter', price: 399, period: '/ year', group: 'website', hosted: 'LWUA6M6TDKV78', description: 'A professional starting point for your business online.', terms: 'Pays for the first year. Annual renewal is arranged separately, not an automatic PayPal subscription. Confirm any one-time setup fee with us before paying.' },
     'website-business': { name: 'Website Business', price: 599, period: '/ year', group: 'website', hosted: '6YU68FW7P92SQ', description: 'A custom business website built around your brand.', terms: 'Pays for the first year. Annual renewal is arranged separately, not an automatic PayPal subscription. Confirm any one-time setup fee with us before paying.' },
-    'website-premium': { name: 'Website Premium', price: 899, period: '/ year', group: 'website', hosted: 'N4GJZAD52XBSG', description: 'Premium custom website with up to 20 pages for a bigger online presence.', terms: 'Pays for the first year. Optional AI-enabled website add-on is US$99/month and is arranged separately. Annual renewal is arranged separately, not an automatic PayPal subscription. Confirm any one-time setup fee with us before paying.' },
+    'website-premium': { name: 'Website Premium', price: 899, period: '/ year', group: 'website', hosted: 'N4GJZAD52XBSG', description: 'Premium custom website with up to 20 pages for a bigger online presence.', terms: 'Pays for the first year. Optional AI-enabled website add-on is a separate US$99/month subscription and is not included in this payment. Annual renewal is arranged separately, not an automatic PayPal subscription. Confirm any one-time setup fee with us before paying.' },
+    'website-ai-addon': { name: 'Optional AI-enabled Website Add-on', price: 99, period: '/ month', group: 'website-addon', plan: 'P-4U223522SW551580KNK7SNNA', description: 'Optional AI service for the Premium website plan.', terms: 'Recurring US$99 monthly subscription. Available only with the US$899/year Premium website, purchased separately. This checkout does not include or pay for the yearly website plan.' },
+    'ai-growth-suite': { name: 'AI Growth Suite', price: 1499, period: '/ month', group: 'website', plan: 'P-05H112846G211282FNK7SOPQ', description: 'Managed website, NexReach AI CRM and automated sales follow-up in one growth system.', terms: 'Recurring US$1,499 monthly subscription. Includes the AI-enabled website as described in the AI Growth Suite package. Third-party AI, telephony, SMS and email usage charges may apply separately. Service setup follows payment verification.' },
     'seo-basic': { name: 'Basic SEO', price: 149, period: '/ month', group: 'seo', plan: 'P-71E70869GM8629117NKSTHUA', description: 'The basic starting package for improving search visibility.', terms: 'Monthly subscription at the basic starting price. Additional scope and setup fees are quoted separately; confirm them before paying. Ad spend is not included: you choose your platforms and budget and pay them separately. Cancellation requires 30 days notice.' }
   };
   const money = value => 'US$' + value.toLocaleString('en-US');
@@ -78,6 +81,11 @@
       if (cart.includes('nexreach-bundle') && cart.some(id => products[id].group === 'website')) {
         list.prepend(el('p', 'store-notice', 'Your bundle already includes a Business website for year one. Remove the separate website unless you need an additional site.'));
       }
+      if (cart.includes('website-ai-addon')) {
+        list.prepend(el('p', 'store-notice', cart.includes('ai-growth-suite')
+          ? 'AI Growth Suite already includes an AI-enabled website. The separate AI website add-on is not needed for that same website.'
+          : 'The AI website add-on is US$99/month and requires the separately purchased US$899/year Premium website. Each item has its own checkout.'));
+      }
     }
     showCart();
   }
@@ -89,8 +97,20 @@
     return;
   }
   const product = products[id];
+  const paymentReference = new URLSearchParams(window.location.search).get('nr_payment');
+  const hasPaymentReference = /^nr_[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/.test(paymentReference || '');
   document.title = 'Checkout · ' + product.name + ' | TwinStance';
   checkout.append(el('div', 'store-eyebrow', product.plan ? 'MONTHLY SUBSCRIPTION' : 'ONE-TIME CHECKOUT'), el('h2', '', product.name), price(product), el('p', 'store-muted', product.description), el('p', 'store-terms', product.terms));
+  // Ordinary NexReach buyers use the existing registration + server-verified checkout.
+  // Preserve explicitly linked CRM payment references on the existing checkout path.
+  if (product.signupPlan && !hasPaymentReference) {
+    checkout.append(el('p', 'store-notice', 'NexReach AI is a product of TwinStance Solutions LLP. Continue on the official NexReach website to create your account and subscribe securely.'));
+    checkout.append(anchor('Continue to NexReach →', 'https://www.ainexreach.com/get-started.html?plan=' + product.signupPlan, 'store-button'));
+    return;
+  }
+  if (id === 'website-premium') {
+    checkout.append(anchor('Optional AI add-on — US$99/month (separate checkout) →', 'checkout.html?item=website-ai-addon', 'store-button'));
+  }
   const payment = el('div', 'store-payment');
   const container = el('div'); container.id = 'payment-button';
   const status = el('p', 'store-status', 'Loading secure PayPal checkout…'); status.setAttribute('role', 'status');
@@ -107,13 +127,11 @@
       let rendered;
       if (product.plan) {
         rendered = window.paypal.Buttons({
-          style: { shape: 'rect', color: 'gold', layout: 'vertical', label: 'subscribe' },
+          style: { shape: 'pill', color: 'blue', layout: 'vertical', label: 'subscribe' },
           createSubscription: function (_, actions) {
             const options = { plan_id: product.plan };
             // Opaque NexReach payment reference only; PayPal's verified server event confirms payment.
-            const paymentReference = new URLSearchParams(window.location.search).get('nr_payment');
-            if (/^nr_[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/.test(paymentReference || '')) options.custom_id = paymentReference;
-            if (id === 'nexreach-starter') options.quantity = 1;
+            if (hasPaymentReference) options.custom_id = paymentReference;
             return actions.subscription.create(options);
           },
           onApprove: function (data) {
